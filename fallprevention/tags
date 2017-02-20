@@ -1,0 +1,54 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALLOWED_HOSTS	fallprevention/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
+AUTH_PASSWORD_VALIDATORS	fallprevention/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:87
+AppConfig	app/apps.py	/^class AppConfig(AppConfig):$/;"	kind:class	line:6
+AppConfig	app/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:3
+BASE_DIR	fallprevention/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+DATABASES	fallprevention/settings.py	/^DATABASES = {$/;"	kind:variable	line:76
+DEBUG	fallprevention/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+INSTALLED_APPS	fallprevention/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	fallprevention/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:106
+MIDDLEWARE	fallprevention/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:42
+ROOT_URLCONF	fallprevention/settings.py	/^ROOT_URLCONF = 'fallprevention.urls'$/;"	kind:variable	line:52
+STATIC_URL	fallprevention/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:120
+TEMPLATES	fallprevention/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:54
+TIME_ZONE	fallprevention/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:108
+TestCase	app/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+USE_I18N	fallprevention/settings.py	/^USE_I18N = True$/;"	kind:variable	line:110
+USE_L10N	fallprevention/settings.py	/^USE_L10N = True$/;"	kind:variable	line:112
+USE_TZ	fallprevention/settings.py	/^USE_TZ = True$/;"	kind:variable	line:114
+WSGI_APPLICATION	fallprevention/settings.py	/^WSGI_APPLICATION = 'fallprevention.wsgi.application'$/;"	kind:variable	line:70
+__init__.py	app/__init__.py	1;"	kind:file	line:1
+__init__.py	app/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	fallprevention/__init__.py	1;"	kind:file	line:1
+admin	app/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	fallprevention/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:17
+admin.py	app/admin.py	1;"	kind:file	line:1
+application	fallprevention/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	app/apps.py	1;"	kind:file	line:1
+django	manage.py	/^            import django$/;"	kind:namespace	line:14
+execute_from_command_line	manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+get_wsgi_application	fallprevention/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+manage.py	manage.py	1;"	kind:file	line:1
+models	app/models.py	/^from django.db import models$/;"	kind:namespace	line:3
+models.py	app/models.py	1;"	kind:file	line:1
+name	app/apps.py	/^    name = 'app'$/;"	kind:variable	line:7
+os	fallprevention/settings.py	/^import os$/;"	kind:namespace	line:13
+os	fallprevention/wsgi.py	/^import os$/;"	kind:namespace	line:10
+os	manage.py	/^import os$/;"	kind:namespace	line:2
+render	app/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:1
+settings.py	fallprevention/settings.py	1;"	kind:file	line:1
+sys	manage.py	/^import sys$/;"	kind:namespace	line:3
+tests.py	app/tests.py	1;"	kind:file	line:1
+unicode_literals	app/apps.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:1
+unicode_literals	app/models.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:1
+url	fallprevention/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:16
+urlpatterns	fallprevention/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urls.py	fallprevention/urls.py	1;"	kind:file	line:1
+views.py	app/views.py	1;"	kind:file	line:1
+wsgi.py	fallprevention/wsgi.py	1;"	kind:file	line:1
