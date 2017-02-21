@@ -3,10 +3,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 
-# Create your views here.
+# Home screen
 def index(request):
     return render(request, 'app/index.html',{})
-
+# User Login - Currently not working
 def user_login(request):
     
     # If the request is a HTTP POST, try to pull out the relevant information.
