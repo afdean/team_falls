@@ -126,5 +126,108 @@
     "fields": {
       "medication_name": "Fanapt"
     }
+  },
+  {
+    "model": "app.FuncAbilityTest",
+    "pk": 1,
+    "fields": {
+      "test_name": "Timed Up and Go Test",
+
+      "test_rec": "True",
+
+      "test_link": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+
+      "test_instruct": "https://www.cdc.gov/steadi/pdf/tug_test-a.pdf"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 1,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "No Problems",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 2,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "Loss of balance",
+      "parameter_risk": "True"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 3,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "Steadying self on walls",
+      "parameter_risk": "True"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 4,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "Shuffling",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 5,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "Short Stride",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 6,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "Little or no arm swing",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 7,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "En bloc turning",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 8,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "Not using assistive device properly",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 9,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "TUG Time (seconds)",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 10,
+    "fields": {
+      "parameter_testkey": "1",
+      "parameter_text": "Pateitn unable to do TUG",
+      "parameter_risk": "False"
+    }
   }
 ]

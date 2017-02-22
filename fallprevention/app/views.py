@@ -8,7 +8,8 @@ def index(request):
 
 def question_list(request):
     questions = Question.objects.all()
+    form = QuestionForm()
     forms = []
     for i in range(0, len(questions)):
         forms.append(QuestionForm(request.POST, instance=questions[i]))
-    return render(request, 'app/questions.html', {'forms': forms, 'questions': questions})
+    return render(request, 'app/questions.html', {'form': form, 'questions': questions})
