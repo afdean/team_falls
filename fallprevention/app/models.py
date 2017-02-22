@@ -45,7 +45,7 @@ class FuncAbilityTest(models.Model):
     test_rec = models.BooleanField(default=False)
 
     # Link to youtube video of the test
-    test_link = models.URLField(max_length=500)
+    test_video = models.URLField(max_length=500)
 
     # Link to PDF on how to conduct the test
     test_instruct = models.URLField(max_length=500)

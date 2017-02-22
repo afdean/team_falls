@@ -132,11 +132,8 @@
     "pk": 1,
     "fields": {
       "test_name": "Timed Up and Go Test",
-
       "test_rec": "True",
-      
-      "test_link": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
-
+      "test_video": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
       "test_instruct": "https://www.cdc.gov/steadi/pdf/tug_test-a.pdf"
     }
   },
@@ -226,7 +223,81 @@
     "pk": 10,
     "fields": {
       "parameter_testkey": "1",
-      "parameter_text": "Pateitn unable to do TUG",
+      "parameter_text": "Patient unable to do TUG",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.FuncAbilityTest",
+    "pk": 2,
+    "fields": {
+      "test_name": "30 Second Chair Stand",
+      "test_rec": "False",
+      "test_video": "https://www.youtube-nocookie.com/embed/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+      "test_instruct": "https://www.cdc.gov/steadi/pdf/30_second_chair_stand_test-a.pdf"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 12,
+    "fields": {
+      "parameter_testkey": "2",
+      "parameter_text": "Notes",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.FuncAbilityTest",
+    "pk": 3,
+    "fields": {
+      "test_name": "4 Stage Balance Test",
+      "test_rec": "False",
+      "test_video": "https://www.youtube-nocookie.com/embed/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+      "test_instruct": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 12,
+    "fields": {
+      "parameter_testkey": "3",
+      "parameter_text": "Stand with your feet side by side. Time (seconds)",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 13,
+    "fields": {
+      "parameter_testkey": "3",
+      "parameter_text": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds)",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 14,
+    "fields": {
+      "parameter_testkey": "3",
+      "parameter_text": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds)",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 15,
+    "fields": {
+      "parameter_testkey": "3",
+      "parameter_text": "Stand on one foot. Time (seconds)",
+      "parameter_risk": "False"
+    }
+  },
+  {
+    "model": "app.TestParameter",
+    "pk": 16,
+    "fields": {
+      "parameter_testkey": "3",
+      "parameter_text": "Notes",
       "parameter_risk": "False"
     }
   }
