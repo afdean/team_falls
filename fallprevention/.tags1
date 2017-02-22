@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+html	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^<html>$/;"	function	line:1
+head	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^    <head>$/;"	function	line:2
+title	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^        <title>Test for questions<\/title>$/;"	function	line:3
+body	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^    <body>$/;"	function	line:5
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^        <div>$/;"	function	line:6
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^            <div class="question">$/;"	function	line:8
+p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^              <p> {{ q.question_text }} <\/p>$/;"	function	line:9
+form	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^              <form method="POST" class="question-form">{% csrf_token %}$/;"	function	line:10

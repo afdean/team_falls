@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Test for questions</title>
+    </head>
+    <body>
+        <div>
+          {% for q in questions %}
+            <div class="question">
+              <p> {{ q.question_text }} </p>
+              <form method="POST" class="question-form">{% csrf_token %}
+                  <!-- {{ forms }} -->
+                  <!-- <button type="submit" class="save btn btn-default">Save</button> -->
+              </form>
+            </div>
+          {% endfor %}
+        </div>
+    </body>
+</html>
+
