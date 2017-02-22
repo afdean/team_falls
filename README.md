@@ -6,10 +6,13 @@ This is a Clinical Decision Support FHIR app for to assist physicians in fall pr
 
 ### Andy's Notes (change later)
 If there are any issues running commands, consider deleting the migration files, and running the flush command to reinitalize
+
 1. Initialize the database (if not already initialized)
+   
     * python manage.py makemigrations
     * python manage.py migrate
     * python manage.py loaddata initial.json
+
 2. Run query checks
     * python manage.py shell
     * from app.models import Question, FuncAbilityTest, TestParameter
