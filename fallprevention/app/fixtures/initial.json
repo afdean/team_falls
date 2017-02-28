@@ -3,302 +3,301 @@
     "model": "app.Question",
     "pk": 1,
     "fields": {
-      "question_text": "I have fallen in the past year",
-      "question_score": "2",
-      "question_key": "True",
-      "question_why": "People who have fallen once are likely to fall again",
-      "question_answer": "False"
+      "content": "I have fallen in the past year",
+      "score": "2",
+      "is_key": "True",
+      "reason": "People who have fallen once are likely to fall again"
     }
   },
   {
     "model": "app.Question",
     "pk": 2,
     "fields": {
-      "question_text": "Sometimes I feel unsteady when I am walking",
-      "question_score": "2",
-      "question_key": "True",
-      "question_why": "Unsteadiness or needing support while walking are signs of poor balance"
+      "content": "Sometimes I feel unsteady when I am walking",
+      "score": "2",
+      "is_key": "True",
+      "reason": "Unsteadiness or needing support while walking are signs of poor balance"
     }
   },
   {
     "model": "app.Question",
     "pk": 3,
     "fields": {
-      "question_text": "I am worried about falling",
-      "question_score": "1",
-      "question_key": "True",
-      "question_why": "People who are worried about falling are more likely to fall"
+      "content": "I am worried about falling",
+      "score": "1",
+      "is_key": "True",
+      "reason": "People who are worried about falling are more likely to fall"
     }
   },
   {
     "model": "app.Question",
     "pk": 4,
     "fields": {
-      "question_text": "I use or have been advised to use a cane or walker to get around safely",
-      "question_score": "2",
-      "question_key": "False",
-      "question_why": "People who have been advised to use a cane or walker may already be more likely to fall"
+      "content": "I use or have been advised to use a cane or walker to get around safely",
+      "score": "2",
+      "is_key": "False",
+      "reason": "People who have been advised to use a cane or walker may already be more likely to fall"
     }
   },
   {
     "model": "app.Question",
     "pk": 5,
     "fields": {
-      "question_text": "I steady myself by holding onto furniture when walking at home",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "Unsteadiness or needing support while walking are signs of poor balance"
+      "content": "I steady myself by holding onto furniture when walking at home",
+      "score": "1",
+      "is_key": "False",
+      "reason": "Unsteadiness or needing support while walking are signs of poor balance"
     }
   },
   {
     "model": "app.Question",
     "pk": 6,
     "fields": {
-      "question_text": "I need to push with my hands to stand up from a chair",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "This is a sign of weak leg muscles, a major reason for falling"
+      "content": "I need to push with my hands to stand up from a chair",
+      "score": "1",
+      "is_key": "False",
+      "reason": "This is a sign of weak leg muscles, a major reason for falling"
     }
   },
   {
     "model": "app.Question",
     "pk": 7,
     "fields": {
-      "question_text": "I have some trouble stepping up onto a curb",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "This is a sign of weak leg muscles, a major reason for falling"
+      "content": "I have some trouble stepping up onto a curb",
+      "score": "1",
+      "is_key": "False",
+      "reason": "This is a sign of weak leg muscles, a major reason for falling"
     }
   },
   {
     "model": "app.Question",
     "pk": 8,
     "fields": {
-      "question_text": "I often have to rush to the toilet",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "Rushing to the bathroom, especially at night, increases your chance of falling"
+      "content": "I often have to rush to the toilet",
+      "score": "1",
+      "is_key": "False",
+      "reason": "Rushing to the bathroom, especially at night, increases your chance of falling"
     }
   },
   {
     "model": "app.Question",
     "pk": 9,
     "fields": {
-      "question_text": "I have lost some feeling in my feet",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "Numbness in your feet can cause stumbles and lead to falls"
+      "content": "I have lost some feeling in my feet",
+      "score": "1",
+      "is_key": "False",
+      "reason": "Numbness in your feet can cause stumbles and lead to falls"
     }
   },
   {
     "model": "app.Question",
     "pk": 10,
     "fields": {
-      "question_text": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "Side effects from medicines can sometimes increase your chance of falling"
+      "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
+      "score": "1",
+      "is_key": "False",
+      "reason": "Side effects from medicines can sometimes increase your chance of falling"
     }
   },
   {
     "model": "app.Question",
     "pk": 11,
     "fields": {
-      "question_text": "I take medicine to help me sleep or improve my mood",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "These medicines can sometimes increase your chance of falling"
+      "content": "I take medicine to help me sleep or improve my mood",
+      "score": "1",
+      "is_key": "False",
+      "reason": "These medicines can sometimes increase your chance of falling"
     }
   },
   {
     "model": "app.Question",
     "pk": 12,
     "fields": {
-      "question_text": "I often feel sad or depressed",
-      "question_score": "1",
-      "question_key": "False",
-      "question_why": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"
+      "content": "I often feel sad or depressed",
+      "score": "1",
+      "is_key": "False",
+      "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"
     }
   },
   {
     "model": "app.Medication",
     "pk": 1,
     "fields": {
-      "medication_name": "Fanapt"
+      "name": "Fanapt"
     }
   },
   {
     "model": "app.FuncAbilityTest",
     "pk": 1,
     "fields": {
-      "test_name": "Timed Up and Go Test",
-      "test_rec": "True",
-      "test_video": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
-      "test_instruct": "https://www.cdc.gov/steadi/pdf/tug_test-a.pdf"
+      "name": "Timed Up and Go Test",
+      "is_recommended": "True",
+      "videoLink": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+      "pdfLink": "https://www.cdc.gov/steadi/pdf/tug_test-a.pdf"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 1,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "No Problems",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "No Problems",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 2,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "Loss of balance",
-      "parameter_risk": "True"
+      "testKey": "1",
+      "content": "Loss of balance",
+      "risk": "True"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 3,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "Steadying self on walls",
-      "parameter_risk": "True"
+      "testKey": "1",
+      "content": "Steadying self on walls",
+      "risk": "True"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 4,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "Shuffling",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "Shuffling",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 5,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "Short Stride",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "Short Stride",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 6,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "Little or no arm swing",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "Little or no arm swing",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 7,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "En bloc turning",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "En bloc turning",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 8,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "Not using assistive device properly",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "Not using assistive device properly",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 9,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "TUG Time (seconds)",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "TUG Time (seconds)",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 10,
     "fields": {
-      "parameter_testkey": "1",
-      "parameter_text": "Patient unable to do TUG",
-      "parameter_risk": "False"
+      "testKey": "1",
+      "content": "Patient unable to do TUG",
+      "risk": "False"
     }
   },
   {
     "model": "app.FuncAbilityTest",
     "pk": 2,
     "fields": {
-      "test_name": "30 Second Chair Stand",
-      "test_rec": "False",
-      "test_video": "https://www.youtube-nocookie.com/embed/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
-      "test_instruct": "https://www.cdc.gov/steadi/pdf/30_second_chair_stand_test-a.pdf"
+      "name": "30 Second Chair Stand",
+      "is_recommended": "False",
+      "videoLink": "https://www.youtube-nocookie.com/embed/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+      "pdfLink": "https://www.cdc.gov/steadi/pdf/30_second_chair_stand_test-a.pdf"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 12,
     "fields": {
-      "parameter_testkey": "2",
-      "parameter_text": "Notes",
-      "parameter_risk": "False"
+      "testKey": "2",
+      "content": "Notes",
+      "risk": "False"
     }
   },
   {
     "model": "app.FuncAbilityTest",
     "pk": 3,
     "fields": {
-      "test_name": "4 Stage Balance Test",
-      "test_rec": "False",
-      "test_video": "https://www.youtube-nocookie.com/embed/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
-      "test_instruct": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf"
+      "name": "4 Stage Balance Test",
+      "is_recommended": "False",
+      "videoLink": "https://www.youtube-nocookie.com/embed/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+      "pdfLink": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 12,
     "fields": {
-      "parameter_testkey": "3",
-      "parameter_text": "Stand with your feet side by side. Time (seconds)",
-      "parameter_risk": "False"
+      "testKey": "3",
+      "content": "Stand with your feet side by side. Time (seconds)",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 13,
     "fields": {
-      "parameter_testkey": "3",
-      "parameter_text": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds)",
-      "parameter_risk": "False"
+      "testKey": "3",
+      "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds)",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 14,
     "fields": {
-      "parameter_testkey": "3",
-      "parameter_text": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds)",
-      "parameter_risk": "False"
+      "testKey": "3",
+      "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds)",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 15,
     "fields": {
-      "parameter_testkey": "3",
-      "parameter_text": "Stand on one foot. Time (seconds)",
-      "parameter_risk": "False"
+      "testKey": "3",
+      "content": "Stand on one foot. Time (seconds)",
+      "risk": "False"
     }
   },
   {
     "model": "app.TestParameter",
     "pk": 16,
     "fields": {
-      "parameter_testkey": "3",
-      "parameter_text": "Notes",
-      "parameter_risk": "False"
+      "testKey": "3",
+      "content": "Notes",
+      "risk": "False"
     }
   }
 ]

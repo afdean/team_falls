@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
             name='Question',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('question_text', models.CharField(max_length=200)),
+                ('content', models.CharField(max_length=200)),
                 ('question_score', models.IntegerField(default=1)),
                 ('question_key', models.BooleanField(default=False)),
                 ('question_why', models.CharField(max_length=200)),

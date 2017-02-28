@@ -2349,83 +2349,83 @@ django	/Users/andrewdean/github/team_falls/fallprevention/manage.py	/^          
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:3
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 1,$/;"	function	line:4
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:5
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I have fallen in the past year",$/;"	function	line:6
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I have fallen in the past year",$/;"	function	line:6
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "2",$/;"	function	line:7
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "True",$/;"	function	line:8
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "People who have fallen once are likely to fall again"$/;"	function	line:9
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:13
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 2,$/;"	function	line:14
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:15
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "Sometimes I feel unsteady when I am walking",$/;"	function	line:16
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "Sometimes I feel unsteady when I am walking",$/;"	function	line:16
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "2",$/;"	function	line:17
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "True",$/;"	function	line:18
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "Unsteadiness or needing support while walking are signs of poor balance"$/;"	function	line:19
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:23
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 3,$/;"	function	line:24
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:25
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I am worried about falling",$/;"	function	line:26
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I am worried about falling",$/;"	function	line:26
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:27
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "True",$/;"	function	line:28
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "People who are worried about falling are more likely to fall"$/;"	function	line:29
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:33
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 4,$/;"	function	line:34
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:35
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I use or have been advised to use a cane or walker to get around safely",$/;"	function	line:36
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I use or have been advised to use a cane or walker to get around safely",$/;"	function	line:36
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "2",$/;"	function	line:37
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "People who have been advised to use a cane or walker may already be more likely to fall"$/;"	function	line:38
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:42
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 5,$/;"	function	line:43
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:44
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I steady myself by holding onto furniture when walking at home",$/;"	function	line:45
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I steady myself by holding onto furniture when walking at home",$/;"	function	line:45
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:46
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:47
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "Unsteadiness or needing support while walking are signs of poor balance"$/;"	function	line:48
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:52
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 6,$/;"	function	line:53
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:54
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I need to push with my hands to stand up from a chair",$/;"	function	line:55
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I need to push with my hands to stand up from a chair",$/;"	function	line:55
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:56
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:57
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "This is a sign of weak leg muscles, a major reason for falling"$/;"	function	line:58
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:62
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 7,$/;"	function	line:63
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:64
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I have some trouble stepping up onto a curb",$/;"	function	line:65
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I have some trouble stepping up onto a curb",$/;"	function	line:65
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:66
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:67
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "This is a sign of weak leg muscles, a major reason for falling"$/;"	function	line:68
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:72
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 8,$/;"	function	line:73
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:74
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I often have to rush to the toilet",$/;"	function	line:75
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I often have to rush to the toilet",$/;"	function	line:75
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:76
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:77
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "Rushing to the bathroom, especially at night, increases your chance of falling"$/;"	function	line:78
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:82
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 9,$/;"	function	line:83
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:84
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I have lost some feeling in my feet",$/;"	function	line:85
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I have lost some feeling in my feet",$/;"	function	line:85
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:86
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:87
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "Numbness in your feet can cause stumbles and lead to falls"$/;"	function	line:88
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:92
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 10,$/;"	function	line:93
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:94
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I take medicine that sometimes makes me feel light-headed or more tired than usual",$/;"	function	line:95
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",$/;"	function	line:95
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:96
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:97
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "Side effects from medicines can sometimes increase your chance of falling"$/;"	function	line:98
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:102
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 11,$/;"	function	line:103
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:104
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I take medicine to help me sleep or improve my mood",$/;"	function	line:105
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I take medicine to help me sleep or improve my mood",$/;"	function	line:105
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:106
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:107
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "These medicines can sometimes increase your chance of falling"$/;"	function	line:108
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "model": "app.Question",$/;"	function	line:112
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "pk": 12,$/;"	function	line:113
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^    "fields": {$/;"	function	line:114
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_text": "I often feel sad or depressed",$/;"	function	line:115
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "content": "I often feel sad or depressed",$/;"	function	line:115
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_score": "1",$/;"	function	line:116
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_key": "False",$/;"	function	line:117
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/app/initial.json	/^      "question_why": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"$/;"	function	line:118
@@ -2474,7 +2474,7 @@ script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/base
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:3
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 1,$/;"	function	line:4
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:5
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I have fallen in the past year",$/;"	function	line:6
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I have fallen in the past year",$/;"	function	line:6
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "2",$/;"	function	line:7
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "True",$/;"	function	line:8
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "People who have fallen once are likely to fall again",$/;"	function	line:9
@@ -2482,77 +2482,77 @@ question_answer	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:14
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 2,$/;"	function	line:15
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:16
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "Sometimes I feel unsteady when I am walking",$/;"	function	line:17
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "Sometimes I feel unsteady when I am walking",$/;"	function	line:17
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "2",$/;"	function	line:18
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "True",$/;"	function	line:19
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "Unsteadiness or needing support while walking are signs of poor balance"$/;"	function	line:20
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:24
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 3,$/;"	function	line:25
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:26
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I am worried about falling",$/;"	function	line:27
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I am worried about falling",$/;"	function	line:27
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:28
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "True",$/;"	function	line:29
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "People who are worried about falling are more likely to fall"$/;"	function	line:30
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:34
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 4,$/;"	function	line:35
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:36
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I use or have been advised to use a cane or walker to get around safely",$/;"	function	line:37
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I use or have been advised to use a cane or walker to get around safely",$/;"	function	line:37
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "2",$/;"	function	line:38
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:39
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "People who have been advised to use a cane or walker may already be more likely to fall"$/;"	function	line:40
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:44
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 5,$/;"	function	line:45
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:46
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I steady myself by holding onto furniture when walking at home",$/;"	function	line:47
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I steady myself by holding onto furniture when walking at home",$/;"	function	line:47
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:48
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:49
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "Unsteadiness or needing support while walking are signs of poor balance"$/;"	function	line:50
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:54
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 6,$/;"	function	line:55
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:56
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I need to push with my hands to stand up from a chair",$/;"	function	line:57
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I need to push with my hands to stand up from a chair",$/;"	function	line:57
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:58
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:59
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "This is a sign of weak leg muscles, a major reason for falling"$/;"	function	line:60
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:64
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 7,$/;"	function	line:65
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:66
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I have some trouble stepping up onto a curb",$/;"	function	line:67
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I have some trouble stepping up onto a curb",$/;"	function	line:67
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:68
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:69
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "This is a sign of weak leg muscles, a major reason for falling"$/;"	function	line:70
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:74
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 8,$/;"	function	line:75
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:76
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I often have to rush to the toilet",$/;"	function	line:77
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I often have to rush to the toilet",$/;"	function	line:77
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:78
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:79
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "Rushing to the bathroom, especially at night, increases your chance of falling"$/;"	function	line:80
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:84
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 9,$/;"	function	line:85
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:86
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I have lost some feeling in my feet",$/;"	function	line:87
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I have lost some feeling in my feet",$/;"	function	line:87
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:88
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:89
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "Numbness in your feet can cause stumbles and lead to falls"$/;"	function	line:90
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:94
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 10,$/;"	function	line:95
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:96
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I take medicine that sometimes makes me feel light-headed or more tired than usual",$/;"	function	line:97
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",$/;"	function	line:97
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:98
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:99
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "Side effects from medicines can sometimes increase your chance of falling"$/;"	function	line:100
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:104
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 11,$/;"	function	line:105
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:106
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I take medicine to help me sleep or improve my mood",$/;"	function	line:107
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I take medicine to help me sleep or improve my mood",$/;"	function	line:107
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:108
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:109
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "These medicines can sometimes increase your chance of falling"$/;"	function	line:110
 model	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "model": "app.Question",$/;"	function	line:114
 pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "pk": 12,$/;"	function	line:115
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:116
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_text": "I often feel sad or depressed",$/;"	function	line:117
+content	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "content": "I often feel sad or depressed",$/;"	function	line:117
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_score": "1",$/;"	function	line:118
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_key": "False",$/;"	function	line:119
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "question_why": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"$/;"	function	line:120
@@ -2561,7 +2561,7 @@ pk	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	
 fields	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^    "fields": {$/;"	function	line:126
 medication_name	/Users/andrewdean/github/team_falls/fallprevention/app/fixtures/initial.json	/^      "medication_name": "Fanapt"$/;"	function	line:127
 div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/question.html	/^  <div class="question">$/;"	function	line:2
-p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/question.html	/^    <p> {{ q.question_text|linebreaksbr }} <\/p>$/;"	function	line:3
+p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/question.html	/^    <p> {{ q.content|linebreaksbr }} <\/p>$/;"	function	line:3
 p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/question.html	/^    <p> Test <\/p>$/;"	function	line:4
 url	/Users/andrewdean/github/team_falls/fallprevention/app/urls.py	/^from django.conf.urls import url$/;"	namespace	line:1
 views	/Users/andrewdean/github/team_falls/fallprevention/app/urls.py	/^from . import views$/;"	namespace	line:2
@@ -2573,7 +2573,7 @@ unicode_literals	/Users/andrewdean/github/team_falls/fallprevention/app/models.p
 models	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^from django.db import models$/;"	namespace	line:3
 python_2_unicode_compatible	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^from django.utils.encoding import python_2_unicode_compatible$/;"	namespace	line:4
 Question	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^class Question(models.Model):$/;"	class	line:8
-question_text	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^    question_text = models.CharField(max_length=200)$/;"	variable	line:10	class:Question
+content	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^    content = models.CharField(max_length=200)$/;"	variable	line:10	class:Question
 question_score	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^    question_score = models.IntegerField(default=1)$/;"	variable	line:13	class:Question
 question_key	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^    question_key = models.BooleanField(default=False)$/;"	variable	line:16	class:Question
 question_why	/Users/andrewdean/github/team_falls/fallprevention/app/models.py	/^    question_why = models.CharField(max_length=200)$/;"	variable	line:19	class:Question
@@ -2597,7 +2597,7 @@ title	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/quest
 body	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^    <body>$/;"	function	line:5
 div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^        <div>$/;"	function	line:6
 div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^            <div class="question">$/;"	function	line:8
-p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^              <p> {{ q.question_text }} <\/p>$/;"	function	line:9
+p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^              <p> {{ q.content }} <\/p>$/;"	function	line:9
 form	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/questions.html	/^              <form method="POST" class="question-form">{% csrf_token %}$/;"	function	line:10
 html	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/funcabilitytests.html	/^<html>$/;"	function	line:1
 head	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/funcabilitytests.html	/^    <head>$/;"	function	line:2

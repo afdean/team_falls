@@ -1,10 +1,11 @@
 from django import forms
+# from .models import Question
+# from django.forms import ModelForm
+#
+# class QuestionForm(ModelForm):
+#     class Meta:
+#         model = Question
+#         fields = ['content',]
 
-from models import Question
-
-class QuestionForm(forms.ModelForm):
-    # answer = forms.BooleanField()
-
-    class Meta:
-        model = Question
-        fields = ('question_answer',)
+class QuestionForm(forms.Form):
+    answer = forms.BooleanField(required=False)

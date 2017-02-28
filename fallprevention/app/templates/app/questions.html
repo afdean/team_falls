@@ -1,19 +1,22 @@
 <html>
-    <head>
-        <title>Test for questions</title>
-    </head>
-    <body>
-        <div>
-          {% for q in questions %}
-            <div class="question">
-              <p> {{ q.question_text }} </p>
-              <form method="POST" class="question-form">{% csrf_token %}
-                  <!-- {{ form }} -->
-                  <!-- <button type="submit" class="save btn btn-default">Save</button> -->
-              </form>
-            </div>
-          {% endfor %}
-        </div>
-    </body>
-</html>
 
+<head>
+    <title>Test for questions</title>
+</head>
+
+<body>
+    <form method='post'>
+        {% for q in questions %}
+        <div class="question">
+            <p>
+                {{ q.content }}
+                {% csrf_token %}
+                {{ form }}
+            </p>
+        </div>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
