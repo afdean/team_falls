@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-    <title>Daper Scholar - {% block title %}How to Tango with Django!{% endblock %}</title>
+    <title>STEADI</title>
 
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
@@ -54,12 +55,7 @@
                 </div>
                 <!--/.well -->
             </div>
-            <!--/span-->
-            <div class="span9">
-                {% block body_block %}
-                {% endblock %}
-            </div>
-            <!--/span-->
+      
         </div>
       </div>
     </div>
@@ -82,7 +78,7 @@
         </div>
     </footer>
     <!--END FOOTER-->
-    <script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 

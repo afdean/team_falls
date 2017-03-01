@@ -1,8 +1,8 @@
-<html>
-    <head>
-        <title>Test for functional ability tests</title>
-    </head>
-    <body>
+{% extends 'app/base.html' %}
+
+{%load static%}
+{% block content %}
+ <body>
         <div>
           {% for f in tests %}
             <div class="funcabilitytest">
@@ -11,5 +11,7 @@
           {% endfor %}
         </div>
     </body>
-</html>
+{% endblock %}
+   
+
 
