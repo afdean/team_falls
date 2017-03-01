@@ -1,12 +1,41 @@
 from django.shortcuts import render
+
+from .forms import QuestionForm
+from .models import Question, FuncAbilityTest, TestParameter
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 
+
 # Home screen
 def index(request):
     return render(request, 'app/index.html',{})
-# User Login - Currently not working
+  
+def questions(request):
+    # questions = Question.objects.all()
+    # form = QuestionForm()
+    # forms = []
+    # for i in range(0, len(questions)):
+    #     forms.append(QuestionForm(request.POST, instance=questions[i]))
+    # return render(request, 'app/questions.html', {'form': form, 'questions': questions})
+
+    questions = Question.objects.all()
+    if request.method == 'POST':
+
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            answers = form.cleaned_data['answers']
+            return HttpResponse(answers)
+
+    else:
+        form = QuestionForm()
+
+    return render(request, 'app/questions.html', {'form': form, 'questions': questions})
+
+def test_list(request):
+    tests = FuncAbilityTest.objects.all()
+    return render(request, 'app/funcabilitytests.html', {'tests': tests})
+  # User Login - Currently not working
 def user_login(request):
     
     # If the request is a HTTP POST, try to pull out the relevant information.
@@ -47,3 +76,5 @@ def user_login(request):
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
         return render(request, 'app/login.html', {})
+
+
