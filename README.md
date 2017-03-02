@@ -18,10 +18,10 @@ If there are any issues running commands, consider deleting the migration files,
     * python manage.py shell
     * from app.models import Question, FuncAbilityTest, TestParameter
     * Below are a list of possible queries to check if it initialized properly, in order
-    * q = Questions.objects.all()
+    * q = Question.objects.all()
     * f = FuncAbilityTest.objects.all()
-    * f = f[0]
-    * p = f.testparameter_set.all()
+    * g = f[0]
+    * p = g.testparameter_set.all()
     * t = p[0]
-    * k = t.parameter_testkey
+    * k = t.test_key
 
