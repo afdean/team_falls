@@ -34,6 +34,7 @@ def questions(request):
 
 def test_list(request):
     tests = FuncAbilityTest.objects.all()
+    print(tests)
     return render(request, 'app/funcabilitytests.html', {'tests': tests})
   # User Login - Currently not working
 def user_login(request):
@@ -77,4 +78,16 @@ def user_login(request):
         # blank dictionary object...
         return render(request, 'app/login.html', {})
 
+# View used to search patients
+def searchPatients(request):
+    return render(request,'app/searchPatients.html',{})
+
+#View used to view patient history
+# A patient dict is needed to populated with info
+def history(request):
+    return render(request,'app/history.html',{})
+
+#View used for medication screen
+def medication(request):
+    return render(request,'app/medication.html',{})
 
