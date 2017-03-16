@@ -27,10 +27,18 @@ class Medication(models.Model):
     # Name for the medication
     name = models.CharField(max_length=200)
 
-    # Will need more fields as a pharmacist/specialist shows us more
+    # Category not included: The first 2 digits of a GPI code signify the category.
 
     def __str__(self):
         return self.name
+
+# Model for mapping GPI codes to medication (some have multiples)
+@python_2_unicode_compatible
+class GpiCode(models.Model):
+    # Key to link to the medication
+    med_key = models.ForeignKey(Medication, on_delete=models.PROTECT)
+
+    code = models.IntegerField(max_length=10)
 
 # Model for checking test information
 @python_2_unicode_compatible
@@ -53,7 +61,7 @@ class FuncAbilityTest(models.Model):
 # Model for mapping parameters to FuncAbilityTest
 @python_2_unicode_compatible
 class TestParameter(models.Model):
-    # Name of the parameter
+    # Key to link to test
     test_key = models.ForeignKey(FuncAbilityTest, on_delete=models.PROTECT)
 
     # Parameter information
