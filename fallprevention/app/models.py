@@ -27,7 +27,7 @@ class Medication(models.Model):
     # Name for the medication
     name = models.CharField(max_length=200)
 
-    date = models.DateField(auto_now=False, auto_now_add=False)
+    date = models.DateField(auto_now=False, auto_now_add=False, default=None)
 
     # Category not included: The first 2 digits of a GPI code signify the category.
 
@@ -40,7 +40,10 @@ class GpiCode(models.Model):
     # Key to link to the medication
     med_key = models.ForeignKey(Medication, on_delete=models.PROTECT)
 
-    code = models.IntegerField(max_length=10)
+    code = models.IntegerField()
+
+    def __str__(self):
+        return self.code
 
 # Model for checking test information
 @python_2_unicode_compatible
