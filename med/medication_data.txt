@@ -121,15 +121,3 @@ Ziprasidone
 Zolpidem
 Zonisamide
 Zyprexa
-# Chlorpheniramine, Pseudoephedrine, and Codeine
-# Dihydrocodeine, Aspirin, and Caffeine
-# Divalproex Sodium, Valproic Acid and Derivatives
-# Guaifenesin, Pseudoephedrine, and Codeine
-# Hydrocodone and Chlorpheniramine
-# Hydrocodone and Guaifenesin
-# Hydrocodone and Phenyltoloxamine
-# Hydrocodone and Pseudoephedrine
-# Hydrocodone, Chlorpheniramine, and Pseudoephedrine
-# Hydrocodone, Pseudoephedrine, and Guaifenesin
-# Opium Tincture
-# Triprolidine, Phenyephrine, and codeine

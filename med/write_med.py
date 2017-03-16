@@ -10,7 +10,7 @@ def run():
         med.write("    \"pk\": " + str(i + 1) + ",\n")
         med.write("    \"fields\": {\n")
         med.write("      \"name\": \"" + med_list[i][:-1] + "\",\n")
-        med.write("      \"date\": \"" + str(datetime.date(2015,12,1)) + "\"\n")
+        med.write("      \"date\": \"" + "datetime.date(2015,12,1)" + "\"\n")
         med.write("    }\n")
         med.write("  },\n")
 

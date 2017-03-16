@@ -123,9 +123,987 @@
     "model": "app.Medication",
     "pk": 1,
     "fields": {
-      "name": "Fanapt"
+      "name": "Acetaminophen-Codeine",
+      "date": "datetime.date(2015,12,1)"
     }
   },
+  {
+    "model": "app.Medication",
+    "pk": 2,
+    "fields": {
+      "name": "Alfentanil",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 3,
+    "fields": {
+      "name": "Alprazolam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 4,
+    "fields": {
+      "name": "Amitriptyline",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 5,
+    "fields": {
+      "name": "Amoxapine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 6,
+    "fields": {
+      "name": "Apap-Caff-Dihydrocodeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 7,
+    "fields": {
+      "name": "Aripiprazole",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 8,
+    "fields": {
+      "name": "Asenapine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 9,
+    "fields": {
+      "name": "Belladonna Alkaloids-Opium",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 10,
+    "fields": {
+      "name": "Brexpiprazole",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 11,
+    "fields": {
+      "name": "Buprenorphine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 12,
+    "fields": {
+      "name": "Buprenorphine Hcl-Naloxone Hcl",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 13,
+    "fields": {
+      "name": "Butalbital-Apap-Caff-Cod",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 14,
+    "fields": {
+      "name": "Butalbital-Asa-Caff-Codeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 15,
+    "fields": {
+      "name": "Butorphanol",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 16,
+    "fields": {
+      "name": "Carbamazepine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 17,
+    "fields": {
+      "name": "Carisoprodol-Aspirin-Codeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 18,
+    "fields": {
+      "name": "Chlordiazepoxide",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 19,
+    "fields": {
+      "name": "Chlordiazepoxide-Amitriptyline",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 20,
+    "fields": {
+      "name": "Chlorpheniramine-Codeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 21,
+    "fields": {
+      "name": "Chlorpromazine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 22,
+    "fields": {
+      "name": "Citalopram",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 23,
+    "fields": {
+      "name": "Clidinium-Chlordiazepoxide",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 24,
+    "fields": {
+      "name": "Clobazam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 25,
+    "fields": {
+      "name": "Clomipramine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 26,
+    "fields": {
+      "name": "Clonazepam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 27,
+    "fields": {
+      "name": "Clorazepate",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 28,
+    "fields": {
+      "name": "Clozapine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 29,
+    "fields": {
+      "name": "Codeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 30,
+    "fields": {
+      "name": "Desipramine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 31,
+    "fields": {
+      "name": "Diazepam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 32,
+    "fields": {
+      "name": "Dihydrocodeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 33,
+    "fields": {
+      "name": "Doxepin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 34,
+    "fields": {
+      "name": "Droperidol",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 35,
+    "fields": {
+      "name": "Escitalopram",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 36,
+    "fields": {
+      "name": "Eslicarbazepine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 37,
+    "fields": {
+      "name": "Estazolam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 38,
+    "fields": {
+      "name": "Eszopiclone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 39,
+    "fields": {
+      "name": "Ethosuximide",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 40,
+    "fields": {
+      "name": "Ethotoin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 41,
+    "fields": {
+      "name": "Ezogabine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 42,
+    "fields": {
+      "name": "Felbamate",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 43,
+    "fields": {
+      "name": "Fentanyl",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 44,
+    "fields": {
+      "name": "Fluoxetine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 45,
+    "fields": {
+      "name": "Fluphenazine HCL",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 46,
+    "fields": {
+      "name": "Flurazepam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 47,
+    "fields": {
+      "name": "Fluvoxamine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 48,
+    "fields": {
+      "name": "Fosphenytoin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 49,
+    "fields": {
+      "name": "Gabapentin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 50,
+    "fields": {
+      "name": "Guaifenesin-Codeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 51,
+    "fields": {
+      "name": "Haloperidol",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 52,
+    "fields": {
+      "name": "Hydrocodone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 53,
+    "fields": {
+      "name": "Hydrocodone-Acetaminophen",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 54,
+    "fields": {
+      "name": "Hydrocodone-Homatropine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 55,
+    "fields": {
+      "name": "Hydrocodone-Ibuprofen",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 56,
+    "fields": {
+      "name": "Hydromorphone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 57,
+    "fields": {
+      "name": "Iloperidone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 58,
+    "fields": {
+      "name": "Imipramine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 59,
+    "fields": {
+      "name": "Lamotrigine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 60,
+    "fields": {
+      "name": "Levetiracetam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 61,
+    "fields": {
+      "name": "Levorphanol",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 62,
+    "fields": {
+      "name": "Lorazepam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 63,
+    "fields": {
+      "name": "Loxapine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 64,
+    "fields": {
+      "name": "Lurasidone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 65,
+    "fields": {
+      "name": "Meperidine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 66,
+    "fields": {
+      "name": "Meperidine-Promethazine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 67,
+    "fields": {
+      "name": "Methadone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 68,
+    "fields": {
+      "name": "Methsuximide",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 69,
+    "fields": {
+      "name": "Morphine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 70,
+    "fields": {
+      "name": "Morphine-Naltrexone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 71,
+    "fields": {
+      "name": "Nalbuphine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 72,
+    "fields": {
+      "name": "Nortriptyline",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 73,
+    "fields": {
+      "name": "Olanzapine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 74,
+    "fields": {
+      "name": "Olanzapine-Fluoxetine Hcl",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 75,
+    "fields": {
+      "name": "Oxazepam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 76,
+    "fields": {
+      "name": "Oxcarbazepine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 77,
+    "fields": {
+      "name": "Oxycodone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 78,
+    "fields": {
+      "name": "Oxycodone-Acetaminophen",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 79,
+    "fields": {
+      "name": "Oxycodone-Aspirin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 80,
+    "fields": {
+      "name": "Oxycodone-Ibuprofen",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 81,
+    "fields": {
+      "name": "Oxymorphone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 82,
+    "fields": {
+      "name": "Paliperidone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 83,
+    "fields": {
+      "name": "Paregoric",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 84,
+    "fields": {
+      "name": "Paroxetine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 85,
+    "fields": {
+      "name": "Pentazocine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 86,
+    "fields": {
+      "name": "Pentazocine-Acetaminophen",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 87,
+    "fields": {
+      "name": "Pentazocine-Naloxone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 88,
+    "fields": {
+      "name": "Perampanel",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 89,
+    "fields": {
+      "name": "Perphenazine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 90,
+    "fields": {
+      "name": "Perphenazine-Amitriptyline",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 91,
+    "fields": {
+      "name": "Phenyleph-Promethazine-Cod",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 92,
+    "fields": {
+      "name": "Phenyleph-Promethazine-Cod",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 93,
+    "fields": {
+      "name": "Phenytoin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 94,
+    "fields": {
+      "name": "Pimozide",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 95,
+    "fields": {
+      "name": "Pregabalin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 96,
+    "fields": {
+      "name": "Primidone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 97,
+    "fields": {
+      "name": "Prochlorperazine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 98,
+    "fields": {
+      "name": "Promethazine-Codeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 99,
+    "fields": {
+      "name": "Protriptyline",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 100,
+    "fields": {
+      "name": "Pseudoephedrine-Codeine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 101,
+    "fields": {
+      "name": "Quazepam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 102,
+    "fields": {
+      "name": "Quetiapine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 103,
+    "fields": {
+      "name": "Risperidone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 104,
+    "fields": {
+      "name": "Rufinamide",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 105,
+    "fields": {
+      "name": "Sertraline",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 106,
+    "fields": {
+      "name": "Sufentanil",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 107,
+    "fields": {
+      "name": "Tapentadol",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 108,
+    "fields": {
+      "name": "Temazepam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 109,
+    "fields": {
+      "name": "Thioridazine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 110,
+    "fields": {
+      "name": "Thiothixene",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 111,
+    "fields": {
+      "name": "Tiagabine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 112,
+    "fields": {
+      "name": "Topiramate",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 113,
+    "fields": {
+      "name": "Tramadol",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 114,
+    "fields": {
+      "name": "Tramadol-Acetaminophen",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 115,
+    "fields": {
+      "name": "Triazolam",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 116,
+    "fields": {
+      "name": "Trifluoperazine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 117,
+    "fields": {
+      "name": "Trimipramine",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 118,
+    "fields": {
+      "name": "Vigabatrin",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 119,
+    "fields": {
+      "name": "Zaleplon",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 120,
+    "fields": {
+      "name": "Ziprasidone",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 121,
+    "fields": {
+      "name": "Zolpidem",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 122,
+    "fields": {
+      "name": "Zonisamide",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+  {
+    "model": "app.Medication",
+    "pk": 123,
+    "fields": {
+      "name": "Zyprexa",
+      "date": "datetime.date(2015,12,1)"
+    }
+  },
+
   {
     "model": "app.FuncAbilityTest",
     "pk": 1,
