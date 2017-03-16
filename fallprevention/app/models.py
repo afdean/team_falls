@@ -27,7 +27,7 @@ class Medication(models.Model):
     # Name for the medication
     name = models.CharField(max_length=200)
 
-    date = models.DateField(auto_now=False, auto_now_add=False, default=None)
+    date = models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
     # Category not included: The first 2 digits of a GPI code signify the category.
 
