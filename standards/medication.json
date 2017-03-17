@@ -168,7 +168,7 @@
   {
     "name": "Eszopiclone",
     "date": "2015-12",
-    "gpi_codes": [6020100500]
+    "gpi_codes": [6020403500]
   },
   {
     "name": "Ethosuximide",
@@ -193,7 +193,7 @@
   {
     "name": "Fentanyl",
     "date": "2015-12",
-    "gpi_codes": [7212002000]
+    "gpi_codes": [6510002500]
   },
   {
     "name": "Fluoxetine",
@@ -283,7 +283,7 @@
   {
     "name": "Levorphanol",
     "date": "2015-12",
-    "gpi_codes": [6510004010, 6510004010]
+    "gpi_codes": [6510004010, 9664507275]
   },
   {
     "name": "Lorazepam",
@@ -378,7 +378,7 @@
   {
     "name": "Oxymorphone",
     "date": "2015-12",
-    "gpi_codes": [6599000226]
+    "gpi_codes": [6510008010]
   },
   {
     "name": "Paliperidone",
@@ -393,7 +393,7 @@
   {
     "name": "Paroxetine",
     "date": "2015-12",
-    "gpi_codes": [4710004000]
+    "gpi_codes": [5816006000]
   },
   {
     "name": "Pentazocine",
@@ -403,7 +403,7 @@
   {
     "name": "Pentazocine-Acetaminophen",
     "date": "2015-12",
-    "gpi_codes": [6520004020]
+    "gpi_codes": [6599400210]
   },
   {
     "name": "Pentazocine-Naloxone",
@@ -484,7 +484,7 @@
   {
     "name": "Rufinamide",
     "date": "2015-12",
-    "gpi_codes": [5907007000]
+    "gpi_codes": [7260006500]
   },
   {
     "name": "Sertraline",
@@ -544,7 +544,7 @@
   {
     "name": "Trifluoperazine",
     "date": "2015-12",
-    "gpi_codes": [6020104000]
+    "gpi_codes": [5920008510]
   },
   {
     "name": "Trimipramine",
@@ -569,16 +569,11 @@
   {
     "name": "Zolpidem",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020408010]
   },
   {
     "name": "Zonisamide",
     "date": "2015-12",
-    "gpi_codes": []
-  },
-  {
-    "name": "Zyprexa",
-    "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7260009000]
   }
 ]

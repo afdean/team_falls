@@ -50,3 +50,10 @@
 "date": "2015-12",
 "gpi_codes": []
 },
+
+,
+{
+"name": "Zyprexa",
+"date": "2015-12",
+"gpi_codes": []
+}
