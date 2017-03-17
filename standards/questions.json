@@ -1,0 +1,77 @@
+[
+  {
+    "content": "I have fallen in the past year",
+    "score": 2,
+    "is_key": true,
+    "reason": "People who have fallen once are likely to fall again"
+  },
+  {
+    "content": "Sometimes I feel unsteady when I am walking",
+    "score": 2,
+    "is_key": true,
+    "reason": "Unsteadiness or needing support while walking are signs of poor balance"
+  },
+  {
+    "content": "I am worried about falling",
+    "score": 1,
+    "is_key": true,
+    "reason": "People who are worried about falling are more likely to fall"
+  },
+  {
+    "content": "I use or have been advised to use a cane or walker to get around safely",
+    "score": 2,
+    "is_key": false,
+    "reason": "People who have been advised to use a cane or walker may already be more likely to fall"
+
+  },
+  {
+    "content": "I steady myself by holding onto furniture when walking at home",
+    "score": 1,
+    "is_key": false,
+    "reason": "Unsteadiness or needing support while walking are signs of poor balance"
+
+  },
+  {
+    "content": "I need to push with my hands to stand up from a chair",
+    "score": 1,
+    "is_key": false,
+    "reason": "This is a sign of weak leg muscles, a major reason for falling"
+
+  },
+  {
+    "content": "I have some trouble stepping up onto a curb",
+    "score": 1,
+    "is_key": false,
+    "reason": "This is a sign of weak leg muscles, a major reason for falling"
+  },
+  {
+    "content": "I often have to rush to the toilet",
+    "score": 1,
+    "is_key": false,
+    "reason": "Rushing to the bathroom, especially at night, increases your chance of falling"
+  },
+  {
+    "content": "I have lost some feeling in my feet",
+    "score": 1,
+    "is_key": false,
+    "reason": "Numbness in your feet can cause stumbles and lead to falls"
+  },
+  {
+    "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
+    "score": "1",
+    "is_key": false,
+    "reason": "Side effects from medicines can sometimes increase your chance of falling"
+  },
+  {
+    "content": "I take medicine to help me sleep or improve my mood",
+    "score": 1,
+    "is_key": false,
+    "reason": "These medicines can sometimes increase your chance of falling"
+  },
+  {
+    "content": "I often feel sad or depressed",
+    "score": 1,
+    "is_key": false,
+    "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"
+  }
+]
