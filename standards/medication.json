@@ -2,602 +2,569 @@
   {
     "name": "Acetaminophen-Codeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599100205]
   },
   {
     "name": "Alfentanil",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510001500]
   },
   {
     "name": "Alprazolam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5710001000, 9642644854]
   },
   {
     "name": "Amitriptyline",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820001010]
   },
   {
     "name": "Amoxapine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820002000]
   },
   {
     "name": "Apap-Caff-Dihydrocodeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599130305]
   },
   {
     "name": "Aripiprazole",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5925001500]
   },
   {
     "name": "Asenapine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5915501510]
   },
   {
     "name": "Belladonna Alkaloids-Opium",
     "date": "2015-12",
-    "gpi_codes": []
-  },
-  {
-    "name": "Brexpiprazole",
-    "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4910990215]
   },
   {
     "name": "Buprenorphine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6520001000]
   },
   {
     "name": "Buprenorphine Hcl-Naloxone Hcl",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6520001020]
   },
   {
     "name": "Butalbital-Apap-Caff-Cod",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599100410]
   },
   {
     "name": "Butalbital-Asa-Caff-Codeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599100430]
   },
   {
     "name": "Butorphanol",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6520002010, 9644826050]
   },
-  {
-    "name": "Carbamazepine",
-    "date": "2015-12",
-    "gpi_codes": []
-  },
+
   {
     "name": "Carisoprodol-Aspirin-Codeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7599000310]
   },
   {
     "name": "Chlordiazepoxide",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5710002010]
   },
   {
     "name": "Chlordiazepoxide-Amitriptyline",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6299200220]
   },
   {
     "name": "Chlorpheniramine-Codeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4399520232]
   },
   {
     "name": "Chlorpromazine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5920001510]
   },
   {
     "name": "Citalopram",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5816002010]
   },
   {
     "name": "Clidinium-Chlordiazepoxide",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4910990245]
   },
   {
     "name": "Clobazam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7210000700]
   },
   {
     "name": "Clomipramine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820002510, 9646644620]
   },
   {
     "name": "Clonazepam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9646644528, 7210001000]
   },
   {
     "name": "Clorazepate",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5710003010]
   },
   {
     "name": "Clozapine",
     "date": "2015-12",
-    "gpi_codes": []
-  },
-  {
-    "name": "Codeine",
-    "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5915202000]
   },
   {
     "name": "Desipramine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820003010]
   },
   {
     "name": "Diazepam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9648580300, 5710004000, 7210003000]
   },
   {
     "name": "Dihydrocodeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599130310]
   },
   {
     "name": "Doxepin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820004010, 6040003010]
   },
   {
     "name": "Droperidol",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5720003000]
   },
   {
     "name": "Escitalopram",
     "date": "2015-12",
-    "gpi_codes": []
-  },
-  {
-    "name": "Eslicarbazepine",
-    "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5816003410]
   },
   {
     "name": "Estazolam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020100500]
   },
   {
     "name": "Eszopiclone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020100500]
   },
   {
     "name": "Ethosuximide",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9650800950, 7240001000]
   },
   {
     "name": "Ethotoin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7220001000]
   },
   {
     "name": "Ezogabine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7260002600]
   },
   {
     "name": "Felbamate",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7212002000]
   },
   {
     "name": "Fentanyl",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7212002000]
   },
   {
     "name": "Fluoxetine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5816004000, 9652646380]
   },
   {
     "name": "Fluphenazine HCL",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5920002510, 9652646450]
   },
   {
     "name": "Flurazepam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020101010]
   },
   {
     "name": "Fluvoxamine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5816004510]
   },
   {
     "name": "Fosphenytoin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7220001310]
   },
   {
     "name": "Gabapentin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9654424400, 7260003000]
   },
   {
     "name": "Guaifenesin-Codeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4399700228]
   },
   {
     "name": "Haloperidol",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5910001010]
   },
   {
     "name": "Hydrocodone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4310100510]
   },
   {
     "name": "Hydrocodone-Acetaminophen",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599170210]
   },
   {
     "name": "Hydrocodone-Homatropine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4310101000]
   },
   {
     "name": "Hydrocodone-Ibuprofen",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599170250]
   },
   {
     "name": "Hydromorphone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510003510]
   },
   {
     "name": "Iloperidone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5907003500]
   },
   {
     "name": "Imipramine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820005010]
   },
   {
     "name": "Lamotrigine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7260004000]
   },
   {
     "name": "Levetiracetam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7260004300, 9664506600]
   },
   {
     "name": "Levorphanol",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510004010, 6510004010]
   },
   {
     "name": "Lorazepam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5710006000, 9664707600]
   },
   {
     "name": "Loxapine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5915402020, 9664709003]
   },
   {
     "name": "Lurasidone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5940002310]
   },
   {
     "name": "Meperidine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510004510]
   },
   {
     "name": "Meperidine-Promethazine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599300220]
   },
   {
     "name": "Methadone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510005010]
   },
   {
     "name": "Methsuximide",
     "date": "2015-12",
-    "gpi_codes": []
-  },
-  {
-    "name": "Morphine",
-    "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7240002000]
   },
   {
     "name": "Morphine-Naltrexone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510005570]
   },
   {
     "name": "Nalbuphine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9668423620, 6520003010]
   },
   {
     "name": "Nortriptyline",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820006010]
   },
   {
     "name": "Olanzapine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5915706000]
   },
   {
     "name": "Olanzapine-Fluoxetine Hcl",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6299500250]
   },
   {
     "name": "Oxazepam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5710007000]
   },
   {
     "name": "Oxcarbazepine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7260004600]
   },
   {
     "name": "Oxycodone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510007510]
   },
   {
     "name": "Oxycodone-Acetaminophen",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599000220]
   },
   {
     "name": "Oxycodone-Aspirin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599000222]
   },
   {
     "name": "Oxycodone-Ibuprofen",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599000226]
   },
   {
     "name": "Oxymorphone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599000226]
   },
   {
     "name": "Paliperidone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5907005000]
   },
   {
     "name": "Paregoric",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4710004000]
   },
   {
     "name": "Paroxetine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4710004000]
   },
   {
     "name": "Pentazocine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6520004020]
   },
   {
     "name": "Pentazocine-Acetaminophen",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6520004020]
   },
   {
     "name": "Pentazocine-Naloxone",
     "date": "2015-12",
-    "gpi_codes": []
-  },
-  {
-    "name": "Perampanel",
-    "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6520004030]
   },
   {
     "name": "Perphenazine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9672505600, 5920004500
+]
   },
   {
     "name": "Perphenazine-Amitriptyline",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6299400260]
   },
   {
     "name": "Phenyleph-Promethazine-Cod",
     "date": "2015-12",
-    "gpi_codes": []
-  },
-  {
-    "name": "Phenyleph-Promethazine-Cod",
-    "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4399530310]
   },
   {
     "name": "Phenytoin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7220003000, 9672561675]
   },
   {
     "name": "Pimozide",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6200003000]
   },
   {
     "name": "Pregabalin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7260005700]
   },
   {
     "name": "Primidone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7260006000, 9672762739]
   },
   {
     "name": "Prochlorperazine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5920005500]
   },
   {
     "name": "Promethazine-Codeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4399520234]
   },
   {
     "name": "Protriptyline",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820007010]
   },
   {
     "name": "Pseudoephedrine-Codeine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [4399510230]
   },
   {
     "name": "Quazepam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020102800]
   },
   {
     "name": "Quetiapine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5915307010]
   },
   {
     "name": "Risperidone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5907007000]
   },
   {
     "name": "Rufinamide",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5907007000]
   },
   {
     "name": "Sertraline",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9678506010, 5816007010]
   },
   {
     "name": "Sufentanil",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9678822210, 6510009010]
   },
   {
     "name": "Tapentadol",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510009110]
   },
   {
     "name": "Temazepam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020103000]
   },
   {
     "name": "Thioridazine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5920008010, 9680562810]
   },
   {
     "name": "Thiothixene",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5930002010, 9680562855]
   },
   {
     "name": "Tiagabine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7217007010]
   },
   {
     "name": "Topiramate",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [9680704900, 7260007500]
   },
   {
     "name": "Tramadol",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6510009510, 9680760339]
   },
   {
     "name": "Tramadol-Acetaminophen",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6599500220]
   },
   {
     "name": "Triazolam",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020104000]
   },
   {
     "name": "Trifluoperazine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020104000]
   },
   {
     "name": "Trimipramine",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5820008010]
   },
   {
     "name": "Vigabatrin",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [7217008500]
   },
   {
     "name": "Zaleplon",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [6020407000]
   },
   {
     "name": "Ziprasidone",
     "date": "2015-12",
-    "gpi_codes": []
+    "gpi_codes": [5940008510]
   },
   {
     "name": "Zolpidem",

@@ -10,3 +10,43 @@
 # Hydrocodone, Pseudoephedrine, and Guaifenesin
 # Opium Tincture
 # Triprolidine, Phenyephrine, and codeine
+
+{
+"name": "Brexpiprazole",
+"date": "2015-12",
+"gpi_codes": []
+},
+{
+  "name": "Carbamazepine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+
+
+{
+  "name": "Codeine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+^^^^^ Phostphate or sulfide????
+
+{
+  "name": "Eslicarbazepine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+
+
+{
+  "name": "Morphine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+^^^ beads??!
+
+
+{
+"name": "Perampanel",
+"date": "2015-12",
+"gpi_codes": []
+},
