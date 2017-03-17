@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^thankyou/$', app_views.thankyou, name="thankyou"),
     url(r'^test/$', app_views.test, name="test"),
     url(r'^funcabilitytests/$', app_views.test_list, name="test_list"),
+      url(r'^login/$', views.user_login, name='login'),
 ]
+

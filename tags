@@ -1,0 +1,71 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALLOWED_HOSTS	fallprevention/fallprevention/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
+AUTH_PASSWORD_VALIDATORS	fallprevention/fallprevention/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:88
+AppConfig	fallprevention/app/apps.py	/^class AppConfig(AppConfig):$/;"	kind:class	line:6
+AppConfig	fallprevention/app/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:3
+BASE_DIR	fallprevention/fallprevention/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+DATABASES	fallprevention/fallprevention/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
+DEBUG	fallprevention/fallprevention/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+HttpResponse	fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	kind:namespace	line:4
+HttpResponseRedirect	fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	kind:namespace	line:4
+INSTALLED_APPS	fallprevention/fallprevention/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	fallprevention/fallprevention/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:107
+LOGIN_URL	fallprevention/fallprevention/settings.py	/^LOGIN_URL = '\/app\/login\/'$/;"	kind:variable	line:123
+MEDIA_ROOT	fallprevention/fallprevention/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory$/;"	kind:variable	line:124
+MEDIA_URL	fallprevention/fallprevention/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:122
+MIDDLEWARE	fallprevention/fallprevention/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+ROOT_URLCONF	fallprevention/fallprevention/settings.py	/^ROOT_URLCONF = 'fallprevention.urls'$/;"	kind:variable	line:53
+STATIC_URL	fallprevention/fallprevention/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:121
+TEMPLATES	fallprevention/fallprevention/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	fallprevention/fallprevention/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:109
+TestCase	fallprevention/app/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+USE_I18N	fallprevention/fallprevention/settings.py	/^USE_I18N = True$/;"	kind:variable	line:111
+USE_L10N	fallprevention/fallprevention/settings.py	/^USE_L10N = True$/;"	kind:variable	line:113
+USE_TZ	fallprevention/fallprevention/settings.py	/^USE_TZ = True$/;"	kind:variable	line:115
+WSGI_APPLICATION	fallprevention/fallprevention/settings.py	/^WSGI_APPLICATION = 'fallprevention.wsgi.application'$/;"	kind:variable	line:71
+__init__.py	fallprevention/app/__init__.py	1;"	kind:file	line:1
+__init__.py	fallprevention/app/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	fallprevention/fallprevention/__init__.py	1;"	kind:file	line:1
+admin	fallprevention/app/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	fallprevention/fallprevention/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:18
+admin.py	fallprevention/app/admin.py	1;"	kind:file	line:1
+application	fallprevention/fallprevention/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	fallprevention/app/apps.py	1;"	kind:file	line:1
+authenticate	fallprevention/app/views.py	/^from django.contrib.auth import authenticate, login$/;"	kind:namespace	line:2
+django	fallprevention/manage.py	/^            import django$/;"	kind:namespace	line:14
+execute_from_command_line	fallprevention/manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+get_wsgi_application	fallprevention/fallprevention/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+include	fallprevention/fallprevention/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:16
+index	fallprevention/app/views.py	/^def index(request):$/;"	kind:function	line:7
+login	fallprevention/app/views.py	/^from django.contrib.auth import authenticate, login$/;"	kind:namespace	line:2
+login_required	fallprevention/app/views.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:3
+manage.py	fallprevention/manage.py	1;"	kind:file	line:1
+models	fallprevention/app/models.py	/^from django.db import models$/;"	kind:namespace	line:3
+models.py	fallprevention/app/models.py	1;"	kind:file	line:1
+name	fallprevention/app/apps.py	/^    name = 'app'$/;"	kind:variable	line:7
+os	fallprevention/fallprevention/settings.py	/^import os$/;"	kind:namespace	line:13
+os	fallprevention/fallprevention/wsgi.py	/^import os$/;"	kind:namespace	line:10
+os	fallprevention/manage.py	/^import os$/;"	kind:namespace	line:2
+render	fallprevention/app/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:1
+settings	fallprevention/fallprevention/urls.py	/^from django.conf import settings$/;"	kind:namespace	line:17
+settings.py	fallprevention/fallprevention/settings.py	1;"	kind:file	line:1
+static	fallprevention/fallprevention/urls.py	/^from django.conf.urls.static import static$/;"	kind:namespace	line:19
+sys	fallprevention/manage.py	/^import sys$/;"	kind:namespace	line:3
+tests.py	fallprevention/app/tests.py	1;"	kind:file	line:1
+unicode_literals	fallprevention/app/apps.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:1
+unicode_literals	fallprevention/app/models.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:1
+url	fallprevention/app/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+url	fallprevention/fallprevention/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:16
+urlpatterns	fallprevention/app/urls.py	/^urlpatterns = [$/;"	kind:variable	line:4
+urlpatterns	fallprevention/fallprevention/urls.py	/^urlpatterns = [$/;"	kind:variable	line:21
+urls.py	fallprevention/app/urls.py	1;"	kind:file	line:1
+urls.py	fallprevention/fallprevention/urls.py	1;"	kind:file	line:1
+user_login	fallprevention/app/views.py	/^def user_login(request):$/;"	kind:function	line:10
+views	fallprevention/app/urls.py	/^from . import views$/;"	kind:namespace	line:2
+views.py	fallprevention/app/views.py	1;"	kind:file	line:1
+wsgi.py	fallprevention/fallprevention/wsgi.py	1;"	kind:file	line:1
