@@ -4,97 +4,90 @@
     "is_recommended": true,
     "video_link": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
     "pdf_link":"https://www.cdc.gov/steadi/pdf/tug_test-a.pdf",
-    "test_parameters":
-      [
-        {
-          "content": "Patient unable to do TUG"
-        }
-      ],
-    "integer_parameters":
-      [
-        {
-          "content": "TUG Time (seconds):"
-        }
-      ],
-    "check_parameters":
-      [
-        {
-          "content": "No problems",
-          "risk": false
-        },
-        {
-          "content": "Loss of balance",
-          "risk": true
-        },
-        {
-          "content": "Steadying self on walls",
-          "risk": true
-        },
-        {
-          "content": "Shuffling",
-          "risk": false
-        },
-        {
-          "content": "Short Stride",
-          "risk": false
-        },
-        {
-          "content": "Little or no arm swing",
-          "risk": false
-        },
-        {
-          "content": "En bloc turning",
-          "risk": false
-        },
-        {
-          "content": "Not using assistive device properly",
-          "risk": false
-        }
-      ]
+    "test_parameters": [
+      {
+        "content": "Patient unable to do TUG"
+      }
+    ],
+    "integer_parameters": [
+      {
+        "content": "TUG Time (seconds):"
+      }
+    ],
+    "check_parameters": [
+      {
+        "content": "No problems",
+        "risk": false
+      },
+      {
+        "content": "Loss of balance",
+        "risk": true
+      },
+      {
+        "content": "Steadying self on walls",
+        "risk": true
+      },
+      {
+        "content": "Shuffling",
+        "risk": false
+      },
+      {
+        "content": "Short Stride",
+        "risk": false
+      },
+      {
+        "content": "Little or no arm swing",
+        "risk": false
+      },
+      {
+        "content": "En bloc turning",
+        "risk": false
+      },
+      {
+        "content": "Not using assistive device properly",
+        "risk": false
+      }
+    ]
   },
   {
     "name": "30-Second Chair Stand",
     "is_recommended": false,
     "video_link": "https://www.youtube-nocookie.com/embed/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
     "pdf_link": "https://www.cdc.gov/steadi/pdf/30_second_chair_stand_test-a.pdf",
-    "test_parameters":
-      [
-        {
-          "content": "Notes:"
-        }
-      ],
-    "integer_parameters":
-      [
-        {
-          "content": "Score:"
-        }
-      ]
+    "test_parameters": [
+      {
+        "content": "Notes:"
+      }
+    ],
+    "integer_parameters": [
+      {
+        "content": "Score:"
+      }
+    ]
   },
   {
     "name": "4 Stage Balance Test",
     "is_recommended": false,
     "video_link": "https://www.youtube-nocookie.com/embed/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
     "pdf_link": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf",
-    "test_parameters":
-      [
-        {
-          "content": "Notes:"
-        }
-      ],
-    "integer_parameters":
-      [
-        {
-          "content": "Stand with your feet side by side. Time (seconds):"
-        },
-        {
-          "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):"
-        },
-        {
-          "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):"
-        },
-        {
-          "content": "Stand on one foot. Time (seconds):"
-        }
-      ]
+    "test_parameters": [
+      {
+        "content": "Notes:"
+      }
+    ],
+    "integer_parameters": [
+      {
+        "content": "Stand with your feet side by side. Time (seconds):"
+      },
+      {
+        "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):"
+      },
+      {
+        "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):"
+      },
+      {
+        "content": "Stand on one foot. Time (seconds):"
+      }
+    ]
   }
 ]
