@@ -5,22 +5,22 @@
       {
         "content": "Supine",
         "type": "integer",
-        "num_forms": 2,
+        "num_forms": 2
       },
       {
         "content": "Standing (1m)",
         "type": "integer",
-        "num_forms": 2,
+        "num_forms": 2
       },
       {
         "content": "Standing (3m)",
         "type": "integer",
-        "num_forms": 2,
+        "num_forms": 2
       },
       {
         "content": "Postural Dizziness",
         "type": "boolean",
-        "num_forms": 1,
+        "num_forms": 1
       },
       {
         "HR": "Heart Rate",
@@ -30,93 +30,128 @@
     ]
   },
   {
-      "name": "Cognitive Screen",
-      "forms": [
-        {
-          "content": "Notes",
-          "type": "String",
-          "num_forms": 1
-        },
-        {
-          "content": "Cognitive Impairment",
-          "type": "boolean",
-          "num_forms": 1
-        }
-      ]
+    "name": "Cognitive Screen",
+    "forms": [
+      {
+        "content": "Notes",
+        "type": "String",
+        "num_forms": 1
+      },
+      {
+        "content": "Cognitive Impairment",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
   },
   {
-      "name": "Feet & Footwear",
-      "forms": [
-        {
-          "content": "Normal",
-          "type": "boolean",
-          "num_forms": 1
-        },
-        {
-          "content": "Bunions",
-          "type": "boolean",
-          "num_forms": 1
-        },
-        {
-          "content": "Ulcers",
-          "type": "boolean",
-          "num_forms": 1
-        },
-        {
-          "content": "Structural Abnormalities",
-          "type": "boolean",
-          "num_forms": 1
-        },
-        {
-          "content": "Impaired Sensation",
-          "type": "boolean",
-          "num_forms": 1
-        },
-        {
-          "content": "Impaired Proprioception",
-          "type": "boolean",
-          "num_forms": 1
-        },
-        {
-          "content": "Amputation noted on one foot",
-          "type": "boolean",
-          "num_forms": 1
-        },
-        {
-          "content": "Amputation noted on both feet",
-          "type": "boolean",
-          "num_forms": 1
-        },
-      ]
+    "name": "Feet and Footwear",
+    "forms": [
+      {
+        "content": "Normal",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Bunions",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Ulcers",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Structural Abnormalities",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Impaired Sensation",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Impaired Proprioception",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Amputation noted on one foot",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Amputation noted on both feet",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
   },
   {
-      "name": "Use of Mobility Aids",
-      "forms": [
-        {
-          "content": "Uses Aid",
-          "type": "boolean",
-          "num_forms": 1
-        },
-      ]
+    "name": "Use of Mobility Aids",
+    "forms": [
+      {
+        "content": "Uses Aid",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
   },
   {
-      "name": "Visual Acuity Check",
-      "forms": [
-        {
-          "content": "Left",
-          "type": "string",
-          "num_forms": 1
-        },
-        {
-          "content": "Right",
-          "type": "string",
-          "num_forms": 1
-        },
-        {
-          "content": "Both",
-          "type": "string",
-          "num_forms": 1
-        },
-      ]
+    "name": "Visual Acuity Check",
+    "forms": [
+      {
+        "content": "Left",
+        "type": "string",
+        "num_forms": 1
+      },
+      {
+        "content": "Right",
+        "type": "string",
+        "num_forms": 1
+      },
+      {
+        "content": "Both",
+        "type": "string",
+        "num_forms": 1
+      },
+      {
+        "content": "Vision Impairment",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
   },
+  {
+    "name": "Muscle Strength & Tone",
+    "forms": [
+      {
+        "content": "Normal Tone and Strength",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Diffuse Muscle Weakness",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Diffuse Muscle Atrophy",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Focal Weakness",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Cogwheel Rigidity",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
+  }
 ]
