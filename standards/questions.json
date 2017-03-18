@@ -6,7 +6,25 @@
       "score": 2,
       "is_key": true,
       "medication_related": false,
-      "reason": "People who have fallen once are likely to fall again"
+      "reason": "People who have fallen once are likely to fall again",
+      "follow_up": [
+        {
+          "content": "I have fallen more than once in the past year",
+          "code": "",
+          "score": 0,
+          "is_key": false,
+          "medication_related": false,
+          "reason": "People who have fallen once are likely to fall again"
+        },
+        {
+          "content": "I have been injured from a fall in the past year",
+          "code": "",
+          "score": 0,
+          "is_key": false,
+          "medication_related": false,
+          "reason": "People who have fallen once are likely to fall again"
+        }
+      ]
     },
     {
       "content": "Sometimes I feel unsteady when I am walking",
