@@ -4,6 +4,8 @@
     "is_recommended": true,
     "video_link": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
     "pdf_link":"https://www.cdc.gov/steadi/pdf/tug_test-a.pdf",
+    "min_time": 12,
+    "min_key": 1,
     "test_parameters": [
       {
         "content": "Patient unable to do TUG"
@@ -17,35 +19,35 @@
     "boolean_parameters": [
       {
         "content": "No problems",
-        "risk": false
+        "is_key": false
       },
       {
         "content": "Loss of balance",
-        "risk": true
+        "is_key": true
       },
       {
         "content": "Steadying self on walls",
-        "risk": true
+        "is_key": true
       },
       {
         "content": "Shuffling",
-        "risk": false
+        "is_key": false
       },
       {
         "content": "Short Stride",
-        "risk": false
+        "is_key": false
       },
       {
         "content": "Little or no arm swing",
-        "risk": false
+        "is_key": false
       },
       {
         "content": "En bloc turning",
-        "risk": false
+        "is_key": false
       },
       {
         "content": "Not using assistive device properly",
-        "risk": false
+        "is_key": false
       }
     ]
   },

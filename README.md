@@ -19,15 +19,18 @@ With respect to maintainability, the usage of FHIR allows us to give more contro
 ## Dependencies
 
     * Python3
+    * HTML
+    * CSS
     * Django
     * Django-Crispy-Forms
     * Memcached
+    * Bootstrap
 
     Using OSX:
-    * pip3 install Django
+    * pip3 install django
     * brew install memcached
 
-### Standards Documents
+### Standards Documents (PLEASE DO NOT EDIT/DELETE ANYTHING HERE OR IN SUBSECTIONS WITHOUT CONSULTING ME FIRST)
 These are hosted on a github page maintained by the CDC:
 
     * questions.json
@@ -46,12 +49,12 @@ questions.json includes all screening questions, and the logic for the screening
 
 The question logic object includes the following fields:
     * min_score: Integer indicating the minimum score needed to fail.
-    * min_key: Integer indicating the minimum number of key questions answered "yes" needed to fail.
+    * min_key: Integer indicating the minimum number of key questions answered "yes" needed to fail
 
 func_ability_test.json includes all of the functional ability tests that can be conducted provided the patient "fails" the screening process. Each functional ability test object includes the following fields:
 
     * name: String representing the name of the test
-    * is_recommended: Boolean indicating if the test is recommended above the others.
+    * is_recommended: Boolean indicating if the test is recommended above the others
     * video_link: String containing a URL to video instructions for the test, hosted by the CDC.
     * pdf_link: String containing a URL to a PDF with instructions for the test
     * test_parameters:
@@ -64,7 +67,34 @@ medication.json includes all medications related to the AGS 2015 Beers Criteria 
     * date: String representing the date the medicine was classified in the Beers Criteria
     * gpi_codes: Array of integers representing the first 10 digits of a medication's GPI code to be matched.
 
+<!-- TODO: NEED TO MENTION WHICH JSON files allow for any object to be added or deleted or modified if corresponds to other entires, and others that are too complex/unique -->
+
 JSON objects can be easily added/modified to the files provided it is formatted in accordance to the fields. The app simply iterates through all objects to fill the pages. Keep this in mind when adding or removing objects, since the order in which they appear in an array matters for the order they appear on a page. Modification to existing objects must keep the data structure intact (i.e do not change an integer into a string).
+
+#### Questions Logic
+A patient fails the screening process if his/her score is greater than or equal to 'min_score' or if the number of key questions answered yes to is greater than or equal to "min_key"
+
+#### Functional Ability Test Parameters and Logic
+Certain tests have unique fields related to them that must be mentioned to understand how the app determines pass/fail. Since these tests are unique, certain aspects of them must be hard coded. That is, one can not simply add a test object and expect it to work without minor changes in the code of the app.
+
+    1. TUG test: The TUG is failed if the time to complete the task is 'min_time' or more seconds or if 'min_key' or more key boolean parameters are checked off. Fields:
+        * min_time: Integer indicating the minimum number of seconds needed to fail.
+        * min_key: Integer indicating the minimum number of key questions requiring a "yes" to fail.
+
+    2. 30-second chair test: This test is based on the patient’s gender and age and amount of times the patient is able to stand in 30 seconds.
+        * Age 60-64  (Men: < 14, Women: < 12)
+        * Age 65-69  (Men: < 12, Women: < 11)
+        * Age 70-74  (Men: < 12, Women: < 10)
+        * Age 75-79  (Men: < 11, Women: < 10)
+        * Age 80-84  (Men: < 10, Women: < 9)
+        * Age 85-89  (Men: < 8, Women: < 8)
+        * Age 90-94  (Men: < 7, Women: < 4)
+
+    <!--TODO: Modify file with implementation then change numbers here, and explain specific parameters-->
+
+    3.  4 stage balance test: This test requires an adult to hold the first 3 stances for at least 10 seconds in order to pass
+    <!--TODO: Modify file with implementation then change numbers here-->
+
 
 ### FHIR
 We use three different resources to keep track of data on FHIR:
@@ -74,7 +104,7 @@ We use three different resources to keep track of data on FHIR:
     3. Procedures: Contains the type of assessment or procedure being done (fall assessment). Procedures reference the patient, provider, and encounter. There is no direct connection between observations and procedures; they are connected through the encounter.
 
 When accessing the app, patients’ answers are associated with an upcoming appointment with a doctor. Each answered question is saved as an observation.When providers access the app, the app looks up observations associated with the encounter that match question codes from our standards document. Questions with saved observations will fill in with those answers. Questions with unsaved observations (if previously answered or a new question since the form was previously filled) will say that they have not yet been answered.The app saves responses to FHIR at almost any time. At the point its saved, current responses are saved as Observations in FHIR. Every time the App is launched, it checks for observations in FHIR based on the standards documents.When the provider selects the patient, all relevant FHIR information is loaded into memory for the session.
-# something about the pages themselves and design?
+### something about the pages themselves and design?
 
 
 

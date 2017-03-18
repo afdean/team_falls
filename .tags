@@ -2857,49 +2857,53 @@ name	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    
 is_recommended	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "is_recommended": true,$/;"	function	line:4
 video_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "video_link": "https:\/\/www.youtube-nocookie.com\/embed\/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http:\/\/www.cdc.gov&showinfo=0&wmode=opaque",$/;"	function	line:5
 pdf_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "pdf_link":"https:\/\/www.cdc.gov\/steadi\/pdf\/tug_test-a.pdf",$/;"	function	line:6
-test_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "test_parameters": [$/;"	function	line:7
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Patient unable to do TUG"$/;"	function	line:9
-integer_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "integer_parameters": [$/;"	function	line:12
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "TUG Time (seconds):"$/;"	function	line:14
-boolean_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "boolean_parameters": [$/;"	function	line:17
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "No problems",$/;"	function	line:19
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": false$/;"	function	line:20
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Loss of balance",$/;"	function	line:23
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": true$/;"	function	line:24
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Steadying self on walls",$/;"	function	line:27
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": true$/;"	function	line:28
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Shuffling",$/;"	function	line:31
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": false$/;"	function	line:32
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Short Stride",$/;"	function	line:35
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": false$/;"	function	line:36
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Little or no arm swing",$/;"	function	line:39
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": false$/;"	function	line:40
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "En bloc turning",$/;"	function	line:43
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": false$/;"	function	line:44
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Not using assistive device properly",$/;"	function	line:47
-risk	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "risk": false$/;"	function	line:48
-name	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "name": "30-Second Chair Stand",$/;"	function	line:53
-is_recommended	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "is_recommended": false,$/;"	function	line:54
-video_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "video_link": "https:\/\/www.youtube-nocookie.com\/embed\/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http:\/\/www.cdc.gov&showinfo=0&wmode=opaque",$/;"	function	line:55
-pdf_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "pdf_link": "https:\/\/www.cdc.gov\/steadi\/pdf\/30_second_chair_stand_test-a.pdf",$/;"	function	line:56
-test_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "test_parameters": [$/;"	function	line:57
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Notes:"$/;"	function	line:59
-integer_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "integer_parameters": [$/;"	function	line:62
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Score:"$/;"	function	line:64
-name	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "name": "4 Stage Balance Test",$/;"	function	line:69
-is_recommended	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "is_recommended": false,$/;"	function	line:70
-video_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "video_link": "https:\/\/www.youtube-nocookie.com\/embed\/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http:\/\/www.cdc.gov&showinfo=0&wmode=opaque",$/;"	function	line:71
-pdf_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "pdf_link": "https:\/\/www.cdc.gov\/steadi\/pdf\/4-stage_balance_test-a.pdf",$/;"	function	line:72
-test_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "test_parameters": [$/;"	function	line:73
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Notes:"$/;"	function	line:75
-integer_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "integer_parameters": [$/;"	function	line:78
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Stand with your feet side by side. Time (seconds):"$/;"	function	line:80
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):"$/;"	function	line:83
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):"$/;"	function	line:86
-content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Stand on one foot. Time (seconds):"$/;"	function	line:89
+min_time	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "min_time": 12,$/;"	function	line:7
+min_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "min_key": 1,$/;"	function	line:8
+test_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "test_parameters": [$/;"	function	line:9
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Patient unable to do TUG"$/;"	function	line:11
+integer_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "integer_parameters": [$/;"	function	line:14
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "TUG Time (seconds):"$/;"	function	line:16
+boolean_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "boolean_parameters": [$/;"	function	line:19
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "No problems",$/;"	function	line:21
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": false$/;"	function	line:22
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Loss of balance",$/;"	function	line:25
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": true$/;"	function	line:26
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Steadying self on walls",$/;"	function	line:29
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": true$/;"	function	line:30
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Shuffling",$/;"	function	line:33
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": false$/;"	function	line:34
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Short Stride",$/;"	function	line:37
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": false$/;"	function	line:38
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Little or no arm swing",$/;"	function	line:41
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": false$/;"	function	line:42
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "En bloc turning",$/;"	function	line:45
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": false$/;"	function	line:46
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Not using assistive device properly",$/;"	function	line:49
+is_key	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "is_key": false$/;"	function	line:50
+name	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "name": "30-Second Chair Stand",$/;"	function	line:55
+is_recommended	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "is_recommended": false,$/;"	function	line:56
+video_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "video_link": "https:\/\/www.youtube-nocookie.com\/embed\/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http:\/\/www.cdc.gov&showinfo=0&wmode=opaque",$/;"	function	line:57
+pdf_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "pdf_link": "https:\/\/www.cdc.gov\/steadi\/pdf\/30_second_chair_stand_test-a.pdf",$/;"	function	line:58
+test_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "test_parameters": [$/;"	function	line:59
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Notes:"$/;"	function	line:61
+integer_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "integer_parameters": [$/;"	function	line:64
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Score:"$/;"	function	line:66
+name	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "name": "4 Stage Balance Test",$/;"	function	line:71
+is_recommended	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "is_recommended": false,$/;"	function	line:72
+video_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "video_link": "https:\/\/www.youtube-nocookie.com\/embed\/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http:\/\/www.cdc.gov&showinfo=0&wmode=opaque",$/;"	function	line:73
+pdf_link	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "pdf_link": "https:\/\/www.cdc.gov\/steadi\/pdf\/4-stage_balance_test-a.pdf",$/;"	function	line:74
+test_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "test_parameters": [$/;"	function	line:75
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Notes:"$/;"	function	line:77
+integer_parameters	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^    "integer_parameters": [$/;"	function	line:80
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Stand with your feet side by side. Time (seconds):"$/;"	function	line:82
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):"$/;"	function	line:85
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):"$/;"	function	line:88
+content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Stand on one foot. Time (seconds):"$/;"	function	line:91
 CS 6440: Health Informatics Project	/Users/andrewdean/github/team_falls/README.md	/^# CS 6440: Health Informatics Project$/;"	function	line:1
 Overview	/Users/andrewdean/github/team_falls/README.md	/^## Overview$/;"	function	line:4
 Dependencies	/Users/andrewdean/github/team_falls/README.md	/^## Dependencies$/;"	function	line:19
-Standards Documents	/Users/andrewdean/github/team_falls/README.md	/^### Standards Documents$/;"	function	line:30
-FHIR	/Users/andrewdean/github/team_falls/README.md	/^### FHIR$/;"	function	line:69
-something about the pages themselves and design?	/Users/andrewdean/github/team_falls/README.md	/^# something about the pages themselves and design?$/;"	function	line:77
+Standards Documents (PLEASE DO NOT EDIT/DELETE ANYTHING HERE OR IN SUBSECTIONS WITHOUT CONSULTING ME FIRST)	/Users/andrewdean/github/team_falls/README.md	/^### Standards Documents (PLEASE DO NOT EDIT\/DELETE ANYTHING HERE OR IN SUBSECTIONS WITHOUT CONSULTING ME FIRST)$/;"	function	line:33
+Questions Logic	/Users/andrewdean/github/team_falls/README.md	/^#### Questions Logic$/;"	function	line:74
+Functional Ability Test Parameters and Logic	/Users/andrewdean/github/team_falls/README.md	/^#### Functional Ability Test Parameters and Logic$/;"	function	line:77
+FHIR	/Users/andrewdean/github/team_falls/README.md	/^### FHIR$/;"	function	line:99
+something about the pages themselves and design?	/Users/andrewdean/github/team_falls/README.md	/^### something about the pages themselves and design?$/;"	function	line:107
