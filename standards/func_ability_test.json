@@ -79,7 +79,7 @@
     "forms": [
       {
         "content": "Notes:",
-        "type": "string"
+        "type": "char"
       },
       {
         "content": "Score:",
@@ -95,7 +95,7 @@
     "forms": [
       {
         "content": "Notes: ",
-        "type": "string"
+        "type": "char"
       },
       {
         "content": "Stand with your feet side by side. Time (seconds): ",
