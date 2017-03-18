@@ -14,7 +14,7 @@
         "content": "TUG Time (seconds):"
       }
     ],
-    "check_parameters": [
+    "boolean_parameters": [
       {
         "content": "No problems",
         "risk": false
