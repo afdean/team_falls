@@ -2776,3 +2776,81 @@ content	/Users/andrewdean/github/team_falls/standards/funcabilitytest.json	/^   
 content	/Users/andrewdean/github/team_falls/standards/funcabilitytest.json	/^        "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):"$/;"	function	line:83
 content	/Users/andrewdean/github/team_falls/standards/funcabilitytest.json	/^        "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):"$/;"	function	line:86
 content	/Users/andrewdean/github/team_falls/standards/funcabilitytest.json	/^        "content": "Stand on one foot. Time (seconds):"$/;"	function	line:89
+min_score	/Users/andrewdean/github/team_falls/standards/question_logic.json	/^    "min_score": 4$/;"	function	line:3
+min_key	/Users/andrewdean/github/team_falls/standards/question_logic.json	/^    "min_key": 1$/;"	function	line:6
+questions	/Users/andrewdean/github/team_falls/standards/questions.json	/^  "questions": [$/;"	function	line:2
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I have fallen in the past year",$/;"	function	line:4
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:5
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 2,$/;"	function	line:6
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": true,$/;"	function	line:7
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:8
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "People who have fallen once are likely to fall again"$/;"	function	line:9
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "Sometimes I feel unsteady when I am walking",$/;"	function	line:12
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:13
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 2,$/;"	function	line:14
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": true,$/;"	function	line:15
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:16
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "Unsteadiness or needing support while walking are signs of poor balance"$/;"	function	line:17
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I am worried about falling",$/;"	function	line:20
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:21
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:22
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": true,$/;"	function	line:23
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:24
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "People who are worried about falling are more likely to fall"$/;"	function	line:25
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I use or have been advised to use a cane or walker to get around safely",$/;"	function	line:28
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:29
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 2,$/;"	function	line:30
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:31
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:32
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "People who have been advised to use a cane or walker may already be more likely to fall"$/;"	function	line:33
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I steady myself by holding onto furniture when walking at home",$/;"	function	line:37
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:38
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:39
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:40
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:41
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "Unsteadiness or needing support while walking are signs of poor balance"$/;"	function	line:42
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I need to push with my hands to stand up from a chair",$/;"	function	line:46
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:47
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:48
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:49
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:50
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "This is a sign of weak leg muscles, a major reason for falling"$/;"	function	line:51
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I have some trouble stepping up onto a curb",$/;"	function	line:55
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:56
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:57
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:58
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:59
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "This is a sign of weak leg muscles, a major reason for falling"$/;"	function	line:60
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I often have to rush to the toilet",$/;"	function	line:63
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:64
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:65
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:66
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:67
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "Rushing to the bathroom, especially at night, increases your chance of falling"$/;"	function	line:68
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I have lost some feeling in my feet",$/;"	function	line:71
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:72
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:73
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:74
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": false,$/;"	function	line:75
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "Numbness in your feet can cause stumbles and lead to falls"$/;"	function	line:76
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",$/;"	function	line:79
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:80
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": "1",$/;"	function	line:81
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:82
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": true,$/;"	function	line:83
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "Side effects from medicines can sometimes increase your chance of falling"$/;"	function	line:84
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I take medicine to help me sleep or improve my mood",$/;"	function	line:87
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:88
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:89
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:90
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": true,$/;"	function	line:91
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "These medicines can sometimes increase your chance of falling"$/;"	function	line:92
+content	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "content": "I often feel sad or depressed",$/;"	function	line:95
+code	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "code": "",$/;"	function	line:96
+score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "score": 1,$/;"	function	line:97
+is_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "is_key": false,$/;"	function	line:98
+medication_related	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "medication_related": true,$/;"	function	line:99
+reason	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"$/;"	function	line:100
+question_logic	/Users/andrewdean/github/team_falls/standards/questions.json	/^  "question_logic": [$/;"	function	line:103
+min_score	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "min_score": 4$/;"	function	line:105
+min_key	/Users/andrewdean/github/team_falls/standards/questions.json	/^      "min_key": 1$/;"	function	line:108
