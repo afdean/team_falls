@@ -141,18 +141,53 @@ class QuestionForm(forms.Form):
 # Hard code 3 tests for now
 class TestForm(forms.Form):
 
-    test1 = forms.BooleanField(
+    tg_test = forms.BooleanField(
         label = 'Time up and Go (Recommended)',
         required = False,
     )
+    tg_test_details = forms.MultipleChoiceField(
+        label = '',
+        choices = (
+            ('no_problem', "No Problems"),
+            ('loss_of_balance', 'Loss of Balance'),
+        ),
+        initial = None,
+        required = False,
+        widget = forms.CheckboxSelectMultiple,
+    )
 
-    test2 = forms.BooleanField(
+    cs_test = forms.BooleanField(
         label = '30 Sec Stand',
         required = False,
     )
+    cs_test_details = forms.CharField(
+        label = 'Score:',
+        required = False,
+    )
 
-    test3 = forms.BooleanField(
+    balance_test = forms.BooleanField(
         label = '4-stage balance test',
+        required = False,
+    )
+    balance_test_detail1 = forms.CharField(
+        label = '1. Stand with your feet side to side:',
+        required = False,
+    )
+    balance_test_detail2 = forms.CharField(
+        label = '2. Place the instep of one foot so it is touching the big toe of the other foot:',
+        required = False,
+    )
+    balance_test_detail3 = forms.CharField(
+        label = '3. Place the instep of one foot so it is touching the big toe of the other foot:',
+        required = False,
+    )
+    balance_test_detail4 = forms.CharField(
+        label = '4. Place the instep of one foot so it is touching the big toe of the other foot:',
+        required = False,
+    )
+
+    note = forms.CharField(
+        label = 'Note:',
         required = False,
     )
 
@@ -161,8 +196,40 @@ class TestForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_id = 'id-testForm'
         self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
 
-        self.helper.add_input(Submit('submit', 'Next'))
+class MedicationsForm(forms.Form):
+
+    #hard code medications for now, will generate it dynamically next step
+    medications = forms.MultipleChoiceField(
+        choices = (
+            ('asprin', "Asprin"),
+            ('isosorbide', 'Isosorbide'),
+            ('amitriptyline', 'Amitriptyline')
+        ),
+        initial = None,
+        required = False,
+        widget = forms.CheckboxSelectMultiple,
+        help_text = "<strong>Note:</strong> This is helper text placeholder.",
+    )
+
+    problems = forms.CharField(
+        label = 'Problems',
+        required = False,
+    )
+
+    medicationsLinked = forms.CharField(
+        label = 'Medications linked to Falls',
+        required = False,
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(MedicationsForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-medicationForms'
+        self.helper.form_method = 'post'
+
+        self.helper.add_input(Submit('submit', 'Submit'))
 
 class MessageForm(forms.Form):
     like_website = forms.TypedChoiceField(

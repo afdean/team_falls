@@ -10,7 +10,6 @@ urlpatterns = [
     url(r'^questions/$', app_views.questions, name="questions"),
     url(r'^thankyou/$', app_views.thankyou, name="thankyou"),
     url(r'^test/$', app_views.test, name="test"),
-    url(r'^funcabilitytests/$', app_views.test_list, name="test_list"),
-      url(r'^login/$', views.user_login, name='login'),
+    url(r'^medications/$', app_views.medications, name="medications"),
+    # url(r'^login/$', views.user_login, name='login'),
 ]
-

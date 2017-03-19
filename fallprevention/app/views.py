@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
+from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TestForm, SearchPatientForm
+from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TestForm, SearchPatientForm, MedicationsForm
 from .models import Question, FuncAbilityTest, TestParameter
 # from subprocess import call
 import urllib.request, json
@@ -80,7 +81,6 @@ def questions(request):
 
     patient = request.session.get('patient', '')
     if request.method == 'POST':
-
         question_form = QuestionForm(request.POST)
         if question_form.is_valid():
             #second parameter if default value
@@ -98,15 +98,23 @@ def thankyou(request):
 
 def test(request):
     patient = request.session.get('patient', '')
-
-
     test_form = TestForm()
+    # test_form.fields['test2'].widget = forms.HiddenInput()
     return render(request, 'app/test.html', {'test_form': test_form, 'patient': patient})
 
-def test_list(request):
-    tests = FuncAbilityTest.objects.all()
-    return render(request, 'app/funcabilitytests.html', {'tests': tests})
-  # User Login - Currently not working
+def medications(request):
+
+    patient = request.session.get('patient', '')
+    if request.method == 'POST':
+        medications_form = MedicationsForm(request.POST)
+        if medications_form.is_valid():
+            return HttpResponseRedirect('/app/thankyou/')
+    else:
+        medications_form = MedicationsForm()
+
+    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': patient})
+
+# User Login - Currently not working
 def user_login(request):
 
     # If the request is a HTTP POST, try to pull out the relevant information.
@@ -138,7 +146,7 @@ def user_login(request):
                 return HttpResponse("Your account is disabled.")
         else:
             # Bad login details were provided. So we can't log the user in.
-            print "Invalid login details: {0}, {1}".format(username, password)
+            print ("Invalid login details: {0}, {1}".format(username, password))
             return HttpResponse("Invalid login details supplied.")
 
     # The request is not a HTTP POST, so display the login form.
