@@ -7,7 +7,7 @@ body {
 }
 #main {
   height:100%;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 #sidebar {
   width: 20%;

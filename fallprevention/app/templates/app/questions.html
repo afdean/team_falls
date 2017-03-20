@@ -1,30 +1,31 @@
 {% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %}
-<center>
-    <h1>Self-Assessment</h1>
-</center>
+
 <div class="container ">
     <div class="row question-container">
-        <div class="col-lg-8 question-form">
-            <form method='post'>
+        <div class="col-lg-9 question-form">
+            <form method='post' class="self_assessment_questions">
                 {% for field in question_form%}
                 <div class="row">
-                    {{field.label}}
-
-                    {{field}}
+                    <div class="col-md-9">
+                        {{field.label}}
+                    </div>
+                    <div class="col-md-3">
+                        {{field}}
+                    </div>
                 </div>
                 {% endfor %}
-                
+
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-6 col-lg-offset-3 center_in_column">
                         <input class="btn btn-primary" type="submit" value="Submit" />
                     </div>
                 </div>
             </form>
         </div>
-        <div class="col-lg-4  auto-pass-fail">
+        <div class="col-lg-1  auto-pass-fail">
             <div class="row " id="pass-button">
                 <center>
-                    <h2>Auto</h2>
+                    <h5>Auto</h5>
                 </center>
                 <div class="col-xs-12 text-center">
                     <button class="btn btn-success" type="button">Pass  </button>

@@ -92,7 +92,7 @@ class QuestionForm(forms.Form):
 
     question4 = forms.ChoiceField(
         label = 'I use or have been advised to use a cane or walker to get around safely',
-        widget=forms.RadioSelect, choices=CHOICES,
+        widget=forms.RadioSelect(attrs={'class':'radio-inline'}), choices=CHOICES,
         required = False,
     )
 
@@ -151,6 +151,8 @@ class QuestionForm(forms.Form):
         self.helper.form_method = 'post'
 
         self.helper.add_input(Submit('submit', 'Submit'))
+
+
 
 # Hard code 3 tests for now
 class TestForm(forms.Form):
