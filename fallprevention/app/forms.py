@@ -68,65 +68,79 @@ class SearchPatientForm(forms.Form):
 #         fields = ['content', 'isKey']
 
 # Hard code 12 questions for now
+
+
 class QuestionForm(forms.Form):
-
-    question1 = forms.BooleanField(
+    CHOICES = (('1', 'Yes',), ('2', 'No',))
+    question1 = forms.ChoiceField(
         label = 'I have fallen in the past year',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question2 = forms.BooleanField(
+    question2 = forms.ChoiceField(
         label = 'Sometimes I feel unsteady when I am walking',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question3 = forms.BooleanField(
+    question3 = forms.ChoiceField(
         label = 'I am worried about falling',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question4 = forms.BooleanField(
+    question4 = forms.ChoiceField(
         label = 'I use or have been advised to use a cane or walker to get around safely',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question5 = forms.BooleanField(
+    question5 = forms.ChoiceField(
         label = 'I steady myself by holding onto furniture when walking at home',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question6 = forms.BooleanField(
+    question6 = forms.ChoiceField(
         label = 'I need to push with my hands to stand up from a chair',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question7 = forms.BooleanField(
+    question7 = forms.ChoiceField(
         label = 'I have some trouble stepping up onto a curb',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question8 = forms.BooleanField(
+    question8 = forms.ChoiceField(
         label = 'I often have to rush to the toilet',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question9 = forms.BooleanField(
+    question9 = forms.ChoiceField(
         label = 'I have lost some feeling in my feet',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question10 = forms.BooleanField(
+    question10 = forms.ChoiceField(
         label = 'I take medicine that sometimes makes me feel light-headed or more tired than usual',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question11 = forms.BooleanField(
+    question11 = forms.ChoiceField(
         label = 'I take medicine to help me sleep or improve my mood',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 
-    question12 = forms.BooleanField(
+    question12 = forms.ChoiceField(
         label = 'I often feel sad or depressed',
+        widget=forms.RadioSelect, choices=CHOICES,
         required = False,
     )
 

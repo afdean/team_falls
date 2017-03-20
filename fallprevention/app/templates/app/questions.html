@@ -1,22 +1,41 @@
-{% extends 'app/base.html' %}
-{%load static%}
-{% block content %}
+{% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %}
+<center>
+    <h1>Self-Assessment</h1>
+</center>
+<div class="container ">
+    <div class="row question-container">
+        <div class="col-lg-8 question-form">
+            <form method='post'>
+                {% for field in question_form%}
+                <div class="row">
+                    {{field.label}}
 
-<body>
-    <form method='post'>
-        {% for q in questions %}
-        <div class="question">
-            <p>
-                {{ q.content }}
-                {% csrf_token %}
-                {{ form }}
-            </p>
+                    {{field}}
+                </div>
+                {% endfor %}
+                
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Submit" />
+                    </div>
+                </div>
+            </form>
         </div>
-        {% endfor %}
-        <input type="submit" value="Submit">
-    </form>
-</body>
-
-
+        <div class="col-lg-4  auto-pass-fail">
+            <div class="row " id="pass-button">
+                <center>
+                    <h2>Auto</h2>
+                </center>
+                <div class="col-xs-12 text-center">
+                    <button class="btn btn-success" type="button">Pass  </button>
+                </div>
+            </div>
+            <div class="row" id="fail-button">
+                <div class="col-xs-12 text-center">
+                    <button class="btn btn-danger" type="button">Fail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
-

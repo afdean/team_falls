@@ -1,4 +1,4 @@
-{% extends 'app/base.html' %}
+{% extends 'app/baseWithSideBar.html' %}
 
 {%load static%}
 {% block content %}
@@ -6,7 +6,7 @@
         <div>
           {% for f in tests %}
             <div class="funcabilitytest">
-              <p> {{ f.test_name }} </p>
+              <p> {{ f.name }} </p>
             </div>
           {% endfor %}
         </div>

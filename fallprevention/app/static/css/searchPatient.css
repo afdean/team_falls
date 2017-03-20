@@ -1,0 +1,28 @@
+  .center {
+    float: none;
+    margin: 0 auto;
+}
+        
+.searchbar {
+    margin-top: 30;
+}
+        
+.patient-block {
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px grey;
+    margin: 20 auto;
+}
+        
+#last-visit {
+    text-align: right;
+}
+
+.pagination {
+    display: flex;
+    padding-left: 0;
+    margin: auto;
+    border-radius: 4px;
+    float: none;
+    width: 100px;
+}

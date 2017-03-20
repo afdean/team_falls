@@ -1,0 +1,18 @@
+
+.container{
+    margin: 100px;
+    border: 10px;
+}
+.sidebar-brand{
+    font-size: 24px;
+    list-style: none;
+}
+
+.sidebar-brand li:hover{
+    display: none;
+    margin-bottom: 10px;
+}
+#sidenav.col-md-12 {
+    margin-top: 70px;
+}
+

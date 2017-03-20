@@ -1,0 +1,17 @@
+.question-form{
+    box-shadow: 0 0 10px grey;
+}
+.question-container{
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+#pass-button{
+    margin-bottom: 10px;
+}
+.auto-pass-fail{
+    /*margin-left:10px;*/
+}
+button{
+    width:80px;
+}
