@@ -5,7 +5,7 @@
     border-radius: 20px;
 }
 .question-container{
-    margin: auto;
+    margin-left: 50px;
     width: 100%;
     height: auto;
   
@@ -24,6 +24,11 @@ button{
     display: inline;
     margin-right: 10px;
 }
+.self_assessment_questions{
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
 
 .center_in_column {
     display: flex;
@@ -32,4 +37,8 @@ button{
     border-radius: 4px;
     float: none;
     width: 100px;
+}
+
+.question_row{
+    margin-bottom: 10px;
 }

@@ -16,11 +16,13 @@ body {
   background-color:#f5f5f5;
   float: left;
   height:100%;
+      overflow: auto;
+
   /*overflow-x:hidden;*/
 }
 
 .sidebar-nav{
-  margin-top:20px;
+  /*margin-top:10px;*/
 }
 
 /*
