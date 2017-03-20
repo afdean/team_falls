@@ -1,0 +1,7 @@
+{% extends 'app/baseWithSideBar.html' %}
+
+{% block content %}
+    <p> {{ patient.name }} </p>
+    <p>Select the test you would like to perform:</p>
+   {{ test_form }}
+{% endblock %}
