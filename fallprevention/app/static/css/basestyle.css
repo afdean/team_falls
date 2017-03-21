@@ -7,18 +7,20 @@ body {
 }
 #main {
   height:100%;
+  margin-top: 80px;
   /*overflow-x: hidden;*/
+}
+.main_container{
+  margin: 0;
 }
 #sidebar {
   width: 20%;
   min-width: 220px;
   max-width: 220px;
   background-color:#f5f5f5;
-  float: left;
+  float: none;
   height:100%;
-      overflow: auto;
-
-  /*overflow-x:hidden;*/
+  overflow: auto;
 }
 
 .sidebar-nav{
