@@ -215,8 +215,7 @@ class FallsFHIRClient(object):
 
     # Probably something in the care provider's system should make changes to prescriptions, etc, but for fun here is
     # a function to end a medication order ourselves. Simply sets the status of a medication order to completed.
-    # Input: medication_order_id (from the searched medication order list), patient_id (defaults to the client's
-    # patient id if it has been set).
+    # Input: medication_order (from a search)
     # Returns: True if write is successful. False otherwise.
     def end_medication_by_order(self, medication_order):
         pat = medication_order['resource']['patient']['reference'].split('/')[1]
@@ -227,8 +226,7 @@ class FallsFHIRClient(object):
         resp = requests.get(self.api_base + 'MedicationOrder/'+medication_order_id, headers=search_headers,
                             params=search_params)
         if resp.status_code != 200:
-            print 'Could not find the medication order by that medication order id and patient id or something else ' \
-                  'went wrong.'
+            print 'Could not find the medication order or something else went wrong.'
             return False
         alter_med = resp.json()
         alter_med['status'] = 'completed'
@@ -379,7 +377,121 @@ class FallsFHIRClient(object):
             print 'Something went wrong when trying to write to the server'
             return False
 
+    # Function to create a new observation for a question with a quantity response.
+    # Input: question_code from the standards document (for quantities instead of yes/no), response to question,
+    # patient_id, encounter_id (the default uses client values if they have been set)
+    # Returns: True if succeeds in creating a new procedure or False if fails.
+    # Note: Some of the coding names are a bit made up. We can probably just use them.
+    # Sets effective date as current date.
+    def create_new_observation_quantity(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):
+        if pat_id == None:
+            pat_id = self.patient_id
+        if enc_id == None:
+            enc_id = self.encounter_id
+        if diag_rpt == None:
+            diag_rpt = self.diagnostic_report
+        if not pat_id or not enc_id or not diag_rpt:
+            print 'I am missing a patient_id, encounter_id, or diagnostic_report to create observations'
+            return None
+        write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        save_obs = {}
+        save_obs['resourceType'] = "Observation"
+        save_obs['status'] = "final"
 
+        save_obs['category'] = {}
+        save_obs['category']['coding'] = []
+        save_obs['category']['coding'].append({})
+        save_obs['category']['coding'][0]['code'] = 'fall_prevention'
+        save_obs['category']['coding'][0]['display'] = 'Fall Prevention Assessment Results'
+        save_obs['category']['coding'][0]['system'] = 'fall_prevention'
+        save_obs['category']['coding'][0]['text'] = 'Fall Prevention Assessment Results'
+        save_obs['code'] = {}
+        save_obs['code']['coding'] = []
+        save_obs['code']['coding'].append({})
+        # save_obs['code']['coding']['system'] = 'http://fall_prevention_algorithm.org'
+        save_obs['code']['coding'][0]['system'] = 'fall_prevention'
+        # save_obs['code']['coding']['code'] = str(questions_code[i])
+        save_obs['code']['coding'][0]['code'] = str(falls_question_code)
+        # save_obs['code']['coding']['display'] = str(questions[i])
+        save_obs['code']['coding'][0]['display'] = self.questions_text[
+            self.questions_code.index(str(falls_question_code))]
+        save_obs['code']['coding'][0]['text'] = self.questions_text[
+            self.questions_code.index(str(falls_question_code))]
+        save_obs['subject'] = {}
+        save_obs['subject']['reference'] = 'Patient/' + str(pat_id)
+        save_obs['encounter'] = {}
+        save_obs['encounter']['reference'] = enc_id
+        save_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
+        save_obs['valueQuantity'] = {}
+        save_obs['valueQuantity']['value'] = str(response)
+        save_obs['valueQuantity']['unit'] = "Custom for question"
+        save_obs['valueQuantity']['system'] = "falls_prevention"
+        save_obs['valueQuantity']['code'] = "Custom for question"
+        resp = requests.post(self.api_base + 'Observation/', data=json.dumps(save_obs), headers=write_headers)
+        if resp.status_ == '201':
+            diag_rpt['resource']['result'].append({})
+            diag_rpt['resource']['result'][-1]['reference'] = 'Observation/' + resp.json()['entry'][0]['resource'][
+                'id']
+            return True
+        else:
+            print 'Something went wrong when trying to write to the server'
+            return False
+
+    # Update an existing observation, searched by ID
+    # Input: medication_order_id (from the searched medication order list), response (value for observation),
+    # patient_id (defaults to the client's patient id if it has been set).
+    # Returns: True if write is successful. False otherwise.
+    def update_observation_by_id(self, observation_id, response, pat=None):
+        if pat == None:
+            pat = self.patient_id
+        if not pat:
+            print 'I am missing a patient_id to search for relevant medications'
+            return False
+        write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        search_headers = {'Accept': 'application/json'}
+        search_params = {'patient': pat}
+        resp = requests.get(self.api_base + 'Observation/' + observation_id, headers=search_headers,
+                            params=search_params)
+        if resp.status_code != 200:
+            print 'Could not find the medication order by that medication order id and patient id or something else ' \
+                  'went wrong.'
+            return False
+        alter_obs = resp.json()
+        alter_obs['valueQuantity']['value'] = str(response)
+        resp = requests.put(self.api_base + 'Observation/' + observation_id, data=json.dumps(alter_med),
+                            headers=write_headers)
+        if resp.status_code != 200:
+            print 'Something went wrong in writing the update to end the medication order by setting its status to ' \
+                  'complete'
+            return False
+        else:
+            return True
+
+    # Update an existing observation, selected by putting in the entire observation (e.g., raw from search).
+    # Input: observation (from the searched observation), response (value for observation)
+    # Returns: True if write is successful. False otherwise.
+    def update_observation_by_observation(self, observation, response):
+        pat = observation['resource']['patient']['reference'].split('/')[1]
+        observation_id = observation['resource']['id']
+        write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        search_headers = {'Accept': 'application/json'}
+        search_params = {'patient': pat}
+        resp = requests.get(self.api_base + 'Observation/' + observation_id, headers=search_headers,
+                            params=search_params)
+        if resp.status_code != 200:
+            print 'Could not find the observation or something else ' \
+                  'went wrong.'
+            return False
+        alter_obs = resp.json()
+        alter_obs['valueQuantity']['value'] = str(response)
+        resp = requests.put(self.api_base + 'Observation/' + observation_id, data=json.dumps(alter_med),
+                            headers=write_headers)
+        if resp.status_code != 200:
+            print 'Something went wrong in writing the update to end the medication order by setting its status to ' \
+                  'complete'
+            return False
+        else:
+            return True
 
 
 if __name__ == "__main__":
