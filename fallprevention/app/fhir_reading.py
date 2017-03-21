@@ -77,14 +77,14 @@ class FallsFHIRClient(object):
     # Requires: api-server running
     def search_patient_dob(self, first_name, last_name, date_of_birth):
         search_headers = {'Accept': 'application/json'}
-        search_params = {'birthdate': date_of_birth,'family': last_name, 'given': first_name,  'gender': 'male'}
+        search_params = {'birthdate': date_of_birth, 'family': last_name, 'given': first_name}
         resp = requests.get(self.api_base + 'Patient/', headers=search_headers, params=search_params)
         if resp.status_code != 200 or resp.json()['total'] < 1:
             # This means something went wrong.
             print 'Something went wrong'
             return []
         else:
-            print resp.json()
+            # print resp.json()
             patient_list = resp.json()['entry']
             return patient_list
 
@@ -106,13 +106,37 @@ class FallsFHIRClient(object):
     def select_patient(self, patient_id):
         self.patient_id = str(patient_id)
 
+    # Search for all encounters by patient_id. Lets you set desired status.
+    # Input: patient_id (by default uses the client's patient_id, if it has
+    # been set), status list of desired statuses of encounters
+    # Returns: list of encounters. Each is a dict.
+    # Requires: api-server running
+    def search_encounter_all(self, pat=None, status=['']):
+        if pat == None:
+            pat = self.patient_id
+        if not pat:
+            print 'I am missing a patient_id to search for relevant encounters'
+            return None
+        encounter_list = []
+        search_headers = {'Accept': 'application/json'}
+        for stat in status:
+            search_params = {'subject': pat, 'status': stat}
+            resp = requests.get(self.api_base + 'Encounter/', headers=search_headers, params=search_params)
+            if resp.json()['total'] > 0:
+                for enc in resp.json()['entry']:
+                    encounter_list.append(enc)
+        if len(encounter_list) == 0:
+            print 'There were no encounters for that patient'
+        return encounter_list
+
+
     # Search for encounters on a date and by patient_id. Sets client encounter_id if there is only one
     # matching encounter.
     # Input: Date str(YYYY-MM-DD), patient_id (by default uses the client's patient_id, if it has
     # been set)
     # Returns: list of encounters. Each is a dict.
     # Requires: api-server running
-    def search_encounter(self, date, pat=None):
+    def search_encounter_date(self, date, pat=None):
         if pat == None:
             pat = self.patient_id
         if not pat:
@@ -123,8 +147,12 @@ class FallsFHIRClient(object):
         for stat in ['planned', 'arrived', 'in-progress']:
             search_params = {'subject': pat, 'status': stat}
             resp = requests.get(self.api_base + 'Encounter/', headers=search_headers, params=search_params)
-            for enc in resp.json()['entry']:
-                encounter_list.append(enc)
+            if resp.json()['total']>0:
+                for enc in resp.json()['entry']:
+                    encounter_list.append(enc)
+        if len(encounter_list) == 0:
+            print 'There were no encounters for that date for that patient'
+            return []
         matching_encounters = []
         for enc in encounter_list:
             if enc['resource']['period']['start'] == date:
@@ -137,6 +165,20 @@ class FallsFHIRClient(object):
             self.encounter_id = enc['id']
             print matching_encounters
             return matching_encounters
+
+    # Function to select the encounter (i.e., set the client's patient_id to the desired patient) based
+    # on a returned list from search_patient or search_patient_dob.
+    # Input: patient_list, index of desired patient (defaults to first on list)
+    # Returns: nothing
+    def select_encounter_from_encounter_result(self, encounter_list, list_index=0):
+        if len(encounter_list) == 0:
+            print 'There were no encounters for that date for that patient'
+            self.encounter_id = None
+        if len(encounter_list) < list_index - 1:
+            print 'The index of the encounter selected is higher than the number of encounters available.'
+            self.encounter_id = None
+        else:
+            self.encounter_id = encounter_list[list_index]['resource']['id']
 
     # Search for medications the patient is currently on by patient_id. First looks up medication orders, which shows
     # the medications the patient is taking. Then looks up the information for each medication and returns that.
@@ -295,7 +337,7 @@ class FallsFHIRClient(object):
     # Search for observations that are relevant to the app based on standards document.
     # Input: dict of standards, patient_id, encounter_id (by default uses the client's values, if they
     # have been set)
-    # Returns: list of observations. Each is a dict. The key of the dict is the observation code.
+    # Returns: Dict of observations. The key is the observation code. Each observation is also a dict.
     # Requires: api-server running
     def search_observations(self, standards_dict=None, pat=None, enc=None):
         output_dict = {}
@@ -307,7 +349,7 @@ class FallsFHIRClient(object):
             standards_dict = self.standards_document_dict
         if not pat or not enc or not standards_dict:
             print 'I am missing a patient_id, encounter_id, or standards_dict to search for relevant observations'
-            return None
+            return {}
         search_headers = {'Accept': 'application/json'}
         search_params = {'subject': pat, 'encounter': enc, 'category': 'fall_prevention'}
         resp = requests.get(self.api_base + 'Observation/', headers=search_headers, params=search_params)
@@ -337,16 +379,16 @@ class FallsFHIRClient(object):
         search_headers = {'Accept': 'application/json'}
         search_params = {'subject': pat_id, 'encounter': enc_id, 'category': 'fall_prevention'}
         resp = requests.get(self.api_base + 'Observation/', headers=search_headers, params=search_params)
-        if resp.json()['total'] > 0:
-            for i in xrange(len(question_codes)):
-                updated_existing = False
+        for i in xrange(len(question_codes)):
+            updated_existing = False
+            if resp.json()['total'] > 0:
                 for obs in resp.json()['entry']:
                     if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention' and obs['resource']['code']['coding'][0]['code'] == question_codes[i]:
                         self.update_observation_by_observation(obs, responses[i])
                         updated_existing = True
-                if updated_existing:
-                    continue
-                self.create_new_observation_yes_no(question_codes[i],responses[i],pat_id=pat_id,enc_id=enc_id,diag_rpt=diag_rpt)
+            if updated_existing:
+                continue
+            self.create_new_observation_yes_no(question_codes[i],responses[i],pat_id=pat_id,enc_id=enc_id,diag_rpt=diag_rpt)
 
     # Function to create a new observation for a yes/no or true/false question.
     # Input: question_code from the standards document, response to question, patient_id, encounter_id
@@ -397,13 +439,14 @@ class FallsFHIRClient(object):
         save_obs['valueQuantity']['system'] = "True or False (1 or 0)"
         save_obs['valueQuantity']['code'] = "True or False (1 or 0)"
         resp = requests.post(self.api_base + 'Observation/', data=json.dumps(save_obs), headers=write_headers)
-        if resp == '201':
+        if resp.status_code != 201:
+            print 'Something went wrong when trying to write to the server'
+            return False
+        else:
+            return True
             diag_rpt['resource']['result'].append({})
             diag_rpt['resource']['result'][-1]['reference'] = 'Observation/'+resp.json()['entry'][0]['resource']['id']
             return True
-        else:
-            print 'Something went wrong when trying to write to the server'
-            return False
 
     # Function to create a new observation for a question with a quantity response.
     # Input: question_code from the standards document (for quantities instead of yes/no), response to question,
@@ -456,14 +499,15 @@ class FallsFHIRClient(object):
         save_obs['valueQuantity']['system'] = "falls_prevention"
         save_obs['valueQuantity']['code'] = "Custom for question"
         resp = requests.post(self.api_base + 'Observation/', data=json.dumps(save_obs), headers=write_headers)
-        if resp.status_ == '201':
+        if resp.status_code != 201:
+            print 'Something went wrong when trying to write to the server'
+            return False
+        else:
+            return True
             diag_rpt['resource']['result'].append({})
             diag_rpt['resource']['result'][-1]['reference'] = 'Observation/' + resp.json()['entry'][0]['resource'][
                 'id']
             return True
-        else:
-            print 'Something went wrong when trying to write to the server'
-            return False
 
     # Update an existing observation, searched by ID
     # Input: medication_order_id (from the searched medication order list), response (value for observation),
@@ -475,6 +519,7 @@ class FallsFHIRClient(object):
         if not pat:
             print 'I am missing a patient_id to search for relevant medications'
             return False
+        print 'Updating observation ID:', observation_id
         write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         search_headers = {'Accept': 'application/json'}
         search_params = {'patient': pat}
@@ -499,8 +544,9 @@ class FallsFHIRClient(object):
     # Input: observation (from the searched observation), response (value for observation)
     # Returns: True if write is successful. False otherwise.
     def update_observation_by_observation(self, observation, response):
-        pat = observation['resource']['patient']['reference'].split('/')[1]
+        pat = observation['resource']['subject']['reference'].split('/')[1]
         observation_id = observation['resource']['id']
+        print 'Updating observation ID:', observation_id
         write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         search_headers = {'Accept': 'application/json'}
         search_params = {'patient': pat}
@@ -527,34 +573,41 @@ if __name__ == "__main__":
     client = FallsFHIRClient()
 
     # Search for a patient by first and last name
-    patients = client.search_patients('Sarah', 'Graham')
-    print patients[0]
+    patients = client.search_patient('S', 'Graham')
+    print 'Patient info:'
+    print patients[0], '\n'
 
     # Or search by name and date of birth
-    patients = client.search_patients_dob('Sarah', 'Graham', '1949')
-    print patients[0]
+    patients = client.search_patient_dob('Sarah', 'Graham', '1949')
+    print 'Patient info:'
+    print patients[0], '\n'
 
     # Set the client's patient to the client we just found by the patient id in the first person from the search
     client.select_patient(patients[0]['resource']['id'])
 
     # Or set the client's patient by just giving it the whole patient resource
-    client.select_patient_from_patient_result(client.select_patient(patients[0]['resource']['id']))
-
-    print client.patient_id
+    client.select_patient_from_patient_result(client.search_patient('Sarah', 'Graham'))
+    print 'Patient ID:'
+    print client.patient_id, '\n'
 
     # Search for encounters by the patient by searching the date. The date must be right.
-    encounters = client.search_encounter('2003')
-    client.select_encounter(patients[0]['resource']['id'])
+    encounters = client.search_encounter_all()
+    client.select_encounter_from_encounter_result(encounters)
+    # client.select_encounter(patients[0]['resource']['id'])
+    print 'Encounter ID:'
+    print client.encounter_id, '\n'
 
     # Search for all medications being taken by the patient
     meds = client.search_medication()
 
     # See the last medication order on the list
     print 'The last medication on the list is:'
-    print meds[-1]
+    print meds[-1], '\n'
 
     # End that medication order (e.g., if doctor decides to change the prescription)
-    client.end_medication_by_order(meds[-1])
+    # Commented out so you don't keep removing medications.
+    # client.end_medication_by_order(meds[-1])
+    # print 'Ended medication!', '\n'
 
     # If the standards document has been updated, run this to update the dict the client is using to perform its search
     # for relevant observations
@@ -562,13 +615,14 @@ if __name__ == "__main__":
 
     # Find all observations that are on fall prevention for this patient and this encounter:
     current_obs = client.search_observations()
-    print current_obs
+    print 'Observations for this patient and this encounter:'
+    print current_obs, '\n'
 
     # Write to FHIR server a bunch of observations from the app. Makes new observations if a previous one does not
     # exist for this question and this encounter. Updates existing observation if it does exist.
     # 1 is for yes. 0 is for no.
-    question_codes = ['1', '2', '3']
+    question_codes = ['1', '2', '7']
     responses = ['1', '0', '1', '1', '0']
-    client.write_list_of_observations_to_fhir(question_codes, responses)
+    client.write_list_of_observations_to_fhir(question_codes, responses, diag_rpt=True)
 
     print 'Did a bunch of things!!'
