@@ -320,6 +320,31 @@ class FallsFHIRClient(object):
                                 output_dict[str(standards_question['pk'])] = obs
         return output_dict
 
+    # Function write many observations to fhir. Takes in a list of question codes and associated responses.
+    # Input: question_code list from the standards document, responses list to question, patient_id, encounter_id,
+    # diagnostic report (the default uses client values if they have been set)
+    # Returns: True if succeeds in creating a new procedure or False if fails.
+    def write_list_of_observations_to_fhir(self, question_codes, responses, pat_id=None, enc_id=None, diag_rpt=None):
+        if pat_id == None:
+            pat_id = self.patient_id
+        if enc_id == None:
+            enc_id = self.encounter_id
+        if diag_rpt == None:
+            diag_rpt = self.diagnostic_report
+        if not pat_id or not enc_id or not diag_rpt:
+            print 'I am missing a patient_id, encounter_id, or diagnostic_report to create observations'
+            return None
+        search_headers = {'Accept': 'application/json'}
+        search_params = {'subject': pat_id, 'encounter': enc_id, 'category': 'fall_prevention'}
+        resp = requests.get(self.api_base + 'Observation/', headers=search_headers, params=search_params)
+        if resp.json()['total'] > 0:
+            for i in xrange(len(question_codes)):
+                for obs in resp.json()['entry']:
+                    if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention' and obs['resource']['code']['coding'][0]['code'] == question_codes[i]:
+                        self.update_observation_by_observation(obs, responses[i])
+                        continue
+                self.create_new_observation_yes_no(question_codes[i],responses[i],pat_id=pat_id,enc_id=enc_id,diag_rpt=diag_rpt)
+
     # Function to create a new observation for a yes/no or true/false question.
     # Input: question_code from the standards document, response to question, patient_id, encounter_id
     # (the default uses client values if they have been set)
