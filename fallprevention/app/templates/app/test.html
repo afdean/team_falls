@@ -1,7 +1,33 @@
-{% extends 'app/baseWithSideBar.html' %}
+{% extends 'app/baseWithSideBar.html' %} {% block content %}
 
-{% block content %}
-    <p> {{ patient.name }} </p>
-    <p>Select the test you would like to perform:</p>
-   {{ test_form }}
+<div class="container">
+    <center>
+        <h1>Select the test you would like to perform:</h1>
+    </center>
+    <form method='post'>
+        <div class="row assessment_block" id="tug">
+            {% for field in test_form%}
+            <div class="container">
+                <div class="row">
+                   <h4> Time up and Go (Recommended) </h4>
+                    
+                    {{field}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row assessment_block" id="30_sec_stand">
+            {{ test_form }}
+        </div>
+
+        <div class="row assessment_block" id="4_stage_balance">
+            {{ test_form }}
+        </div>
+
+        <div class="row" id="notes">
+            {{ test_form }}
+        </div>
+    </form>
+</div>
 {% endblock %}

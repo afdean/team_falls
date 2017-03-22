@@ -20,7 +20,7 @@ body {
   list-style: none;
   margin-bottom: 30px;
 }
-#patient-age{
+#patient-age,#patient-score{
 font-size: 14px;
 }
  /* Remove the navbar's default margin-bottom and rounded borders */ 

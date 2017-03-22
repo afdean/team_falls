@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TestForm, SearchPatientForm, MedicationsForm
+from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm ,MedicationsForm,ThirtySecStandForm
 from .models import Question, FuncAbilityTest, TestParameter
 # from subprocess import call
 from six.moves import urllib
@@ -100,9 +100,11 @@ def thankyou(request):
 
 def test(request):
     patient = request.session.get('patient', '')
-    test_form = TestForm()
+    tug_form = TestForm()
+    thirty_sec_stand_form  = ThirtySecStandForm()
+    balance_test_form = BalanceTestForm()
     # test_form.fields['test2'].widget = forms.HiddenInput()
-    return render(request, 'app/test.html', {'test_form': test_form, 'patient': patient})
+    return render(request, 'app/test.html', { 'tug_form': tug_form, 'patient': patient})
 
 def medications(request):
 

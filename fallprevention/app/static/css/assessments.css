@@ -1,0 +1,15 @@
+.assessment_block{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px grey;
+    padding: 20px;
+}
+
+li{
+    list-style: none;
+}
+.assessment_block{
+    padd: 20px;
+}

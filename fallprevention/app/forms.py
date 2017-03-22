@@ -155,36 +155,38 @@ class QuestionForm(forms.Form):
 
 
 # Hard code 3 tests for now
-class TestForm(forms.Form):
+class TugForm(forms.Form):
 
-    tg_test = forms.BooleanField(
-        label = 'Time up and Go (Recommended)',
-        required = False,
-    )
     tg_test_details = forms.MultipleChoiceField(
         label = '',
         choices = (
             ('no_problem', "No Problems"),
             ('loss_of_balance', 'Loss of Balance'),
+            ('steady_self_on_walls', 'Steadying Self on Walls'),
+            ('shuffling', 'Shuffling'),
+             ('short_stride', 'Short Stride'),
+            ('little_or_no_arm_swing', 'Little or no arm swing'),
+             ('en_bloc_turning', 'En bloc turning'),
+              ('not_using_assitive_device_properly', 'Not using assitive device properly'),
         ),
         initial = None,
         required = False,
         widget = forms.CheckboxSelectMultiple,
     )
-
-    cs_test = forms.BooleanField(
-        label = '30 Sec Stand',
-        required = False,
-    )
-    cs_test_details = forms.CharField(
+class ThirtySecStandForm(forms.Form):
+     cs_test_details = forms.CharField(
         label = 'Score:',
         required = False,
     )
 
-    balance_test = forms.BooleanField(
-        label = '4-stage balance test',
-        required = False,
-    )
+def __init__(self, *args, **kwargs):
+        super(ThirtySecStandForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-balance'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+class BalanceTestForm(forms.Form):
     balance_test_detail1 = forms.CharField(
         label = '1. Stand with your feet side to side:',
         required = False,
@@ -202,17 +204,21 @@ class TestForm(forms.Form):
         required = False,
     )
 
+    def __init__(self, *args, **kwargs):
+        super(BalanceTestForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-balance'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+class NoteForm(forms.Form):
     note = forms.CharField(
+        widget=forms.Textarea,
         label = 'Note:',
         required = False,
     )
 
-    def __init__(self, *args, **kwargs):
-        super(TestForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-testForm'
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
+
 
 class MedicationsForm(forms.Form):
 
