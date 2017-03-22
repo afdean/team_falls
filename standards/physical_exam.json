@@ -23,7 +23,7 @@
         "num_forms": 1
       },
       {
-        "HR": "Heart Rate",
+        "content": "Heart Rate",
         "type": "integer",
         "num_forms": 3
       }
