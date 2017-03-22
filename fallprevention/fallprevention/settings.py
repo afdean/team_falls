@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'app',
 ]
 
@@ -123,3 +124,16 @@ MEDIA_URL = '/media/'
 LOGIN_URL = '/app/login/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory
 
+#Django sessions settings
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
+#Django cache settings
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+#Django crisp form settings
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

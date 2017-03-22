@@ -1,0 +1,129 @@
+{
+  "questions": [
+    {
+      "content": "I have fallen in the past year",
+      "code": "",
+      "score": 2,
+      "is_key": true,
+      "medication_related": false,
+      "reason": "People who have fallen once are likely to fall again",
+      "follow_up": [
+        {
+          "content": "I have fallen more than once in the past year",
+          "code": "",
+          "score": 0,
+          "is_key": false,
+          "medication_related": false,
+          "reason": "People who have fallen once are likely to fall again"
+        },
+        {
+          "content": "I have been injured from a fall in the past year",
+          "code": "",
+          "score": 0,
+          "is_key": false,
+          "medication_related": false,
+          "reason": "People who have fallen once are likely to fall again"
+        }
+      ]
+    },
+    {
+      "content": "Sometimes I feel unsteady when I am walking",
+      "code": "",
+      "score": 2,
+      "is_key": true,
+      "medication_related": false,
+      "reason": "Unsteadiness or needing support while walking are signs of poor balance"
+    },
+    {
+      "content": "I am worried about falling",
+      "code": "",
+      "score": 1,
+      "is_key": true,
+      "medication_related": false,
+      "reason": "People who are worried about falling are more likely to fall"
+    },
+    {
+      "content": "I use or have been advised to use a cane or walker to get around safely",
+      "code": "",
+      "score": 2,
+      "is_key": false,
+      "medication_related": false,
+      "reason": "People who have been advised to use a cane or walker may already be more likely to fall"
+
+    },
+    {
+      "content": "I steady myself by holding onto furniture when walking at home",
+      "code": "",
+      "score": 1,
+      "is_key": false,
+      "medication_related": false,
+      "reason": "Unsteadiness or needing support while walking are signs of poor balance"
+
+    },
+    {
+      "content": "I need to push with my hands to stand up from a chair",
+      "code": "",
+      "score": 1,
+      "is_key": false,
+      "medication_related": false,
+      "reason": "This is a sign of weak leg muscles, a major reason for falling"
+
+    },
+    {
+      "content": "I have some trouble stepping up onto a curb",
+      "code": "",
+      "score": 1,
+      "is_key": false,
+      "medication_related": false,
+      "reason": "This is a sign of weak leg muscles, a major reason for falling"
+    },
+    {
+      "content": "I often have to rush to the toilet",
+      "code": "",
+      "score": 1,
+      "is_key": false,
+      "medication_related": false,
+      "reason": "Rushing to the bathroom, especially at night, increases your chance of falling"
+    },
+    {
+      "content": "I have lost some feeling in my feet",
+      "code": "",
+      "score": 1,
+      "is_key": false,
+      "medication_related": false,
+      "reason": "Numbness in your feet can cause stumbles and lead to falls"
+    },
+    {
+      "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
+      "code": "",
+      "score": "1",
+      "is_key": false,
+      "medication_related": true,
+      "reason": "Side effects from medicines can sometimes increase your chance of falling"
+    },
+    {
+      "content": "I take medicine to help me sleep or improve my mood",
+      "code": "",
+      "score": 1,
+      "is_key": false,
+      "medication_related": true,
+      "reason": "These medicines can sometimes increase your chance of falling"
+    },
+    {
+      "content": "I often feel sad or depressed",
+      "code": "",
+      "score": 1,
+      "is_key": false,
+      "medication_related": true,
+      "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"
+    }
+  ],
+  "question_logic": [
+    {
+      "min_score": 4
+    },
+    {
+      "min_key": 1
+    }
+  ]
+}

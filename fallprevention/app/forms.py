@@ -68,8 +68,6 @@ class SearchPatientForm(forms.Form):
 #         fields = ['content', 'isKey']
 
 # Hard code 12 questions for now
-
-
 class QuestionForm(forms.Form):
     CHOICES = (('1', 'Yes',), ('2', 'No',))
     question1 = forms.ChoiceField(
@@ -141,8 +139,66 @@ class QuestionForm(forms.Form):
     question12 = forms.ChoiceField(
         label = 'I often feel sad or depressed',
         widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
+    #
+    # question1 = forms.BooleanField(
+    #     label = 'I have fallen in the past year',
+    #     required = False,
+    # )
+    #
+    # question2 = forms.BooleanField(
+    #     label = 'Sometimes I feel unsteady when I am walking',
+    #     required = False,
+    # )
+    #
+    # question3 = forms.BooleanField(
+    #     label = 'I am worried about falling',
+    #     required = False,
+    # )
+    #
+    # question4 = forms.BooleanField(
+    #     label = 'I use or have been advised to use a cane or walker to get around safely',
+    #     required = False,
+    # )
+    #
+    # question5 = forms.BooleanField(
+    #     label = 'I steady myself by holding onto furniture when walking at home',
+    #     required = False,
+    # )
+    #
+    # question6 = forms.BooleanField(
+    #     label = 'I need to push with my hands to stand up from a chair',
+    #     required = False,
+    # )
+    #
+    # question7 = forms.BooleanField(
+    #     label = 'I have some trouble stepping up onto a curb',
+    #     required = False,
+    # )
+    #
+    # question8 = forms.BooleanField(
+    #     label = 'I often have to rush to the toilet',
+    #     required = False,
+    # )
+    #
+    # question9 = forms.BooleanField(
+    #     label = 'I have lost some feeling in my feet',
+    #     required = False,
+    # )
+    #
+    # question10 = forms.BooleanField(
+    #     label = 'I take medicine that sometimes makes me feel light-headed or more tired than usual',
+    #     required = False,
+    # )
+    #
+    # question11 = forms.BooleanField(
+    #     label = 'I take medicine to help me sleep or improve my mood',
+    #     required = False,
+    # )
+    #
+    # question12 = forms.BooleanField(
+    #     label = 'I often feel sad or depressed',
+    #     required = False,
+    # )
 
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
@@ -151,8 +207,6 @@ class QuestionForm(forms.Form):
         self.helper.form_method = 'post'
 
         self.helper.add_input(Submit('submit', 'Submit'))
-
-
 
 # Hard code 3 tests for now
 class TestForm(forms.Form):

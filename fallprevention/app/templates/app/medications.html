@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 {% extends 'app/baseWithSideBar.html' %}
 
 {% block content %}
     <p>welcome! {{ patient.name }} </p>
    {{ medications_form }}
 {% endblock %}
+=======
+{% extends 'app/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <p>welcome! {{ patient.name }} </p>
+   {% crispy medications_form %}
+{% endblock %}
+>>>>>>> initial-launch
