@@ -6,11 +6,11 @@
     </center>
     <form method='post'>
         <div class="row assessment_block" id="tug">
-            {% for field in test_form%}
+            {% for field in tug_form%}
             <div class="container">
                 <div class="row">
-                   <h4> Time up and Go (Recommended) </h4>
-                    
+                    <h4> Time Up and Go (Recommended) </h4>
+
                     {{field}}
                 </div>
             </div>
@@ -18,15 +18,17 @@
         </div>
 
         <div class="row assessment_block" id="30_sec_stand">
-            {{ test_form }}
+            <h4> 30-Second Chair Stand </h4>
+            {{ thirty_sec_stand_form }}
         </div>
 
         <div class="row assessment_block" id="4_stage_balance">
             {{ test_form }}
         </div>
 
-        <div class="row" id="notes">
-            {{ test_form }}
+        <div class="row assessment_block" id="notes">
+            <label for="comment">Notes:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
         </div>
     </form>
 </div>

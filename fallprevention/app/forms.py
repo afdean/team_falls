@@ -149,10 +149,7 @@ class QuestionForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
-
         self.helper.add_input(Submit('submit', 'Submit'))
-
-
 
 # Hard code 3 tests for now
 class TugForm(forms.Form):
@@ -164,10 +161,10 @@ class TugForm(forms.Form):
             ('loss_of_balance', 'Loss of Balance'),
             ('steady_self_on_walls', 'Steadying Self on Walls'),
             ('shuffling', 'Shuffling'),
-             ('short_stride', 'Short Stride'),
+            ('short_stride', 'Short Stride'),
             ('little_or_no_arm_swing', 'Little or no arm swing'),
-             ('en_bloc_turning', 'En bloc turning'),
-              ('not_using_assitive_device_properly', 'Not using assitive device properly'),
+            ('en_bloc_turning', 'En bloc turning'),
+            ('not_using_assitive_device_properly', 'Not using assitive device properly'),
         ),
         initial = None,
         required = False,
