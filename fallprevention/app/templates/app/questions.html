@@ -1,7 +1,31 @@
 {% extends 'app/base.html' %}
+<<<<<<< HEAD
 {% load crispy_forms_tags %}
 
 {% block content %}
     <p>welcome! {{ patient.name }} </p>
    {% crispy question_form %}
 {% endblock %}
+=======
+{%load static%}
+{% block content %}
+
+<body>
+    <form method='post'>
+        {% for q in questions %}
+        <div class="question">
+            <p>
+                {{ q.content }}
+                {% csrf_token %}
+                {{ form }}
+            </p>
+        </div>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+
+{% endblock %}
+
+>>>>>>> med-logic

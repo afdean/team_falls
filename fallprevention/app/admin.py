@@ -4,16 +4,16 @@ from django.contrib import admin
 from .models import Question, Medication, FuncAbilityTest, TestParameter
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('content', 'score', 'isKey', 'reason')
+    list_display = ('content', 'score', 'is_key', 'reason')
 
 class MedicationAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 class FuncAbilityTestAdmin(admin.ModelAdmin):
-    list_display = ('name', 'isRecommended', 'videoLink', 'pdfLink',)
+    list_display = ('name', 'is_recommended', 'video_link', 'pdf_link',)
 
 class TestParameterAdmin(admin.ModelAdmin):
-    list_display = ('testKey', 'content', 'risk',)
+    list_display = ('test_key', 'content', 'risk',)
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Medication, MedicationAdmin)

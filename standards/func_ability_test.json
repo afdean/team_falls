@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Timed Up and Go Test",
+    "is_recommended": true,
+    "video_link": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+    "pdf_link":"https://www.cdc.gov/steadi/pdf/tug_test-a.pdf",
+    "min_time": 12,
+    "min_key": 1,
+    "forms": [
+      {
+        "content": "Patient unable to do TUG",
+        "type": "boolean"
+      },
+      {
+        "content": "TUG Time (seconds): ",
+        "type": "integer"
+      },
+      {
+        "content": "No problems",
+        "type": "boolean",
+        "is_key": false
+      },
+      {
+        "content": "Loss of balance",
+        "type": "boolean",
+        "is_key": true
+      },
+      {
+        "content": "Steadying self on walls",
+        "type": "boolean",
+        "is_key": true
+      },
+      {
+        "content": "Shuffling",
+        "type": "boolean",
+        "is_key": false
+      },
+      {
+        "content": "Short Stride",
+        "type": "boolean",
+        "is_key": false
+      },
+      {
+        "content": "Little or no arm swing",
+        "type": "boolean",
+        "is_key": false
+      },
+      {
+        "content": "En bloc turning",
+        "type": "boolean",
+        "is_key": false
+      },
+      {
+        "content": "Not using assistive device properly",
+        "type": "boolean",
+        "is_key": false
+      }
+    ]
+  },
+  {
+    "name": "30-Second Chair Stand",
+    "is_recommended": false,
+    "video_link": "https://www.youtube-nocookie.com/embed/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+    "pdf_link": "https://www.cdc.gov/steadi/pdf/30_second_chair_stand_test-a.pdf",
+    "60-64_min_stand_male": 14,
+    "60-64_min_stand_female": 12,
+    "65-69_min_stand_male": 12,
+    "65-69_min_stand_female": 11,
+    "70-74_min_stand_male": 12,
+    "70-74_min_stand_female": 10,
+    "75-79_min_stand_male": 11,
+    "75-79_min_stand_female": 10,
+    "80-84_min_stand_male": 10,
+    "80-84_min_stand_female": 9,
+    "85-89_min_stand_male": 8,
+    "85-89_min_stand_female": 8,
+    "90-94_min_stand_male": 7,
+    "90-94_min_stand_female":4,
+    "forms": [
+      {
+        "content": "Notes:",
+        "type": "char"
+      },
+      {
+        "content": "Score:",
+        "type": "integer"
+      }
+    ]
+  },
+  {
+    "name": "4 Stage Balance Test",
+    "is_recommended": false,
+    "video_link": "https://www.youtube-nocookie.com/embed/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
+    "pdf_link": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf",
+    "forms": [
+      {
+        "content": "Notes: ",
+        "type": "char"
+      },
+      {
+        "content": "Stand with your feet side by side. Time (seconds): ",
+        "type": "integer"
+      },
+      {
+        "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds): ",
+        "type": "integer"
+      },
+      {
+        "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds): ",
+        "type": "integer"
+      },
+      {
+        "content": "Stand on one foot. Time (seconds): ",
+        "type": "integer"
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{%load static%}
+{% block content %}
+ <body>
+        <div>
+          {% for f in tests %}
+            <div class="funcabilitytest">
+              <p> {{ f.test_name }} </p>
+            </div>
+          {% endfor %}
+        </div>
+    </body>
+{% endblock %}
+   
+
+

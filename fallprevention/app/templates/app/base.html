@@ -1,5 +1,6 @@
 {% load staticfiles %}
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,7 +10,11 @@
     <meta name="author" content="">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
+<<<<<<< HEAD
     <title>Daper Scholar - {% block title %}Fall Prevenation!{% endblock %}</title>
+=======
+    <title>STEADI</title>
+>>>>>>> med-logic
 
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
@@ -46,6 +51,26 @@
       </div>
     </div>
 
+<<<<<<< HEAD
+=======
+    <div class="container-fluid">
+      <div class="row">
+       
+        <div class="col-sm-12  main">
+           <div>
+                {% block body_block %}{% endblock %}
+                </div>
+                <!--/.well -->
+            </div>
+      
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <!--SIDE BAR END-->
+
+>>>>>>> med-logic
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
@@ -61,7 +86,7 @@
         </div>
     </footer>
     <!--END FOOTER-->
-    <script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 
