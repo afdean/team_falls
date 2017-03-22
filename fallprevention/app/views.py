@@ -1,3 +1,7 @@
+import urllib.request as ur
+# from urllib2 import urlopen
+import json
+from .constants import *
 from django.shortcuts import render
 # from urllib import request, json
 from django.core.urlresolvers import reverse
@@ -6,19 +10,16 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TestForm, SearchPatientForm, MedicationsForm
 from .models import Question, FuncAbilityTest, TestParameter
 # from subprocess import call
-import urllib.request, json
+
 
 
 # Home screen
 def index(request):
-    # url = "./fixtures/initial.json"
-    # response = urllib.request.urlopen(url)
-    # with open('initial.json') as data_file:
-    #     data = json.load(data_file)
-    data_file = open("./app/fixtures/initial.json", "r")
-    data = json.load(data_file)
-
-    print (data)
+    # url_questions = ur.urlopen(QUESTIONS_URL)
+    # questions_json = json.loads(url_questions.read().decode('utf-8'))
+    with ur.urlopen(QUESTIONS_URL) as url_questions:
+        questions_json = json.loads(url_questions.read().decode('utf-8'))
+    question_list = questions_json.get("questions")
     # This view is missing all form handling logic for simplicity of the example
     # call(["python", "manage.py", "makemigrations"])
     return render(request, 'app/index.html', {'form': MessageForm()})
