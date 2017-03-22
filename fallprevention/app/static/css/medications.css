@@ -1,0 +1,18 @@
+#problems, #medications{
+    width: 300px;
+}
+
+#medications_linked_to_falls{
+    width: 740px;
+}
+
+.medication_block{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.btn
+{
+    margin-right: 100px;
+}
