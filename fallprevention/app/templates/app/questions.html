@@ -4,6 +4,7 @@
     <div class="row question-container">
         <div class="col-lg-9 question-form">
             <form method='post' class="self_assessment_questions">
+                {% csrf_token %} 
                 {% for field in question_form%}
                 <div class="row question_row">
                     <div class="col-md-9">

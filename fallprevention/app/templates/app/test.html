@@ -4,8 +4,9 @@
     <center>
         <h1>Select the test you would like to perform:</h1>
     </center>
-    <form method='post'>
-        <div class="row assessment_block" id="tug">
+    <form  method='post'>
+        {% csrf_token %} 
+        <div class="row assessment_block form-group" id="tug">
             {% for field in tug_form%}
             <div class="container">
                 <div class="row">
@@ -17,18 +18,25 @@
             {% endfor %}
         </div>
 
-        <div class="row assessment_block" id="30_sec_stand">
+        <div class="row assessment_block form-group" id="30_sec_stand">
             <h4> 30-Second Chair Stand </h4>
             {{ thirty_sec_stand_form }}
         </div>
 
-        <div class="row assessment_block" id="4_stage_balance">
-            {{ test_form }}
+        <div class="row assessment_block form-group" id="4_stage_balance">
+            <h4>4-Stage Balance Test</h4>
+            {{ balance_test_form }}
         </div>
 
-        <div class="row assessment_block" id="notes">
+        <div class="row assessment_block form-group" id="notes">
             <label for="comment">Notes:</label>
             <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+
+        <div class="row form-group" id="fail-button">
+            <div class="col-xs-12 text-center">
+                <button class="btn btn-primary" type="button">Submit</button>
+            </div>
         </div>
     </form>
 </div>
