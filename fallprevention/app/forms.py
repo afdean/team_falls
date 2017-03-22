@@ -218,36 +218,45 @@ class NoteForm(forms.Form):
 
 
 class MedicationsForm(forms.Form):
-
     #hard code medications for now, will generate it dynamically next step
-    medications = forms.MultipleChoiceField(
-        choices = (
-            ('asprin', "Asprin"),
-            ('isosorbide', 'Isosorbide'),
-            ('amitriptyline', 'Amitriptyline')
-        ),
-        initial = None,
+     asprin = forms.CharField(
+        label = 'Asprin',
         required = False,
-        widget = forms.CheckboxSelectMultiple,
-        help_text = "<strong>Note:</strong> This is helper text placeholder.",
     )
+isosorbide = forms.CharField(
+        label = 'Isosorbide',
+        required = False,
+    )
+def __init__(self, *args, **kwargs):
+        super(MedicationsForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-problemsForms'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
 
+class ProblemsForm(forms.Form):
     problems = forms.CharField(
         label = 'Problems',
         required = False,
     )
+    def __init__(self, *args, **kwargs):
+        super(ProblemsForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-problemsForms'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
 
+class MedicationsLinkedForm(forms.Form):
     medicationsLinked = forms.CharField(
         label = 'Medications linked to Falls',
         required = False,
     )
 
     def __init__(self, *args, **kwargs):
-        super(MedicationsForm, self).__init__(*args, **kwargs)
+        super(MedicationsLinkedForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_id = 'id-medicationForms'
+        self.helper.form_id = 'id-medicationLinkedForms'
         self.helper.form_method = 'post'
-
         self.helper.add_input(Submit('submit', 'Submit'))
 
 class MessageForm(forms.Form):
