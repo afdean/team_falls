@@ -1,20 +1,12 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 # from urllib import request, json
-=======
->>>>>>> initial-launch
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TestForm, SearchPatientForm, MedicationsForm
 from .models import Question, FuncAbilityTest, TestParameter
 # from subprocess import call
-<<<<<<< HEAD
-from six.moves import urllib
-import json
-=======
 import urllib.request, json
->>>>>>> initial-launch
 
 
 # Home screen
@@ -65,12 +57,7 @@ def login_cp(request):
 
     return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
 
-<<<<<<< HEAD
 def searchPatient(request):
-=======
-def searchPatient(request, searchItem):
->>>>>>> initial-launch
-
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
@@ -167,8 +154,4 @@ def user_login(request):
     else:
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
-<<<<<<< HEAD
         return render(request, 'app/login.html', {})
-=======
-        return render(request, 'app/login.html', {})
->>>>>>> initial-launch

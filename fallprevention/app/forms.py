@@ -139,6 +139,7 @@ class QuestionForm(forms.Form):
     question12 = forms.ChoiceField(
         label = 'I often feel sad or depressed',
         widget=forms.RadioSelect, choices=CHOICES,
+    )
     #
     # question1 = forms.BooleanField(
     #     label = 'I have fallen in the past year',
