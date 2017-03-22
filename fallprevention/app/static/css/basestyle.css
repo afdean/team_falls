@@ -32,8 +32,8 @@ font-size: 14px;
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {
-      height: 800px;
-      overflow-y: hidden;
+      height:1000px;
+      /*overflow-y: hidden;*/
     }
     
     /* Set gray background color and 100% height */
