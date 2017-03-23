@@ -1,24 +1,35 @@
+import urllib.request as ur
+# from urllib2 import urlopen
+import json
+from .constants import *
 from django.shortcuts import render
 # from urllib import request, json
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TestForm, SearchPatientForm, MedicationsForm
+from .forms import *
 from .models import Question, FuncAbilityTest, TestParameter
 # from subprocess import call
-import urllib.request, json
+
 
 
 # Home screen
 def index(request):
-    # url = "./fixtures/initial.json"
-    # response = urllib.request.urlopen(url)
-    # with open('initial.json') as data_file:
-    #     data = json.load(data_file)
-    data_file = open("./app/fixtures/initial.json", "r")
-    data = json.load(data_file)
+    with ur.urlopen(QUESTIONS_URL) as url_questions:
+        questions_json = json.loads(url_questions.read().decode('utf-8'))
+    with ur.urlopen(FAT_URL) as url_fat:
+        func_ability_test = json.loads(url_fat.read().decode('utf-8'))
+    with ur.urlopen(MEDICATION_URL) as url_medication:
+        medication_list = json.loads(url_medication.read().decode('utf-8'))
+    with ur.urlopen(PHYEXAM_URL) as url_phyexam:
+        phyexam_list = json.loads(url_phyexam.read().decode('utf-8'))
+    with ur.urlopen(INTERVENTION_URL) as url_intervention:
+        intervention_list = json.loads(url_intervention.read().decode('utf-8'))
+    with ur.urlopen(RISK_URL) as url_risk:
+        risk_list = json.loads(url_risk.read().decode('utf-8'))
+    question_list = questions_json.get("questions")
+    question_logic = questions_json.get("question_logic")
 
-    print (data)
     # This view is missing all form handling logic for simplicity of the example
     # call(["python", "manage.py", "makemigrations"])
     return render(request, 'app/index.html', {'form': MessageForm()})
@@ -113,6 +124,12 @@ def medications(request):
         medications_form = MedicationsForm()
 
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': patient})
+
+def results(request):
+    patient = request.session.get('patient', '')
+    results_form = ResultsForm()
+    return render(request, 'app/results.html', {'results_form': results_form, 'patient': patient})
+
 
 # User Login - Currently not working
 def user_login(request):

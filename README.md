@@ -7,7 +7,7 @@ It is a direct implementation of the STEADI algorithm that provides flexibility 
 
 ## Dependencies
 
-    * Python3
+    * Python3 (3.6.1 at time of writing)
     * HTML
     * CSS
     * Django
@@ -16,5 +16,8 @@ It is a direct implementation of the STEADI algorithm that provides flexibility 
     * Bootstrap
 
     Using OSX:
+    * Ensure python3.6.1 is installed
     * pip3 install django
     * brew install memcached
+    * pip3 install python-memcached
+    * pip3 install --upgrade django-crispy-forms
