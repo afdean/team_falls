@@ -7,4 +7,4 @@ FAT_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standard
 MEDICATION_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/medication.json"
 PHYEXAM_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/physical_exam.json"
 INTERVENTION_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/intervention_list.json"
-RISK_URL = "https://github.com/akapusta/team_falls/blob/master/standards/risk_interventions.json"
+RISK_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/risk_interventions.json"
