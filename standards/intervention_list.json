@@ -1,0 +1,67 @@
+{
+  "patient_edu": {
+    "name": "Patient Education",
+    "forms": [
+      {
+        "content": "Check for Safety Brochure",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "What Can You Do to Prevent Falls",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Chair Rise Exercise Sheet",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Postural Hypotension Brochure",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
+  },
+  "vit_calcium": {
+    "name": "Vitamin D and Calcium",
+    "forms": [
+      {
+        "content": "Patient is currently taking at least 800 IU of Vitamin D",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Patient is currently taking enough calcium",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
+  },
+  "referrals": {
+    "name": "Referrals",
+    "forms": [
+      {
+        "content": "PT to improve gait, strength and balance",
+        "type": "boolean",
+        "num_forms": 1
+      },
+      {
+        "content": "Fall prevention/Community exercise program",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
+  },
+  "home_safety": {
+    "name": "Home Safety",
+    "forms": [
+      {
+        "content": "Reviewed home safety with patient",
+        "type": "boolean",
+        "num_forms": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+# Chlorpheniramine, Pseudoephedrine, and Codeine
+# Dihydrocodeine, Aspirin, and Caffeine
+# Divalproex Sodium, Valproic Acid and Derivatives
+# Guaifenesin, Pseudoephedrine, and Codeine
+# Hydrocodone and Chlorpheniramine
+# Hydrocodone and Guaifenesin
+# Hydrocodone and Phenyltoloxamine
+# Hydrocodone and Pseudoephedrine
+# Hydrocodone, Chlorpheniramine, and Pseudoephedrine
+# Hydrocodone, Pseudoephedrine, and Guaifenesin
+# Opium Tincture
+# Triprolidine, Phenyephrine, and codeine
+
+{
+"name": "Brexpiprazole",
+"date": "2015-12",
+"gpi_codes": []
+},
+{
+  "name": "Carbamazepine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+
+
+{
+  "name": "Codeine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+^^^^^ Phostphate or sulfide????
+
+{
+  "name": "Eslicarbazepine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+
+
+{
+  "name": "Morphine",
+  "date": "2015-12",
+  "gpi_codes": []
+},
+^^^ beads??!
+
+
+{
+"name": "Perampanel",
+"date": "2015-12",
+"gpi_codes": []
+},
+
+,
+{
+"name": "Zyprexa",
+"date": "2015-12",
+"gpi_codes": []
+}

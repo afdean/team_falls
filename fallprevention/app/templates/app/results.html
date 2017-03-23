@@ -2,5 +2,6 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-   {% crispy login_cp_form %}
+    <p>welcome! {{ patient.name }} </p>
+    {% crispy results_form %}
 {% endblock %}

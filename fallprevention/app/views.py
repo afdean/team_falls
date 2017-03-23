@@ -1,27 +1,21 @@
+import urllib as url
+import json
+from .constants import *
 from django.shortcuts import render
-# from urllib import request, json
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm ,MedicationsForm,ThirtySecStandForm
 from .models import Question, FuncAbilityTest, TestParameter
+from .data_client import DataClient
+
 # from subprocess import call
-from six.moves import urllib
-import json
+
 
 
 # Home screen
 def index(request):
-    # url = "./fixtures/initial.json"
-    # response = urllib.request.urlopen(url)
-    # with open('initial.json') as data_file:
-    #     data = json.load(data_file)
-    data_file = open("./app/fixtures/initial.json", "r")
-    data = json.load(data_file)
-
-    print (data)
-    # This view is missing all form handling logic for simplicity of the example
-    # call(["python", "manage.py", "makemigrations"])
+    DataClient()
     return render(request, 'app/index.html', {'form': MessageForm()})
 
 def login(request):
@@ -59,7 +53,6 @@ def login_cp(request):
     return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
 
 def searchPatient(request):
-
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
@@ -117,6 +110,12 @@ def medications(request):
         medications_form = MedicationsForm()
 
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': patient})
+
+def results(request):
+    patient = request.session.get('patient', '')
+    results_form = ResultsForm()
+    return render(request, 'app/results.html', {'results_form': results_form, 'patient': patient})
+
 
 # User Login - Currently not working
 def user_login(request):

@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from app import views as app_views
+from . import views
 
 urlpatterns = [
     url(r'^$', app_views.index, name="index"),
@@ -11,5 +12,6 @@ urlpatterns = [
     url(r'^thankyou/$', app_views.thankyou, name="thankyou"),
     url(r'^assessments/$', app_views.assessments, name="assessments"),
     url(r'^medications/$', app_views.medications, name="medications"),
+    url(r'^results/$', app_views.results, name="results"),
     # url(r'^login/$', views.user_login, name='login'),
 ]

@@ -3,10 +3,31 @@ from django.db import models
 from django.forms import ModelForm
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
+from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 from .models import Question
+from .data_client import DataClient
+
+def generateForm(field, fieldName, form, isHidden):
+    if (field.type == "boolean"):
+        form.fields[fieldName] = forms.BooleanField(
+            label = field.content,
+            required = False,
+        )
+
+    elif (field.type == "integer"):
+        form.fields[fieldName] = forms.IntegerField(
+            label = field.content,
+            required = False,
+        )
+    elif (field.type == "char"):
+        form.fields[fieldName] = forms.CharField(
+            label = field.content,
+            required = False,
+        )
+    if (isHidden):
+        form.fields[fieldName].widget = forms.HiddenInput()
 
 class LoginForm(forms.Form):
     identity = forms.TypedChoiceField(
@@ -62,90 +83,19 @@ class SearchPatientForm(forms.Form):
 
         self.helper.add_input(Submit('submit', 'Search'))
 
-# class QuestionForm(ModelForm):
-#     class Meta:
-#         model = Question
-#         fields = ['content', 'isKey']
-
-# Hard code 12 questions for now
-
-
 class QuestionForm(forms.Form):
-    CHOICES = (('1', 'Yes',), ('2', 'No',))
-    question1 = forms.ChoiceField(
-        label = 'I have fallen in the past year',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question2 = forms.ChoiceField(
-        label = 'Sometimes I feel unsteady when I am walking',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question3 = forms.ChoiceField(
-        label = 'I am worried about falling',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question4 = forms.ChoiceField(
-        label = 'I use or have been advised to use a cane or walker to get around safely',
-        widget=forms.RadioSelect(attrs={'class':'radio-inline'}), choices=CHOICES,
-        required = False,
-    )
-
-    question5 = forms.ChoiceField(
-        label = 'I steady myself by holding onto furniture when walking at home',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question6 = forms.ChoiceField(
-        label = 'I need to push with my hands to stand up from a chair',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question7 = forms.ChoiceField(
-        label = 'I have some trouble stepping up onto a curb',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question8 = forms.ChoiceField(
-        label = 'I often have to rush to the toilet',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question9 = forms.ChoiceField(
-        label = 'I have lost some feeling in my feet',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question10 = forms.ChoiceField(
-        label = 'I take medicine that sometimes makes me feel light-headed or more tired than usual',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question11 = forms.ChoiceField(
-        label = 'I take medicine to help me sleep or improve my mood',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question12 = forms.ChoiceField(
-        label = 'I often feel sad or depressed',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
 
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        CHOICES = (('1', 'Yes',), ('2', 'No',))
+        for i, question in enumerate(data_client.questions.questions):
+            fieldName = "question" + str(i)
+            self.fields[fieldName] = forms.ChoiceField(
+                label = question.content,
+                widget=forms.RadioSelect, choices = CHOICES,
+                required = False,
+            )
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
@@ -153,7 +103,6 @@ class QuestionForm(forms.Form):
 
 # Hard code 3 tests for now
 class TugForm(forms.Form):
-
     tg_test_details = forms.MultipleChoiceField(
         label = '',
         choices = (
@@ -216,7 +165,6 @@ class NoteForm(forms.Form):
     )
 
 
-
 class MedicationsForm(forms.Form):
     #hard code medications for now, will generate it dynamically next step
      asprin = forms.CharField(
@@ -258,6 +206,73 @@ class MedicationsLinkedForm(forms.Form):
         self.helper.form_id = 'id-medicationLinkedForms'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
+
+class ResultsForm(forms.Form):
+    #Hard code an example results page. Until we figure out how to do it dynamically.
+    safety_brochure = forms.BooleanField(
+        label = "Check for Safety Brochure",
+        required = False
+    )
+
+    prevent_falls = forms.BooleanField(
+        label = "What Can You Do to Prevent Falls",
+        required = False
+    )
+
+    vitamin_d = forms.BooleanField(
+        label = "Patient is currently taking at least 800 IU of Vitamin D",
+        required = False
+    )
+
+    calcium = forms.BooleanField(
+        label = "Patient is currently taking enough calcium",
+        required = False
+    )
+
+    gsb_pt = forms.BooleanField(
+        label = "PT to improve gait, strength and balance",
+        required = False
+    )
+
+    exercise_program = forms.BooleanField(
+        label = "Fall prevention/Community exercise program",
+        required = False
+    )
+
+    review_safety = forms.BooleanField(
+        label = "Reviewed home safety with patient",
+        required = False
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(ResultsForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Fieldset(
+                'Patient Education (Handouts)',
+                'safety_brochure'
+            ),
+            Fieldset(
+                'Vitamin D and Calcium',
+                'vitamin_d',
+                'calcium'
+            ),
+            Fieldset(
+                'Referrals',
+                'gsb_pt',
+                'exercise_program'
+            ),
+            Fieldset(
+                'Home Safety',
+                'review_safety'
+            )
+
+        )
+        self.helper.form_id = 'id-resultsForm'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+
 
 class MessageForm(forms.Form):
     like_website = forms.TypedChoiceField(

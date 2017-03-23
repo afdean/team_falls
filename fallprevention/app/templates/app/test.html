@@ -1,0 +1,8 @@
+{% extends 'app/baseWithSideBar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <p> {{ patient.name }} </p>
+    <p>Select the test you would like to perform:</p>
+   {% crispy test_form %}
+{% endblock %}
