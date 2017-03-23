@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^thankyou/$', app_views.thankyou, name="thankyou"),
     url(r'^test/$', app_views.test, name="test"),
     url(r'^medications/$', app_views.medications, name="medications"),
+    url(r'^results/$', app_views.results, name="results"),
     # url(r'^login/$', views.user_login, name='login'),
 ]

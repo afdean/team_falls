@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TestForm, SearchPatientForm, MedicationsForm
+from .forms import *
 from .models import Question, FuncAbilityTest, TestParameter
 # from subprocess import call
 
@@ -124,6 +124,12 @@ def medications(request):
         medications_form = MedicationsForm()
 
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': patient})
+
+def results(request):
+    patient = request.session.get('patient', '')
+    results_form = ResultsForm()
+    return render(request, 'app/results.html', {'results_form': results_form, 'patient': patient})
+
 
 # User Login - Currently not working
 def user_login(request):

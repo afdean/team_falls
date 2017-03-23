@@ -302,6 +302,14 @@ class MedicationsForm(forms.Form):
 
         self.helper.add_input(Submit('submit', 'Submit'))
 
+class ResultsForm(forms.Form):
+    #Hard code an example results page. Until we figure out how to do it dynamically.
+    patient_edu = forms.BooleanField(
+        label = "Check for Safety Brochure",
+        required = False
+    )
+
+
 class MessageForm(forms.Form):
     like_website = forms.TypedChoiceField(
         label = "Do you like this website?",
