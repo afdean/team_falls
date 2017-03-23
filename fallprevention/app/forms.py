@@ -3,7 +3,7 @@ from django.db import models
 from django.forms import ModelForm
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
+from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 from .models import Question
@@ -304,10 +304,69 @@ class MedicationsForm(forms.Form):
 
 class ResultsForm(forms.Form):
     #Hard code an example results page. Until we figure out how to do it dynamically.
-    patient_edu = forms.BooleanField(
+    safety_brochure = forms.BooleanField(
         label = "Check for Safety Brochure",
         required = False
     )
+
+    prevent_falls = forms.BooleanField(
+        label = "What Can You Do to Prevent Falls",
+        required = False
+    )
+
+    vitamin_d = forms.BooleanField(
+        label = "Patient is currently taking at least 800 IU of Vitamin D",
+        required = False
+    )
+
+    calcium = forms.BooleanField(
+        label = "Patient is currently taking enough calcium",
+        required = False
+    )
+
+    gsb_pt = forms.BooleanField(
+        label = "PT to improve gait, strength and balance",
+        required = False
+    )
+
+    exercise_program = forms.BooleanField(
+        label = "Fall prevention/Community exercise program",
+        required = False
+    )
+
+    review_safety = forms.BooleanField(
+        label = "Reviewed home safety with patient",
+        required = False
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(ResultsForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Fieldset(
+                'Patient Education (Handouts)',
+                'safety_brochure'
+            ),
+            Fieldset(
+                'Vitamin D and Calcium',
+                'vitamin_d',
+                'calcium'
+            ),
+            Fieldset(
+                'Referrals',
+                'gsb_pt',
+                'exercise_program'
+            ),
+            Fieldset(
+                'Home Safety',
+                'review_safety'
+            )
+
+        )
+        self.helper.form_id = 'id-resultsForm'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
+
 
 
 class MessageForm(forms.Form):
