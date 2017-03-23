@@ -5,9 +5,9 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm ,MedicationsForm,ThirtySecStandForm
-from .models import Question, FuncAbilityTest, TestParameter
-from .data_client import DataClient
+from app.forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm ,MedicationsForm,ThirtySecStandForm
+from app.models import Question, FuncAbilityTest, TestParameter
+from app.data_client import DataClient
 
 # from subprocess import call
 
