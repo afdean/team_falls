@@ -7,29 +7,15 @@ from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import *
 from .models import Question, FuncAbilityTest, TestParameter
+from .data_client import DataClient
+
 # from subprocess import call
 
 
 
 # Home screen
 def index(request):
-    with ur.urlopen(QUESTIONS_URL) as url_questions:
-        questions_json = json.loads(url_questions.read().decode('utf-8'))
-    with ur.urlopen(FAT_URL) as url_fat:
-        func_ability_test = json.loads(url_fat.read().decode('utf-8'))
-    with ur.urlopen(MEDICATION_URL) as url_medication:
-        medication_list = json.loads(url_medication.read().decode('utf-8'))
-    with ur.urlopen(PHYEXAM_URL) as url_phyexam:
-        phyexam_list = json.loads(url_phyexam.read().decode('utf-8'))
-    with ur.urlopen(INTERVENTION_URL) as url_intervention:
-        intervention_list = json.loads(url_intervention.read().decode('utf-8'))
-    with ur.urlopen(RISK_URL) as url_risk:
-        risk_list = json.loads(url_risk.read().decode('utf-8'))
-    question_list = questions_json.get("questions")
-    question_logic = questions_json.get("question_logic")
-
-    # This view is missing all form handling logic for simplicity of the example
-    # call(["python", "manage.py", "makemigrations"])
+    DataClient()
     return render(request, 'app/index.html', {'form': MessageForm()})
 
 def login(request):

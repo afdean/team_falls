@@ -28,8 +28,7 @@ class DataClient(metaclass=Singleton):
             self.medication = json2obj(url_medication)
         with ur.urlopen(PHYEXAM_URL) as url_phyexam:
             self.physical_exam = json2obj(url_phyexam)
-        # bug in intervention_list file
-        # with ur.urlopen(INTERVENTION_URL) as url_intervention:
-            # self.intervention_list = json2obj(url_medication)
+        with ur.urlopen(INTERVENTION_URL) as url_intervention:
+            self.intervention_list = json2obj(url_intervention)
         with ur.urlopen(RISK_URL) as url_risk:
             self.risk_list = json2obj(url_risk)

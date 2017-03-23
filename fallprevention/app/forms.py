@@ -9,6 +9,26 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from .models import Question
 from .data_client import DataClient
 
+def generateForm(field, fieldName, form, isHidden):
+    if (field.type == "boolean"):
+        form.fields[fieldName] = forms.BooleanField(
+            label = field.content,
+            required = False,
+        )
+
+    elif (field.type == "integer"):
+        form.fields[fieldName] = forms.IntegerField(
+            label = field.content,
+            required = False,
+        )
+    elif (field.type == "char"):
+        form.fields[fieldName] = forms.CharField(
+            label = field.content,
+            required = False,
+        )
+    if (isHidden):
+        form.fields[fieldName].widget = forms.HiddenInput()
+
 class LoginForm(forms.Form):
     identity = forms.TypedChoiceField(
         label = 'Identify Who you are',
@@ -85,11 +105,6 @@ class QuestionForm(forms.Form):
 # Hard code 3 tests for now
 class TestForm(forms.Form):
 
-    note = forms.CharField(
-        label = 'Note:',
-        required = False,
-    )
-
     def __init__(self, *args, **kwargs):
         super(TestForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
@@ -99,6 +114,10 @@ class TestForm(forms.Form):
                 label = test.name,
                 required = False,
             )
+            for i, test_detail in enumerate(test.forms):
+                fieldName = test.name + str(i)
+                generateForm(test_detail, fieldName, self, True)
+
         self.helper = FormHelper()
         self.helper.form_id = 'id-testForm'
         self.helper.form_method = 'post'
