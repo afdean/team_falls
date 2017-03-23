@@ -62,20 +62,36 @@
     "is_recommended": false,
     "video_link": "https://www.youtube-nocookie.com/embed/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
     "pdf_link": "https://www.cdc.gov/steadi/pdf/30_second_chair_stand_test-a.pdf",
-    "60-64_min_stand_male": 14,
-    "60-64_min_stand_female": 12,
-    "65-69_min_stand_male": 12,
-    "65-69_min_stand_female": 11,
-    "70-74_min_stand_male": 12,
-    "70-74_min_stand_female": 10,
-    "75-79_min_stand_male": 11,
-    "75-79_min_stand_female": 10,
-    "80-84_min_stand_male": 10,
-    "80-84_min_stand_female": 9,
-    "85-89_min_stand_male": 8,
-    "85-89_min_stand_female": 8,
-    "90-94_min_stand_male": 7,
-    "90-94_min_stand_female":4,
+    "min_stand_seconds": {
+        "ages": [
+            60,
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95
+        ],
+        "male": [
+            14,
+            12,
+            12,
+            11,
+            10,
+            8,
+            7
+        ],
+        "female": [
+            12,
+            11,
+            10,
+            10,
+            9,
+            8,
+            4
+        ]
+    },
     "forms": [
       {
         "content": "Notes:",

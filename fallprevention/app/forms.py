@@ -63,85 +63,16 @@ class SearchPatientForm(forms.Form):
 
         self.helper.add_input(Submit('submit', 'Search'))
 
-# class QuestionForm(ModelForm):
-#     class Meta:
-#         model = Question
-#         fields = ['content', 'isKey']
-
-# Hard code 12 questions for now
 class QuestionForm(forms.Form):
-    data_client = DataClient()
-    print(data_client.questions)
-    CHOICES = (('1', 'Yes',), ('2', 'No',))
-
-    #
-    # question1 = forms.BooleanField(
-    #     label = 'I have fallen in the past year',
-    #     required = False,
-    # )
-    #
-    # question2 = forms.BooleanField(
-    #     label = 'Sometimes I feel unsteady when I am walking',
-    #     required = False,
-    # )
-    #
-    # question3 = forms.BooleanField(
-    #     label = 'I am worried about falling',
-    #     required = False,
-    # )
-    #
-    # question4 = forms.BooleanField(
-    #     label = 'I use or have been advised to use a cane or walker to get around safely',
-    #     required = False,
-    # )
-    #
-    # question5 = forms.BooleanField(
-    #     label = 'I steady myself by holding onto furniture when walking at home',
-    #     required = False,
-    # )
-    #
-    # question6 = forms.BooleanField(
-    #     label = 'I need to push with my hands to stand up from a chair',
-    #     required = False,
-    # )
-    #
-    # question7 = forms.BooleanField(
-    #     label = 'I have some trouble stepping up onto a curb',
-    #     required = False,
-    # )
-    #
-    # question8 = forms.BooleanField(
-    #     label = 'I often have to rush to the toilet',
-    #     required = False,
-    # )
-    #
-    # question9 = forms.BooleanField(
-    #     label = 'I have lost some feeling in my feet',
-    #     required = False,
-    # )
-    #
-    # question10 = forms.BooleanField(
-    #     label = 'I take medicine that sometimes makes me feel light-headed or more tired than usual',
-    #     required = False,
-    # )
-    #
-    # question11 = forms.BooleanField(
-    #     label = 'I take medicine to help me sleep or improve my mood',
-    #     required = False,
-    # )
-    #
-    # question12 = forms.BooleanField(
-    #     label = 'I often feel sad or depressed',
-    #     required = False,
-    # )
 
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
         CHOICES = (('1', 'Yes',), ('2', 'No',))
-        for counter in range(0, 12):
-            fieldName = "question" + str(counter)
+        for i, question in enumerate(data_client.questions.questions):
+            fieldName = "question" + str(i)
             self.fields[fieldName] = forms.ChoiceField(
-                label = 'I have lost some feeling in my feet',
+                label = question.content,
                 widget=forms.RadioSelect, choices = CHOICES,
                 required = False,
             )
@@ -154,51 +85,6 @@ class QuestionForm(forms.Form):
 # Hard code 3 tests for now
 class TestForm(forms.Form):
 
-    tg_test = forms.BooleanField(
-        label = 'Time up and Go (Recommended)',
-        required = False,
-    )
-    tg_test_details = forms.MultipleChoiceField(
-        label = '',
-        choices = (
-            ('no_problem', "No Problems"),
-            ('loss_of_balance', 'Loss of Balance'),
-        ),
-        initial = None,
-        required = False,
-        widget = forms.CheckboxSelectMultiple,
-    )
-
-    cs_test = forms.BooleanField(
-        label = '30 Sec Stand',
-        required = False,
-    )
-    cs_test_details = forms.CharField(
-        label = 'Score:',
-        required = False,
-    )
-
-    balance_test = forms.BooleanField(
-        label = '4-stage balance test',
-        required = False,
-    )
-    balance_test_detail1 = forms.CharField(
-        label = '1. Stand with your feet side to side:',
-        required = False,
-    )
-    balance_test_detail2 = forms.CharField(
-        label = '2. Place the instep of one foot so it is touching the big toe of the other foot:',
-        required = False,
-    )
-    balance_test_detail3 = forms.CharField(
-        label = '3. Place the instep of one foot so it is touching the big toe of the other foot:',
-        required = False,
-    )
-    balance_test_detail4 = forms.CharField(
-        label = '4. Place the instep of one foot so it is touching the big toe of the other foot:',
-        required = False,
-    )
-
     note = forms.CharField(
         label = 'Note:',
         required = False,
@@ -206,6 +92,13 @@ class TestForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(TestForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        for i, test in enumerate(data_client.func_test):
+            fieldName = test.name
+            self.fields[fieldName] = forms.BooleanField(
+                label = test.name,
+                required = False,
+            )
         self.helper = FormHelper()
         self.helper.form_id = 'id-testForm'
         self.helper.form_method = 'post'

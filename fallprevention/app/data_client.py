@@ -1,4 +1,10 @@
 import json
+from collections import namedtuple
+import urllib.request as ur
+from .constants import *
+
+def _json_object_hook(d): return namedtuple('X', d.keys())(*d.values())
+def json2obj(data): return json.load(data, object_hook=_json_object_hook)
 
 class Singleton(type):
     def __init__(self, *args, **kwargs):
@@ -14,18 +20,16 @@ class Singleton(type):
 
 class DataClient(metaclass=Singleton):
     def __init__(self):
-        question_file = open("../standards/questions.json", "r")
-        med_file = open("../standards/medication.json", "r")
-        func_ability_file = open("../standards/func_ability_test.json", "r")
-        intervention_list_file = open("../standards/intervention_list.json", "r")
-        physical_exam_file = open("../standards/physical_exam.json", "r")
-        risk_interventions_file = open("../standards/risk_interventions.json", "r")
-
-        self.questions = json.load(question_file)
-        self.func_test = json.load(func_ability_file)
-        self.intervention_list = json.load(intervention_list_file)
-        self.medication = json.load(med_file)
-        self.physical_exam = json.load(physical_exam_file)
-        self.risk_interventions = json.load(risk_interventions_file)
-
-        print(self.func_test)
+        with ur.urlopen(QUESTIONS_URL) as url_questions:
+            self.questions = json2obj(url_questions)
+        with ur.urlopen(FAT_URL) as url_fat:
+            self.func_test = json2obj(url_fat)
+        with ur.urlopen(MEDICATION_URL) as url_medication:
+            self.medication = json2obj(url_medication)
+        with ur.urlopen(PHYEXAM_URL) as url_phyexam:
+            self.physical_exam = json2obj(url_phyexam)
+        # bug in intervention_list file
+        # with ur.urlopen(INTERVENTION_URL) as url_intervention:
+            # self.intervention_list = json2obj(url_medication)
+        with ur.urlopen(RISK_URL) as url_risk:
+            self.risk_list = json2obj(url_risk)

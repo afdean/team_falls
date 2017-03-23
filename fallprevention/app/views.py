@@ -1,9 +1,7 @@
 import urllib.request as ur
-# from urllib2 import urlopen
 import json
 from .constants import *
 from django.shortcuts import render
-# from urllib import request, json
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
