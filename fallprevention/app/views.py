@@ -89,7 +89,7 @@ def questions(request):
             if request.session.get('identity', 'patient') == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
             else:
-                return HttpResponseRedirect('/app/test/')
+                return HttpResponseRedirect('/app/assessments/')
     else:
         question_form = QuestionForm()
 
@@ -98,13 +98,13 @@ def questions(request):
 def thankyou(request):
     return render(request, 'app/thankyou.html')
 
-def test(request):
+def assessments(request):
     patient = request.session.get('patient', '')
     tug_form = TugForm()
     thirty_sec_stand_form  = ThirtySecStandForm()
     balance_test_form = BalanceTestForm()
     # test_form.fields['test2'].widget = forms.HiddenInput()
-    return render(request, 'app/test.html', { 'tug_form': tug_form, 'thirty_sec_stand_form':thirty_sec_stand_form,'balance_test_form':balance_test_form , 'patient': patient})
+    return render(request, 'app/assessments.html', { 'tug_form': tug_form, 'thirty_sec_stand_form':thirty_sec_stand_form,'balance_test_form':balance_test_form , 'patient': patient})
 
 def medications(request):
 

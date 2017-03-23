@@ -9,7 +9,7 @@ urlpatterns = [
     # url(r'^questions/([\w\-]+)/$', app_views.questions, name="questions"),
     url(r'^questions/$', app_views.questions, name="questions"),
     url(r'^thankyou/$', app_views.thankyou, name="thankyou"),
-    url(r'^test/$', app_views.test, name="test"),
+    url(r'^assessments/$', app_views.assessments, name="assessments"),
     url(r'^medications/$', app_views.medications, name="medications"),
     # url(r'^login/$', views.user_login, name='login'),
 ]
