@@ -7,6 +7,7 @@ from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 from .models import Question
+from .data_client import DataClient
 
 class LoginForm(forms.Form):
     identity = forms.TypedChoiceField(
@@ -69,77 +70,10 @@ class SearchPatientForm(forms.Form):
 
 # Hard code 12 questions for now
 class QuestionForm(forms.Form):
+    data_client = DataClient()
+    print(data_client.questions)
     CHOICES = (('1', 'Yes',), ('2', 'No',))
-    question1 = forms.ChoiceField(
-        label = 'I have fallen in the past year',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
 
-    question2 = forms.ChoiceField(
-        label = 'Sometimes I feel unsteady when I am walking',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question3 = forms.ChoiceField(
-        label = 'I am worried about falling',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question4 = forms.ChoiceField(
-        label = 'I use or have been advised to use a cane or walker to get around safely',
-        widget=forms.RadioSelect(attrs={'class':'radio-inline'}), choices=CHOICES,
-        required = False,
-    )
-
-    question5 = forms.ChoiceField(
-        label = 'I steady myself by holding onto furniture when walking at home',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question6 = forms.ChoiceField(
-        label = 'I need to push with my hands to stand up from a chair',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question7 = forms.ChoiceField(
-        label = 'I have some trouble stepping up onto a curb',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question8 = forms.ChoiceField(
-        label = 'I often have to rush to the toilet',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question9 = forms.ChoiceField(
-        label = 'I have lost some feeling in my feet',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question10 = forms.ChoiceField(
-        label = 'I take medicine that sometimes makes me feel light-headed or more tired than usual',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question11 = forms.ChoiceField(
-        label = 'I take medicine to help me sleep or improve my mood',
-        widget=forms.RadioSelect, choices=CHOICES,
-        required = False,
-    )
-
-    question12 = forms.ChoiceField(
-        label = 'I often feel sad or depressed',
-        widget=forms.RadioSelect, choices=CHOICES,
-    )
     #
     # question1 = forms.BooleanField(
     #     label = 'I have fallen in the past year',
@@ -203,6 +137,14 @@ class QuestionForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
+        CHOICES = (('1', 'Yes',), ('2', 'No',))
+        for counter in range(0, 12):
+            fieldName = "question" + str(counter)
+            self.fields[fieldName] = forms.ChoiceField(
+                label = 'I have lost some feeling in my feet',
+                widget=forms.RadioSelect, choices = CHOICES,
+                required = False,
+            )
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
