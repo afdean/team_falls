@@ -7,7 +7,7 @@ from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from app.forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm ,MedicationsForm,ThirtySecStandForm
 from app.models import Question, FuncAbilityTest, TestParameter
-# from app.data_client import DataClient
+from app.data_client import DataClient
 
 # from subprocess import call
 
@@ -15,7 +15,7 @@ from app.models import Question, FuncAbilityTest, TestParameter
 
 # Home screen
 def index(request):
-    # DataClient()
+    DataClient()
     return render(request, 'app/index.html', {'form': MessageForm()})
 
 def login(request):
