@@ -7,7 +7,7 @@ from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, F
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 from .models import Question
-from .data_client import DataClient
+from app.data_client import DataClient
 
 def generateForm(field, fieldName, form, isHidden):
     if (field.type == "boolean"):
