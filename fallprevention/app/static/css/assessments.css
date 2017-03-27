@@ -6,7 +6,21 @@
     box-shadow: 0 0 10px grey;
     padding: 20px;
 }
+#assessment_select{
+    width: 50%;
+    margin: 0 auto; 
+}
 
 li{
     list-style: none;
+}
+.checkbox label{
+    font-size: 30px;
+}
+.checkbox
+{
+    margin-bottom: 30px;
+}
+#assessment_select{
+    margin-top: 50px;
 }
