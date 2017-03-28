@@ -9,32 +9,30 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from .models import Question
 from app.data_client import DataClient
 
-def generate_form(field, field_widget, field_choices=None, isHidden=None):
+def generate_form(field, field_widget=None, field_choices=None, isHidden=None):
     if field.type == "boolean":
         return forms.BooleanField(
             label=field.content,
-            widget=field_widget,
             required=False,
         )
     elif field.type == "choice":
-        return forms.BooleanField(
+        return forms.ChoiceField(
             label=field.content,
             widget=field_widget,
             choices=field_choices,
             required=False,
         )
-
-    elif (field.type == "integer"):
-        self.fields[field_name] = forms.IntegerField(
-            label = field.content,
-            required = False,
+    elif field.type == "integer":
+        return forms.IntegerField(
+            label=field.content,
+            required=False,
         )
-    elif (field.type == "char"):
-        self.fields[field_name] = forms.CharField(
-            label = field.content,
-            required = False,
+    elif field.type == "char":
+        return forms.CharField(
+            label=field.content,
+            required=False,
         )
-    if (isHidden):
+    if isHidden:
         self.fields[field_name].widget = forms.HiddenInput()
 
 class LoginForm(forms.Form):
@@ -97,93 +95,112 @@ class QuestionForm(forms.Form):
         for i, question in enumerate(data_client.questions.questions):
             field_name = "question" + str(i)
             self.fields[field_name] = generate_form(question, forms.RadioSelect, CHOICES)
-            # self.fields[field_name] = forms.ChoiceField(
-            #     label = question.content,
-            #     widget= forms.RadioSelect,
-            #     choices = CHOICES,
-            #     required = False,
-            # )
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
-# Hard code 3 tests for now
-class TugForm(forms.Form):
-    tg_test_details = forms.MultipleChoiceField(
-        label = '',
-        choices = (
-            ('no_problem', "No Problems"),
-            ('loss_of_balance', 'Loss of Balance'),
-            ('steady_self_on_walls', 'Steadying Self on Walls'),
-            ('shuffling', 'Shuffling'),
-            ('short_stride', 'Short Stride'),
-            ('little_or_no_arm_swing', 'Little or no arm swing'),
-            ('en_bloc_turning', 'En bloc turning'),
-            ('not_using_assitive_device_properly', 'Not using assitive device properly'),
-        ),
-        initial = None,
-        required = False,
-        widget = forms.CheckboxSelectMultiple,
-    )
+# class TugForm(forms.Form):
+#     tg_test_details = forms.MultipleChoiceField(
+#         label = '',
+#         choices = (
+#             ('no_problem', "No Problems"),
+#             ('loss_of_balance', 'Loss of Balance'),
+#             ('steady_self_on_walls', 'Steadying Self on Walls'),
+#             ('shuffling', 'Shuffling'),
+#             ('short_stride', 'Short Stride'),
+#             ('little_or_no_arm_swing', 'Little or no arm swing'),
+#             ('en_bloc_turning', 'En bloc turning'),
+#             ('not_using_assitive_device_properly', 'Not using assitive device properly'),
+#         ),
+#         initial = None,
+#         required = False,
+#         widget = forms.CheckboxSelectMultiple,
+#     )
 
-# class TugForm2(forms.Form):
+class TugForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(TugForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        for test in data_client.func_test:
+            if test.name == "Timed Up and Go Test":
+                tug_test = test
+                break
+        for i, form in enumerate(tug_test.forms):
+            field_name = "form" + str(i)
+            self.fields[field_name] = generate_form(form)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-tugform2'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+# class ThirtySecStandForm(forms.Form):
 #     def __init__(self, *args, **kwargs):
-#         super(TugForm2, self).__init__(*args, **kwargs)
-#         data_client = DataClient()
-#         CHOICES = (('1', 'Yes',), ('2', 'No',))
-#         for test in data_client.func_test.func_test:
-#             if test.name == "Timed Up and Go Test":
-#                 tug_test = test
-#                 break
-#         for i, form in enumerate(tug_test.forms):
-#             field_name = "form" + str(i)
-#             self.fields[field_name] = generate_form(form, field_name)
-#             # self.fields[fieldName] = forms.ChoiceField(
-#             #     label = question.content,
-#             #     widget=forms.RadioSelect, choices = CHOICES,
-#             #     required = False,
-#             # )
+#         super(ThirtySecStandForm, self).__init__(*args, **kwargs)
 #         self.helper = FormHelper()
-#         self.helper.form_id = 'id-tugform2'
+#         self.helper.form_id = 'id-balance'
 #         self.helper.form_method = 'post'
 #         self.helper.add_input(Submit('submit', 'Submit'))
+#
+#     cs_test_details = forms.CharField(
+#         label = 'Score:',
+#         required = False,
+#     )
 
 class ThirtySecStandForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(ThirtySecStandForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        for test in data_client.func_test:
+            if test.name == "30-Second Chair Stand":
+                thirty_test = test
+                break
+        for i, form in enumerate(thirty_test.forms):
+            field_name = "form" + str(i)
+            self.fields[field_name] = generate_form(form)
         self.helper = FormHelper()
-        self.helper.form_id = 'id-balance'
+        self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
-    cs_test_details = forms.CharField(
-        label = 'Score:',
-        required = False,
-    )
+# class BalanceTestForm(forms.Form):
+#     balance_test_detail1 = forms.CharField(
+#         label = '1. Stand with your feet side to side:',
+#         required = False,
+#     )
+#     balance_test_detail2 = forms.CharField(
+#         label = '2. Place the instep of one foot so it is touching the big toe of the other foot:',
+#         required = False,
+#     )
+#     balance_test_detail3 = forms.CharField(
+#         label = '3. Place the instep of one foot so it is touching the big toe of the other foot:',
+#         required = False,
+#     )
+#     balance_test_detail4 = forms.CharField(
+#         label = '4. Place the instep of one foot so it is touching the big toe of the other foot:',
+#         required = False,
+#     )
+#
+#     def __init__(self, *args, **kwargs):
+#         super(BalanceTestForm, self).__init__(*args, **kwargs)
+#         self.helper = FormHelper()
+#         self.helper.form_id = 'id-balance'
+#         self.helper.form_method = 'post'
+#         self.helper.add_input(Submit('submit', 'Submit'))
 
 class BalanceTestForm(forms.Form):
-    balance_test_detail1 = forms.CharField(
-        label = '1. Stand with your feet side to side:',
-        required = False,
-    )
-    balance_test_detail2 = forms.CharField(
-        label = '2. Place the instep of one foot so it is touching the big toe of the other foot:',
-        required = False,
-    )
-    balance_test_detail3 = forms.CharField(
-        label = '3. Place the instep of one foot so it is touching the big toe of the other foot:',
-        required = False,
-    )
-    balance_test_detail4 = forms.CharField(
-        label = '4. Place the instep of one foot so it is touching the big toe of the other foot:',
-        required = False,
-    )
-
     def __init__(self, *args, **kwargs):
         super(BalanceTestForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        for test in data_client.func_test:
+            if test.name == "4 Stage Balance Test":
+                balance_test = test
+                break
+        for i, form in enumerate(balance_test.forms):
+            field_name = "form" + str(i)
+            self.fields[field_name] = generate_form(form)
         self.helper = FormHelper()
-        self.helper.form_id = 'id-balance'
+        self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
@@ -193,7 +210,6 @@ class NoteForm(forms.Form):
         label = 'Note:',
         required = False,
     )
-
 
 class MedicationsForm(forms.Form):
     #hard code medications for now, will generate it dynamically next step
@@ -212,7 +228,6 @@ class MedicationsForm(forms.Form):
         label = 'Isosorbide',
         required = False,
     )
-
 
 class ProblemsForm(forms.Form):
     problems = forms.CharField(
@@ -303,8 +318,6 @@ class ResultsForm(forms.Form):
         self.helper.form_id = 'id-resultsForm'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
-
-
 
 class MessageForm(forms.Form):
     like_website = forms.TypedChoiceField(

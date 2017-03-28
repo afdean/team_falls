@@ -111,23 +111,23 @@
     "pdf_link": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf",
     "forms": [
       {
-        "content": "Notes: ",
+        "content": "Notes:",
         "type": "char"
       },
       {
-        "content": "Stand with your feet side by side. Time (seconds): ",
+        "content": "Stand with your feet side by side. Time (seconds):",
         "type": "integer"
       },
       {
-        "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds): ",
+        "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):",
         "type": "integer"
       },
       {
-        "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds): ",
+        "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):",
         "type": "integer"
       },
       {
-        "content": "Stand on one foot. Time (seconds): ",
+        "content": "Stand on one foot. Time (seconds):",
         "type": "integer"
       }
     ]
