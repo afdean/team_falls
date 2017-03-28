@@ -10,14 +10,13 @@
       </div>
       <!--END-->
 
-      <li><a href="#">Patient History</a></li>
-
+          <li><a href="#">Patient History</a></li>
+          <li><a href="{% url 'searchPatient' %}">Search Patient</a></li>
           <li><a href="{% url 'questions' %}">Fall Screening</a></li>
           <li><a href="{% url 'assessments' %}">Assessment</a></li>
           <li><a href="{% url 'medications' %}">Medications</a></li>
           <li><a href="{% url 'exams' %}">Exams</a></li>
           <li><a href="{% url 'results' %}">Results</a></li>
-
     </ul>
 
 {%endblock%}
