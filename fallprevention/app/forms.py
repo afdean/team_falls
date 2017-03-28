@@ -260,7 +260,7 @@ class ExamsForm(forms.Form):
         data_client = DataClient()
         for exam in data_client.physical_exam:
             for i, form in enumerate(exam.forms):
-                field_name = "form" + str(i)
+                field_name = form.content
                 self.fields[field_name] = generate_form(form)
         self.helper = FormHelper()
         self.helper.form_id = 'id-tugform2'
