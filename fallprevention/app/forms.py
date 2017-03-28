@@ -9,8 +9,14 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from .models import Question
 from app.data_client import DataClient
 
-def generate_form(field, field_widget, field_choices, isHidden=None):
+def generate_form(field, field_widget, field_choices=None, isHidden=None):
     if field.type == "boolean":
+        return forms.BooleanField(
+            label=field.content,
+            widget=field_widget,
+            required=False,
+        )
+    elif field.type == "choice":
         return forms.BooleanField(
             label=field.content,
             widget=field_widget,
@@ -121,27 +127,27 @@ class TugForm(forms.Form):
         widget = forms.CheckboxSelectMultiple,
     )
 
-class TugForm2(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super(TugForm2, self).__init__(*args, **kwargs)
-        data_client = DataClient()
-        CHOICES = (('1', 'Yes',), ('2', 'No',))
-        for test in data_client.func_test.func_test:
-            if test.name == "Timed Up and Go Test":
-                tug_test = test
-                break
-        for i, form in enumerate(tug_test.forms):
-            field_name = "form" + str(i)
-            self.fields[fieldName] = generate_form(form, field_name)
-            self.fields[fieldName] = forms.ChoiceField(
-                label = question.content,
-                widget=forms.RadioSelect, choices = CHOICES,
-                required = False,
-            )
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-tugform2'
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
+# class TugForm2(forms.Form):
+#     def __init__(self, *args, **kwargs):
+#         super(TugForm2, self).__init__(*args, **kwargs)
+#         data_client = DataClient()
+#         CHOICES = (('1', 'Yes',), ('2', 'No',))
+#         for test in data_client.func_test.func_test:
+#             if test.name == "Timed Up and Go Test":
+#                 tug_test = test
+#                 break
+#         for i, form in enumerate(tug_test.forms):
+#             field_name = "form" + str(i)
+#             self.fields[field_name] = generate_form(form, field_name)
+#             # self.fields[fieldName] = forms.ChoiceField(
+#             #     label = question.content,
+#             #     widget=forms.RadioSelect, choices = CHOICES,
+#             #     required = False,
+#             # )
+#         self.helper = FormHelper()
+#         self.helper.form_id = 'id-tugform2'
+#         self.helper.form_method = 'post'
+#         self.helper.add_input(Submit('submit', 'Submit'))
 
 class ThirtySecStandForm(forms.Form):
     def __init__(self, *args, **kwargs):

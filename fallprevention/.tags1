@@ -21,119 +21,117 @@ PrependedText	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^
 FormActions	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:7
 Question	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from .models import Question$/;"	namespace	line:9
 DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from app.data_client import DataClient$/;"	namespace	line:10
-generate_form	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def generate_form(field, field_widget, field_choices, isHidden=None):$/;"	function	line:12
-LoginForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginForm(forms.Form):$/;"	class	line:34
-identity	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    identity = forms.TypedChoiceField($/;"	variable	line:35	class:LoginForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Identify Who you are',$/;"	variable	line:36	class:LoginForm
-choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = (('patient', 'Patient'),$/;"	variable	line:37	class:LoginForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:39	class:LoginForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:41	class:LoginForm
-LoginCPForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginCPForm(forms.Form):$/;"	class	line:49
-username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:50	class:LoginCPForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Username:",$/;"	variable	line:51	class:LoginCPForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:52	class:LoginCPForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:53	class:LoginCPForm
-password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:55	class:LoginCPForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Password:",$/;"	variable	line:56	class:LoginCPForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.PasswordInput,$/;"	variable	line:57	class:LoginCPForm
+generate_form	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def generate_form(field, field_widget, field_choices=None, isHidden=None):$/;"	function	line:12
+LoginForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginForm(forms.Form):$/;"	class	line:40
+identity	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    identity = forms.TypedChoiceField($/;"	variable	line:41	class:LoginForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Identify Who you are',$/;"	variable	line:42	class:LoginForm
+choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = (('patient', 'Patient'),$/;"	variable	line:43	class:LoginForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:45	class:LoginForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:47	class:LoginForm
+LoginCPForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginCPForm(forms.Form):$/;"	class	line:55
+username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:56	class:LoginCPForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Username:",$/;"	variable	line:57	class:LoginCPForm
 max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:58	class:LoginCPForm
 required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:59	class:LoginCPForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:61	class:LoginCPForm
-SearchPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class SearchPatientForm(forms.Form):$/;"	class	line:69
-patient_name	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    patient_name = forms.CharField($/;"	variable	line:70	class:SearchPatientForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Patient Name:",$/;"	variable	line:71	class:SearchPatientForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:72	class:SearchPatientForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:73	class:SearchPatientForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:76	class:SearchPatientForm
-QuestionForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class QuestionForm(forms.Form):$/;"	class	line:85
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:87	class:QuestionForm
-TugForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class TugForm(forms.Form):$/;"	class	line:106
-tg_test_details	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    tg_test_details = forms.MultipleChoiceField($/;"	variable	line:107	class:TugForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '',$/;"	variable	line:108	class:TugForm
-choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = ($/;"	variable	line:109	class:TugForm
-initial	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        initial = None,$/;"	variable	line:119	class:TugForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:120	class:TugForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.CheckboxSelectMultiple,$/;"	variable	line:121	class:TugForm
-TugForm2	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class TugForm2(forms.Form):$/;"	class	line:124
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:125	class:TugForm2
-ThirtySecStandForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ThirtySecStandForm(forms.Form):$/;"	class	line:146
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:147	class:ThirtySecStandForm
-cs_test_details	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    cs_test_details = forms.CharField($/;"	variable	line:154	class:ThirtySecStandForm
-BalanceTestForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class BalanceTestForm(forms.Form):$/;"	class	line:159
-balance_test_detail1	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail1 = forms.CharField($/;"	variable	line:160	class:BalanceTestForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '1. Stand with your feet side to side:',$/;"	variable	line:161	class:BalanceTestForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:162	class:BalanceTestForm
-balance_test_detail2	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail2 = forms.CharField($/;"	variable	line:164	class:BalanceTestForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '2. Place the instep of one foot so it is touching the big toe of the other foot:',$/;"	variable	line:165	class:BalanceTestForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:166	class:BalanceTestForm
-balance_test_detail3	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail3 = forms.CharField($/;"	variable	line:168	class:BalanceTestForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '3. Place the instep of one foot so it is touching the big toe of the other foot:',$/;"	variable	line:169	class:BalanceTestForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:170	class:BalanceTestForm
-balance_test_detail4	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail4 = forms.CharField($/;"	variable	line:172	class:BalanceTestForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '4. Place the instep of one foot so it is touching the big toe of the other foot:',$/;"	variable	line:173	class:BalanceTestForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:174	class:BalanceTestForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:177	class:BalanceTestForm
-NoteForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class NoteForm(forms.Form):$/;"	class	line:184
-note	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    note = forms.CharField($/;"	variable	line:185	class:NoteForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.Textarea,$/;"	variable	line:186	class:NoteForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Note:',$/;"	variable	line:187	class:NoteForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:188	class:NoteForm
-MedicationsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsForm(forms.Form):$/;"	class	line:192
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:194	class:MedicationsForm
-asprin	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    asprin = forms.CharField($/;"	variable	line:201	class:MedicationsForm
-isosorbide	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    isosorbide = forms.CharField($/;"	variable	line:205	class:MedicationsForm
-ProblemsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ProblemsForm(forms.Form):$/;"	class	line:211
-problems	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    problems = forms.CharField($/;"	variable	line:212	class:ProblemsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Problems',$/;"	variable	line:213	class:ProblemsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:214	class:ProblemsForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:216	class:ProblemsForm
-MedicationsLinkedForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsLinkedForm(forms.Form):$/;"	class	line:223
-medicationsLinked	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    medicationsLinked = forms.CharField($/;"	variable	line:224	class:MedicationsLinkedForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Medications linked to Falls',$/;"	variable	line:225	class:MedicationsLinkedForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:226	class:MedicationsLinkedForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:229	class:MedicationsLinkedForm
-ResultsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ResultsForm(forms.Form):$/;"	class	line:236
-safety_brochure	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    safety_brochure = forms.BooleanField($/;"	variable	line:238	class:ResultsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Check for Safety Brochure",$/;"	variable	line:239	class:ResultsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:240	class:ResultsForm
-prevent_falls	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    prevent_falls = forms.BooleanField($/;"	variable	line:243	class:ResultsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What Can You Do to Prevent Falls",$/;"	variable	line:244	class:ResultsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:245	class:ResultsForm
-vitamin_d	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    vitamin_d = forms.BooleanField($/;"	variable	line:248	class:ResultsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Patient is currently taking at least 800 IU of Vitamin D",$/;"	variable	line:249	class:ResultsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:250	class:ResultsForm
-calcium	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    calcium = forms.BooleanField($/;"	variable	line:253	class:ResultsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Patient is currently taking enough calcium",$/;"	variable	line:254	class:ResultsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:255	class:ResultsForm
-gsb_pt	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    gsb_pt = forms.BooleanField($/;"	variable	line:258	class:ResultsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "PT to improve gait, strength and balance",$/;"	variable	line:259	class:ResultsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:260	class:ResultsForm
-exercise_program	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    exercise_program = forms.BooleanField($/;"	variable	line:263	class:ResultsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Fall prevention\/Community exercise program",$/;"	variable	line:264	class:ResultsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:265	class:ResultsForm
-review_safety	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    review_safety = forms.BooleanField($/;"	variable	line:268	class:ResultsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Reviewed home safety with patient",$/;"	variable	line:269	class:ResultsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:270	class:ResultsForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:273	class:ResultsForm
-MessageForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MessageForm(forms.Form):$/;"	class	line:303
-like_website	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    like_website = forms.TypedChoiceField($/;"	variable	line:304	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Do you like this website?",$/;"	variable	line:305	class:MessageForm
-choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = ((1, "Yes"), (0, "No")),$/;"	variable	line:306	class:MessageForm
-coerce	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        coerce = lambda x: bool(int(x)),$/;"	variable	line:307	class:MessageForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.RadioSelect,$/;"	variable	line:308	class:MessageForm
-initial	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        initial = '1',$/;"	variable	line:309	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:310	class:MessageForm
-favorite_food	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_food = forms.CharField($/;"	variable	line:313	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite food?",$/;"	variable	line:314	class:MessageForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:315	class:MessageForm
+password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:61	class:LoginCPForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Password:",$/;"	variable	line:62	class:LoginCPForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.PasswordInput,$/;"	variable	line:63	class:LoginCPForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:64	class:LoginCPForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:65	class:LoginCPForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:67	class:LoginCPForm
+SearchPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class SearchPatientForm(forms.Form):$/;"	class	line:75
+patient_name	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    patient_name = forms.CharField($/;"	variable	line:76	class:SearchPatientForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Patient Name:",$/;"	variable	line:77	class:SearchPatientForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:78	class:SearchPatientForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:79	class:SearchPatientForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:82	class:SearchPatientForm
+QuestionForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class QuestionForm(forms.Form):$/;"	class	line:91
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:93	class:QuestionForm
+TugForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class TugForm(forms.Form):$/;"	class	line:112
+tg_test_details	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    tg_test_details = forms.MultipleChoiceField($/;"	variable	line:113	class:TugForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '',$/;"	variable	line:114	class:TugForm
+choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = ($/;"	variable	line:115	class:TugForm
+initial	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        initial = None,$/;"	variable	line:125	class:TugForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:126	class:TugForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.CheckboxSelectMultiple,$/;"	variable	line:127	class:TugForm
+ThirtySecStandForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ThirtySecStandForm(forms.Form):$/;"	class	line:152
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:153	class:ThirtySecStandForm
+cs_test_details	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    cs_test_details = forms.CharField($/;"	variable	line:160	class:ThirtySecStandForm
+BalanceTestForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class BalanceTestForm(forms.Form):$/;"	class	line:165
+balance_test_detail1	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail1 = forms.CharField($/;"	variable	line:166	class:BalanceTestForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '1. Stand with your feet side to side:',$/;"	variable	line:167	class:BalanceTestForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:168	class:BalanceTestForm
+balance_test_detail2	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail2 = forms.CharField($/;"	variable	line:170	class:BalanceTestForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '2. Place the instep of one foot so it is touching the big toe of the other foot:',$/;"	variable	line:171	class:BalanceTestForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:172	class:BalanceTestForm
+balance_test_detail3	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail3 = forms.CharField($/;"	variable	line:174	class:BalanceTestForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '3. Place the instep of one foot so it is touching the big toe of the other foot:',$/;"	variable	line:175	class:BalanceTestForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:176	class:BalanceTestForm
+balance_test_detail4	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    balance_test_detail4 = forms.CharField($/;"	variable	line:178	class:BalanceTestForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = '4. Place the instep of one foot so it is touching the big toe of the other foot:',$/;"	variable	line:179	class:BalanceTestForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:180	class:BalanceTestForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:183	class:BalanceTestForm
+NoteForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class NoteForm(forms.Form):$/;"	class	line:190
+note	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    note = forms.CharField($/;"	variable	line:191	class:NoteForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.Textarea,$/;"	variable	line:192	class:NoteForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Note:',$/;"	variable	line:193	class:NoteForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:194	class:NoteForm
+MedicationsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsForm(forms.Form):$/;"	class	line:198
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:200	class:MedicationsForm
+asprin	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    asprin = forms.CharField($/;"	variable	line:207	class:MedicationsForm
+isosorbide	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    isosorbide = forms.CharField($/;"	variable	line:211	class:MedicationsForm
+ProblemsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ProblemsForm(forms.Form):$/;"	class	line:217
+problems	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    problems = forms.CharField($/;"	variable	line:218	class:ProblemsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Problems',$/;"	variable	line:219	class:ProblemsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:220	class:ProblemsForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:222	class:ProblemsForm
+MedicationsLinkedForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsLinkedForm(forms.Form):$/;"	class	line:229
+medicationsLinked	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    medicationsLinked = forms.CharField($/;"	variable	line:230	class:MedicationsLinkedForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Medications linked to Falls',$/;"	variable	line:231	class:MedicationsLinkedForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:232	class:MedicationsLinkedForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:235	class:MedicationsLinkedForm
+ResultsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ResultsForm(forms.Form):$/;"	class	line:242
+safety_brochure	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    safety_brochure = forms.BooleanField($/;"	variable	line:244	class:ResultsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Check for Safety Brochure",$/;"	variable	line:245	class:ResultsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:246	class:ResultsForm
+prevent_falls	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    prevent_falls = forms.BooleanField($/;"	variable	line:249	class:ResultsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What Can You Do to Prevent Falls",$/;"	variable	line:250	class:ResultsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:251	class:ResultsForm
+vitamin_d	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    vitamin_d = forms.BooleanField($/;"	variable	line:254	class:ResultsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Patient is currently taking at least 800 IU of Vitamin D",$/;"	variable	line:255	class:ResultsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:256	class:ResultsForm
+calcium	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    calcium = forms.BooleanField($/;"	variable	line:259	class:ResultsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Patient is currently taking enough calcium",$/;"	variable	line:260	class:ResultsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:261	class:ResultsForm
+gsb_pt	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    gsb_pt = forms.BooleanField($/;"	variable	line:264	class:ResultsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "PT to improve gait, strength and balance",$/;"	variable	line:265	class:ResultsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:266	class:ResultsForm
+exercise_program	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    exercise_program = forms.BooleanField($/;"	variable	line:269	class:ResultsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Fall prevention\/Community exercise program",$/;"	variable	line:270	class:ResultsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:271	class:ResultsForm
+review_safety	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    review_safety = forms.BooleanField($/;"	variable	line:274	class:ResultsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Reviewed home safety with patient",$/;"	variable	line:275	class:ResultsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:276	class:ResultsForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:279	class:ResultsForm
+MessageForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MessageForm(forms.Form):$/;"	class	line:309
+like_website	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    like_website = forms.TypedChoiceField($/;"	variable	line:310	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Do you like this website?",$/;"	variable	line:311	class:MessageForm
+choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = ((1, "Yes"), (0, "No")),$/;"	variable	line:312	class:MessageForm
+coerce	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        coerce = lambda x: bool(int(x)),$/;"	variable	line:313	class:MessageForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.RadioSelect,$/;"	variable	line:314	class:MessageForm
+initial	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        initial = '1',$/;"	variable	line:315	class:MessageForm
 required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:316	class:MessageForm
-favorite_color	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_color = forms.CharField($/;"	variable	line:319	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite color?",$/;"	variable	line:320	class:MessageForm
+favorite_food	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_food = forms.CharField($/;"	variable	line:319	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite food?",$/;"	variable	line:320	class:MessageForm
 max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:321	class:MessageForm
 required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:322	class:MessageForm
-favorite_number	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_number = forms.IntegerField($/;"	variable	line:325	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Favorite number",$/;"	variable	line:326	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:327	class:MessageForm
-notes	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    notes = forms.CharField($/;"	variable	line:330	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Additional notes or feedback",$/;"	variable	line:331	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:332	class:MessageForm
+favorite_color	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_color = forms.CharField($/;"	variable	line:325	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite color?",$/;"	variable	line:326	class:MessageForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:327	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:328	class:MessageForm
+favorite_number	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_number = forms.IntegerField($/;"	variable	line:331	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Favorite number",$/;"	variable	line:332	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:333	class:MessageForm
+notes	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    notes = forms.CharField($/;"	variable	line:336	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Additional notes or feedback",$/;"	variable	line:337	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:338	class:MessageForm

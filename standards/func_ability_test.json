@@ -9,7 +9,8 @@
     "forms": [
       {
         "content": "Patient unable to do TUG",
-        "type": "boolean"
+        "type": "boolean",
+        "is_key": false
       },
       {
         "content": "TUG Time (seconds): ",
