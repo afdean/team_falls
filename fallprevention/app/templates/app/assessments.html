@@ -29,15 +29,8 @@
     <form method='post' id="assessments">
         {% csrf_token %}
         <div class="row assessment_block form-group" id="tug">
-            {% for field in tug_form%}
-            <div class="container">
-                <div class="row">
-                    <h4> Time Up and Go (Recommended) </h4>
-
-                    {{field}}
-                </div>
-            </div>
-            {% endfor %}
+            <h4> Timed Up and Go test </h4>
+            {{ tug_form }}
         </div>
 
         <div class="row assessment_block form-group" id="30_sec_stand">

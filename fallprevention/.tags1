@@ -96,26 +96,26 @@ required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^     
 review_safety	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    review_safety = forms.BooleanField($/;"	variable	line:302	class:ResultsForm
 label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Reviewed home safety with patient",$/;"	variable	line:303	class:ResultsForm
 required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False$/;"	variable	line:304	class:ResultsForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:307	class:ResultsForm
-MessageForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MessageForm(forms.Form):$/;"	class	line:335
-like_website	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    like_website = forms.TypedChoiceField($/;"	variable	line:336	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Do you like this website?",$/;"	variable	line:337	class:MessageForm
-choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = ((1, "Yes"), (0, "No")),$/;"	variable	line:338	class:MessageForm
-coerce	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        coerce = lambda x: bool(int(x)),$/;"	variable	line:339	class:MessageForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.RadioSelect,$/;"	variable	line:340	class:MessageForm
-initial	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        initial = '1',$/;"	variable	line:341	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:342	class:MessageForm
-favorite_food	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_food = forms.CharField($/;"	variable	line:345	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite food?",$/;"	variable	line:346	class:MessageForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:347	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:348	class:MessageForm
-favorite_color	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_color = forms.CharField($/;"	variable	line:351	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite color?",$/;"	variable	line:352	class:MessageForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:353	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:354	class:MessageForm
-favorite_number	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_number = forms.IntegerField($/;"	variable	line:357	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Favorite number",$/;"	variable	line:358	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:359	class:MessageForm
-notes	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    notes = forms.CharField($/;"	variable	line:362	class:MessageForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Additional notes or feedback",$/;"	variable	line:363	class:MessageForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:364	class:MessageForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:309	class:ResultsForm
+MessageForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MessageForm(forms.Form):$/;"	class	line:355
+like_website	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    like_website = forms.TypedChoiceField($/;"	variable	line:356	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Do you like this website?",$/;"	variable	line:357	class:MessageForm
+choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices = ((1, "Yes"), (0, "No")),$/;"	variable	line:358	class:MessageForm
+coerce	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        coerce = lambda x: bool(int(x)),$/;"	variable	line:359	class:MessageForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget = forms.RadioSelect,$/;"	variable	line:360	class:MessageForm
+initial	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        initial = '1',$/;"	variable	line:361	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:362	class:MessageForm
+favorite_food	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_food = forms.CharField($/;"	variable	line:365	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite food?",$/;"	variable	line:366	class:MessageForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:367	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:368	class:MessageForm
+favorite_color	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_color = forms.CharField($/;"	variable	line:371	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "What is your favorite color?",$/;"	variable	line:372	class:MessageForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length = 80,$/;"	variable	line:373	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = True,$/;"	variable	line:374	class:MessageForm
+favorite_number	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    favorite_number = forms.IntegerField($/;"	variable	line:377	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Favorite number",$/;"	variable	line:378	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:379	class:MessageForm
+notes	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    notes = forms.CharField($/;"	variable	line:382	class:MessageForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Additional notes or feedback",$/;"	variable	line:383	class:MessageForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:384	class:MessageForm

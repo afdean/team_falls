@@ -304,29 +304,49 @@ class ResultsForm(forms.Form):
         required = False
     )
 
+
+
     def __init__(self, *args, **kwargs):
         super(ResultsForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
+        test_array = [Fieldset(
+            'Patient Education (Handouts)',
+            'safety_brochure'
+        ),
+        Fieldset(
+            'Vitamin D and Calcium',
+            'vitamin_d',
+            'calcium'
+        ),
+        Fieldset(
+            'Referrals',
+            'gsb_pt',
+            'exercise_program'
+        ),
+        Fieldset(
+            'Home Safety',
+            'review_safety'
+        )]
         self.helper.layout = Layout(
-            Fieldset(
-                'Patient Education (Handouts)',
-                'safety_brochure'
-            ),
-            Fieldset(
-                'Vitamin D and Calcium',
-                'vitamin_d',
-                'calcium'
-            ),
-            Fieldset(
-                'Referrals',
-                'gsb_pt',
-                'exercise_program'
-            ),
-            Fieldset(
-                'Home Safety',
-                'review_safety'
-            )
-
+            x for x in test_array
+            # Fieldset(
+            #     'Patient Education (Handouts)',
+            #     'safety_brochure'
+            # ),
+            # Fieldset(
+            #     'Vitamin D and Calcium',
+            #     'vitamin_d',
+            #     'calcium'
+            # ),
+            # Fieldset(
+            #     'Referrals',
+            #     'gsb_pt',
+            #     'exercise_program'
+            # ),
+            # Fieldset(
+            #     'Home Safety',
+            #     'review_safety'
+            # )
         )
         self.helper.form_id = 'id-resultsForm'
         self.helper.form_method = 'post'
