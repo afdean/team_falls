@@ -2,6 +2,7 @@
   "questions": [
     {
       "content": "I have fallen in the past year",
+      "type": "boolean",
       "code": "",
       "score": 2,
       "is_key": true,
@@ -10,6 +11,7 @@
       "follow_up": [
         {
           "content": "I have fallen more than once in the past year",
+          "type": "boolean",
           "code": "",
           "score": 0,
           "is_key": false,
@@ -18,6 +20,7 @@
         },
         {
           "content": "I have been injured from a fall in the past year",
+          "type": "boolean",
           "code": "",
           "score": 0,
           "is_key": false,
@@ -28,6 +31,7 @@
     },
     {
       "content": "Sometimes I feel unsteady when I am walking",
+      "type": "boolean",
       "code": "",
       "score": 2,
       "is_key": true,
@@ -36,6 +40,7 @@
     },
     {
       "content": "I am worried about falling",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": true,
@@ -44,6 +49,7 @@
     },
     {
       "content": "I use or have been advised to use a cane or walker to get around safely",
+      "type": "boolean",
       "code": "",
       "score": 2,
       "is_key": false,
@@ -53,6 +59,7 @@
     },
     {
       "content": "I steady myself by holding onto furniture when walking at home",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": false,
@@ -62,6 +69,7 @@
     },
     {
       "content": "I need to push with my hands to stand up from a chair",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": false,
@@ -71,6 +79,7 @@
     },
     {
       "content": "I have some trouble stepping up onto a curb",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": false,
@@ -79,6 +88,7 @@
     },
     {
       "content": "I often have to rush to the toilet",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": false,
@@ -87,6 +97,7 @@
     },
     {
       "content": "I have lost some feeling in my feet",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": false,
@@ -95,6 +106,7 @@
     },
     {
       "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
+      "type": "boolean",
       "code": "",
       "score": "1",
       "is_key": false,
@@ -103,6 +115,7 @@
     },
     {
       "content": "I take medicine to help me sleep or improve my mood",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": false,
@@ -111,6 +124,7 @@
     },
     {
       "content": "I often feel sad or depressed",
+      "type": "boolean",
       "code": "",
       "score": 1,
       "is_key": false,
