@@ -5,7 +5,8 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-from app.forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm ,MedicationsForm,ThirtySecStandForm
+# from app.forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm, MedicationsForm, ThirtySecStandForm, ResultsForm
+from app.forms import *
 from app.models import Question, FuncAbilityTest, TestParameter
 from app.data_client import DataClient
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -118,6 +119,10 @@ def results(request):
     results_form = ResultsForm()
     return render(request, 'app/results.html', {'results_form': results_form, 'patient': patient})
 
+def exams(request):
+    patient = request.session.get('patient', '')
+    exams_form = ExamsForm()
+    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': patient})
 
 # User Login - Currently not working
 def user_login(request):

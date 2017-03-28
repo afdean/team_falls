@@ -1,0 +1,7 @@
+{% extends 'app/baseWithSideBar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <p>welcome! {{ patient.name }} </p>
+    {% crispy exams_form %}
+{% endblock %}

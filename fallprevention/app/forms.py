@@ -254,6 +254,19 @@ class MedicationsLinkedForm(forms.Form):
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
+class ExamsForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(ExamsForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        for exam in data_client.physical_exam:
+            for i, form in enumerate(exam.forms):
+                field_name = "form" + str(i)
+                self.fields[field_name] = generate_form(form)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-tugform2'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
+
 class ResultsForm(forms.Form):
     #Hard code an example results page. Until we figure out how to do it dynamically.
     safety_brochure = forms.BooleanField(
