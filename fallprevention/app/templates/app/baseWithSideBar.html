@@ -6,18 +6,17 @@
       <div class="patient-info">
         <li class="" id="patient-name">Lusenii Kromah</li>
         <li class="" id="patient-age">Age: 22</li>
-        <li class="" id="patient-score">Today's Score: <p id="score">0</p></li>
+        <li class="" id="patient-score">Score: 0</li>
       </div>
       <!--END-->
 
-      <li><a href="#">Patient History</a></li>
 
           <li><a href="{% url 'questions' %}">Fall Screening</a></li>
           <li><a href="{% url 'assessments' %}">Assessment</a></li>
           <li><a href="{% url 'medications' %}">Medications</a></li>
           <li><a href="{% url 'exams' %}">Exams</a></li>
           <li><a href="{% url 'results' %}">Results</a></li>
-
+             <li><a href="{% url 'risks' %}">Risks</a></li>
     </ul>
 
 {%endblock%}
