@@ -274,86 +274,24 @@ class ExamsForm(forms.Form):
         self.helper.add_input(Submit('submit', 'Submit'))
 
 class ResultsForm(forms.Form):
-    #Hard code an example results page. Until we figure out how to do it dynamically.
-    safety_brochure = forms.BooleanField(
-        label = "Check for Safety Brochure",
-        required = False
-    )
-
-    prevent_falls = forms.BooleanField(
-        label = "What Can You Do to Prevent Falls",
-        required = False
-    )
-
-    vitamin_d = forms.BooleanField(
-        label = "Patient is currently taking at least 800 IU of Vitamin D",
-        required = False
-    )
-
-    calcium = forms.BooleanField(
-        label = "Patient is currently taking enough calcium",
-        required = False
-    )
-
-    gsb_pt = forms.BooleanField(
-        label = "PT to improve gait, strength and balance",
-        required = False
-    )
-
-    exercise_program = forms.BooleanField(
-        label = "Fall prevention/Community exercise program",
-        required = False
-    )
-
-    review_safety = forms.BooleanField(
-        label = "Reviewed home safety with patient",
-        required = False
-    )
-
+    """
+    This is a generic results form that will show every intervention
+    """
     def __init__(self, *args, **kwargs):
         super(ResultsForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
         self.helper = FormHelper()
-        test_array = [Fieldset('Patient Education (Handouts)', 'safety_brochure'),
-        Fieldset(
-            'Vitamin D and Calcium',
-            'vitamin_d',
-            'calcium',
-        ),
-        Fieldset(
-            'Referrals',
-            'gsb_pt',
-            'exercise_program',
-        ),
-        Fieldset(
-            'Home Safety',
-            'review_safety',
-        )]
-        # self.helper.layout = Layout(
-        #     # x for x in test_array
-        #     Fieldset(
-        #         'Patient Education (Handouts)',
-        #         'safety_brochure'
-        #     ),
-        #     Fieldset(
-        #         'Vitamin D and Calcium',
-        #         'vitamin_d',
-        #         'calcium'
-        #     ),
-        #     Fieldset(
-        #         'Referrals',
-        #         'gsb_pt',
-        #         'exercise_program'
-        #     ),
-        #     Fieldset(
-        #         'Home Safety',
-        #         'review_safety'
-        #     )
-        # )
+        j = 0
         self.helper.layout = Layout()
-        for x in test_array:
-            self.helper.layout.append(x)
-
-        self.helper.form_id = 'id-resultsForm'
+        for intervention in data_client.intervention_list:
+            intervention_fieldset = Fieldset(intervention.name)
+            for i, form in enumerate(intervention.forms):
+                field_name = str(j)
+                j = j + 1
+                self.fields[field_name] = generate_form(form)
+                intervention_fieldset.append(Field(field_name))
+            self.helper.layout.append(intervention_fieldset)
+        self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
