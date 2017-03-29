@@ -1,6 +1,11 @@
 {% extends 'app/baseWithSideBar.html' %}
 {% load crispy_forms_tags %}
+{%load static%}
 
 {% block content %}
-   <p> Thank you</p>
+   <center><h1> Activity Complete</h1></center>
+
+<div class="completion">
+   <center><img src="{% static 'img/completed.svg'%}" id="completed_image" align="middle" /></center>
+</div>
 {% endblock %}

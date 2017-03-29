@@ -1,5 +1,67 @@
-{% extends 'app/baseWithSideBar.html' %}
-{% load crispy_forms_tags %}
-{% block content %}
+{% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
+<div class="container">
 
+
+
+
+    <form method='post' id="risk_form">
+        {% csrf_token %}
+
+        <div class="row form-group assessment_block" id="patient_education">
+            <h3>Interventions</h3>
+
+            <div class="col-md-6">
+                <!--where form should go-->
+            </div>
+            <div class="col-md-6">
+                <div class="container">
+                    <h5>Risk Levels</h5>
+                    <div class="row">
+
+                        <div class="col-xs-3">
+                            <a href=""><button class="btn btn-success risk_button" id="low" type="button" >Low</button></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <a href=""><button class="btn btn-success risk_button" id="med" type="button" >Medium</button></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <a href=""><button class="btn btn-success risk_button" id="high" type="button" >High</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row assessment_block form-group" id="patient_education">
+            <h4>Patient Education</h4>
+            <div class="row justify-content-end">
+              <!--where form should go-->
+            </div>
+            
+            <div class="row justify-content-end">
+                <div class="col-xs-3">
+                    <a href=""><button class="btn btn-success" type="button" >Print Brochure</button></a>
+                </div>
+                <div class="col-xs-3">
+                    <button class="btn btn-info" type="button">Print Handouts</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row assessment_block form-group" id="risk_notes">
+            <label for="comment">Notes:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+
+        <div class="row form-group" id="submit_risk_button">
+            <div class="col-xs-12 text-center">
+                <button class="btn btn-primary" type="button" id="risks_submit_button">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
 {% endblock %}

@@ -1,19 +1,19 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-{%load static%}
+<!DOCTYPE html> {%load static%}
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-    <title> {% block title %}Fall Prevention{% endblock %}</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+  <title> {% block title %}Fall Prevention{% endblock %}</title>
+
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
@@ -24,19 +24,18 @@
   <link href="{%static 'css/questions.css' %}" rel="stylesheet">
   <link href="{%static 'css/assessments.css'%}" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-  <link rel="stylesheet" href="{%static 'css/medications.css'%}"/>
+  <link rel="stylesheet" href="{%static 'css/medications.css'%}" />
+  <link rel="stylesheet" href="{%static 'css/risks.css'%}" />
   <style>
 
   </style>
 </head>
-
 <body>
   <!--BEGIN NAV-->
   <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #075290" role="navigation">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: white;" href="">CDC Fall Prevention</a>
-      </div>
-
+      <a class="navbar-brand" style="color: white;" href="/app/search">CDC Fall Prevention</a>
+    </div>
     </div>
   </nav>
   <!--END NAV-->
@@ -55,9 +54,11 @@
 
     </div>
   </div>
-    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/assessments.js' %}"></script>
+  <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/assessments.js' %}"></script>
+  <script src="{%static 'js/completed.js'%}"></script>
+
 </body>
 
 </html>

@@ -20,6 +20,8 @@ body {
   list-style: none;
   margin-bottom: 30px;
 }
+
+
 #patient-age,#patient-score{
 font-size: 14px;
 }

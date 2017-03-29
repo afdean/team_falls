@@ -11,12 +11,12 @@
       <!--END-->
 
 
-          <li><a href="{% url 'questions' %}">Fall Screening</a></li>
-          <li><a href="{% url 'assessments' %}">Assessment</a></li>
-          <li><a href="{% url 'medications' %}">Medications</a></li>
-          <li><a href="{% url 'exams' %}">Exams</a></li>
-          <li><a href="{% url 'results' %}">Results</a></li>
-             <li><a href="{% url 'risks' %}">Risks</a></li>
+          <li id="questions_li"><a href="{% url 'questions' %}" >Fall Screening</a></li>
+          <li><a href="{% url 'assessments' %}" id="assessments_li">Assessment</a></li>
+          <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
+          <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
+          <li><a href="{% url 'results' %}" id="results_li">Results</a></li>
+          <li><a href="{% url 'risks' %}" id="risks_li">Risks</a></li>
     </ul>
 
 {%endblock%}
