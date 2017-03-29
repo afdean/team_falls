@@ -258,11 +258,17 @@ class ExamsForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(ExamsForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
-        for exam in data_client.physical_exam:
-            for i, form in enumerate(exam.forms):
-                field_name = form.content
-                self.fields[field_name] = generate_form(form)
         self.helper = FormHelper()
+        j = 0
+        self.helper.layout = Layout()
+        for exam in data_client.physical_exam:
+            exam_fieldset = Fieldset(exam.name)
+            for i, form in enumerate(exam.forms):
+                field_name = str(j)
+                j = j + 1
+                self.fields[field_name] = generate_form(form)
+                exam_fieldset.append(Field(field_name))
+            self.helper.layout.append(exam_fieldset)
         self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
@@ -304,50 +310,49 @@ class ResultsForm(forms.Form):
         required = False
     )
 
-
-
     def __init__(self, *args, **kwargs):
         super(ResultsForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
-        test_array = [Fieldset(
-            'Patient Education (Handouts)',
-            'safety_brochure'
-        ),
+        test_array = [Fieldset('Patient Education (Handouts)', 'safety_brochure'),
         Fieldset(
             'Vitamin D and Calcium',
             'vitamin_d',
-            'calcium'
+            'calcium',
         ),
         Fieldset(
             'Referrals',
             'gsb_pt',
-            'exercise_program'
+            'exercise_program',
         ),
         Fieldset(
             'Home Safety',
-            'review_safety'
+            'review_safety',
         )]
-        self.helper.layout = Layout(
-            x for x in test_array
-            # Fieldset(
-            #     'Patient Education (Handouts)',
-            #     'safety_brochure'
-            # ),
-            # Fieldset(
-            #     'Vitamin D and Calcium',
-            #     'vitamin_d',
-            #     'calcium'
-            # ),
-            # Fieldset(
-            #     'Referrals',
-            #     'gsb_pt',
-            #     'exercise_program'
-            # ),
-            # Fieldset(
-            #     'Home Safety',
-            #     'review_safety'
-            # )
-        )
+        # self.helper.layout = Layout(
+        #     # x for x in test_array
+        #     Fieldset(
+        #         'Patient Education (Handouts)',
+        #         'safety_brochure'
+        #     ),
+        #     Fieldset(
+        #         'Vitamin D and Calcium',
+        #         'vitamin_d',
+        #         'calcium'
+        #     ),
+        #     Fieldset(
+        #         'Referrals',
+        #         'gsb_pt',
+        #         'exercise_program'
+        #     ),
+        #     Fieldset(
+        #         'Home Safety',
+        #         'review_safety'
+        #     )
+        # )
+        self.helper.layout = Layout()
+        for x in test_array:
+            self.helper.layout.append(x)
+
         self.helper.form_id = 'id-resultsForm'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
