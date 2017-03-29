@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^medications/$', app_views.medications, name="medications"),
     url(r'^results/$', app_views.results, name="results"),
     url(r'^exams/$', app_views.exams, name="exams"),
+     url(r'^risks/$', app_views.exams, name="risks"),
     # url(r'^login/$', views.user_login, name='login'),
 ]

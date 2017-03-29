@@ -165,3 +165,7 @@ def user_login(request):
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
         return render(request, 'app/login.html', {})
+
+def risks(request):
+    
+    return render(request, 'app/risks.html', {})
