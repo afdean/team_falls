@@ -9,31 +9,29 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from .models import Question
 from app.data_client import DataClient
 
-def generate_form(field, field_widget=None, field_choices=None, isHidden=None):
+def generate_form(field, field_widget = None, field_choices = None):
     if field.type == "boolean":
         return forms.BooleanField(
-            label=field.content,
-            required=False,
+            label = field.content,
+            required = False,
         )
     elif field.type == "choice":
         return forms.ChoiceField(
-            label=field.content,
-            widget=field_widget,
-            choices=field_choices,
-            required=False,
+            label = field.content,
+            widget = field_widget,
+            choices = field_choices,
+            required = False,
         )
     elif field.type == "integer":
         return forms.IntegerField(
-            label=field.content,
-            required=False,
+            label = field.content,
+            required = False,
         )
     elif field.type == "char":
         return forms.CharField(
-            label=field.content,
-            required=False,
+            label = field.content,
+            required = False,
         )
-    if isHidden:
-        self.fields[field_name].widget = forms.HiddenInput()
 
 class LoginForm(forms.Form):
     identity = forms.TypedChoiceField(
@@ -117,6 +115,31 @@ class QuestionForm(forms.Form):
 #         required = False,
 #         widget = forms.CheckboxSelectMultiple,
 #     )
+
+class AssessmentForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        assessments_chosen = kwargs.pop('assessments_chosen', None)
+        super(AssessmentForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        for name in assessments_chosen:
+            print (name)
+        if assessments_chosen:
+            for test in data_client.func_test:
+                if test.name in assessments_chosen:
+                    for i, form in enumerate(test.forms):
+                        field_name = test.name + "_form" + str(i)
+                        self.fields[field_name] = generate_form(form, None, None)
+                        # self.fields[field_name].widget = forms.HiddenInput()
+        else:
+            for test in data_client.func_test:
+                self.fields[test.name] = forms.BooleanField(
+                    label = test.name,
+                    required = False,
+                )
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-assessmentForm'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))
 
 class TugForm(forms.Form):
     def __init__(self, *args, **kwargs):

@@ -46,8 +46,8 @@ def login_cp(request):
     if request.method == 'POST':
         login_cp_form = LoginCPForm(request.POST)
         if login_cp_form.is_valid():
-            url = '/app/search/patient/'
-            # login_cp_form.helper.form_action = url
+            url = '/app/test/'
+            request.session['assessments_chosen'] = [];
             return HttpResponseRedirect(url)
     else:
         login_cp_form = LoginCPForm()
@@ -69,13 +69,6 @@ def searchPatient(request):
     return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form})
 
 def questions(request):
-    # questions = Question.objects.all()
-
-    # forms = []
-    # for i in range(0, len(questions)):
-    #     forms.append(QuestionForm(request.POST, instance=questions[i]))
-    # return render(request, 'app/questions.html', {'form': form, 'questions': questions})
-
     patient = request.session.get('patient', '')
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
@@ -93,6 +86,37 @@ def questions(request):
 
 def thankyou(request):
     return render(request, 'app/thankyou.html')
+
+def test(request):
+
+    assessments_chosen = request.session.get('assessments_chosen', []);
+    patient = request.session.get('patient', '')
+    if request.method == 'POST':
+        assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
+        if assessments_form.is_valid():
+            if assessments_chosen:
+                request.session['assessments_chosen'] = []
+                return HttpResponseRedirect('/app/thankyou/')
+            else:
+                chosen_list = []
+                for field in assessments_form.fields:
+                    if (assessments_form.cleaned_data[field]):
+                        chosen_list.append(field)
+                request.session['assessments_chosen'] = chosen_list
+                assessments_form = AssessmentForm(assessments_chosen = chosen_list);
+    else:
+        assessments_form = AssessmentForm(assessments_chosen = []);
+    return render(request, 'app/test.html', { 'assessments_form': assessments_form, 'patient': patient})
+
+def test_details(request):
+    patient = request.session.get('patient', '')
+    if request.method == 'POST':
+        assessments_form = AssessmentForm(request.POST);
+        if assessments_form.is_valid():
+            return HttpResponseRedirect('/app/assessments/details')
+    else:
+        assessments_form = AssessmentForm();
+    return render(request, 'app/test.html', { 'assessments_form': assessments_form, 'patient': patient})
 
 def assessments(request):
     patient = request.session.get('patient', '')
