@@ -17,8 +17,9 @@ AUTH_PASSWORD_VALIDATORS	fallprevention/fallprevention/settings.py	/^AUTH_PASSWO
 AppConfig	fallprevention/app/apps.py	/^class AppConfig(AppConfig):$/;"	kind:class	line:6
 AppConfig	fallprevention/app/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:3
 AppendedText	fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	kind:namespace	line:7
+AssessmentForm	fallprevention/app/forms.py	/^class AssessmentForm(forms.Form):$/;"	kind:class	line:119
 BASE_DIR	fallprevention/fallprevention/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
-BalanceTestForm	fallprevention/app/forms.py	/^class BalanceTestForm(forms.Form):$/;"	kind:class	line:191
+BalanceTestForm	fallprevention/app/forms.py	/^class BalanceTestForm(forms.Form):$/;"	kind:class	line:214
 Button	fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	kind:namespace	line:6
 CACHES	fallprevention/fallprevention/settings.py	/^CACHES = {$/;"	kind:variable	line:131
 CRISPY_TEMPLATE_PACK	fallprevention/fallprevention/settings.py	/^CRISPY_TEMPLATE_PACK = 'bootstrap4'$/;"	kind:variable	line:139
@@ -29,7 +30,7 @@ DataClient	fallprevention/app/forms.py	/^from app.data_client import DataClient$
 DataClient	fallprevention/app/views.py	/^from app.data_client import DataClient$/;"	kind:namespace	line:11
 Div	fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	kind:namespace	line:6
 EmptyPage	fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	kind:namespace	line:12
-ExamsForm	fallprevention/app/forms.py	/^class ExamsForm(forms.Form):$/;"	kind:class	line:257
+ExamsForm	fallprevention/app/forms.py	/^class ExamsForm(forms.Form):$/;"	kind:class	line:280
 FAT_URL	fallprevention/app/constants.py	/^FAT_URL = "https:\/\/raw.githubusercontent.com\/akapusta\/team_falls\/master\/standards\/func_ability_test.json"$/;"	kind:variable	line:6
 FallsFHIRClient	fallprevention/app/fhir_reading.py	/^class FallsFHIRClient(object):$/;"	kind:class	line:22
 FallsFHIRClient	fallprevention/app/fhir_reading_python2.py	/^class FallsFHIRClient(object):$/;"	kind:class	line:22
@@ -50,8 +51,8 @@ INTERVENTION_URL	fallprevention/app/constants.py	/^INTERVENTION_URL = "https:\/\
 LANGUAGE_CODE	fallprevention/fallprevention/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:108
 LOGIN_URL	fallprevention/fallprevention/settings.py	/^LOGIN_URL = '\/app\/login\/'$/;"	kind:variable	line:124
 Layout	fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	kind:namespace	line:6
-LoginCPForm	fallprevention/app/forms.py	/^class LoginCPForm(forms.Form):$/;"	kind:class	line:53
-LoginForm	fallprevention/app/forms.py	/^class LoginForm(forms.Form):$/;"	kind:class	line:38
+LoginCPForm	fallprevention/app/forms.py	/^class LoginCPForm(forms.Form):$/;"	kind:class	line:51
+LoginForm	fallprevention/app/forms.py	/^class LoginForm(forms.Form):$/;"	kind:class	line:36
 MEDIA_ROOT	fallprevention/fallprevention/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory$/;"	kind:variable	line:125
 MEDIA_URL	fallprevention/fallprevention/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:123
 MEDICATION_URL	fallprevention/app/constants.py	/^MEDICATION_URL = "https:\/\/raw.githubusercontent.com\/akapusta\/team_falls\/master\/standards\/medication.json"$/;"	kind:variable	line:7
@@ -59,9 +60,9 @@ MIDDLEWARE	fallprevention/fallprevention/settings.py	/^MIDDLEWARE = [$/;"	kind:v
 Medication	fallprevention/app/admin.py	/^from .models import Question, Medication, FuncAbilityTest, TestParameter$/;"	kind:namespace	line:4
 Medication	fallprevention/app/models.py	/^class Medication(models.Model):$/;"	kind:class	line:26
 MedicationAdmin	fallprevention/app/admin.py	/^class MedicationAdmin(admin.ModelAdmin):$/;"	kind:class	line:9
-MedicationsForm	fallprevention/app/forms.py	/^class MedicationsForm(forms.Form):$/;"	kind:class	line:214
-MedicationsLinkedForm	fallprevention/app/forms.py	/^class MedicationsLinkedForm(forms.Form):$/;"	kind:class	line:244
-MessageForm	fallprevention/app/forms.py	/^class MessageForm(forms.Form):$/;"	kind:class	line:335
+MedicationsForm	fallprevention/app/forms.py	/^class MedicationsForm(forms.Form):$/;"	kind:class	line:237
+MedicationsLinkedForm	fallprevention/app/forms.py	/^class MedicationsLinkedForm(forms.Form):$/;"	kind:class	line:267
+MessageForm	fallprevention/app/forms.py	/^class MessageForm(forms.Form):$/;"	kind:class	line:321
 Migration	fallprevention/app/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
 Migration	fallprevention/app/migrations/0002_funcabilitytest_testparameter.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
 Migration	fallprevention/app/migrations/0003_auto_20170222_1853.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
@@ -71,26 +72,26 @@ Migration	fallprevention/app/migrations/0006_delete_dummymodel.py	/^class Migrat
 Migration	fallprevention/app/migrations/0007_auto_20170302_0337.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
 Migration	fallprevention/app/migrations/0008_auto_20170316_0917.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
 ModelForm	fallprevention/app/forms.py	/^from django.forms import ModelForm$/;"	kind:namespace	line:3
-NoteForm	fallprevention/app/forms.py	/^class NoteForm(forms.Form):$/;"	kind:class	line:207
+NoteForm	fallprevention/app/forms.py	/^class NoteForm(forms.Form):$/;"	kind:class	line:230
 PHYEXAM_URL	fallprevention/app/constants.py	/^PHYEXAM_URL = "https:\/\/raw.githubusercontent.com\/akapusta\/team_falls\/master\/standards\/physical_exam.json"$/;"	kind:variable	line:8
 PageNotAnInteger	fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	kind:namespace	line:12
 Paginator	fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	kind:namespace	line:12
 PrependedText	fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	kind:namespace	line:7
-ProblemsForm	fallprevention/app/forms.py	/^class ProblemsForm(forms.Form):$/;"	kind:class	line:232
+ProblemsForm	fallprevention/app/forms.py	/^class ProblemsForm(forms.Form):$/;"	kind:class	line:255
 QUESTIONS_URL	fallprevention/app/constants.py	/^QUESTIONS_URL = "https:\/\/raw.githubusercontent.com\/akapusta\/team_falls\/master\/standards\/questions.json"$/;"	kind:variable	line:5
 Question	fallprevention/app/admin.py	/^from .models import Question, Medication, FuncAbilityTest, TestParameter$/;"	kind:namespace	line:4
 Question	fallprevention/app/forms.py	/^from .models import Question$/;"	kind:namespace	line:9
 Question	fallprevention/app/models.py	/^class Question(models.Model):$/;"	kind:class	line:8
 Question	fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	kind:namespace	line:10
 QuestionAdmin	fallprevention/app/admin.py	/^class QuestionAdmin(admin.ModelAdmin):$/;"	kind:class	line:6
-QuestionForm	fallprevention/app/forms.py	/^class QuestionForm(forms.Form):$/;"	kind:class	line:89
+QuestionForm	fallprevention/app/forms.py	/^class QuestionForm(forms.Form):$/;"	kind:class	line:87
 RISK_URL	fallprevention/app/constants.py	/^RISK_URL = "https:\/\/raw.githubusercontent.com\/akapusta\/team_falls\/master\/standards\/risk_interventions.json"/;"	kind:variable	line:10
 ROOT_URLCONF	fallprevention/fallprevention/settings.py	/^ROOT_URLCONF = 'fallprevention.urls'$/;"	kind:variable	line:54
-ResultsForm	fallprevention/app/forms.py	/^class ResultsForm(forms.Form):$/;"	kind:class	line:270
+ResultsForm	fallprevention/app/forms.py	/^class ResultsForm(forms.Form):$/;"	kind:class	line:299
 Row	fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	kind:namespace	line:6
 SESSION_ENGINE	fallprevention/fallprevention/settings.py	/^SESSION_ENGINE = 'django.contrib.sessions.backends.cache'$/;"	kind:variable	line:128
 STATIC_URL	fallprevention/fallprevention/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:122
-SearchPatientForm	fallprevention/app/forms.py	/^class SearchPatientForm(forms.Form):$/;"	kind:class	line:73
+SearchPatientForm	fallprevention/app/forms.py	/^class SearchPatientForm(forms.Form):$/;"	kind:class	line:71
 Singleton	fallprevention/app/data_client.py	/^class Singleton(type):$/;"	kind:class	line:9
 Submit	fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	kind:namespace	line:6
 TEMPLATES	fallprevention/fallprevention/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:56
@@ -100,8 +101,8 @@ TestParameter	fallprevention/app/admin.py	/^from .models import Question, Medica
 TestParameter	fallprevention/app/models.py	/^class TestParameter(models.Model):$/;"	kind:class	line:68
 TestParameter	fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	kind:namespace	line:10
 TestParameterAdmin	fallprevention/app/admin.py	/^class TestParameterAdmin(admin.ModelAdmin):$/;"	kind:class	line:15
-ThirtySecStandForm	fallprevention/app/forms.py	/^class ThirtySecStandForm(forms.Form):$/;"	kind:class	line:150
-TugForm	fallprevention/app/forms.py	/^class TugForm(forms.Form):$/;"	kind:class	line:121
+ThirtySecStandForm	fallprevention/app/forms.py	/^class ThirtySecStandForm(forms.Form):$/;"	kind:class	line:173
+TugForm	fallprevention/app/forms.py	/^class TugForm(forms.Form):$/;"	kind:class	line:144
 USE_I18N	fallprevention/fallprevention/settings.py	/^USE_I18N = True$/;"	kind:variable	line:112
 USE_L10N	fallprevention/fallprevention/settings.py	/^USE_L10N = True$/;"	kind:variable	line:114
 USE_TZ	fallprevention/fallprevention/settings.py	/^USE_TZ = True$/;"	kind:variable	line:116
@@ -111,18 +112,19 @@ __init__	fallprevention/app/data_client.py	/^    def __init__(self):$/;"	kind:me
 __init__	fallprevention/app/data_client.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:10
 __init__	fallprevention/app/fhir_reading.py	/^    def __init__(self):$/;"	kind:member	line:23
 __init__	fallprevention/app/fhir_reading_python2.py	/^    def __init__(self):$/;"	kind:member	line:23
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:122
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:151
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:192
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:216
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:237
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:250
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:258
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:307
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:45
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:65
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:80
-__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:91
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:120
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:145
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:174
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:215
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:239
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:260
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:273
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:281
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:303
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:43
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:63
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:78
+__init__	fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:89
 __init__.py	fallprevention/app/__init__.py	1;"	kind:file	line:1
 __init__.py	fallprevention/app/migrations/__init__.py	1;"	kind:file	line:1
 __init__.py	fallprevention/fallprevention/__init__.py	1;"	kind:file	line:1
@@ -138,15 +140,15 @@ admin.py	fallprevention/app/admin.py	1;"	kind:file	line:1
 app_views	fallprevention/app/urls.py	/^from app import views as app_views$/;"	kind:namespace	line:2
 application	fallprevention/fallprevention/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 apps.py	fallprevention/app/apps.py	1;"	kind:file	line:1
-asprin	fallprevention/app/forms.py	/^    asprin = forms.CharField($/;"	kind:variable	line:223
-assessments	fallprevention/app/views.py	/^def assessments(request):$/;"	kind:function	line:97
-calcium	fallprevention/app/forms.py	/^    calcium = forms.BooleanField($/;"	kind:variable	line:287
-choices	fallprevention/app/forms.py	/^        choices = (('patient', 'Patient'),$/;"	kind:variable	line:41
-choices	fallprevention/app/forms.py	/^        choices = ((1, "Yes"), (0, "No")),$/;"	kind:variable	line:338
+asprin	fallprevention/app/forms.py	/^    asprin = forms.CharField($/;"	kind:variable	line:246
+assessments	fallprevention/app/views.py	/^def assessments(request):$/;"	kind:function	line:123
+assessments_details	fallprevention/app/views.py	/^def assessments_details(request):$/;"	kind:function	line:112
+choices	fallprevention/app/forms.py	/^        choices = (('patient', 'Patient'),$/;"	kind:variable	line:39
+choices	fallprevention/app/forms.py	/^        choices = ((1, "Yes"), (0, "No")),$/;"	kind:variable	line:324
 client	fallprevention/app/fhir_reading.py	/^    client = FallsFHIRClient()$/;"	kind:variable	line:573
 client	fallprevention/app/fhir_reading_python2.py	/^    client = FallsFHIRClient()$/;"	kind:variable	line:573
 code	fallprevention/app/models.py	/^    code = models.IntegerField()$/;"	kind:variable	line:43
-coerce	fallprevention/app/forms.py	/^        coerce = lambda x: bool(int(x)),$/;"	kind:variable	line:339
+coerce	fallprevention/app/forms.py	/^        coerce = lambda x: bool(int(x)),$/;"	kind:variable	line:325
 constants.py	fallprevention/app/constants.py	1;"	kind:file	line:1
 content	fallprevention/app/models.py	/^    content = models.CharField(max_length=200)$/;"	kind:variable	line:10
 content	fallprevention/app/models.py	/^    content = models.CharField(max_length=200)$/;"	kind:variable	line:73
@@ -186,12 +188,11 @@ end_medication_by_id	fallprevention/app/fhir_reading.py	/^    def end_medication
 end_medication_by_id	fallprevention/app/fhir_reading_python2.py	/^    def end_medication_by_id(self, medication_order_id, pat=None):$/;"	kind:member	line:234
 end_medication_by_order	fallprevention/app/fhir_reading.py	/^    def end_medication_by_order(self, medication_order):$/;"	kind:member	line:262
 end_medication_by_order	fallprevention/app/fhir_reading_python2.py	/^    def end_medication_by_order(self, medication_order):$/;"	kind:member	line:262
-exams	fallprevention/app/views.py	/^def exams(request):$/;"	kind:function	line:122
+exams	fallprevention/app/views.py	/^def exams(request):$/;"	kind:function	line:148
 execute_from_command_line	fallprevention/manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
-exercise_program	fallprevention/app/forms.py	/^    exercise_program = forms.BooleanField($/;"	kind:variable	line:297
-favorite_color	fallprevention/app/forms.py	/^    favorite_color = forms.CharField($/;"	kind:variable	line:351
-favorite_food	fallprevention/app/forms.py	/^    favorite_food = forms.CharField($/;"	kind:variable	line:345
-favorite_number	fallprevention/app/forms.py	/^    favorite_number = forms.IntegerField($/;"	kind:variable	line:357
+favorite_color	fallprevention/app/forms.py	/^    favorite_color = forms.CharField($/;"	kind:variable	line:337
+favorite_food	fallprevention/app/forms.py	/^    favorite_food = forms.CharField($/;"	kind:variable	line:331
+favorite_number	fallprevention/app/forms.py	/^    favorite_number = forms.IntegerField($/;"	kind:variable	line:343
 fhir_reading.py	fallprevention/app/fhir_reading.py	1;"	kind:file	line:1
 fhir_reading_python2.py	fallprevention/app/fhir_reading_python2.py	1;"	kind:file	line:1
 field	fallprevention/app/migrations/0003_auto_20170222_1853.py	/^            field=models.BooleanField(default=False),$/;"	kind:variable	line:19
@@ -207,43 +208,35 @@ fields	fallprevention/app/migrations/0008_auto_20170316_0917.py	/^            fi
 forms	fallprevention/app/forms.py	/^from django import forms$/;"	kind:namespace	line:1
 forms	fallprevention/app/views.py	/^from django import forms$/;"	kind:namespace	line:6
 forms.py	fallprevention/app/forms.py	1;"	kind:file	line:1
-generate_form	fallprevention/app/forms.py	/^def generate_form(field, field_widget=None, field_choices=None, isHidden=None):$/;"	kind:function	line:12
+generate_form	fallprevention/app/forms.py	/^def generate_form(field, field_widget = None, field_choices = None):$/;"	kind:function	line:12
 get_wsgi_application	fallprevention/fallprevention/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
-gsb_pt	fallprevention/app/forms.py	/^    gsb_pt = forms.BooleanField($/;"	kind:variable	line:292
-identity	fallprevention/app/forms.py	/^    identity = forms.TypedChoiceField($/;"	kind:variable	line:39
+identity	fallprevention/app/forms.py	/^    identity = forms.TypedChoiceField($/;"	kind:variable	line:37
 include	fallprevention/fallprevention/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:16
 index	fallprevention/app/views.py	/^def index(request):$/;"	kind:function	line:19
-initial	fallprevention/app/forms.py	/^        initial = '1',$/;"	kind:variable	line:341
+initial	fallprevention/app/forms.py	/^        initial = '1',$/;"	kind:variable	line:327
 initial	fallprevention/app/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:10
 is_key	fallprevention/app/models.py	/^    is_key = models.BooleanField(default=False)$/;"	kind:variable	line:16
 is_recommended	fallprevention/app/models.py	/^    is_recommended = models.BooleanField(default=False)$/;"	kind:variable	line:55
-isosorbide	fallprevention/app/forms.py	/^    isosorbide = forms.CharField($/;"	kind:variable	line:227
+isosorbide	fallprevention/app/forms.py	/^    isosorbide = forms.CharField($/;"	kind:variable	line:250
 json	fallprevention/app/data_client.py	/^import json$/;"	kind:namespace	line:1
 json	fallprevention/app/fhir_reading.py	/^import json$/;"	kind:namespace	line:15
 json	fallprevention/app/fhir_reading_python2.py	/^import json$/;"	kind:namespace	line:15
 json	fallprevention/app/views.py	/^import json$/;"	kind:namespace	line:2
 json	standards/med_check.py	/^import json$/;"	kind:namespace	line:2
-json2obj	fallprevention/app/data_client.py	/^def json2obj(data): return json.load(data, object_hook=_json_object_hook)$/;"	kind:function	line:7
-label	fallprevention/app/forms.py	/^        label = "Additional notes or feedback",$/;"	kind:variable	line:363
-label	fallprevention/app/forms.py	/^        label = "Check for Safety Brochure",$/;"	kind:variable	line:273
-label	fallprevention/app/forms.py	/^        label = "Do you like this website?",$/;"	kind:variable	line:337
-label	fallprevention/app/forms.py	/^        label = "Fall prevention\/Community exercise program",$/;"	kind:variable	line:298
-label	fallprevention/app/forms.py	/^        label = "Favorite number",$/;"	kind:variable	line:358
-label	fallprevention/app/forms.py	/^        label = "PT to improve gait, strength and balance",$/;"	kind:variable	line:293
-label	fallprevention/app/forms.py	/^        label = "Password:",$/;"	kind:variable	line:60
-label	fallprevention/app/forms.py	/^        label = "Patient Name:",$/;"	kind:variable	line:75
-label	fallprevention/app/forms.py	/^        label = "Patient is currently taking at least 800 IU of Vitamin D",$/;"	kind:variable	line:283
-label	fallprevention/app/forms.py	/^        label = "Patient is currently taking enough calcium",$/;"	kind:variable	line:288
-label	fallprevention/app/forms.py	/^        label = "Reviewed home safety with patient",$/;"	kind:variable	line:303
-label	fallprevention/app/forms.py	/^        label = "Username:",$/;"	kind:variable	line:55
-label	fallprevention/app/forms.py	/^        label = "What Can You Do to Prevent Falls",$/;"	kind:variable	line:278
-label	fallprevention/app/forms.py	/^        label = "What is your favorite color?",$/;"	kind:variable	line:352
-label	fallprevention/app/forms.py	/^        label = "What is your favorite food?",$/;"	kind:variable	line:346
-label	fallprevention/app/forms.py	/^        label = 'Identify Who you are',$/;"	kind:variable	line:40
-label	fallprevention/app/forms.py	/^        label = 'Medications linked to Falls',$/;"	kind:variable	line:246
-label	fallprevention/app/forms.py	/^        label = 'Note:',$/;"	kind:variable	line:210
-label	fallprevention/app/forms.py	/^        label = 'Problems',$/;"	kind:variable	line:234
-like_website	fallprevention/app/forms.py	/^    like_website = forms.TypedChoiceField($/;"	kind:variable	line:336
+json2obj	fallprevention/app/data_client.py	/^def json2obj(data): return json.loads(data, object_hook=_json_object_hook)$/;"	kind:function	line:7
+label	fallprevention/app/forms.py	/^        label = "Additional notes or feedback",$/;"	kind:variable	line:349
+label	fallprevention/app/forms.py	/^        label = "Do you like this website?",$/;"	kind:variable	line:323
+label	fallprevention/app/forms.py	/^        label = "Favorite number",$/;"	kind:variable	line:344
+label	fallprevention/app/forms.py	/^        label = "Password:",$/;"	kind:variable	line:58
+label	fallprevention/app/forms.py	/^        label = "Patient Name:",$/;"	kind:variable	line:73
+label	fallprevention/app/forms.py	/^        label = "Username:",$/;"	kind:variable	line:53
+label	fallprevention/app/forms.py	/^        label = "What is your favorite color?",$/;"	kind:variable	line:338
+label	fallprevention/app/forms.py	/^        label = "What is your favorite food?",$/;"	kind:variable	line:332
+label	fallprevention/app/forms.py	/^        label = 'Identify Who you are',$/;"	kind:variable	line:38
+label	fallprevention/app/forms.py	/^        label = 'Medications linked to Falls',$/;"	kind:variable	line:269
+label	fallprevention/app/forms.py	/^        label = 'Note:',$/;"	kind:variable	line:233
+label	fallprevention/app/forms.py	/^        label = 'Problems',$/;"	kind:variable	line:257
+like_website	fallprevention/app/forms.py	/^    like_website = forms.TypedChoiceField($/;"	kind:variable	line:322
 list_display	fallprevention/app/admin.py	/^    list_display = ('content', 'score', 'is_key', 'reason')$/;"	kind:variable	line:7
 list_display	fallprevention/app/admin.py	/^    list_display = ('name', 'is_recommended', 'video_link', 'pdf_link',)$/;"	kind:variable	line:13
 list_display	fallprevention/app/admin.py	/^    list_display = ('name',)$/;"	kind:variable	line:10
@@ -253,16 +246,16 @@ load_standards_document	fallprevention/app/fhir_reading_python2.py	/^    def loa
 login	fallprevention/app/views.py	/^def login(request):$/;"	kind:function	line:23
 login_cp	fallprevention/app/views.py	/^def login_cp(request):$/;"	kind:function	line:44
 manage.py	fallprevention/manage.py	1;"	kind:file	line:1
-max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:347
-max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:353
-max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:56
-max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:62
-max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:76
+max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:333
+max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:339
+max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:54
+max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:60
+max_length	fallprevention/app/forms.py	/^        max_length = 80,$/;"	kind:variable	line:74
 med_check.py	standards/med_check.py	1;"	kind:file	line:1
 med_key	fallprevention/app/models.py	/^    med_key = models.ForeignKey(Medication, on_delete=models.PROTECT)$/;"	kind:variable	line:41
 med_write.py	standards/med_write.py	1;"	kind:file	line:1
-medications	fallprevention/app/views.py	/^def medications(request):$/;"	kind:function	line:105
-medicationsLinked	fallprevention/app/forms.py	/^    medicationsLinked = forms.CharField($/;"	kind:variable	line:245
+medications	fallprevention/app/views.py	/^def medications(request):$/;"	kind:function	line:131
+medicationsLinked	fallprevention/app/forms.py	/^    medicationsLinked = forms.CharField($/;"	kind:variable	line:268
 meds	fallprevention/app/fhir_reading.py	/^    meds = client.search_medication()$/;"	kind:variable	line:601
 meds	fallprevention/app/fhir_reading_python2.py	/^    meds = client.search_medication()$/;"	kind:variable	line:601
 migrations	fallprevention/app/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
@@ -340,8 +333,8 @@ new_name	fallprevention/app/migrations/0007_auto_20170302_0337.py	/^            
 new_name	fallprevention/app/migrations/0007_auto_20170302_0337.py	/^            new_name='pdf_link',$/;"	kind:variable	line:23
 new_name	fallprevention/app/migrations/0007_auto_20170302_0337.py	/^            new_name='test_key',$/;"	kind:variable	line:38
 new_name	fallprevention/app/migrations/0007_auto_20170302_0337.py	/^            new_name='video_link',$/;"	kind:variable	line:28
-note	fallprevention/app/forms.py	/^    note = forms.CharField($/;"	kind:variable	line:208
-notes	fallprevention/app/forms.py	/^    notes = forms.CharField($/;"	kind:variable	line:362
+note	fallprevention/app/forms.py	/^    note = forms.CharField($/;"	kind:variable	line:231
+notes	fallprevention/app/forms.py	/^    notes = forms.CharField($/;"	kind:variable	line:348
 old_name	fallprevention/app/migrations/0004_auto_20170222_1927.py	/^            old_name='test_link',$/;"	kind:variable	line:17
 old_name	fallprevention/app/migrations/0005_auto_20170227_1512.py	/^            old_name='content',$/;"	kind:variable	line:42
 old_name	fallprevention/app/migrations/0005_auto_20170227_1512.py	/^            old_name='medication_name',$/;"	kind:variable	line:37
@@ -371,15 +364,14 @@ operations	fallprevention/app/migrations/0008_auto_20170316_0917.py	/^    operat
 os	fallprevention/fallprevention/settings.py	/^import os$/;"	kind:namespace	line:13
 os	fallprevention/fallprevention/wsgi.py	/^import os$/;"	kind:namespace	line:10
 os	fallprevention/manage.py	/^import os$/;"	kind:namespace	line:2
-password	fallprevention/app/forms.py	/^    password = forms.CharField($/;"	kind:variable	line:59
-patient_name	fallprevention/app/forms.py	/^    patient_name = forms.CharField($/;"	kind:variable	line:74
+password	fallprevention/app/forms.py	/^    password = forms.CharField($/;"	kind:variable	line:57
+patient_name	fallprevention/app/forms.py	/^    patient_name = forms.CharField($/;"	kind:variable	line:72
 patients	fallprevention/app/fhir_reading.py	/^    patients = client.search_patient('S', 'Graham')$/;"	kind:variable	line:576
 patients	fallprevention/app/fhir_reading.py	/^    patients = client.search_patient_dob('Sarah', 'Graham', '1949')$/;"	kind:variable	line:581
 patients	fallprevention/app/fhir_reading_python2.py	/^    patients = client.search_patient('S', 'Graham')$/;"	kind:variable	line:576
 patients	fallprevention/app/fhir_reading_python2.py	/^    patients = client.search_patient_dob('Sarah', 'Graham', '1949')$/;"	kind:variable	line:581
 pdf_link	fallprevention/app/models.py	/^    pdf_link = models.URLField(max_length=500)$/;"	kind:variable	line:61
-prevent_falls	fallprevention/app/forms.py	/^    prevent_falls = forms.BooleanField($/;"	kind:variable	line:277
-problems	fallprevention/app/forms.py	/^    problems = forms.CharField($/;"	kind:variable	line:233
+problems	fallprevention/app/forms.py	/^    problems = forms.CharField($/;"	kind:variable	line:256
 pullup_diagnostic_report	fallprevention/app/fhir_reading.py	/^    def pullup_diagnostic_report(self, pat=None, enc=None):$/;"	kind:member	line:296
 pullup_diagnostic_report	fallprevention/app/fhir_reading_python2.py	/^    def pullup_diagnostic_report(self, pat=None, enc=None):$/;"	kind:member	line:296
 python_2_unicode_compatible	fallprevention/app/models.py	/^from django.utils.encoding import python_2_unicode_compatible$/;"	kind:namespace	line:4
@@ -390,33 +382,25 @@ reason	fallprevention/app/models.py	/^    reason = models.CharField(max_length=2
 render	fallprevention/app/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:4
 requests	fallprevention/app/fhir_reading.py	/^import requests$/;"	kind:namespace	line:16
 requests	fallprevention/app/fhir_reading_python2.py	/^import requests$/;"	kind:namespace	line:16
-required	fallprevention/app/forms.py	/^        required = False$/;"	kind:variable	line:274
-required	fallprevention/app/forms.py	/^        required = False$/;"	kind:variable	line:279
-required	fallprevention/app/forms.py	/^        required = False$/;"	kind:variable	line:284
-required	fallprevention/app/forms.py	/^        required = False$/;"	kind:variable	line:289
-required	fallprevention/app/forms.py	/^        required = False$/;"	kind:variable	line:294
-required	fallprevention/app/forms.py	/^        required = False$/;"	kind:variable	line:299
-required	fallprevention/app/forms.py	/^        required = False$/;"	kind:variable	line:304
-required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:211
-required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:235
-required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:247
-required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:359
-required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:364
-required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:342
-required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:348
-required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:354
-required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:43
-required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:57
-required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:63
-required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:77
+required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:234
+required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:258
+required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:270
+required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:345
+required	fallprevention/app/forms.py	/^        required = False,$/;"	kind:variable	line:350
+required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:328
+required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:334
+required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:340
+required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:41
+required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:55
+required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:61
+required	fallprevention/app/forms.py	/^        required = True,$/;"	kind:variable	line:75
 responses	fallprevention/app/fhir_reading.py	/^    responses = ['1', '0', '1', '1', '0']$/;"	kind:variable	line:625
 responses	fallprevention/app/fhir_reading_python2.py	/^    responses = ['1', '0', '1', '1', '0']$/;"	kind:variable	line:625
-results	fallprevention/app/views.py	/^def results(request):$/;"	kind:function	line:117
+results	fallprevention/app/views.py	/^def results(request):$/;"	kind:function	line:143
 reverse	fallprevention/app/views.py	/^from django.core.urlresolvers import reverse$/;"	kind:namespace	line:5
-review_safety	fallprevention/app/forms.py	/^    review_safety = forms.BooleanField($/;"	kind:variable	line:302
 risk	fallprevention/app/models.py	/^    risk = models.BooleanField(default=False)$/;"	kind:variable	line:76
+risks	fallprevention/app/views.py	/^def risks(request):$/;"	kind:function	line:195
 run	standards/med_check.py	/^def run():$/;"	kind:function	line:4
-safety_brochure	fallprevention/app/forms.py	/^    safety_brochure = forms.BooleanField($/;"	kind:variable	line:272
 score	fallprevention/app/models.py	/^    score = models.IntegerField(default=1)$/;"	kind:variable	line:13
 searchPatient	fallprevention/app/views.py	/^def searchPatient(request):$/;"	kind:function	line:57
 search_encounter_all	fallprevention/app/fhir_reading.py	/^    def search_encounter_all(self, pat=None, status=['']):$/;"	kind:member	line:114
@@ -443,11 +427,12 @@ settings	fallprevention/fallprevention/urls.py	/^from django.conf import setting
 settings.py	fallprevention/fallprevention/settings.py	1;"	kind:file	line:1
 static	fallprevention/fallprevention/urls.py	/^from django.conf.urls.static import static$/;"	kind:namespace	line:19
 sys	fallprevention/manage.py	/^import sys$/;"	kind:namespace	line:3
+test	fallprevention/app/views.py	/^def test(request):$/;"	kind:function	line:90
 test_function	fallprevention/app/fhir_reading.py	/^    def test_function(self):$/;"	kind:member	line:32
 test_function	fallprevention/app/fhir_reading_python2.py	/^    def test_function(self):$/;"	kind:member	line:32
 test_key	fallprevention/app/models.py	/^    test_key = models.ForeignKey(FuncAbilityTest, on_delete=models.PROTECT)$/;"	kind:variable	line:70
 tests.py	fallprevention/app/tests.py	1;"	kind:file	line:1
-thankyou	fallprevention/app/views.py	/^def thankyou(request):$/;"	kind:function	line:94
+thankyou	fallprevention/app/views.py	/^def thankyou(request):$/;"	kind:function	line:87
 time	fallprevention/app/fhir_reading.py	/^import time$/;"	kind:namespace	line:18
 time	fallprevention/app/fhir_reading_python2.py	/^import time$/;"	kind:namespace	line:18
 unicode_literals	fallprevention/app/apps.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:1
@@ -473,15 +458,14 @@ urlpatterns	fallprevention/app/urls.py	/^urlpatterns = [$/;"	kind:variable	line:
 urlpatterns	fallprevention/fallprevention/urls.py	/^urlpatterns = [$/;"	kind:variable	line:21
 urls.py	fallprevention/app/urls.py	1;"	kind:file	line:1
 urls.py	fallprevention/fallprevention/urls.py	1;"	kind:file	line:1
-user_login	fallprevention/app/views.py	/^def user_login(request):$/;"	kind:function	line:128
-username	fallprevention/app/forms.py	/^    username = forms.CharField($/;"	kind:variable	line:54
+user_login	fallprevention/app/views.py	/^def user_login(request):$/;"	kind:function	line:154
+username	fallprevention/app/forms.py	/^    username = forms.CharField($/;"	kind:variable	line:52
 video_link	fallprevention/app/models.py	/^    video_link = models.URLField(max_length=500)$/;"	kind:variable	line:58
 views	fallprevention/app/urls.py	/^from . import views$/;"	kind:namespace	line:3
 views.py	fallprevention/app/views.py	1;"	kind:file	line:1
-vitamin_d	fallprevention/app/forms.py	/^    vitamin_d = forms.BooleanField($/;"	kind:variable	line:282
-widget	fallprevention/app/forms.py	/^        widget = forms.PasswordInput,$/;"	kind:variable	line:61
-widget	fallprevention/app/forms.py	/^        widget = forms.RadioSelect,$/;"	kind:variable	line:340
-widget	fallprevention/app/forms.py	/^        widget=forms.Textarea,$/;"	kind:variable	line:209
+widget	fallprevention/app/forms.py	/^        widget = forms.PasswordInput,$/;"	kind:variable	line:59
+widget	fallprevention/app/forms.py	/^        widget = forms.RadioSelect,$/;"	kind:variable	line:326
+widget	fallprevention/app/forms.py	/^        widget=forms.Textarea,$/;"	kind:variable	line:232
 write_list_of_observations_to_fhir	fallprevention/app/fhir_reading.py	/^    def write_list_of_observations_to_fhir(self, question_codes, responses, pat_id=None, enc_id=None, diag_rpt=None):$/;"	kind:member	line:369
 write_list_of_observations_to_fhir	fallprevention/app/fhir_reading_python2.py	/^    def write_list_of_observations_to_fhir(self, question_codes, responses, pat_id=None, enc_id=None, diag_rpt=None):$/;"	kind:member	line:369
 wsgi.py	fallprevention/fallprevention/wsgi.py	1;"	kind:file	line:1

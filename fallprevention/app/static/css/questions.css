@@ -1,8 +1,7 @@
 .question-form{
-    box-shadow: 0 0 10px grey;
       padding-bottom: 20px;
     padding-top: 20px;
-    border-radius: 20px;
+    /*border: 1px solid grey;*/
 }
 .question-container{
     margin-top: 80px;

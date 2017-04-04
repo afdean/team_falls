@@ -5,6 +5,7 @@ var stage_checkbox = $('#4_stage_balance_checkbox');
 // Main function that is called throughout sessions
 var main = function () {
     "use strict";
+    // $('#assessments').hide();
     hideButtons();
     showSelectedAssessments();
 
@@ -36,5 +37,6 @@ function showSelectedAssessments() {
         $('#notes').show();
         $('#assessment_button').show();
         $('#assessment_select').hide();
+        $('h1').hide();
     });
 }

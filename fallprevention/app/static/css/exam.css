@@ -1,0 +1,29 @@
+.field_set{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: none;
+}
+form#id-tugform2{
+    margin: auto; 
+    overflow-y: auto;
+}
+
+#id-tugform2 legend{
+    padding-top:50px;
+    font-size: 30px;
+}
+#id-tugform2 label{
+    font-size: 15px;
+}
+#submit-id-submit{
+    margin-top:20px;
+    width: 100%;
+    
+}
+#exam_select{
+    width: 50%;
+    margin: 0 auto; 
+}
+#exam_select label{
+    font-size: 14px;
+}

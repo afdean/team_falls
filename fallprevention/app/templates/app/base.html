@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
   <link rel="stylesheet" href="{%static 'css/medications.css'%}" />
   <link rel="stylesheet" href="{%static 'css/risks.css'%}" />
+  <link rel="stylesheet" href="{%static 'css/exam.css'%}" />
   <style>
 
   </style>
@@ -47,7 +48,7 @@
       </div>
       <!--Sidebar end-->
       <!--Main part of app-->
-      <div class="col-sm-10">
+      <div class="col-sm-10 main">
         {%block content%} {% endblock %}
       </div>
       <!--Main part of app end-->
@@ -58,6 +59,7 @@
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/assessments.js' %}"></script>
   <script src="{%static 'js/completed.js'%}"></script>
+  <script src="{%static 'js/exam.js'%}"></script>
 
 </body>
 

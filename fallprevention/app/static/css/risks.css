@@ -1,24 +1,34 @@
 .risk_button{
     margin: 20px;
+    width:100%;
 }
-
 #low{
     background-color: #FFE621;
     border-color:#FFE621;
     color: white;
-        width:100%;
 }
-
 #med{
     background-color: orange;
     border-color:orange;
     color: white;
-    width:100%;
 }
-
 #high{
     background-color: #d9534f;
     border-color:#d9534f;
     color: white;
-        width:100%;
+}
+.results_form{
+    height: 200px;
+    overflow-y: auto;
+}
+.field_set_results{
+    padding-bottom: 20px;
+    padding-top: 0px;
+    border: none;
+}
+.field_set_results legend{
+    font-size: 20px;
+}
+.field_set_results label{
+    font-size: 15px;
 }

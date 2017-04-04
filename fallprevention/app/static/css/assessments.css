@@ -3,7 +3,7 @@
     margin: auto;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px grey;
+    box-shadow: none;
     padding: 20px;
 }
 #assessment_select{
@@ -23,4 +23,8 @@ li{
 }
 #assessment_select{
     margin-top: 50px;
+}
+form #assessment{
+    margin-top: 80px;
+    margin-right: 50px;
 }

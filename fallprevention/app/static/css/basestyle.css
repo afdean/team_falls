@@ -1,17 +1,17 @@
 body,html,.row-offcanvas {
   height:100%;
+ 
 }
 
 body {
   padding-top: 50px;
 }
-#main {
+.main {
   height:100%;
-  margin-top: 80px;
-  /*overflow-x: hidden;*/
 }
 .main_container{
   margin: 0;
+  
 }
 
 .patient-info{

@@ -1,7 +1,21 @@
+<style>
+.main{
+    overflow-y: auto;
+}
+</style>
 {% extends 'app/baseWithSideBar.html' %}
-{% load crispy_forms_tags %}
+{%load static%}
 
+{% load crispy_forms_tags %}
 {% block content %}
     <p>{{ patient.name }} </p>
-    {% crispy exams_form %}
+    <div class="row">
+        <div class="col-md-12">
+            {% crispy exams_form %}
+        </div>
+    </div>
+
 {% endblock %}
+
+<script src="{%static 'js/exam.js'%}"></script>
+
