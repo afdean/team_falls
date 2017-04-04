@@ -285,7 +285,7 @@ class ExamsForm(forms.Form):
         j = 0
         self.helper.layout = Layout()
         for exam in data_client.physical_exam:
-            exam_fieldset = Fieldset(exam.name)
+            exam_fieldset = Fieldset(exam.name, css_class='field_set')
             for i, form in enumerate(exam.forms):
                 field_name = str(j)
                 j = j + 1
@@ -307,7 +307,7 @@ class ResultsForm(forms.Form):
         j = 0
         self.helper.layout = Layout()
         for intervention in data_client.intervention_list:
-            intervention_fieldset = Fieldset(intervention.name)
+            intervention_fieldset = Fieldset(intervention.name, css_class='field_set_results')
             for i, form in enumerate(intervention.forms):
                 field_name = str(j)
                 j = j + 1
@@ -316,7 +316,7 @@ class ResultsForm(forms.Form):
             self.helper.layout.append(intervention_fieldset)
         self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
+        # self.helper.add_input(Submit('submit', 'Submit'))
 
 class MessageForm(forms.Form):
     like_website = forms.TypedChoiceField(

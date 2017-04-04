@@ -193,5 +193,5 @@ def user_login(request):
         return render(request, 'app/login.html', {})
 
 def risks(request):
-
-    return render(request, 'app/risks.html', {})
+    results_form = ResultsForm()
+    return render(request, 'app/risks.html', {'results_form':results_form})
