@@ -123,20 +123,30 @@ class AssessmentForm(forms.Form):
         data_client = DataClient()
         for name in assessments_chosen:
             print (name)
+        self.helper = FormHelper()
+        self.helper.layout = Layout()
         if assessments_chosen:
             for test in data_client.func_test:
                 if test.name in assessments_chosen:
+                    test_fieldset = Fieldset(test.name, css_class=test.name)
                     for i, form in enumerate(test.forms):
                         field_name = test.name + "_form" + str(i)
                         self.fields[field_name] = generate_form(form, None, None)
+                        test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
+                    self.helper.layout.append(test_fieldset)
         else:
             for test in data_client.func_test:
-                self.fields[test.name] = forms.BooleanField(
-                    label = test.name,
-                    required = False,
-                )
-        self.helper = FormHelper()
+                if test.is_recommended:
+                    self.fields[test.name] = forms.BooleanField(
+                        label = test.name + " (Recommended)",
+                        required = False,
+                    )
+                else:
+                    self.fields[test.name] = forms.BooleanField(
+                        label = test.name,
+                        required = False,
+                    )
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))

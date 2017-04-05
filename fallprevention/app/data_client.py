@@ -20,7 +20,6 @@ class Singleton(type):
 
 class DataClient(metaclass=Singleton):
     def __init__(self):
-        print('I GOT HERE WOOO')
         with ur.urlopen(QUESTIONS_URL) as url_questions:
             self.questions = json2obj(url_questions.read().decode('utf8'))
         with ur.urlopen(FAT_URL) as url_fat:
