@@ -285,7 +285,7 @@ class ExamsForm(forms.Form):
         j = 0
         self.helper.layout = Layout()
         for exam in data_client.physical_exam:
-            exam_fieldset = Fieldset(exam.name, css_class='field_set')
+            exam_fieldset = Fieldset(exam.name, css_class=exam.name)
             for i, form in enumerate(exam.forms):
                 field_name = str(j)
                 j = j + 1
