@@ -1,6 +1,5 @@
 .question-form{
-      padding-bottom: 20px;
-    padding-top: 20px;
+    padding: 0
     /*border: 1px solid grey;*/
 }
 .question-container{
@@ -16,7 +15,7 @@
     /*margin-left:10px;*/
 }
 button{
-    width:130px;
+    width:100px;
 }
 .self_assessment_questions li{
     list-style: none;

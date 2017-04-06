@@ -32,3 +32,14 @@ p{
     padding-left: 10px;
     
 }
+    .main {
+        overflow-y: auto;
+    }
+    #id-tugform2 fieldset{
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border: none;
+    }
+     #exam_select .checkbox label{
+         font-size: 20px;
+     }
