@@ -14,15 +14,15 @@
 </style>
 {% extends 'app/baseWithSideBar.html' %} {%load static%} {% load crispy_forms_tags %} {% block content %}
 <div class="select_exam">
-    <center>
-        <h3>Select which test(s) you would like to perform: </h3>
+    <center class="title">
+        <p>Select which test(s) you would like to perform: </p>
     </center>
     <form id="exam_select">
           
 
         <div class="row form-group" id="select_exam_button">
             <div class="col-xs-12 text-center">
-                <button class="btn btn-primary" type="button">Submit</button>
+                <button class="btn btn-primary" type="button" id="submit-id-submit">Submit</button>
             </div>
         </div>
     </form>

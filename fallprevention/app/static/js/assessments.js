@@ -21,22 +21,9 @@ function hideButtons() {
 }
 
 function showSelectedAssessments() {
-    var button = $('#select_assessment_button');
+    var button = $('#submit-id-submit');
     button.click(function () {
 
-        if (tug_checkbox.is(':checked')) {
-            $('#tug').slideToggle('fast');
-        }
-        if (stand_checkbox.is(':checked')) {
-            $('#30_sec_stand').slideToggle('fast');
-
-        }
-        if (stage_checkbox.is(':checked')) {
-            $('#4_stage_balance').slideToggle('fast');
-        }
-        $('#notes').show();
-        $('#assessment_button').show();
-        $('#assessment_select').hide();
-        $('h1').hide();
+     $('center').hide();
     });
 }

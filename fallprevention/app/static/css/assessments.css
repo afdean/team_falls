@@ -15,7 +15,7 @@ li{
     list-style: none;
 }
 .checkbox label{
-    font-size: 20px;
+    font-size: 14px;
 }
 .checkbox
 {
@@ -27,4 +27,27 @@ li{
 form #assessment{
     margin-top: 80px;
     margin-right: 50px;
+}
+    .checkbox label {
+        font-size:20px;
+    }
+    .checkbox p{
+        padding-left: 10px;
+    }
+    .title{
+        font-size: 20px;
+    }
+form#id-assessmentForm fieldset{
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border: none;
+    }
+form#id-assessmentForm{
+    width:50%;
+    margin: auto; 
+    overflow-y: auto;
+}
+#id-assessmentForm legend {
+    padding-top: 50px;
+    font-size: 30px;
 }

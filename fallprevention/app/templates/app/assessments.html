@@ -1,58 +1,25 @@
-{% extends 'app/baseWithSideBar.html' %} {% block content %}
-
-<div class="container">
-
-
-    <div class="container" >
-        <center>
-            <h1>Select which test(s) you would like to perform: </h1>
-        </center>
-        <form id="assessment_select">
-            <div class="checkbox">
-                <label><input type="checkbox" value="" id="tug_checkbox">Timed up and Go (Recommended)</label>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" value="" id="30_sec_stand_checkbox">30-Second Chair Stand</label>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" value="" id="4_stage_balance_checkbox">4-Stage Balance Test</label>
-            </div>
-
-            <div class="row form-group" id="select_assessment_button">
-                <div class="col-xs-12 text-center">
-                    <button class="btn btn-primary" type="button">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <form method='post' id="assessments">
-        {% csrf_token %}
-        <div class="row assessment_block form-group" id="tug">
-            <h4> Timed Up and Go test </h4>
-            {{ tug_form }}
-        </div>
-
-        <div class="row assessment_block form-group" id="30_sec_stand">
-            <h4> 30-Second Chair Stand </h4>
-            {{ thirty_sec_stand_form }}
-        </div>
-
-        <div class="row assessment_block form-group" id="4_stage_balance">
-            <h4>4-Stage Balance Test</h4>
-            {{ balance_test_form }}
-        </div>
-
-        <div class="row assessment_block form-group" id="notes">
-            <label for="comment">Notes:</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
-        </div>
-
-        <div class="row form-group" id="assessment_button">
-            <div class="col-xs-12 text-center">
-                <button class="btn btn-primary" type="button" id="assessment_submit_button">Submit</button>
-            </div>
-        </div>
-    </form>
-</div>
-{% endblock %}
+<style>
+    .checkbox label {
+        font-size: 14px;
+    }
+    
+form#id-assessmentForm fieldset{
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border: none;
+    }
+form#id-assessmentForm{
+    margin: auto; 
+    overflow-y: auto;
+}
+ .main {
+        overflow-y: auto;
+    }
+    body{
+        /*overflow-y: hidden */
+    }
+</style>
+{% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
+<p> {{ patient.name }} </p>
+<center class='title'><p>Select the test you would like to perform:</p></center>
+{% crispy assessments_form %} {% endblock %}
