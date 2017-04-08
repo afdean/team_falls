@@ -16,7 +16,9 @@ import json
 import requests
 import copy
 import time
-
+from collections import namedtuple
+import urllib.request as ur
+from .constants import *
 # Requires a smart-on-fhir api-server running on localhost. Find code to run that at
 # https://github.com/smart-on-fhir/api-server
 class FallsFHIRClient(object):
@@ -39,14 +41,13 @@ class FallsFHIRClient(object):
     # Returns: nothing
     # Note: We can change this to take input so you can tell it where the document is.
     def load_standards_document(self):
-        with open('./fixtures/initial.json') as question_file:
+        with ur.urlopen(QUESTIONS_URL) as question_file:
             self.standards_document_dict = json.load(question_file)
         self.questions_text = []
         self.questions_code = []
-        for question in self.standards_document_dict:
-            if question['model'] == 'app.Question':
-                self.questions_text.append(str(question['fields']['content']))
-                self.questions_code.append(str(question['pk']))
+        for question in self.standards_document_dict['questions']:
+            self.questions_text.append(str(question['content']))
+            self.questions_code.append(str(question['code']))
         print('Client has loaded the current standards document')
 
     # Search for a patient by name

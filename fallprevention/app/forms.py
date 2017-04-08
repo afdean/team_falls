@@ -10,26 +10,26 @@ from .models import Question
 from app.data_client import DataClient
 
 def generate_form(field, field_widget = None, field_choices = None):
-    if field.type == "boolean":
+    if field['type'] == "boolean":
         return forms.BooleanField(
-            label = field.content,
+            label = field['content'],
             required = False,
         )
-    elif field.type == "choice":
+    elif field['type'] == "choice":
         return forms.ChoiceField(
-            label = field.content,
+            label = field['content'],
             widget = field_widget,
             choices = field_choices,
             required = False,
         )
-    elif field.type == "integer":
+    elif field['type'] == "integer":
         return forms.IntegerField(
-            label = field.content,
+            label = field['content'],
             required = False,
         )
-    elif field.type == "char":
+    elif field['type'] == "char":
         return forms.CharField(
-            label = field.content,
+            label = field['content'],
             required = False,
         )
 
@@ -81,7 +81,6 @@ class SearchPatientForm(forms.Form):
         self.helper.form_id = 'id-searchPatientForm'
         self.helper.form_class = 'blueForms'
         self.helper.form_method = 'post'
-
         self.helper.add_input(Submit('submit', 'Search'))
 
 class QuestionForm(forms.Form):
@@ -90,7 +89,7 @@ class QuestionForm(forms.Form):
         super(QuestionForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         CHOICES = (('1', 'Yes',), ('2', 'No',))
-        for i, question in enumerate(data_client.questions.questions):
+        for i, question in enumerate(data_client.questions['questions']):
             field_name = "question" + str(i)
             self.fields[field_name] = generate_form(question, forms.RadioSelect, CHOICES)
         self.helper = FormHelper()
@@ -127,24 +126,24 @@ class AssessmentForm(forms.Form):
         self.helper.layout = Layout()
         if assessments_chosen:
             for test in data_client.func_test:
-                if test.name in assessments_chosen:
-                    test_fieldset = Fieldset(test.name, css_class=test.name)
-                    for i, form in enumerate(test.forms):
-                        field_name = test.name + "_form" + str(i)
+                if test['name'] in assessments_chosen:
+                    test_fieldset = Fieldset(test['name'], css_class=test['name'])
+                    for i, form in enumerate(test['forms']):
+                        field_name = test['name'] + "_form" + str(i)
                         self.fields[field_name] = generate_form(form, None, None)
                         test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
                     self.helper.layout.append(test_fieldset)
         else:
             for test in data_client.func_test:
-                if test.is_recommended:
-                    self.fields[test.name] = forms.BooleanField(
-                        label = test.name + " (Recommended)",
+                if test['is_recommended']:
+                    self.fields[test['name']] = forms.BooleanField(
+                        label = test['name'] + " (Recommended)",
                         required = False,
                     )
                 else:
-                    self.fields[test.name] = forms.BooleanField(
-                        label = test.name,
+                    self.fields[test['name']] = forms.BooleanField(
+                        label = test['name'],
                         required = False,
                     )
         self.helper.form_id = 'id-assessmentForm'
@@ -156,10 +155,10 @@ class TugForm(forms.Form):
         super(TugForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         for test in data_client.func_test:
-            if test.name == "Timed Up and Go Test":
+            if test['name'] == "Timed Up and Go Test":
                 tug_test = test
                 break
-        for i, form in enumerate(tug_test.forms):
+        for i, form in enumerate(tug_test['forms']):
             field_name = "form" + str(i)
             self.fields[field_name] = generate_form(form)
         self.helper = FormHelper()
@@ -185,10 +184,10 @@ class ThirtySecStandForm(forms.Form):
         super(ThirtySecStandForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         for test in data_client.func_test:
-            if test.name == "30-Second Chair Stand":
+            if test['name'] == "30-Second Chair Stand":
                 thirty_test = test
                 break
-        for i, form in enumerate(thirty_test.forms):
+        for i, form in enumerate(thirty_test['forms']):
             field_name = "form" + str(i)
             self.fields[field_name] = generate_form(form)
         self.helper = FormHelper()
@@ -226,10 +225,10 @@ class BalanceTestForm(forms.Form):
         super(BalanceTestForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         for test in data_client.func_test:
-            if test.name == "4 Stage Balance Test":
+            if test['name'] == "4 Stage Balance Test":
                 balance_test = test
                 break
-        for i, form in enumerate(balance_test.forms):
+        for i, form in enumerate(balance_test['forms']):
             field_name = "form" + str(i)
             self.fields[field_name] = generate_form(form)
         self.helper = FormHelper()
@@ -295,8 +294,8 @@ class ExamsForm(forms.Form):
         j = 0
         self.helper.layout = Layout()
         for exam in data_client.physical_exam:
-            exam_fieldset = Fieldset(exam.name, css_class=exam.name)
-            for i, form in enumerate(exam.forms):
+            exam_fieldset = Fieldset(exam['name'], css_class=exam['name'])
+            for i, form in enumerate(exam['forms']):
                 field_name = str(j)
                 j = j + 1
                 self.fields[field_name] = generate_form(form)
@@ -317,8 +316,8 @@ class ResultsForm(forms.Form):
         j = 0
         self.helper.layout = Layout()
         for intervention in data_client.intervention_list:
-            intervention_fieldset = Fieldset(intervention.name, css_class='field_set_results')
-            for i, form in enumerate(intervention.forms):
+            intervention_fieldset = Fieldset(intervention['name'], css_class='field_set_results')
+            for i, form in enumerate(intervention['forms']):
                 field_name = str(j)
                 j = j + 1
                 self.fields[field_name] = generate_form(form)

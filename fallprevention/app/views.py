@@ -9,6 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from app.forms import *
 from app.models import Question, FuncAbilityTest, TestParameter
 from app.data_client import DataClient
+from app.fhir_reading import FallsFHIRClient
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # from subprocess import call
@@ -58,8 +59,12 @@ def searchPatient(request):
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
-            patient = { 'name' : search_patient_form.cleaned_data['patient_name'] }
-            request.session['patient'] = patient
+            fhir_client = FallsFHIRClient()
+            data_client = DataClient()
+            patient_name = search_patient_form.cleaned_data['patient_name'].split()
+            # Search for a patient by first and last name
+            #TODO error check fot the search result
+            data_client.patient = fhir_client.search_patient(patient_name[0], patient_name[1])
             url = '/app/questions/'
             return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
@@ -69,7 +74,7 @@ def searchPatient(request):
     return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form})
 
 def questions(request):
-    patient = request.session.get('patient', '')
+    data_client = DataClient()
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
         if question_form.is_valid():
@@ -82,15 +87,15 @@ def questions(request):
         question_form = QuestionForm()
         balance_test_form = BalanceTestForm()
 
-    return render(request, 'app/questions.html', {'question_form': question_form,'balance_test_form':balance_test_form ,  'patient': patient})
+    return render(request, 'app/questions.html', {'question_form': question_form,'balance_test_form':balance_test_form ,  'patient': data_client.patient})
 
 def thankyou(request):
+    request.session['assessments_chosen'] = []
     return render(request, 'app/thankyou.html')
 
 # def test(request):
 
 #     # assessments_chosen = request.session.get('assessments_chosen', []);
-#     patient = request.session.get('patient', '')
 #     if request.method == 'POST':
 #         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
 #         if assessments_form.is_valid():
@@ -110,7 +115,7 @@ def thankyou(request):
 #     return render(request, 'app/test.html', { 'assessments_form': assessments_form, 'patient': patient})
 
 def assessments_details(request):
-    patient = request.session.get('patient', '')
+    data_client = DataClient()
     assessments_chosen = request.session.get('assessments_chosen', []);
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
@@ -118,11 +123,11 @@ def assessments_details(request):
             return HttpResponseRedirect('/app/thankyou')
     else:
         assessments_form = AssessmentForm(assessments_chosen = assessments_chosen);
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': patient})
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
 
 def assessments(request):
      # assessments_chosen = request.session.get('assessments_chosen', []);
-    patient = request.session.get('patient', '')
+    data_client = DataClient()
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
         if assessments_form.is_valid():
@@ -139,11 +144,11 @@ def assessments(request):
             return HttpResponseRedirect('/app/assessments/details')
     else:
         assessments_form = AssessmentForm(assessments_chosen = []);
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': patient})
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
 
 def medications(request):
 
-    patient = request.session.get('patient', '')
+    data_client = DataClient()
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
         if medications_form.is_valid():
@@ -151,17 +156,17 @@ def medications(request):
     else:
         medications_form = MedicationsForm()
 
-    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': patient})
+    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient})
 
 def results(request):
-    patient = request.session.get('patient', '')
+    data_client = DataClient()
     results_form = ResultsForm()
-    return render(request, 'app/results.html', {'results_form': results_form, 'patient': patient})
+    return render(request, 'app/results.html', {'results_form': results_form, 'patient': data_client.patient})
 
 def exams(request):
-    patient = request.session.get('patient', '')
+    data_client = DataClient()
     exams_form = ExamsForm()
-    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': patient})
+    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
 
 # User Login - Currently not working
 def user_login(request):
