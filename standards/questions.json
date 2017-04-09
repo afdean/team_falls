@@ -132,12 +132,8 @@
       "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"
     }
   ],
-  "question_logic": [
-    {
-      "min_score": 4
-    },
-    {
-      "min_key": 1
-    }
-  ]
+  "question_logic": {
+    "min_score": 4,
+    "min_key": 1
+  }
 }
