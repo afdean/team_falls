@@ -5,15 +5,11 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
-# from app.forms import MessageForm, QuestionForm, LoginForm, LoginCPForm, TugForm, SearchPatientForm, BalanceTestForm, MedicationsForm, ThirtySecStandForm, ResultsForm
 from app.forms import *
 from app.models import Question, FuncAbilityTest, TestParameter
 from app.data_client import DataClient
 from app.fhir_reading import FallsFHIRClient
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-# from subprocess import call
-
 
 
 # Home screen
@@ -22,20 +18,20 @@ def index(request):
     return render(request, 'app/index.html', {'form': MessageForm()})
 
 def login(request):
-
+    data_client = DataClient()
     if request.method == 'POST':
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
             identity = login_form.cleaned_data['identity']
-            print (identity)
             if identity == 'patient':
                 # login_form.helper.form_action = '/app/questions/'
                 url = '/app/questions/'
-                request.session['identity'] = 'patient'
+                data_client.identity = 'patient'
+                # request.session['identity'] = 'patient'
             else:
                 # login_form.helper.form_action = '/app/login/care_provider/'
                 url = '/app/login/care_provider/'
-                request.session['identity'] = 'care_provider'
+                data_client.identity = 'care_provider'
             return HttpResponseRedirect(url)
     else:
         login_form = LoginForm()
@@ -43,12 +39,11 @@ def login(request):
     return render(request, 'app/login.html', {'login_form': login_form})
 
 def login_cp(request):
-
+    data_client = DataClient()
     if request.method == 'POST':
         login_cp_form = LoginCPForm(request.POST)
         if login_cp_form.is_valid():
-            url = '/app/test/'
-            request.session['assessments_chosen'] = [];
+            url = '/app/questions/'
             return HttpResponseRedirect(url)
     else:
         login_cp_form = LoginCPForm()
@@ -56,6 +51,7 @@ def login_cp(request):
     return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
 
 def searchPatient(request):
+    data_client = DataClient()
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
@@ -78,10 +74,24 @@ def questions(request):
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
         if question_form.is_valid():
-            #second parameter if default value
-            if request.session.get('identity', 'patient') == 'patient':
+            score = 0
+            key_score = 0
+            for i, question in enumerate(data_client.questions['questions']):
+                field_name = "question" + str(i)
+                answer = question_form.cleaned_data[field_name]
+                data_client.questions['questions'][i]['answer'] = answer
+                if answer:
+                    score += int(data_client.questions['questions'][i]['score'])
+                    if data_client.questions['questions'][i]['is_key']:
+                        key_score += 1
+            if data_client.identity == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
             else:
+                print (data_client.questions['question_logic'])
+                if (key_score < data_client.questions['question_logic']['min_key'] and
+                    score < data_client.questions['question_logic']['min_score']):
+                    data_client.risk_level = "low"
+                    return HttpResponseRedirect('/app/risks/')
                 return HttpResponseRedirect('/app/assessments/')
     else:
         question_form = QuestionForm()
@@ -90,33 +100,13 @@ def questions(request):
     return render(request, 'app/questions.html', {'question_form': question_form,'balance_test_form':balance_test_form ,  'patient': data_client.patient})
 
 def thankyou(request):
-    request.session['assessments_chosen'] = []
+    data_client = DataClient()
+    data_client.assessments_chosen = []
     return render(request, 'app/thankyou.html')
-
-# def test(request):
-
-#     # assessments_chosen = request.session.get('assessments_chosen', []);
-#     if request.method == 'POST':
-#         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
-#         if assessments_form.is_valid():
-#             # if assessments_chosen:
-#             #     # request.session['assessments_chosen'] = []
-#             #     return HttpResponseRedirect('/app/thankyou/')
-#             # else:
-#             chosen_list = []
-#             for field in assessments_form.fields:
-#                 if (assessments_form.cleaned_data[field]):
-#                     chosen_list.append(field)
-#             request.session['assessments_chosen'] = chosen_list
-#             # assessments_form = AssessmentForm(assessments_chosen = chosen_list);
-#             return HttpResponseRedirect('/app/assessments/details')
-#     else:
-#         assessments_form = AssessmentForm(assessments_chosen = []);
-#     return render(request, 'app/test.html', { 'assessments_form': assessments_form, 'patient': patient})
 
 def assessments_details(request):
     data_client = DataClient()
-    assessments_chosen = request.session.get('assessments_chosen', []);
+    assessments_chosen = data_client.assessments_chosen;
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
         if assessments_form.is_valid():
@@ -131,15 +121,11 @@ def assessments(request):
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
         if assessments_form.is_valid():
-            # if assessments_chosen:
-            #     # request.session['assessments_chosen'] = []
-            #     return HttpResponseRedirect('/app/thankyou/')
-            # else:
             chosen_list = []
             for field in assessments_form.fields:
                 if (assessments_form.cleaned_data[field]):
                     chosen_list.append(field)
-            request.session['assessments_chosen'] = chosen_list
+            data_client.assessments_chosen = chosen_list
             # assessments_form = AssessmentForm(assessments_chosen = chosen_list);
             return HttpResponseRedirect('/app/assessments/details')
     else:

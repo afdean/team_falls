@@ -88,7 +88,7 @@ class QuestionForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
-        CHOICES = (('1', 'Yes',), ('2', 'No',))
+        CHOICES = ((True, 'Yes',), (False, 'No',))
         for i, question in enumerate(data_client.questions['questions']):
             field_name = "question" + str(i)
             self.fields[field_name] = generate_form(question, forms.RadioSelect, CHOICES)
@@ -166,19 +166,6 @@ class TugForm(forms.Form):
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
-# class ThirtySecStandForm(forms.Form):
-#     def __init__(self, *args, **kwargs):
-#         super(ThirtySecStandForm, self).__init__(*args, **kwargs)
-#         self.helper = FormHelper()
-#         self.helper.form_id = 'id-balance'
-#         self.helper.form_method = 'post'
-#         self.helper.add_input(Submit('submit', 'Submit'))
-#
-#     cs_test_details = forms.CharField(
-#         label = 'Score:',
-#         required = False,
-#     )
-
 class ThirtySecStandForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(ThirtySecStandForm, self).__init__(*args, **kwargs)
@@ -194,31 +181,6 @@ class ThirtySecStandForm(forms.Form):
         self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
-
-# class BalanceTestForm(forms.Form):
-#     balance_test_detail1 = forms.CharField(
-#         label = '1. Stand with your feet side to side:',
-#         required = False,
-#     )
-#     balance_test_detail2 = forms.CharField(
-#         label = '2. Place the instep of one foot so it is touching the big toe of the other foot:',
-#         required = False,
-#     )
-#     balance_test_detail3 = forms.CharField(
-#         label = '3. Place the instep of one foot so it is touching the big toe of the other foot:',
-#         required = False,
-#     )
-#     balance_test_detail4 = forms.CharField(
-#         label = '4. Place the instep of one foot so it is touching the big toe of the other foot:',
-#         required = False,
-#     )
-#
-#     def __init__(self, *args, **kwargs):
-#         super(BalanceTestForm, self).__init__(*args, **kwargs)
-#         self.helper = FormHelper()
-#         self.helper.form_id = 'id-balance'
-#         self.helper.form_method = 'post'
-#         self.helper.add_input(Submit('submit', 'Submit'))
 
 class BalanceTestForm(forms.Form):
     def __init__(self, *args, **kwargs):
@@ -291,13 +253,11 @@ class ExamsForm(forms.Form):
         super(ExamsForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         self.helper = FormHelper()
-        j = 0
         self.helper.layout = Layout()
         for exam in data_client.physical_exam:
-            exam_fieldset = Fieldset(exam['name'], css_class=exam['name'])
+            exam_fieldset = Fieldset(exam['name'], css_class = exam['name'])
             for i, form in enumerate(exam['forms']):
-                field_name = str(j)
-                j = j + 1
+                field_name = exam['name'] + "_form" + str(i)
                 self.fields[field_name] = generate_form(form)
                 exam_fieldset.append(Field(field_name))
             self.helper.layout.append(exam_fieldset)
@@ -313,13 +273,11 @@ class ResultsForm(forms.Form):
         super(ResultsForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         self.helper = FormHelper()
-        j = 0
         self.helper.layout = Layout()
-        for intervention in data_client.intervention_list:
-            intervention_fieldset = Fieldset(intervention['name'], css_class='field_set_results')
+        for intervention_key, intervention in data_client.intervention_list.items():
+            intervention_fieldset = Fieldset(intervention_key, css_class='field_set_results')
             for i, form in enumerate(intervention['forms']):
-                field_name = str(j)
-                j = j + 1
+                field_name = intervention_key + "_form" + str(i)
                 self.fields[field_name] = generate_form(form)
                 intervention_fieldset.append(Field(field_name))
             self.helper.layout.append(intervention_fieldset)
