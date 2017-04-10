@@ -1,6 +1,5 @@
 {%load static%}
 {% load crispy_forms_tags %}
-{% crispy search_patient_form %}
 <html>
 <head>
     <meta charset="utf-8">
@@ -35,10 +34,8 @@
         <!--Search Bar-->
         <div class="row searchbar">
             <div class="col-lg-6 col-lg-offset-3">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Patients">
-                    <span class="input-group-btn"><button class="btn btn-primary" type="button">Search</button></span>
-                </div>
+               {% crispy search_patient_form %}
+
             </div>
         </div>
         <!--Search Bar end-->
