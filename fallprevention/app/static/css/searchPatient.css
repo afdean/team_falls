@@ -19,6 +19,11 @@
     text-align: right;
 }
 
+#id-searchPatientForm #submit-id-submit{
+    width:100%;
+
+}
+
 .pagination {
     display: flex;
     padding-left: 0;
