@@ -43,7 +43,7 @@ form#id-assessmentForm fieldset{
         border: none;
     }
 form#id-assessmentForm{
-    width:50%;
+    width:80%;
     margin: auto; 
     overflow-y: auto;
 }

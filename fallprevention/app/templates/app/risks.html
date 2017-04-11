@@ -17,10 +17,21 @@
             <div class="row form-group assessment_block" id="patient_education">
                 <h3>Interventions</h3>
 
-                <div class="col-md-6">
-                    <!--where form should go-->
+                  <div class="col-md-6 results_form">
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            {% crispy results_form %}
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
+           
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row assessment_block form-group" id="patient_education">
+
+                     <div class="col-md-6">
                     <div class="container">
                         <h5>Risk Levels</h5>
                         <div class="row">
@@ -41,18 +52,7 @@
                         </div>-->
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row assessment_block form-group" id="patient_education">
-                <div class="col-md-6 results_form">
-                    <div class="container">
-                        <div class="row justify-content-end">
-                            {% crispy results_form %}
-                        </div>
-                    </div>
-                </div>
+              
                 <div class="col-md-6">
                     <div class="container">
                         <h5>Print</h5>
