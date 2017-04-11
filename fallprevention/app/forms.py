@@ -275,9 +275,9 @@ class ResultsForm(forms.Form):
         self.helper = FormHelper()
         self.helper.layout = Layout()
         for intervention_key, intervention in data_client.intervention_list.items():
-            intervention_fieldset = Fieldset(intervention_key, css_class='field_set_results')
+            intervention_fieldset = Fieldset(intervention['name'], css_class='field_set_results')
             for i, form in enumerate(intervention['forms']):
-                field_name = intervention_key + "_form" + str(i)
+                field_name = intervention['name'] + "_form" + str(i)
                 self.fields[field_name] = generate_form(form)
                 intervention_fieldset.append(Field(field_name))
             self.helper.layout.append(intervention_fieldset)
