@@ -60,7 +60,7 @@ def searchPatient(request):
             patient_name = search_patient_form.cleaned_data['patient_name'].split()
             # Search for a patient by first and last name
             #TODO error check fot the search result
-            data_client.patient = fhir_client.search_patient(patient_name[0], patient_name[1])
+            patient = fhir_client.search_patient(patient_name[0], patient_name[1])[0]
             url = '/app/questions/'
             return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
@@ -110,6 +110,22 @@ def assessments_details(request):
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
         if assessments_form.is_valid():
+            # Variables keeping track of pass/fail for each of the possible test
+            # For each test
+            #   Find the answer to each, write it into fhir
+            #
+            #       use if else statements for each test
+            #           Check logic of test to see if theres a failure
+            #           TUG: >12 seconds or couple key questions
+            #           CHAIR: Failing scores according to standard doc
+            #           Stances: All >10 seconds
+            #               Mark variable as pass/fail, write result into fhir
+            #  If theres a failure for a test
+            #       if >0 falls/injury
+            #          Redirect to Medication (which redirects to risk)
+            #       else redirect to moderate
+            #   Else redirect to low risk?
+
             return HttpResponseRedirect('/app/thankyou')
     else:
         assessments_form = AssessmentForm(assessments_chosen = assessments_chosen);
