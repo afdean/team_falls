@@ -8,7 +8,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from app.forms import *
 from app.models import Question, FuncAbilityTest, TestParameter
 from app.data_client import DataClient
-from app.fhir_reading import FallsFHIRClient
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -56,14 +55,14 @@ def searchPatient(request):
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
-            fhir_client = FallsFHIRClient()
             data_client = DataClient()
             patient_name = search_patient_form.cleaned_data['patient_name'].split()
             # Search for a patient by first and last name
             #TODO error check fot the search result
-            patient_list = fhir_client.search_patient(patient_name[0], patient_name[1])
+            patient_list = data_client.fhir_client.search_patient(patient_name[0], patient_name[1])
             if patient_list:
                 data_client.patient = patient_list[0]
+            print (data_client.patient)
             url = '/app/questions/'
             return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
@@ -98,9 +97,8 @@ def questions(request):
                 return HttpResponseRedirect('/app/assessments/')
     else:
         question_form = QuestionForm()
-        balance_test_form = BalanceTestForm()
 
-    return render(request, 'app/questions.html', {'question_form': question_form,'balance_test_form':balance_test_form ,  'patient': data_client.patient})
+    return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})
 
 def thankyou(request):
     data_client = DataClient()
