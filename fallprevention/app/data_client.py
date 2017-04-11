@@ -2,6 +2,7 @@ import json
 from collections import namedtuple
 import urllib.request as ur
 from .constants import *
+from app.fhir_reading import FallsFHIRClient
 
 def _json_object_hook(d): return namedtuple('X', d.keys())(*d.values())
 def json2obj(data): return json.loads(data, object_hook=_json_object_hook)
@@ -32,6 +33,8 @@ class DataClient(metaclass=Singleton):
             self.intervention_list = json.loads(url_intervention.read().decode('utf8'))
         with ur.urlopen(RISK_URL) as url_risk:
             self.risk_list = json.loads(url_risk.read().decode('utf8'))
+        self.fhir_client = FallsFHIRClient()
+        self.fhir_client.load_standards_document(self.questions)
         # Use "low", "moderate", and "high"
         self.risk_level = ""
         # Stores resources

@@ -97,24 +97,6 @@ class QuestionForm(forms.Form):
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
-# class TugForm(forms.Form):
-#     tg_test_details = forms.MultipleChoiceField(
-#         label = '',
-#         choices = (
-#             ('no_problem', "No Problems"),
-#             ('loss_of_balance', 'Loss of Balance'),
-#             ('steady_self_on_walls', 'Steadying Self on Walls'),
-#             ('shuffling', 'Shuffling'),
-#             ('short_stride', 'Short Stride'),
-#             ('little_or_no_arm_swing', 'Little or no arm swing'),
-#             ('en_bloc_turning', 'En bloc turning'),
-#             ('not_using_assitive_device_properly', 'Not using assitive device properly'),
-#         ),
-#         initial = None,
-#         required = False,
-#         widget = forms.CheckboxSelectMultiple,
-#     )
-
 class AssessmentForm(forms.Form):
     def __init__(self, *args, **kwargs):
         assessments_chosen = kwargs.pop('assessments_chosen', None)
@@ -147,54 +129,6 @@ class AssessmentForm(forms.Form):
                         required = False,
                     )
         self.helper.form_id = 'id-assessmentForm'
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
-
-class TugForm(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super(TugForm, self).__init__(*args, **kwargs)
-        data_client = DataClient()
-        for test in data_client.func_test:
-            if test['name'] == "Timed Up and Go Test":
-                tug_test = test
-                break
-        for i, form in enumerate(tug_test['forms']):
-            field_name = "form" + str(i)
-            self.fields[field_name] = generate_form(form)
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-tugform2'
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
-
-class ThirtySecStandForm(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super(ThirtySecStandForm, self).__init__(*args, **kwargs)
-        data_client = DataClient()
-        for test in data_client.func_test:
-            if test['name'] == "30-Second Chair Stand":
-                thirty_test = test
-                break
-        for i, form in enumerate(thirty_test['forms']):
-            field_name = "form" + str(i)
-            self.fields[field_name] = generate_form(form)
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-tugform2'
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
-
-class BalanceTestForm(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super(BalanceTestForm, self).__init__(*args, **kwargs)
-        data_client = DataClient()
-        for test in data_client.func_test:
-            if test['name'] == "4 Stage Balance Test":
-                balance_test = test
-                break
-        for i, form in enumerate(balance_test['forms']):
-            field_name = "form" + str(i)
-            self.fields[field_name] = generate_form(form)
-        self.helper = FormHelper()
-        self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
@@ -317,35 +251,3 @@ class ResultsForm(forms.Form):
         self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         # self.helper.add_input(Submit('submit', 'Submit'))
-
-class MessageForm(forms.Form):
-    like_website = forms.TypedChoiceField(
-        label = "Do you like this website?",
-        choices = ((1, "Yes"), (0, "No")),
-        coerce = lambda x: bool(int(x)),
-        widget = forms.RadioSelect,
-        initial = '1',
-        required = True,
-    )
-
-    favorite_food = forms.CharField(
-        label = "What is your favorite food?",
-        max_length = 80,
-        required = True,
-    )
-
-    favorite_color = forms.CharField(
-        label = "What is your favorite color?",
-        max_length = 80,
-        required = True,
-    )
-
-    favorite_number = forms.IntegerField(
-        label = "Favorite number",
-        required = False,
-    )
-
-    notes = forms.CharField(
-        label = "Additional notes or feedback",
-        required = False,
-    )

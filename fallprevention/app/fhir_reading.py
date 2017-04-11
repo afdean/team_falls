@@ -28,7 +28,7 @@ class FallsFHIRClient(object):
         self.encounter_id = None
         self.diagnostic_report = None
         self.medication_list = None
-        self.load_standards_document('https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json')
+        #self.load_standards_document('https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json')
 
 
     def test_function(self):
@@ -40,9 +40,8 @@ class FallsFHIRClient(object):
     # Input: nothing (it loads the document from a known location)
     # Returns: nothing
     # Note: We can change this to take input so you can tell it where the document is.
-    def load_standards_document(self, questions_url):
-        with ur.urlopen(questions_url) as question_file:
-            self.standards_document_dict = json.loads(question_file.read().decode('utf8'))
+    def load_standards_document(self, standards_document_dict):
+        self.standards_document_dict = standards_document_dict;
         self.questions_text = []
         self.questions_code = []
         for question in self.standards_document_dict['questions']:
