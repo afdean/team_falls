@@ -197,5 +197,13 @@ def user_login(request):
         return render(request, 'app/login.html', {})
 
 def risks(request):
-    results_form = ResultsForm()
+    data_client = DataClient()
+    if data_client.risk_level == "low":
+        results_form = ResultsForm("low")
+    elif data_client.risk_level == "medium":
+        results_form = ResultsForm("medium")
+    elif data_client.risk_level == "high":
+        results_form = ResultsForm("high")
+    else:
+        results_form = ResultsForm("incomplete")
     return render(request, 'app/risks.html', {'results_form':results_form})

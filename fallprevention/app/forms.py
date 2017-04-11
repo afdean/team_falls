@@ -271,16 +271,49 @@ class ResultsForm(forms.Form):
     """
     def __init__(self, *args, **kwargs):
         super(ResultsForm, self).__init__(*args, **kwargs)
+        if args is not None:
+            print(args[0])
         data_client = DataClient()
         self.helper = FormHelper()
         self.helper.layout = Layout()
-        for intervention_key, intervention in data_client.intervention_list.items():
-            intervention_fieldset = Fieldset(intervention['name'], css_class='field_set_results')
-            for i, form in enumerate(intervention['forms']):
-                field_name = intervention['name'] + "_form" + str(i)
-                self.fields[field_name] = generate_form(form)
-                intervention_fieldset.append(Field(field_name))
-            self.helper.layout.append(intervention_fieldset)
+
+        intervention_list = []
+
+        if args[0] == "low":
+            for intervention in data_client.risk_list["low_risk"]:
+                intervention_list.append(intervention)
+        elif args[0] == "medium":
+            for intervention in data_client.risk_list["moderate_risk"]:
+                intervention_list.append(intervention)
+        elif args[0] == "high":
+            for intervention in data_client.risk_list["high_risk"]:
+                intervention_list.append(intervention)
+
+        # print (intervention_list)
+        # print (data_client.intervention_list.items())
+
+        # Pythonic way to check if list isn't empty
+        if intervention_list:
+            for intervention in intervention_list:
+                print(intervention)
+                current_intervention = data_client.intervention_list[intervention]
+                print(current_intervention)
+                intervention_fieldset = Fieldset(current_intervention['name'], css_class='field_set_results')
+                for i, form in enumerate(current_intervention['forms']):
+                    field_name = current_intervention['name'] + "_form" + str(i)
+                    self.fields[field_name] = generate_form(form)
+                    intervention_fieldset.append(Field(field_name))
+                self.helper.layout.append(intervention_fieldset)
+
+        #
+        # for intervention_key, intervention in data_client.intervention_list.items():
+        #     intervention_fieldset = Fieldset(intervention['name'], css_class='field_set_results')
+        #     for i, form in enumerate(intervention['forms']):
+        #         field_name = intervention['name'] + "_form" + str(i)
+        #         self.fields[field_name] = generate_form(form)
+        #         intervention_fieldset.append(Field(field_name))
+        #     self.helper.layout.append(intervention_fieldset)
+        #
         self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         # self.helper.add_input(Submit('submit', 'Submit'))

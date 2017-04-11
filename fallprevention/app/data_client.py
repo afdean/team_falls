@@ -32,6 +32,7 @@ class DataClient(metaclass=Singleton):
             self.intervention_list = json.loads(url_intervention.read().decode('utf8'))
         with ur.urlopen(RISK_URL) as url_risk:
             self.risk_list = json.loads(url_risk.read().decode('utf8'))
+        # Use "low", "moderate", and "high"
         self.risk_level = ""
         self.patient = {}
         self.identity = "patient"
