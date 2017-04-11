@@ -223,9 +223,6 @@ class ResultsForm(forms.Form):
             for intervention in data_client.risk_list["risks"]["high_risk"]:
                 intervention_list.append(intervention)
 
-        # print (intervention_list)
-        # print (data_client.intervention_list.items())
-
         # Pythonic way to check if list isn't empty
         if intervention_list:
             for intervention in intervention_list:
@@ -239,15 +236,6 @@ class ResultsForm(forms.Form):
                     intervention_fieldset.append(Field(field_name))
                 self.helper.layout.append(intervention_fieldset)
 
-        #
-        # for intervention_key, intervention in data_client.intervention_list.items():
-        #     intervention_fieldset = Fieldset(intervention['name'], css_class='field_set_results')
-        #     for i, form in enumerate(intervention['forms']):
-        #         field_name = intervention['name'] + "_form" + str(i)
-        #         self.fields[field_name] = generate_form(form)
-        #         intervention_fieldset.append(Field(field_name))
-        #     self.helper.layout.append(intervention_fieldset)
-        #
         self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         # self.helper.add_input(Submit('submit', 'Submit'))

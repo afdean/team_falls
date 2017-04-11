@@ -1,7 +1,7 @@
 {
   "risks": {
       "code": "r001",
-      "question_description": "Fall risk level evaluation",
+      "description": "Fall risk level evaluation",
       "low_risk": [
         "patient_edu", "vit_calcium", "referrals"
       ],
