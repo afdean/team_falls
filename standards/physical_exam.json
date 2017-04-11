@@ -5,26 +5,31 @@
       {
         "content": "Supine",
         "type": "integer",
+        "code": "pos001",
         "num_forms": 2
       },
       {
         "content": "Standing (1m)",
         "type": "integer",
+        "code": "pos002",
         "num_forms": 2
       },
       {
         "content": "Standing (3m)",
         "type": "integer",
+        "code": "pos003",
         "num_forms": 2
       },
       {
         "content": "Postural Dizziness",
         "type": "boolean",
+        "code": "pos004",
         "num_forms": 1
       },
       {
         "content": "Heart Rate",
         "type": "integer",
+        "code": "pos005",
         "num_forms": 3
       }
     ]
@@ -35,11 +40,13 @@
       {
         "content": "Notes",
         "type": "char",
+        "code": "cog001",
         "num_forms": 1
       },
       {
         "content": "Cognitive Impairment",
         "type": "boolean",
+        "code": "cog002",
         "num_forms": 1
       }
     ]
@@ -50,41 +57,49 @@
       {
         "content": "Normal",
         "type": "boolean",
+        "code": "feet001",
         "num_forms": 1
       },
       {
         "content": "Bunions",
         "type": "boolean",
+        "code": "feet002",
         "num_forms": 1
       },
       {
         "content": "Ulcers",
         "type": "boolean",
+        "code": "feet003",
         "num_forms": 1
       },
       {
         "content": "Structural Abnormalities",
         "type": "boolean",
+        "code": "feet004",
         "num_forms": 1
       },
       {
         "content": "Impaired Sensation",
         "type": "boolean",
+        "code": "feet005",
         "num_forms": 1
       },
       {
         "content": "Impaired Proprioception",
         "type": "boolean",
+        "code": "feet006",
         "num_forms": 1
       },
       {
         "content": "Amputation noted on one foot",
         "type": "boolean",
+        "code": "feet007",
         "num_forms": 1
       },
       {
         "content": "Amputation noted on both feet",
         "type": "boolean",
+        "code": "feet008",
         "num_forms": 1
       }
     ]
@@ -95,6 +110,7 @@
       {
         "content": "Uses Aid",
         "type": "boolean",
+        "code": "aid001",
         "num_forms": 1
       }
     ]
@@ -105,21 +121,25 @@
       {
         "content": "Left",
         "type": "char",
+        "code": "vis001",
         "num_forms": 1
       },
       {
         "content": "Right",
         "type": "char",
+        "code": "vis002",
         "num_forms": 1
       },
       {
         "content": "Both",
         "type": "char",
+        "code": "vis003",
         "num_forms": 1
       },
       {
         "content": "Vision Impairment",
         "type": "boolean",
+        "code": "vis004",
         "num_forms": 1
       }
     ]
@@ -130,26 +150,31 @@
       {
         "content": "Normal Tone and Strength",
         "type": "boolean",
+        "code": "musc001",
         "num_forms": 1
       },
       {
         "content": "Diffuse Muscle Weakness",
         "type": "boolean",
+        "code": "musc002",
         "num_forms": 1
       },
       {
         "content": "Diffuse Muscle Atrophy",
         "type": "boolean",
+        "code": "musc003",
         "num_forms": 1
       },
       {
         "content": "Focal Weakness",
         "type": "boolean",
+        "code": "musc004",
         "num_forms": 1
       },
       {
         "content": "Cogwheel Rigidity",
         "type": "boolean",
+        "code": "musc005",
         "num_forms": 1
       }
     ]

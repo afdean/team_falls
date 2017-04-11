@@ -10,50 +10,60 @@
       {
         "content": "Patient unable to do TUG",
         "type": "boolean",
+        "code": "tug001",
         "is_key": false
       },
       {
         "content": "TUG Time (seconds): ",
+        "code": "tug002",
         "type": "integer"
       },
       {
         "content": "No problems",
         "type": "boolean",
+        "code": "tug003",
         "is_key": false
       },
       {
         "content": "Loss of balance",
         "type": "boolean",
+        "code": "tug004",
         "is_key": true
       },
       {
         "content": "Steadying self on walls",
         "type": "boolean",
+        "code": "tug005",
         "is_key": true
       },
       {
         "content": "Shuffling",
         "type": "boolean",
+        "code": "tug006",
         "is_key": false
       },
       {
         "content": "Short Stride",
         "type": "boolean",
+        "code": "tug007",
         "is_key": false
       },
       {
         "content": "Little or no arm swing",
         "type": "boolean",
+        "code": "tug008",
         "is_key": false
       },
       {
         "content": "En bloc turning",
         "type": "boolean",
+        "code": "tug009",
         "is_key": false
       },
       {
         "content": "Not using assistive device properly",
         "type": "boolean",
+        "code": "tug010",
         "is_key": false
       }
     ]
@@ -96,10 +106,12 @@
     "forms": [
       {
         "content": "Notes:",
+        "code": "chair001",
         "type": "char"
       },
       {
         "content": "Score:",
+        "code": "chair002",
         "type": "integer"
       }
     ]
@@ -112,22 +124,27 @@
     "forms": [
       {
         "content": "Notes:",
+        "code": "bal001",
         "type": "char"
       },
       {
         "content": "Stand with your feet side by side. Time (seconds):",
+        "code": "bal002",
         "type": "integer"
       },
       {
         "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):",
+        "code": "bal003",
         "type": "integer"
       },
       {
         "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):",
+        "code": "bal004",
         "type": "integer"
       },
       {
         "content": "Stand on one foot. Time (seconds):",
+        "code": "bal005",
         "type": "integer"
       }
     ]

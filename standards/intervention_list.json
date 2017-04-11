@@ -5,21 +5,25 @@
       {
         "content": "Check for Safety Brochure",
         "type": "boolean",
+        "code": "edu001",
         "num_forms": 1
       },
       {
         "content": "What Can You Do to Prevent Falls",
         "type": "boolean",
+        "code": "edu002",
         "num_forms": 1
       },
       {
         "content": "Chair Rise Exercise Sheet",
         "type": "boolean",
+        "code": "edu003",
         "num_forms": 1
       },
       {
         "content": "Postural Hypotension Brochure",
         "type": "boolean",
+        "code": "edu004",
         "num_forms": 1
       }
     ]
@@ -30,11 +34,13 @@
       {
         "content": "Patient is currently taking at least 800 IU of Vitamin D",
         "type": "boolean",
+        "code": "vit001",
         "num_forms": 1
       },
       {
         "content": "Patient is currently taking enough calcium",
         "type": "boolean",
+        "code": "vit002",
         "num_forms": 1
       }
     ]
@@ -45,11 +51,13 @@
       {
         "content": "PT to improve gait, strength and balance",
         "type": "boolean",
+        "code": "ref001",
         "num_forms": 1
       },
       {
         "content": "Fall prevention/Community exercise program",
         "type": "boolean",
+        "code": "ref002",
         "num_forms": 1
       }
     ]
@@ -60,6 +68,7 @@
       {
         "content": "Reviewed home safety with patient",
         "type": "boolean",
+        "code": "home001",
         "num_forms": 1
       }
     ]

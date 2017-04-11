@@ -3,7 +3,7 @@
     {
       "content": "I have fallen in the past year",
       "type": "choice",
-      "code": "001",
+      "code": "q001",
       "score": 2,
       "is_key": true,
       "medication_related": false,
@@ -12,7 +12,7 @@
         {
           "content": "I have fallen more than once in the past year",
           "type": "choice",
-          "code": "002",
+          "code": "q002",
           "score": 0,
           "is_key": false,
           "medication_related": false,
@@ -21,7 +21,7 @@
         {
           "content": "I have been injured from a fall in the past year",
           "type": "choice",
-          "code": "003",
+          "code": "q003",
           "score": 0,
           "is_key": false,
           "medication_related": false,
@@ -32,7 +32,7 @@
     {
       "content": "Sometimes I feel unsteady when I am walking",
       "type": "choice",
-      "code": "004",
+      "code": "q004",
       "score": 2,
       "is_key": true,
       "medication_related": false,
@@ -41,7 +41,7 @@
     {
       "content": "I am worried about falling",
       "type": "choice",
-      "code": "005",
+      "code": "q005",
       "score": 1,
       "is_key": true,
       "medication_related": false,
@@ -50,7 +50,7 @@
     {
       "content": "I use or have been advised to use a cane or walker to get around safely",
       "type": "choice",
-      "code": "006",
+      "code": "q006",
       "score": 2,
       "is_key": false,
       "medication_related": false,
@@ -60,7 +60,7 @@
     {
       "content": "I steady myself by holding onto furniture when walking at home",
       "type": "choice",
-      "code": "007",
+      "code": "q007",
       "score": 1,
       "is_key": false,
       "medication_related": false,
@@ -70,7 +70,7 @@
     {
       "content": "I need to push with my hands to stand up from a chair",
       "type": "choice",
-      "code": "008",
+      "code": "q008",
       "score": 1,
       "is_key": false,
       "medication_related": false,
@@ -80,7 +80,7 @@
     {
       "content": "I have some trouble stepping up onto a curb",
       "type": "choice",
-      "code": "009",
+      "code": "q009",
       "score": 1,
       "is_key": false,
       "medication_related": false,
@@ -89,7 +89,7 @@
     {
       "content": "I often have to rush to the toilet",
       "type": "choice",
-      "code": "010",
+      "code": "q010",
       "score": 1,
       "is_key": false,
       "medication_related": false,
@@ -98,7 +98,7 @@
     {
       "content": "I have lost some feeling in my feet",
       "type": "choice",
-      "code": "011",
+      "code": "q011",
       "score": 1,
       "is_key": false,
       "medication_related": false,
@@ -107,7 +107,7 @@
     {
       "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
       "type": "choice",
-      "code": "012",
+      "code": "q012",
       "score": "1",
       "is_key": false,
       "medication_related": true,
@@ -116,7 +116,7 @@
     {
       "content": "I take medicine to help me sleep or improve my mood",
       "type": "choice",
-      "code": "013",
+      "code": "q013",
       "score": 1,
       "is_key": false,
       "medication_related": true,
@@ -125,7 +125,7 @@
     {
       "content": "I often feel sad or depressed",
       "type": "choice",
-      "code": "014",
+      "code": "q014",
       "score": 1,
       "is_key": false,
       "medication_related": true,

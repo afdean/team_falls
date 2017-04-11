@@ -280,13 +280,13 @@ class ResultsForm(forms.Form):
         intervention_list = []
 
         if args[0] == "low":
-            for intervention in data_client.risk_list["low_risk"]:
+            for intervention in data_client.risk_list["risks"]["low_risk"]:
                 intervention_list.append(intervention)
         elif args[0] == "medium":
-            for intervention in data_client.risk_list["moderate_risk"]:
+            for intervention in data_client.risk_list["risks"]["moderate_risk"]:
                 intervention_list.append(intervention)
         elif args[0] == "high":
-            for intervention in data_client.risk_list["high_risk"]:
+            for intervention in data_client.risk_list["risks"]["high_risk"]:
                 intervention_list.append(intervention)
 
         # print (intervention_list)
