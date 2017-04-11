@@ -34,6 +34,9 @@ class DataClient(metaclass=Singleton):
             self.risk_list = json.loads(url_risk.read().decode('utf8'))
         # Use "low", "moderate", and "high"
         self.risk_level = ""
+        # Stores resources
         self.patient = {}
+        self.encounter = {}
+        self.observations = {}
         self.identity = "patient"
         self.assessments_chosen = []

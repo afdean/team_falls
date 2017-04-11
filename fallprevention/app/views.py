@@ -52,6 +52,7 @@ def login_cp(request):
 
 def searchPatient(request):
     data_client = DataClient()
+    patient_list = []
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
@@ -60,14 +61,16 @@ def searchPatient(request):
             patient_name = search_patient_form.cleaned_data['patient_name'].split()
             # Search for a patient by first and last name
             #TODO error check fot the search result
-            data_client.patient = fhir_client.search_patient(patient_name[0], patient_name[1])
+            patient_list = fhir_client.search_patient(patient_name[0], patient_name[1])
+            if patient_list:
+                data_client.patient = patient_list[0]
             url = '/app/questions/'
             return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
     else:
         search_patient_form = SearchPatientForm()
 
-    return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form})
+    return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patient_list': patient_list})
 
 def questions(request):
     data_client = DataClient()
