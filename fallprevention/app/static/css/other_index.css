@@ -1,0 +1,74 @@
+#questions form {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        
+        button {
+            width: 100%;
+        }
+        
+        .forms {
+            height: 400px;
+            overflow-y: auto;
+        }
+        
+        #notes .forms {
+            height: 350px;
+        }
+        
+        #assessments form {
+            width: 100%;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            height: 250px;
+        }
+        
+        .panel-heading {
+            text-align: center;
+        }
+        
+        #close {
+            float: right;
+            display: inline-block;
+            padding: 2px 5px;
+            background: #ccc;
+        }
+        
+        #exam_submit {
+            width: 100%;
+        }
+        
+        #content {
+            margin-top: 80px;
+        }
+        
+        .auto-pass-fail {
+            width: 100%;
+        }
+        i{
+            margin-right: 5px;
+            
+        }
+        .fail{
+            background-color: red;
+            text-align: center;
+            color: white;
+            border: none;
+        }
+        .pass{
+            background-color: green;
+            text-align: center;
+            color: white;
+            border: none;
+        }
+        i:hover {
+            transform: scale(1.1, 1.1);
+            opacity: 1;
+}
+label{
+    font-size: 20px;
+}

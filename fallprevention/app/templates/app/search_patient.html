@@ -1,25 +1,29 @@
-{%load static%}
-{% load crispy_forms_tags %}
+{%load static%} {% load crispy_forms_tags %}
 <html>
+
 <head>
     <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-  <title>STEADI</title>
+    <title>STEADI</title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
-  <link href="{% static 'css/basestyle.css' %}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link href="{% static 'css/basestyle.css' %}" rel="stylesheet">
 
-  <link href="{%static 'css/styles.css'%}" rel="stylesheet">
-  <link href="{%static 'css/searchPatient.css'%}" rel="stylesheet">
-  <link href="{%static 'css/questions.css' %}" rel="stylesheet">
+    <link href="{%static 'css/styles.css'%}" rel="stylesheet">
+    <link href="{%static 'css/searchPatient.css'%}" rel="stylesheet">
+    <link href="{%static 'css/questions.css' %}" rel="stylesheet">
+    <link href="{%static 'css/other_index.css'%}" rel="stylesheet">
+        <link href="{%static 'css/new_styles.css'%}" rel="stylesheet">
+
 
 </head>
+
 <body>
     <!--BEGIN NAV-->
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #075290" role="navigation">
@@ -30,23 +34,22 @@
         </div>
     </nav>
     <!--END NAV-->
+
+
     <div class="container-fluid">
         <!--Search Bar-->
         <div class="row searchbar">
-            <div class="col-lg-6 col-lg-offset-3">
-               {% crispy search_patient_form %}
+            <div class="col-lg-10 col-lg-offset-1">
+                {% crispy search_patient_form %}
 
             </div>
         </div>
         <!--Search Bar end-->
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
+        <div class="row row-centered">
             <!--Patient BLOCK-->
-            <div class="col-md-6 patient-block" style="float: none;">
+            <div class="col-lg-3  patient-block col-centered">
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-12">
                         <h3 id="name">John Doe</h3>
                         <div class="row">
                             <div class="col-xs-4">
@@ -57,75 +60,97 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-6" id="last-visit">
-                        <h4>Last Visit: 1/12/2016</h4>
-                    </div>
-                </div>
-
-                <div class="row justify-content-end">
-                    <div class="col-xs-3">
-                        <a href="{% url 'questions' %}"><button class="btn btn-success" type="button" >Start</button></a>
-                    </div>
 
                 </div>
+
+                <div class="buttons">
+                    <div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <a href="{% url 'questions' %}"><button class="btn btn-success start" type="button" >Start</button></a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <a href="{% url 'questions' %}"><button class="btn btn-info history" type="button" >History</button></a>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <a href="{% url 'questions' %}"><button class="btn btn-success" type="button" >History</button></a>
+                        </div>
+                    </div>-->
 
             </div>
+            <!--/END-->
             <!--Patient BLOCK-->
-            <div class="col-md-6 patient-block" style="float: none;">
+            <div class="col-lg-3 patient-block col-centered">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <h3 id="name">James Anderson</h3>
+                    <div class="col-xs-12">
+                        <h3 id="name">John Doe</h3>
                         <div class="row">
                             <div class="col-xs-4">
-                                <p id="age">Age: 72</p>
+                                <p id="age">Age: 83</p>
                             </div>
                             <div class="col-xs-4">
                                 <p id="gender">Male</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-6" id="last-visit">
-                        <h4 id="last_date">Last Visit: 5/8/2016</h4>
-                    </div>
+
                 </div>
 
-                <div class="row justify-content-end">
-                    <div class="col-xs-6">
-                        <a href="{% url 'questions' %}"><button class="btn btn-success" type="button" >Start</button></a>
-                    </div>
 
+                <div class="buttons">
+                    <div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <a href="{% url 'questions' %}"><button class="btn btn-success start" type="button" >Start</button></a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <a href="{% url 'questions' %}"><button class="btn btn-info history" type="button" >History</button></a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-            <!--\Patient BLOCK END-->
+            <!--/END-->
             <!--Patient BLOCK-->
-            <div class="col-md-6 patient-block" style="float: none;">
+            <div class="col-lg-3 patient-block col-centered">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <h3 id="name">April Bell</h3>
+                    <div class="col-xs-12">
+                        <h3 id="name">John Doe</h3>
                         <div class="row">
                             <div class="col-xs-4">
-                                <p id="age">Age: 78</p>
+                                <p id="age">Age: 83</p>
                             </div>
                             <div class="col-xs-4">
-                                <p id="gender">Female</p>
+                                <p id="gender">Male</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-6" id="last-visit">
-                        <h4>Last Visit: 12/12/2017</h4>
-                    </div>
+
                 </div>
 
-                <div class="row justify-content-end">
-                    <div class="col-xs-3">
-                        <a href="{% url 'questions' %}"><button class="btn btn-success" type="button" >Start</button></a>
-                    </div>
 
+                <div class="buttons">
+                    <div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <a href="{% url 'questions' %}"><button class="btn btn-success start" type="button" >Start</button></a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <a href="{% url 'questions' %}"><button class="btn btn-info history" type="button" >History</button></a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-            <!--\Patient BLOCK END-->
+            <!--/END-->
+
+
         </div>
 
         <!--PAGINATION-->
@@ -139,8 +164,11 @@
             </div>
         </div>
         <!--END PAGINATION-->
-
     </div>
 
+
+
+
 </body>
+
 </html>
