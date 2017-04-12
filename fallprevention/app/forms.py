@@ -9,7 +9,7 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from .models import Question
 from app.data_client import DataClient
 
-def generate_form(field, field_widget = None, field_choices = None):
+def generate_form(field, field_widget=None, field_choices=None):
     if field['type'] == "boolean":
         return forms.BooleanField(
             label = field['content'],
@@ -189,7 +189,7 @@ class ExamsForm(forms.Form):
         self.helper = FormHelper()
         self.helper.layout = Layout()
         for exam in data_client.physical_exam:
-            exam_fieldset = Fieldset(exam['name'], css_class = exam['name'])
+            exam_fieldset = Fieldset(exam['name'], css_class=exam['name'])
             for i, form in enumerate(exam['forms']):
                 field_name = exam['name'] + "_form" + str(i)
                 self.fields[field_name] = generate_form(form)

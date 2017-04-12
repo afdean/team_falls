@@ -62,7 +62,13 @@ def searchPatient(request):
             patient_list = data_client.fhir_client.search_patient(patient_name[0], patient_name[1])
             if patient_list:
                 data_client.patient = patient_list[0]
-            print (data_client.patient)
+                data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
+                encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
+                if encounter_list:
+                    data_client.encounter = encounter_list[0]
+                    data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
+                    #print (data_client.fhir_client.encounter_id)
+                    print (data_client.fhir_client.search_observations())
             url = '/app/questions/'
             return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
