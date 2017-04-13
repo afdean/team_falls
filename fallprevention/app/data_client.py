@@ -43,4 +43,5 @@ class DataClient(metaclass=Singleton):
         self.observations = {}
         self.identity = "patient"
         self.assessments_chosen = []
+        self.exams_chosen = []
         self.patient_id = ""

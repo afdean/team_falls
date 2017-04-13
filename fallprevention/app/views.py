@@ -119,7 +119,6 @@ def assessments_details(request):
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
         if assessments_form.is_valid():
-            data_client = DataClient()
             # Local obs just in case
             observations = {}
 
@@ -223,7 +222,6 @@ def assessments(request):
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
 
 def medications(request):
-
     data_client = DataClient()
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
@@ -247,7 +245,13 @@ def results(request):
     return render(request, 'app/results.html', {'results_form': results_form, 'patient': data_client.patient})
 
 def exams(request):
+    # Copy the above and make exams_details for the ones chosen?
     data_client = DataClient()
+    # if request.method == 'POST':
+    #     exams_form = ExamsForm(request.POST)
+    #     if exams_form.is_valid():
+    #
+    # else:
     exams_form = ExamsForm()
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
 
