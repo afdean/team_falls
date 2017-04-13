@@ -205,7 +205,7 @@ class ExamsForm(forms.Form):
                     label = exam['name'],
                     required = False,
                 )
-        self.helper.form_id = 'id-tugform2'
+        self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 

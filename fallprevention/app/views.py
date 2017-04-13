@@ -117,7 +117,7 @@ def thankyou(request):
 
 def assessments_details(request):
     data_client = DataClient()
-    assessments_chosen = data_client.assessments_chosen;
+    assessments_chosen = data_client.assessments_chosen
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen=assessments_chosen);
         if assessments_form.is_valid():
@@ -255,17 +255,26 @@ def results(request):
     results_form = ResultsForm()
     return render(request, 'app/results.html', {'results_form': results_form, 'patient': data_client.patient})
 
+def exams_details(request):
+    data_client = DataClient()
+    exams_chosen = data_client.exams_chosen
+    if request.method == 'POST':
+        exams_form = ExamsForm(request.POST, exams_chosen=exams_chosen)
+    else:
+        exams_form = ExamsForm(exams_chosen=exams_chosen)
+    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
+
 def exams(request):
     data_client = DataClient()
     if request.method == 'POST':
         exams_form = ExamsForm(request.POST)
         if exams_form.is_valid():
             chosen_list = []
-            for field in exams_form.fields"
+            for field in exams_form.fields:
                 if (exams_form.cleaned_data[field]):
                     chosen_list.append(field)
             data_client.exams_chosen = chosen_list
-            return HttpResponseRedirect('app/exams/details')
+            return HttpResponseRedirect('/app/exams/details')
     else:
         exams_form = ExamsForm()
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
