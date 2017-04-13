@@ -256,14 +256,18 @@ def results(request):
     return render(request, 'app/results.html', {'results_form': results_form, 'patient': data_client.patient})
 
 def exams(request):
-    # Copy the above and make exams_details for the ones chosen?
     data_client = DataClient()
-    # if request.method == 'POST':
-    #     exams_form = ExamsForm(request.POST)
-    #     if exams_form.is_valid():
-    #
-    # else:
-    exams_form = ExamsForm()
+    if request.method == 'POST':
+        exams_form = ExamsForm(request.POST)
+        if exams_form.is_valid():
+            chosen_list = []
+            for field in exams_form.fields"
+                if (exams_form.cleaned_data[field]):
+                    chosen_list.append(field)
+            data_client.exams_chosen = chosen_list
+            return HttpResponseRedirect('app/exams/details')
+    else:
+        exams_form = ExamsForm()
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
 
 # User Login - Currently not working
