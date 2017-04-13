@@ -174,6 +174,9 @@ def assessments_details(request):
                                 form_logic = test['forms'][i]['logic']
                                 if form_logic in test['min_logic']:
                                     #Need to know how to get patient age and gender
+                                    # 'male or female'
+                                    data_client.patient['resource']['gender']
+                                    data_client.patient['resource']['birthDate']
                                     #find the index where age first exceeds, then match index in male or female
                                     #mark as failure according ot where it falls
                                     print("Finish this")
@@ -240,26 +243,36 @@ def medications(request):
             if data_client.risk_level == "high":
                 return HttpResponseRedirect('/app/exams/')
             elif data_client.risk_level == "moderate":
-                return HttpResponseRedirect('/app/results')
+                return HttpResponseRedirect('/app/risks')
             # Low should only get here through the usage of the side bar
             elif data_client.risk_level == "low":
-                return HttpResponseRedirect('/app/results')
+                return HttpResponseRedirect('/app/risks')
             return HttpResponseRedirect('/app/thankyou/')
     else:
         medications_form = MedicationsForm()
 
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient})
 
-def results(request):
-    data_client = DataClient()
-    results_form = ResultsForm()
-    return render(request, 'app/results.html', {'results_form': results_form, 'patient': data_client.patient})
-
 def exams_details(request):
     data_client = DataClient()
     exams_chosen = data_client.exams_chosen
     if request.method == 'POST':
         exams_form = ExamsForm(request.POST, exams_chosen=exams_chosen)
+        if exams_form.is_valid():
+            # Local obs just in case
+            observations = {}
+            for exam in data_client.physical_exam:
+                if exam['name'] in exams_chosen:
+                    for i, form in enumerate(exam['forms']):
+                        field_name = exam['name'] + "_form" + str(i)
+                        answer = exams_form.cleaned_data[field_name]
+                        code = exam['forms'][i]['code']
+                        data_client.observations['code'] = answer
+                        observations['code'] = answer
+
+            data_client.exams_chosen = []
+            print("The current risk level from exams_details is " + data_client.risk_level)
+            return HttpResponseRedirect('/app/risks/')
     else:
         exams_form = ExamsForm(exams_chosen=exams_chosen)
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
@@ -322,13 +335,17 @@ def user_login(request):
         return render(request, 'app/login.html', {})
 
 def risks(request):
+    # put another if that if its empty, do the things that you have ot do pretty pekase
+
     data_client = DataClient()
+    print ("risk_level:" + data_client.risk_level)
     if data_client.risk_level == "low":
-        results_form = ResultsForm("low")
-    elif data_client.risk_level == "medium":
-        results_form = ResultsForm("medium")
+        risks_form = RisksForm(risk_level="low")
+    elif data_client.risk_level == "moderate":
+        risks_form = RisksForm(risk_level="moderate")
     elif data_client.risk_level == "high":
-        results_form = ResultsForm("high")
+        print("In risks, the risk level is high")
+        risks_form = RisksForm(risk_level="high")
     else:
-        results_form = ResultsForm("incomplete")
-    return render(request, 'app/risks.html', {'results_form':results_form})
+        risks_form = RisksForm("incomplete")
+    return render(request, 'app/risks.html', {'risks_form':risks_form})

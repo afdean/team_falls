@@ -209,27 +209,29 @@ class ExamsForm(forms.Form):
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
-class ResultsForm(forms.Form):
+class RisksForm(forms.Form):
     """
     This is a generic results form that will show every intervention
     """
     def __init__(self, *args, **kwargs):
-        super(ResultsForm, self).__init__(*args, **kwargs)
-        if args is not None:
-            print(args[0])
+        risk_level = kwargs.pop("risk_level", None)
+        print("In forms, the risk_level is " + risk_level)
+        super(RisksForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         self.helper = FormHelper()
         self.helper.layout = Layout()
 
         intervention_list = []
 
-        if args[0] == "low":
+        if risk_level == None:
+            print("There was an error somewhere, shouldn't have been directed here")
+        elif risk_level == "low":
             for intervention in data_client.risk_list["risks"]["low_risk"]:
                 intervention_list.append(intervention)
-        elif args[0] == "medium":
+        elif risk_level == "medium":
             for intervention in data_client.risk_list["risks"]["moderate_risk"]:
                 intervention_list.append(intervention)
-        elif args[0] == "high":
+        elif risk_level == "high":
             for intervention in data_client.risk_list["risks"]["high_risk"]:
                 intervention_list.append(intervention)
 
@@ -246,6 +248,6 @@ class ResultsForm(forms.Form):
                     intervention_fieldset.append(Field(field_name))
                 self.helper.layout.append(intervention_fieldset)
 
-        self.helper.form_id = 'id-tugform2'
+        self.helper.form_id = 'id-risksForm'
         self.helper.form_method = 'post'
         # self.helper.add_input(Submit('submit', 'Submit'))
