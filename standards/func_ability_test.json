@@ -2,8 +2,11 @@
   {
     "name": "Timed Up and Go Test",
     "is_recommended": true,
-    "min_time": 12,
-    "min_key": 1,
+    "code": "tug000",
+    "min_logic": {
+      "min_time": 12,
+      "min_key": 1,
+    },
     "more_info": {
       "video_link": "https://www.youtube-nocookie.com/embed/BA7Y_oLElGY?autohide=0&enablejsapi=1&playerapiid=804452&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
       "pdf_link": "https://www.cdc.gov/steadi/pdf/tug_test-a.pdf",
@@ -28,7 +31,8 @@
       {
         "content": "TUG Time (seconds): ",
         "code": "tug002",
-        "type": "integer"
+        "type": "integer",
+        "logic": "min_key"
       },
       {
         "content": "No problems",
@@ -83,6 +87,7 @@
   {
     "name": "30-Second Chair Stand",
     "is_recommended": false,
+    "code": "chair000",
     "more_info": {
       "video_link": "https://www.youtube-nocookie.com/embed/Ng-UOHjTejY?autohide=0&enablejsapi=1&playerapiid=804450&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
       "pdf_link": "https://www.cdc.gov/steadi/pdf/30_second_chair_stand_test-a.pdf",
@@ -96,7 +101,8 @@
         "6. Repeat this for 30 seconds."
       ]
     },
-    "min_stand_seconds": {
+    "min_logic": {
+      "min_stand_seconds": {
         "ages": [
             60,
             65,
@@ -125,6 +131,7 @@
             8,
             4
         ]
+      },
     },
     "forms": [
       {
@@ -135,15 +142,21 @@
       {
         "content": "Score:",
         "code": "chair002",
-        "type": "integer"
+        "type": "integer",
+        "logic": "min_stand_seconds"
       }
     ]
   },
   {
     "name": "4 Stage Balance Test",
     "is_recommended": false,
-    "video_link": "https://www.youtube-nocookie.com/embed/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
-    "pdf_link": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf",
+    "code": "bal000",
+    "min_logic": {
+      "min_side": 10,
+      "min_front": 10,
+      "min_tandem": 10,
+      "min_failure": 1
+    },
     "more_info": {
       "video_link": "https://www.youtube-nocookie.com/embed/3HvMLLIGY6c?autohide=0&enablejsapi=1&playerapiid=804451&modestbranding=1&rel=0&origin=http://www.cdc.gov&showinfo=0&wmode=opaque",
       "pdf_link": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf",
@@ -166,17 +179,20 @@
       {
         "content": "Stand with your feet side by side. Time (seconds):",
         "code": "bal002",
-        "type": "integer"
+        "type": "integer",
+        "logic": "min_side"
       },
       {
         "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):",
         "code": "bal003",
-        "type": "integer"
+        "type": "integer",
+        "logic": "min_front"
       },
       {
         "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):",
         "code": "bal004",
-        "type": "integer"
+        "type": "integer",
+        "logic": "min_tandem"
       },
       {
         "content": "Stand on one foot. Time (seconds):",
