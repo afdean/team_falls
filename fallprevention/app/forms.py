@@ -185,17 +185,26 @@ class MedicationsLinkedForm(forms.Form):
 
 class ExamsForm(forms.Form):
     def __init__(self, *args, **kwargs):
+        exams_chosen = kwargs.pop("exams_chosen", None)
         super(ExamsForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         self.helper = FormHelper()
         self.helper.layout = Layout()
-        for exam in data_client.physical_exam:
-            exam_fieldset = Fieldset(exam['name'], css_class=exam['name'])
-            for i, form in enumerate(exam['forms']):
-                field_name = exam['name'] + "_form" + str(i)
-                self.fields[field_name] = generate_form(form)
-                exam_fieldset.append(Field(field_name))
-            self.helper.layout.append(exam_fieldset)
+        if exams_chosen:
+            for exam in data_client.physical_exam:
+                if exam['name'] in exams_chosen:
+                    exam_fieldset = Fieldset(exam['name'], css_class=exam['name'])
+                    for i, form in enumerate(exam['forms']):
+                        field_name = exam['name'] + "_form" + str(i)
+                        self.fields[field_name] = generate_form(form)
+                        exam_fieldset.append(Field(field_name))
+                    self.helper.layout.append(exam_fieldset)
+        else:
+            for exam in data_client.physical_exam:
+                self.fields[exam['name']] = forms.BooleanField(
+                    label = exam['name'],
+                    required = False,
+                )
         self.helper.form_id = 'id-tugform2'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
