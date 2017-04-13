@@ -84,9 +84,11 @@ def questions(request):
         if question_form.is_valid():
             score = 0
             key_score = 0
+            # like the for loop for chosen
             for i, question in enumerate(data_client.questions['questions']):
                 field_name = "question" + str(i)
                 answer = question_form.cleaned_data[field_name]
+                # Adds answer into json
                 data_client.questions['questions'][i]['answer'] = answer
                 if answer:
                     score += int(data_client.questions['questions'][i]['score'])
@@ -117,21 +119,86 @@ def assessments_details(request):
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
         if assessments_form.is_valid():
-            # Variables keeping track of pass/fail for each of the possible test
-            # For each test
-            #   Find the answer to each, write it into fhir
-            #
-            #       use if else statements for each test
-            #           Check logic of test to see if theres a failure
-            #           TUG: >12 seconds or couple key questions
-            #           CHAIR: Failing scores according to standard doc
-            #           Stances: All >10 seconds
-            #               Mark variable as pass/fail, write result into fhir
-            #  If theres a failure for a test
-            #       if >0 falls/injury
-            #          Redirect to Medication (which redirects to risk)
-            #       else redirect to moderate
-            #   Else redirect to low risk?
+            data_client = DataClient()
+            # Local obs just in case
+            observations = {}
+
+            # Boolean to ultimately determine if patient fails GSB
+            has_problem = False
+            # Score of how many key questions have been answered 'yes'
+            tug_key = 0
+            # Minimum amount of key questions needed to be answered 'yes' to fail
+            tug_min_key = -1
+            # Score of how many evaluations have exceeded their respective min time
+            bal_failure = 0
+            # Minimum amount of failures for evaluations to fail the test overall
+            bal_min_failure = -1
+
+            for test in data_client.func_test:
+                if test['name'] in data_client.assessments_chosen:
+                    if test['code'] == "tug000":
+                        tug_min_key = test['min_logic']['min_key']
+                    elif test['code'] == "bal000":
+                        bal_min_failure = test['min_logic']['min_failure']
+
+                    for i, form in enumerate(test['forms']):
+                        field_name = test['name'] + "_form" + str(i)
+                        answer = assessments_form.cleaned_data[field_name]
+                        code = test['forms'][i]['code']
+                        data_client.observations['code'] = answer
+                        observations['code'] = answer
+
+                        # Check logic for TUG
+                        if test['code'] == "tug000":
+                            # Check for key questions
+                            if test['forms'][i]['type'] == 'boolean':
+                                if test['forms'][i]['is_key'] and answer:
+                                    tug_key = tug_key + 1
+                            # Check for timing scores
+                            if test['forms'][i]['type'] == 'integer':
+                                form_logic = test['forms'][i]['logic']
+                                if form_logic in test['min_logic']:
+                                    if answer < test['min_logic'][form_logic]:
+                                        has_problem = True
+
+                        # Check logic for 30 Chair
+                        if test['code'] == 'chair000':
+                            if test['forms'][i]['type'] == 'integer':
+                                form_logic = test['forms'][i]['logic']
+                                if form_logic in test['min_logic']:
+                                    #Need to know how to get patient age and gender
+                                    #find the index where age first exceeds, then match index in male or female
+                                    #mark as failure according ot where it falls
+                                    print("Finish this")
+
+                        # Check logic for Balance Test
+                        if test['code'] == 'bal000':
+                            if test['forms'][i]['type'] == 'integer':
+                                form_logic = test['forms'][i]['logic']
+                                if form_logic in test['min_logic']:
+                                    if answer < test['min_logic'][form_logic]:
+                                        bal_score = bal_score + 1
+
+            # First check if tug was in assessments chosen
+            #   Now check if the amount key answered exceeded what was needed to fail
+                # if tug_key >= data_client.func_test[] (check if >=0 )
+                #   Then they failed it so has_problem is true
+                #
+            if tug_min_key >= 0 and tug_key > tug_min_key:
+                has_problem = True
+            if bal_min_failure >= 0 and bal_score > bal_min_failure:
+                has_problem = True
+
+            if has_problem:
+                if data_client.observations['q001']:
+                    data_client.risk_level = "high"
+                    return HttpResponseRedirect('/app/medications/')
+                else:
+                    data_client.risk_level = "moderate"
+                    return HttpResponseRedirect('/app/risks/')
+            else:
+                data_client.risk_level = "low"
+                return HttpResponseRedirect('/app/risks/')
 
             return HttpResponseRedirect('/app/thankyou')
     else:
