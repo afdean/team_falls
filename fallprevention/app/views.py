@@ -226,7 +226,6 @@ def assessments(request):
                 if (assessments_form.cleaned_data[field]):
                     chosen_list.append(field)
             data_client.assessments_chosen = chosen_list
-            # assessments_form = AssessmentForm(assessments_chosen = chosen_list);
             return HttpResponseRedirect('/app/assessments/details')
     else:
         assessments_form = AssessmentForm();
@@ -235,6 +234,7 @@ def assessments(request):
 def medications(request):
     data_client = DataClient()
     if request.method == 'POST':
+        print("post")
         medications_form = MedicationsForm(request.POST)
         if medications_form.is_valid():
             if data_client.risk_level == "high":

@@ -18,7 +18,7 @@ import copy
 import time
 from collections import namedtuple
 import urllib.request as ur
-from .constants import *
+from constants import *
 # Requires a smart-on-fhir api-server running on localhost. Find code to run that at
 # https://github.com/smart-on-fhir/api-server
 class FallsFHIRClient(object):
@@ -680,7 +680,7 @@ if __name__ == "__main__":
 
     # If the standards document has been updated, run this to update the dict the client is using to perform its search
     # for relevant observations
-    client.load_standards_document('https://github.com/akapusta/team_falls/blob/master/standards/questions.json')
+    client.load_standards_document("https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json")
 
     # Find all observations that are on fall prevention for this patient and this encounter:
     current_obs = client.search_observations()

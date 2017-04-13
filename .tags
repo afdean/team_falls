@@ -3184,3 +3184,78 @@ required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^     
 notes	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    notes = forms.CharField($/;"	variable	line:325	class:MessageForm
 label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = "Additional notes or feedback",$/;"	variable	line:326	class:MessageForm
 required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:327	class:MessageForm
+index	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def index(request):$/;"	function	line:15
+login	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def login(request):$/;"	function	line:19
+login_cp	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def login_cp(request):$/;"	function	line:40
+searchPatient	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def searchPatient(request):$/;"	function	line:52
+questions	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def questions(request):$/;"	function	line:80
+thankyou	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def thankyou(request):$/;"	function	line:113
+assessments_details	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def assessments_details(request):$/;"	function	line:118
+assessments	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def assessments(request):$/;"	function	line:218
+medications	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def medications(request):$/;"	function	line:234
+results	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def results(request):$/;"	function	line:253
+exams	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def exams(request):$/;"	function	line:258
+user_login	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def user_login(request):$/;"	function	line:270
+risks	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def risks(request):$/;"	function	line:311
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^<div class="container">$/;"	function	line:2
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="row justify-content-between medication_block">$/;"	function	line:3
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="col-lg-6">$/;"	function	line:4
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="form-group" id="medications">$/;"	function	line:6
+label	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <label for="exampleSelect2">Medications<\/label>$/;"	function	line:7
+select	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <select multiple class="form-control">$/;"	function	line:8
+option	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                 <option>Asprin<\/option>$/;"	function	line:10
+option	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                 <option>Isosorbide<\/option>$/;"	function	line:11
+option	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                 <option>Amitriptyline<\/option>$/;"	function	line:12
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="col-lg-6">$/;"	function	line:17
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="form-group" id="problems">$/;"	function	line:18
+label	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <label for="exampleSelect2">Problems<\/label>$/;"	function	line:19
+select	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <select multiple class="form-control">$/;"	function	line:20
+option	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <option>Coronary artery disease, infraction<\/option>$/;"	function	line:22
+option	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                 <option>Isosorbide<\/option>$/;"	function	line:23
+option	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                 <option>Amitriptyline<\/option>$/;"	function	line:24
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="row medication_block">$/;"	function	line:30
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="col-lg-12">$/;"	function	line:31
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="form-group" id="medications_linked_to_falls">$/;"	function	line:32
+label	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <label for="exampleSelect2">Medications Linked to Falls<\/label>$/;"	function	line:33
+select	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <select multiple class="form-control">$/;"	function	line:34
+option	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <option>Fanapt 10 MG Tabs<\/option>$/;"	function	line:35
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="row medication_block">$/;"	function	line:42
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="col-lg-12">$/;"	function	line:43
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="form-check">$/;"	function	line:44
+label	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <label class="form-check-label">$/;"	function	line:45
+input	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <input type="checkbox" class="form-check-input">$/;"	function	line:46
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="row ">$/;"	function	line:53
+div	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="col-lg-12 text-center form-group">$/;"	function	line:54
+button	/home/parallels/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <button class="btn btn-primary" type="button" id="medication_submit_button">Submit<\/button>$/;"	function	line:55
+FallsFHIRClient	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^class FallsFHIRClient(object):$/;"	class	line:24
+__init__	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def __init__(self):$/;"	member	line:25	class:FallsFHIRClient
+test_function	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def test_function(self):$/;"	member	line:34	class:FallsFHIRClient
+load_standards_document	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def load_standards_document(self, standards_document_dict):$/;"	member	line:43	class:FallsFHIRClient
+search_patient	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_patient(self, first_name, last_name):$/;"	member	line:57	class:FallsFHIRClient
+search_patient_dob	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_patient_dob(self, first_name, last_name, date_of_birth):$/;"	member	line:78	class:FallsFHIRClient
+select_patient_from_patient_result	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_patient_from_patient_result(self, patient_list, list_index=0):$/;"	member	line:95	class:FallsFHIRClient
+select_patient	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_patient(self, patient_id):$/;"	member	line:106	class:FallsFHIRClient
+search_encounter_all	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_encounter_all(self, pat=None, status=['']):$/;"	member	line:114	class:FallsFHIRClient
+search_encounter_date	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_encounter_date(self, date, pat=None):$/;"	member	line:139	class:FallsFHIRClient
+select_encounter_from_encounter_result	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_encounter_from_encounter_result(self, encounter_list, list_index=0):$/;"	member	line:173	class:FallsFHIRClient
+search_medication	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_medication(self, pat=None):$/;"	member	line:188	class:FallsFHIRClient
+end_medication_by_id	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def end_medication_by_id(self, medication_order_id, pat=None):$/;"	member	line:234	class:FallsFHIRClient
+end_medication_by_order	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def end_medication_by_order(self, medication_order):$/;"	member	line:262	class:FallsFHIRClient
+select_encounter	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_encounter(self, encounter_id):$/;"	member	line:288	class:FallsFHIRClient
+pullup_diagnostic_report	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def pullup_diagnostic_report(self, pat=None, enc=None):$/;"	member	line:296	class:FallsFHIRClient
+create_new_diagnostic_report	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def create_new_diagnostic_report(self, pat=None, enc=None):$/;"	member	line:320	class:FallsFHIRClient
+search_observations	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_observations(self, standards_dict=None, pat=None, enc=None):$/;"	member	line:342	class:FallsFHIRClient
+write_list_of_observations_to_fhir	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def write_list_of_observations_to_fhir(self, question_codes, responses, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:369	class:FallsFHIRClient
+write_note_to_fhir	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def write_note_to_fhir(self, question_code, note_text, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:399	class:FallsFHIRClient
+create_new_observation_yes_no	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def create_new_observation_yes_no(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:468	class:FallsFHIRClient
+create_new_observation_quantity	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def create_new_observation_quantity(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:526	class:FallsFHIRClient
+update_observation_by_id	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def update_observation_by_id(self, observation_id, response, pat=None):$/;"	member	line:585	class:FallsFHIRClient
+update_observation_by_observation	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def update_observation_by_observation(self, observation, response):$/;"	member	line:615	class:FallsFHIRClient
+client	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    client = FallsFHIRClient()$/;"	variable	line:642	class:FallsFHIRClient
+patients	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    patients = client.search_patient('S', 'Graham')$/;"	variable	line:645	class:FallsFHIRClient
+patients	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    patients = client.search_patient_dob('Sarah', 'Graham', '1949')$/;"	variable	line:650	class:FallsFHIRClient
+encounters	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    encounters = client.search_encounter_all()$/;"	variable	line:663	class:FallsFHIRClient
+meds	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    meds = client.search_medication()$/;"	variable	line:670	class:FallsFHIRClient
+current_obs	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    current_obs = client.search_observations()$/;"	variable	line:686	class:FallsFHIRClient
+question_codes	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    question_codes = ['1', '2', '7']$/;"	variable	line:693	class:FallsFHIRClient
+responses	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    responses = ['1', '0', '1', '1', '0']$/;"	variable	line:694	class:FallsFHIRClient
