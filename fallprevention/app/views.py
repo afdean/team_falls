@@ -90,6 +90,8 @@ def questions(request):
                 answer = question_form.cleaned_data[field_name]
                 # Adds answer into json
                 data_client.questions['questions'][i]['answer'] = answer
+                code = data_client.questions['questions'][i]['code']
+                data_client.observations[code] = answer
                 if answer:
                     score += int(data_client.questions['questions'][i]['score'])
                     if data_client.questions['questions'][i]['is_key']:
@@ -117,7 +119,7 @@ def assessments_details(request):
     data_client = DataClient()
     assessments_chosen = data_client.assessments_chosen;
     if request.method == 'POST':
-        assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
+        assessments_form = AssessmentForm(request.POST, assessments_chosen=assessments_chosen);
         if assessments_form.is_valid():
             # Local obs just in case
             observations = {}
@@ -141,7 +143,7 @@ def assessments_details(request):
                         bal_min_failure = test['min_logic']['min_failure']
 
                     for i, form in enumerate(test['forms']):
-                        field_name = test['name'] + "_form" + str(i)
+                        field_name = test['code'] + "_form" + str(i)
                         answer = assessments_form.cleaned_data[field_name]
                         code = test['forms'][i]['code']
                         data_client.observations['code'] = answer
@@ -153,12 +155,18 @@ def assessments_details(request):
                             if test['forms'][i]['type'] == 'boolean':
                                 if test['forms'][i]['is_key'] and answer:
                                     tug_key = tug_key + 1
+                                if test['forms'][i]['code'] == 'tug001' and answer:
+                                    print ("Has problem from cant do it")
+                                    has_problem = True
                             # Check for timing scores
                             if test['forms'][i]['type'] == 'integer':
-                                form_logic = test['forms'][i]['logic']
-                                if form_logic in test['min_logic']:
-                                    if answer < test['min_logic'][form_logic]:
-                                        has_problem = True
+                                # Check to make sure it isnt NoneType
+                                if answer is not None:
+                                    form_logic = test['forms'][i]['logic']
+                                    if form_logic in test['min_logic']:
+                                        if answer < test['min_logic'][form_logic]:
+                                            print ("has problem from low time")
+                                            has_problem = True
 
                         # Check logic for 30 Chair
                         if test['code'] == 'chair000':
@@ -178,25 +186,28 @@ def assessments_details(request):
                                     if answer < test['min_logic'][form_logic]:
                                         bal_score = bal_score + 1
 
-            # First check if tug was in assessments chosen
-            #   Now check if the amount key answered exceeded what was needed to fail
-                # if tug_key >= data_client.func_test[] (check if >=0 )
-                #   Then they failed it so has_problem is true
-                #
             if tug_min_key >= 0 and tug_key > tug_min_key:
+                print ("has problem from key tugs")
                 has_problem = True
             if bal_min_failure >= 0 and bal_score > bal_min_failure:
+                print ('has problem from key bal')
                 has_problem = True
 
+            data_client.assessments_chosen = []
+
             if has_problem:
-                if data_client.observations['q001']:
-                    data_client.risk_level = "high"
-                    return HttpResponseRedirect('/app/medications/')
+                if 'q001' in data_client.observations:
+                    if data_client.observations['q001']:
+                        data_client.risk_level = "high"
+                        print("From FAT, risk level is " + data_client.risk_level)
+                        return HttpResponseRedirect('/app/medications/')
                 else:
                     data_client.risk_level = "moderate"
+                    print("From FAT, risk level is " + data_client.risk_level)
                     return HttpResponseRedirect('/app/medications/')
             else:
                 data_client.risk_level = "low"
+                print("From FAT, risk level is " + data_client.risk_level)
                 return HttpResponseRedirect('/app/risks/')
 
             return HttpResponseRedirect('/app/thankyou')
@@ -208,7 +219,7 @@ def assessments(request):
      # assessments_chosen = request.session.get('assessments_chosen', []);
     data_client = DataClient()
     if request.method == 'POST':
-        assessments_form = AssessmentForm(request.POST, assessments_chosen = []);
+        assessments_form = AssessmentForm(request.POST);
         if assessments_form.is_valid():
             chosen_list = []
             for field in assessments_form.fields:
@@ -218,7 +229,7 @@ def assessments(request):
             # assessments_form = AssessmentForm(assessments_chosen = chosen_list);
             return HttpResponseRedirect('/app/assessments/details')
     else:
-        assessments_form = AssessmentForm(assessments_chosen = []);
+        assessments_form = AssessmentForm();
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
 
 def medications(request):

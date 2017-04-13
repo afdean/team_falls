@@ -99,11 +99,11 @@ class QuestionForm(forms.Form):
 
 class AssessmentForm(forms.Form):
     def __init__(self, *args, **kwargs):
-        assessments_chosen = kwargs.pop('assessments_chosen', None)
+
+        assessments_chosen = kwargs.pop("assessments_chosen", None)
         super(AssessmentForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
-        for name in assessments_chosen:
-            print (name)
+        # assessments_chosen = data_client.assessments_chosen
         self.helper = FormHelper()
         self.helper.layout = Layout()
         if assessments_chosen:
@@ -111,7 +111,8 @@ class AssessmentForm(forms.Form):
                 if test['name'] in assessments_chosen:
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
                     for i, form in enumerate(test['forms']):
-                        field_name = test['name'] + "_form" + str(i)
+                        field_name = test['code'] + "_form" + str(i)
+                        print(field_name)
                         self.fields[field_name] = generate_form(form, None, None)
                         test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
