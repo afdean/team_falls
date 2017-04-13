@@ -195,7 +195,7 @@ def assessments_details(request):
                     return HttpResponseRedirect('/app/medications/')
                 else:
                     data_client.risk_level = "moderate"
-                    return HttpResponseRedirect('/app/risks/')
+                    return HttpResponseRedirect('/app/medications/')
             else:
                 data_client.risk_level = "low"
                 return HttpResponseRedirect('/app/risks/')
@@ -228,6 +228,13 @@ def medications(request):
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
         if medications_form.is_valid():
+            if data_client.risk_level = "high":
+                return HttpResponseRedirect('/app/exams/')
+            elif data_client.risk_level = "moderate":
+                return HttpResponseRedirect('/app/results')
+            # Low should only get here through the usage of the side bar
+            elif data_client.risk_level = "low":
+                return HttpResponseRedirect('/app/results')
             return HttpResponseRedirect('/app/thankyou/')
     else:
         medications_form = MedicationsForm()
