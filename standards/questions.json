@@ -9,9 +9,18 @@
       "medication_related": false,
       "reason": "People who have fallen once are likely to fall again",
       "choices": [
-        {"value": 2, "text": "More than once"},
-        {"value": 1, "text": "Once"},
-        {"value": 0, "text": "No times"}
+        {
+          "value": 2,
+          "text": "More than once"
+        },
+        {
+          "value": 1,
+          "text": "Once"
+        },
+        {
+          "value": 0,
+          "text": "No times"
+        }
       ]
     },
     {
