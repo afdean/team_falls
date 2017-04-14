@@ -4,19 +4,19 @@
     "forms": [
       {
         "content": "Supine",
-        "type": "positive_integer",
+        "type": "integer",
         "code": "pos001",
         "num_forms": 2
       },
       {
         "content": "Standing (1m)",
-        "type": "positive_integer",
+        "type": "integer",
         "code": "pos002",
         "num_forms": 2
       },
       {
         "content": "Standing (3m)",
-        "type": "positive_integer",
+        "type": "integer",
         "code": "pos003",
         "num_forms": 2
       },
@@ -28,7 +28,7 @@
       },
       {
         "content": "Heart Rate",
-        "type": "positive_integer",
+        "type": "integer",
         "code": "pos005",
         "num_forms": 3
       }
