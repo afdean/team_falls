@@ -31,7 +31,7 @@
       {
         "content": "TUG Time (seconds): ",
         "code": "tug002",
-        "type": "integer",
+        "type": "positive_integer",
         "logic": "min_key"
       },
       {
@@ -142,7 +142,7 @@
       {
         "content": "Score:",
         "code": "chair002",
-        "type": "integer",
+        "type": "positive_integer",
         "logic": "min_stand_seconds"
       }
     ]
@@ -179,25 +179,25 @@
       {
         "content": "Stand with your feet side by side. Time (seconds):",
         "code": "bal002",
-        "type": "integer",
+        "type": "positive_integer",
         "logic": "min_side"
       },
       {
         "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):",
         "code": "bal003",
-        "type": "integer",
+        "type": "positive_integer",
         "logic": "min_front"
       },
       {
         "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):",
         "code": "bal004",
-        "type": "integer",
+        "type": "positive_integer",
         "logic": "min_tandem"
       },
       {
         "content": "Stand on one foot. Time (seconds):",
         "code": "bal005",
-        "type": "integer"
+        "type": "positive_integer"
       }
     ]
   }
