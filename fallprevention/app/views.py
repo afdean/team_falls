@@ -254,7 +254,6 @@ def assessments_details(request):
             if test['name'] in data_client.assessments_chosen:
                 for i, form in enumerate(test['forms']):
                     code = test['forms'][i]['code']
-                    print(code)
                     if code in data_client.observations:
                         field_name = test['code'] + "_form" + str(i)
                         assessments_answers[field_name] = data_client.observations[code]
@@ -311,14 +310,21 @@ def exams_details(request):
                         field_name = exam['name'] + "_form" + str(i)
                         answer = exams_form.cleaned_data[field_name]
                         code = exam['forms'][i]['code']
-                        data_client.observations['code'] = answer
+                        data_client.observations[code] = answer
                         observations['code'] = answer
-
             data_client.exams_chosen = []
             # print("The current risk level from exams_details is " + data_client.risk_level)
             return HttpResponseRedirect('/app/risks/')
     else:
-        exams_form = ExamsForm(exams_chosen=exams_chosen)
+        exam_answers = {}
+        for exam in data_client.physical_exam:
+            if exam['name'] in exams_chosen:
+                for i, form in enumerate(exam['forms']):
+                    code = exam['forms'][i]['code']
+                    if code in data_client.observations:
+                        field_name = exam['name'] + "_form" + str(i)
+                        exam_answers[field_name] = data_client.observations[code]
+        exams_form = ExamsForm(initial=exam_answers, exams_chosen=exams_chosen)
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
 
 def exams(request):
