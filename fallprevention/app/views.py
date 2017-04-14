@@ -115,9 +115,21 @@ def thankyou(request):
     data_client.assessments_chosen = []
     return render(request, 'app/thankyou.html')
 
+def calculate_age(date_string):
+    date_string = date_string.replace('-', '')
+    year_string = date_string[0:4]
+    month_string = date_string[4:6]
+    day_string = date_string[6:8]
+    year = int(year_string)
+    month = int(month_string)
+    day = int(day_string)
+    birth_date = date(year, month, day)
+    age = date.today() - birth_date
+    return math.floor(age.days / 365)
+
 def assessments_details(request):
     data_client = DataClient()
-    assessments_chosen = data_client.assessments_chosen;
+    assessments_chosen = data_client.assessments_chosen
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen=assessments_chosen);
         if assessments_form.is_valid():
@@ -126,14 +138,16 @@ def assessments_details(request):
 
             # Boolean to ultimately determine if patient fails GSB
             has_problem = False
-            # Score of how many key questions have been answered 'yes'
+            # Score of how many key questions have been answered 'yes' (use 0 because adds 1 each iteration)
             tug_key = 0
-            # Minimum amount of key questions needed to be answered 'yes' to fail
+            # Minimum amount of key questions needed to be answered 'yes' to fail (use -1 as a check if test conducted)
             tug_min_key = -1
-            # Score of how many evaluations have exceeded their respective min time
+            # Score of how many evaluations have exceeded their respective min time (use 0 because adds 1 each iteration)
             bal_failure = 0
-            # Minimum amount of failures for evaluations to fail the test overall
+            # Minimum amount of failures for evaluations to fail the test overall (use -1 as a check if test conducted)
             bal_min_failure = -1
+            # Minimum amount of time needed for patient to stand in chair (use -1 as a check if test conducted)
+            chair_min_failure = -1
 
             for test in data_client.func_test:
                 if test['name'] in data_client.assessments_chosen:
@@ -173,10 +187,30 @@ def assessments_details(request):
                             if test['forms'][i]['type'] == 'integer':
                                 form_logic = test['forms'][i]['logic']
                                 if form_logic in test['min_logic']:
-                                    #Need to know how to get patient age and gender
-                                    #find the index where age first exceeds, then match index in male or female
-                                    #mark as failure according ot where it falls
-                                    print("Finish this")
+                                    patient_gender = data_client.patient['resource']['gender']
+                                    date_string = data_client.patient['resource']['birthDate']
+                                    patient_age = calculate_age(date_string)
+                                    age_index = test['min_logic']['form_logic']['ages']
+                                    male_score = test['min_logic']['form_logic']['male']
+                                    female_score = test['min_logic']['form_logic']['female']
+                                    if patient_age < ages[0]:
+                                        print("Age is less than minimum age for test, will pass since score irrelevant")
+                                    if patient_age > ages[-1]:
+                                        print("Age is greater than maximum age for test, will fail since score irrelevant")
+                                    else:
+                                        for i, age in age_index:
+                                            if patient_age >= age:
+                                                continue
+                                            else:
+                                                index = i - 1
+                                                break
+                                    if patient_gender == 'male':
+                                        chair_min_failure = male_score[index]
+                                    elif patient_gender == 'female':
+                                        chair_min_failure = female_score[index]
+                                    if answer is not None and chair_min_failure >= 0:
+                                        if answer < chair_min_failure:
+                                            has_problem = True
 
                         # Check logic for Balance Test
                         if test['code'] == 'bal000':
@@ -216,7 +250,6 @@ def assessments_details(request):
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
 
 def assessments(request):
-     # assessments_chosen = request.session.get('assessments_chosen', []);
     data_client = DataClient()
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST);
@@ -225,9 +258,11 @@ def assessments(request):
             for field in assessments_form.fields:
                 if (assessments_form.cleaned_data[field]):
                     chosen_list.append(field)
-            data_client.assessments_chosen = chosen_list
-            # assessments_form = AssessmentForm(assessments_chosen = chosen_list);
-            return HttpResponseRedirect('/app/assessments/details')
+            if not chosen_list:
+                return HttpResponseRedirect('/app/assessments/')
+            else:
+                data_client.assessments_chosen = chosen_list
+                return HttpResponseRedirect('/app/assessments/details')
     else:
         assessments_form = AssessmentForm();
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
@@ -235,35 +270,62 @@ def assessments(request):
 def medications(request):
     data_client = DataClient()
     if request.method == 'POST':
+        print("post")
         medications_form = MedicationsForm(request.POST)
         if medications_form.is_valid():
             if data_client.risk_level == "high":
                 return HttpResponseRedirect('/app/exams/')
             elif data_client.risk_level == "moderate":
-                return HttpResponseRedirect('/app/results')
+                return HttpResponseRedirect('/app/risks')
             # Low should only get here through the usage of the side bar
             elif data_client.risk_level == "low":
-                return HttpResponseRedirect('/app/results')
+                return HttpResponseRedirect('/app/risks')
             return HttpResponseRedirect('/app/thankyou/')
     else:
         medications_form = MedicationsForm()
 
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient})
 
-def results(request):
+def exams_details(request):
     data_client = DataClient()
-    results_form = ResultsForm()
-    return render(request, 'app/results.html', {'results_form': results_form, 'patient': data_client.patient})
+    exams_chosen = data_client.exams_chosen
+    if request.method == 'POST':
+        exams_form = ExamsForm(request.POST, exams_chosen=exams_chosen)
+        if exams_form.is_valid():
+            # Local obs just in case
+            observations = {}
+            for exam in data_client.physical_exam:
+                if exam['name'] in exams_chosen:
+                    for i, form in enumerate(exam['forms']):
+                        field_name = exam['name'] + "_form" + str(i)
+                        answer = exams_form.cleaned_data[field_name]
+                        code = exam['forms'][i]['code']
+                        data_client.observations['code'] = answer
+                        observations['code'] = answer
+
+            data_client.exams_chosen = []
+            print("The current risk level from exams_details is " + data_client.risk_level)
+            return HttpResponseRedirect('/app/risks/')
+    else:
+        exams_form = ExamsForm(exams_chosen=exams_chosen)
+    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
 
 def exams(request):
-    # Copy the above and make exams_details for the ones chosen?
     data_client = DataClient()
-    # if request.method == 'POST':
-    #     exams_form = ExamsForm(request.POST)
-    #     if exams_form.is_valid():
-    #
-    # else:
-    exams_form = ExamsForm()
+    if request.method == 'POST':
+        exams_form = ExamsForm(request.POST)
+        if exams_form.is_valid():
+            chosen_list = []
+            for field in exams_form.fields:
+                if (exams_form.cleaned_data[field]):
+                    chosen_list.append(field)
+            if not chosen_list:
+                return HttpResponseRedirect('/app/exams/')
+            else:
+                data_client.exams_chosen = chosen_list
+                return HttpResponseRedirect('/app/exams/details')
+    else:
+        exams_form = ExamsForm()
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
 
 # User Login - Currently not working
@@ -309,13 +371,17 @@ def user_login(request):
         return render(request, 'app/login.html', {})
 
 def risks(request):
+    # put another if that if its empty, do the things that you have ot do pretty pekase
+
     data_client = DataClient()
+    print ("risk_level:" + data_client.risk_level)
     if data_client.risk_level == "low":
-        results_form = ResultsForm("low")
-    elif data_client.risk_level == "medium":
-        results_form = ResultsForm("medium")
+        risks_form = RisksForm(risk_level="low")
+    elif data_client.risk_level == "moderate":
+        risks_form = RisksForm(risk_level="moderate")
     elif data_client.risk_level == "high":
-        results_form = ResultsForm("high")
+        print("In risks, the risk level is high")
+        risks_form = RisksForm(risk_level="high")
     else:
-        results_form = ResultsForm("incomplete")
-    return render(request, 'app/risks.html', {'results_form':results_form})
+        risks_form = RisksForm("incomplete")
+    return render(request, 'app/risks.html', {'risks_form':risks_form})
