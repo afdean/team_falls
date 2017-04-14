@@ -135,7 +135,7 @@
     },
     "forms": [
       {
-        "content": "Score:",
+        "content": "Time (seconds):",
         "code": "chair002",
         "type": "integer",
         "logic": "min_stand_seconds"
@@ -172,11 +172,6 @@
     },
     "forms": [
       {
-        "content": "Notes:",
-        "code": "bal001",
-        "type": "char"
-      },
-      {
         "content": "Stand with your feet side by side. Time (seconds):",
         "code": "bal002",
         "type": "integer",
@@ -198,7 +193,12 @@
         "content": "Stand on one foot. Time (seconds):",
         "code": "bal005",
         "type": "integer"
-      }
+      },
+      {
+        "content": "Notes:",
+        "code": "bal001",
+        "type": "char"
+      },
     ]
   }
 ]

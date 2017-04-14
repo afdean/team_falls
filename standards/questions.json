@@ -1,32 +1,31 @@
 {
   "questions": [
     {
-      "content": "I have fallen in the past year",
+      "content": "In the past year I have fallen...",
       "type": "choice",
       "code": "q001",
       "score": 2,
       "is_key": true,
       "medication_related": false,
       "reason": "People who have fallen once are likely to fall again",
-      "follow_up": [
-        {
-          "content": "I have fallen more than once in the past year",
-          "type": "choice",
-          "code": "q002",
-          "score": 0,
-          "is_key": false,
-          "medication_related": false,
-          "reason": "People who have fallen once are likely to fall again"
-        },
-        {
-          "content": "I have been injured from a fall in the past year",
-          "type": "choice",
-          "code": "q003",
-          "score": 0,
-          "is_key": false,
-          "medication_related": false,
-          "reason": "People who have fallen once are likely to fall again"
-        }
+      "choices": [
+        {"value": 2, "text": "More than once"},
+        {"value": 1, "text": "Once"}
+        {"value": 0, "text": "No times"}
+      ]
+    },
+    {
+      "content": "I have been injured from a fall in the past year",
+      "type": "choice",
+      "code": "q003",
+      "score": 0,
+      "is_key": false,
+      "medication_related": false,
+      "reason": "People who have fallen once are likely to fall again",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+        {"value": null, "text": "N/A"}
       ]
     },
     {
@@ -36,7 +35,11 @@
       "score": 2,
       "is_key": true,
       "medication_related": false,
-      "reason": "Unsteadiness or needing support while walking are signs of poor balance"
+      "reason": "Unsteadiness or needing support while walking are signs of poor balance",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I am worried about falling",
@@ -45,7 +48,11 @@
       "score": 1,
       "is_key": true,
       "medication_related": false,
-      "reason": "People who are worried about falling are more likely to fall"
+      "reason": "People who are worried about falling are more likely to fall",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I use or have been advised to use a cane or walker to get around safely",
@@ -54,8 +61,11 @@
       "score": 2,
       "is_key": false,
       "medication_related": false,
-      "reason": "People who have been advised to use a cane or walker may already be more likely to fall"
-
+      "reason": "People who have been advised to use a cane or walker may already be more likely to fall",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I steady myself by holding onto furniture when walking at home",
@@ -64,8 +74,11 @@
       "score": 1,
       "is_key": false,
       "medication_related": false,
-      "reason": "Unsteadiness or needing support while walking are signs of poor balance"
-
+      "reason": "Unsteadiness or needing support while walking are signs of poor balance",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I need to push with my hands to stand up from a chair",
@@ -74,8 +87,11 @@
       "score": 1,
       "is_key": false,
       "medication_related": false,
-      "reason": "This is a sign of weak leg muscles, a major reason for falling"
-
+      "reason": "This is a sign of weak leg muscles, a major reason for falling",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I have some trouble stepping up onto a curb",
@@ -84,7 +100,11 @@
       "score": 1,
       "is_key": false,
       "medication_related": false,
-      "reason": "This is a sign of weak leg muscles, a major reason for falling"
+      "reason": "This is a sign of weak leg muscles, a major reason for falling",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I often have to rush to the toilet",
@@ -93,7 +113,11 @@
       "score": 1,
       "is_key": false,
       "medication_related": false,
-      "reason": "Rushing to the bathroom, especially at night, increases your chance of falling"
+      "reason": "Rushing to the bathroom, especially at night, increases your chance of falling",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I have lost some feeling in my feet",
@@ -102,7 +126,11 @@
       "score": 1,
       "is_key": false,
       "medication_related": false,
-      "reason": "Numbness in your feet can cause stumbles and lead to falls"
+      "reason": "Numbness in your feet can cause stumbles and lead to falls",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
@@ -111,7 +139,11 @@
       "score": "1",
       "is_key": false,
       "medication_related": true,
-      "reason": "Side effects from medicines can sometimes increase your chance of falling"
+      "reason": "Side effects from medicines can sometimes increase your chance of falling",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I take medicine to help me sleep or improve my mood",
@@ -120,7 +152,11 @@
       "score": 1,
       "is_key": false,
       "medication_related": true,
-      "reason": "These medicines can sometimes increase your chance of falling"
+      "reason": "These medicines can sometimes increase your chance of falling",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     },
     {
       "content": "I often feel sad or depressed",
@@ -129,7 +165,11 @@
       "score": 1,
       "is_key": false,
       "medication_related": true,
-      "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls"
+      "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls",
+      "choices": [
+        {"value": true, "text": "Yes"},
+        {"value": false, "text": "No"}
+      ]
     }
   ],
   "question_logic": {

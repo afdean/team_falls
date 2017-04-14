@@ -87,14 +87,20 @@ class SearchPatientForm(forms.Form):
         self.helper.add_input(Submit('submit', 'Search'))
 
 class QuestionForm(forms.Form):
-
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
-        CHOICES = ((True, 'Yes',), (False, 'No',))
+        # CHOICES = ((True, 'Yes',), (False, 'No',))
         for i, question in enumerate(data_client.questions['questions']):
             field_name = "question" + str(i)
-            self.fields[field_name] = generate_form(question, forms.RadioSelect, CHOICES)
+            choice_list = []
+            for choice_pair in question['choices']:
+                pair_array = []
+                pair_array.append(choice_pair["value"])
+                pair_array.append(choice_pair["text"])
+                choice_list.append(pair_array)
+            choice_tuple = tuple(tuple(x) for x in choice_list)
+            self.fields[field_name] = generate_form(question, forms.RadioSelect, choices=choice_tuple)
             self.fields[field_name].required = True
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
