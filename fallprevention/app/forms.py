@@ -12,33 +12,35 @@ from app.data_client import DataClient
 def generate_form(field, field_widget=None, field_choices=None):
     if field['type'] == "boolean":
         return forms.BooleanField(
-            label = field['content'],
-            required = False,
+            label=field['content'],
+            required=False,
         )
     elif field['type'] == "choice":
         return forms.ChoiceField(
-            label = field['content'],
-            widget = field_widget,
-            choices = field_choices,
-            required = False,
+            label=field['content'],
+            widget=field_widget,
+            choices=field_choices,
+            required=False,
         )
     elif field['type'] == "integer":
         return forms.IntegerField(
-            label = field['content'],
-            required = False,
+            label=field['content'],
+            min_value=0,
+            widget=forms.NumberInput,
+            required=False,
         )
     elif field['type'] == "char":
         return forms.CharField(
-            label = field['content'],
-            required = False,
+            label=field['content'],
+            required=False,
         )
 
 class LoginForm(forms.Form):
     identity = forms.TypedChoiceField(
-        label = 'Identify Who you are',
-        choices = (('patient', 'Patient'),
+        label='Identify Who you are',
+        choices=(('patient', 'Patient'),
                 ('care_provider', 'Care Provider')),
-        required = True,
+        required=True,
     )
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
@@ -50,15 +52,15 @@ class LoginForm(forms.Form):
 
 class LoginCPForm(forms.Form):
     username = forms.CharField(
-        label = "Username:",
-        max_length = 80,
-        required = True,
+        label="Username:",
+        max_length=80,
+        required=True,
     )
     password = forms.CharField(
-        label = "Password:",
-        widget = forms.PasswordInput,
-        max_length = 80,
-        required = True,
+        label="Password:",
+        widget=forms.PasswordInput,
+        max_length=80,
+        required=True,
     )
     def __init__(self, *args, **kwargs):
         super(LoginCPForm, self).__init__(*args, **kwargs)
@@ -70,9 +72,9 @@ class LoginCPForm(forms.Form):
 
 class SearchPatientForm(forms.Form):
     patient_name = forms.CharField(
-        label = "Patient Name:",
-        max_length = 80,
-        required = True,
+        label="Patient Name:",
+        max_length=80,
+        required=True,
     )
 
     def __init__(self, *args, **kwargs):
@@ -92,6 +94,7 @@ class QuestionForm(forms.Form):
         for i, question in enumerate(data_client.questions['questions']):
             field_name = "question" + str(i)
             self.fields[field_name] = generate_form(question, forms.RadioSelect, CHOICES)
+            self.fields[field_name].required = True
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
@@ -121,13 +124,13 @@ class AssessmentForm(forms.Form):
             for test in data_client.func_test:
                 if test['is_recommended']:
                     self.fields[test['name']] = forms.BooleanField(
-                        label = test['name'] + " (Recommended)",
-                        required = False,
+                        label=test['name'] + " (Recommended)",
+                        required=False,
                     )
                 else:
                     self.fields[test['name']] = forms.BooleanField(
-                        label = test['name'],
-                        required = False,
+                        label=test['name'],
+                        required=False,
                     )
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
@@ -136,8 +139,8 @@ class AssessmentForm(forms.Form):
 class NoteForm(forms.Form):
     note = forms.CharField(
         widget=forms.Textarea,
-        label = 'Note:',
-        required = False,
+        label='Note:',
+        required=False,
     )
 
 class MedicationsForm(forms.Form):
@@ -202,8 +205,8 @@ class ExamsForm(forms.Form):
         else:
             for exam in data_client.physical_exam:
                 self.fields[exam['name']] = forms.BooleanField(
-                    label = exam['name'],
-                    required = False,
+                    label=exam['name'],
+                    required=False,
                 )
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
@@ -228,7 +231,7 @@ class RisksForm(forms.Form):
         elif risk_level == "low":
             for intervention in data_client.risk_list["risks"]["low_risk"]:
                 intervention_list.append(intervention)
-        elif risk_level == "medium":
+        elif risk_level == "moderate":
             for intervention in data_client.risk_list["risks"]["moderate_risk"]:
                 intervention_list.append(intervention)
         elif risk_level == "high":
