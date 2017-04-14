@@ -258,8 +258,11 @@ def assessments(request):
             for field in assessments_form.fields:
                 if (assessments_form.cleaned_data[field]):
                     chosen_list.append(field)
-            data_client.assessments_chosen = chosen_list
-            return HttpResponseRedirect('/app/assessments/details')
+            if not chosen_list:
+                return HttpResponseRedirect('/app/assessments/')
+            else:
+                data_client.assessments_chosen = chosen_list
+                return HttpResponseRedirect('/app/assessments/details')
     else:
         assessments_form = AssessmentForm();
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
@@ -316,8 +319,11 @@ def exams(request):
             for field in exams_form.fields:
                 if (exams_form.cleaned_data[field]):
                     chosen_list.append(field)
-            data_client.exams_chosen = chosen_list
-            return HttpResponseRedirect('/app/exams/details')
+            if not chosen_list:
+                return HttpResponseRedirect('/app/exams/')
+            else:
+                data_client.exams_chosen = chosen_list
+                return HttpResponseRedirect('/app/exams/details')
     else:
         exams_form = ExamsForm()
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
