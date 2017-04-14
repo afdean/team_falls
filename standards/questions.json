@@ -32,9 +32,18 @@
       "medication_related": false,
       "reason": "People who have fallen once are likely to fall again",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"},
-        {"value": null, "text": "N/A"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        },
+        {
+          "value": null,
+          "text": "N/A"
+        }
       ]
     },
     {
@@ -46,8 +55,14 @@
       "medication_related": false,
       "reason": "Unsteadiness or needing support while walking are signs of poor balance",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -59,8 +74,14 @@
       "medication_related": false,
       "reason": "People who are worried about falling are more likely to fall",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -72,8 +93,14 @@
       "medication_related": false,
       "reason": "People who have been advised to use a cane or walker may already be more likely to fall",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -85,8 +112,14 @@
       "medication_related": false,
       "reason": "Unsteadiness or needing support while walking are signs of poor balance",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -98,8 +131,14 @@
       "medication_related": false,
       "reason": "This is a sign of weak leg muscles, a major reason for falling",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -111,8 +150,14 @@
       "medication_related": false,
       "reason": "This is a sign of weak leg muscles, a major reason for falling",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -124,8 +169,14 @@
       "medication_related": false,
       "reason": "Rushing to the bathroom, especially at night, increases your chance of falling",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -137,8 +188,14 @@
       "medication_related": false,
       "reason": "Numbness in your feet can cause stumbles and lead to falls",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -150,8 +207,14 @@
       "medication_related": true,
       "reason": "Side effects from medicines can sometimes increase your chance of falling",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -163,8 +226,14 @@
       "medication_related": true,
       "reason": "These medicines can sometimes increase your chance of falling",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     },
     {
@@ -176,8 +245,14 @@
       "medication_related": true,
       "reason": "Symptoms of depression, such as not feeling well or feeling slowed down, are linked to falls",
       "choices": [
-        {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {
+          "value": true,
+          "text": "Yes"
+        },
+        {
+          "value": false,
+          "text": "No"
+        }
       ]
     }
   ],
