@@ -10,7 +10,7 @@
       "reason": "People who have fallen once are likely to fall again",
       "choices": [
         {"value": 2, "text": "More than once"},
-        {"value": 1, "text": "Once"}
+        {"value": 1, "text": "Once"},
         {"value": 0, "text": "No times"}
       ]
     },
@@ -24,7 +24,7 @@
       "reason": "People who have fallen once are likely to fall again",
       "choices": [
         {"value": true, "text": "Yes"},
-        {"value": false, "text": "No"}
+        {"value": false, "text": "No"},
         {"value": null, "text": "N/A"}
       ]
     },
