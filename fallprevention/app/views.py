@@ -115,6 +115,18 @@ def thankyou(request):
     data_client.assessments_chosen = []
     return render(request, 'app/thankyou.html')
 
+def calculate_age(date_string):
+    date_string = date_string.replace('-', '')
+    year_string = date_string[0:4]
+    month_string = date_string[4:6]
+    day_string = date_string[6:8]
+    year = int(year_string)
+    month = int(month_string)
+    day = int(day_string)
+    birth_date = date(year, month, day)
+    age = date.today() - birth_date
+    return math.floor(age.days / 365)
+
 def assessments_details(request):
     data_client = DataClient()
     assessments_chosen = data_client.assessments_chosen
@@ -126,14 +138,16 @@ def assessments_details(request):
 
             # Boolean to ultimately determine if patient fails GSB
             has_problem = False
-            # Score of how many key questions have been answered 'yes'
+            # Score of how many key questions have been answered 'yes' (use 0 because adds 1 each iteration)
             tug_key = 0
-            # Minimum amount of key questions needed to be answered 'yes' to fail
+            # Minimum amount of key questions needed to be answered 'yes' to fail (use -1 as a check if test conducted)
             tug_min_key = -1
-            # Score of how many evaluations have exceeded their respective min time
+            # Score of how many evaluations have exceeded their respective min time (use 0 because adds 1 each iteration)
             bal_failure = 0
-            # Minimum amount of failures for evaluations to fail the test overall
+            # Minimum amount of failures for evaluations to fail the test overall (use -1 as a check if test conducted)
             bal_min_failure = -1
+            # Minimum amount of time needed for patient to stand in chair (use -1 as a check if test conducted)
+            chair_min_failure = -1
 
             for test in data_client.func_test:
                 if test['name'] in data_client.assessments_chosen:
@@ -173,13 +187,30 @@ def assessments_details(request):
                             if test['forms'][i]['type'] == 'integer':
                                 form_logic = test['forms'][i]['logic']
                                 if form_logic in test['min_logic']:
-                                    #Need to know how to get patient age and gender
-                                    # 'male or female'
-                                    data_client.patient['resource']['gender']
-                                    data_client.patient['resource']['birthDate']
-                                    #find the index where age first exceeds, then match index in male or female
-                                    #mark as failure according ot where it falls
-                                    print("Finish this")
+                                    patient_gender = data_client.patient['resource']['gender']
+                                    date_string = data_client.patient['resource']['birthDate']
+                                    patient_age = calculate_age(date_string)
+                                    age_index = test['min_logic']['form_logic']['ages']
+                                    male_score = test['min_logic']['form_logic']['male']
+                                    female_score = test['min_logic']['form_logic']['female']
+                                    if patient_age < ages[0]:
+                                        print("Age is less than minimum age for test, will pass since score irrelevant")
+                                    if patient_age > ages[-1]:
+                                        print("Age is greater than maximum age for test, will fail since score irrelevant")
+                                    else:
+                                        for i, age in age_index:
+                                            if patient_age >= age:
+                                                continue
+                                            else:
+                                                index = i - 1
+                                                break
+                                    if patient_gender == 'male':
+                                        chair_min_failure = male_score[index]
+                                    elif patient_gender == 'female':
+                                        chair_min_failure = female_score[index]
+                                    if answer is not None and chair_min_failure >= 0:
+                                        if answer < chair_min_failure:
+                                            has_problem = True
 
                         # Check logic for Balance Test
                         if test['code'] == 'bal000':
@@ -219,7 +250,6 @@ def assessments_details(request):
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
 
 def assessments(request):
-     # assessments_chosen = request.session.get('assessments_chosen', []);
     data_client = DataClient()
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST);
