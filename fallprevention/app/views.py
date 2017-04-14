@@ -68,7 +68,7 @@ def searchPatient(request):
                     data_client.encounter = encounter_list[0]
                     data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
                     #print (data_client.fhir_client.encounter_id)
-                    print (data_client.fhir_client.search_observations())
+                    # print (data_client.fhir_client.search_observations())
             url = '/app/questions/'
             return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
@@ -96,7 +96,7 @@ def questions(request):
             if data_client.identity == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
             else:
-                print (data_client.questions['question_logic'])
+                # print (data_client.questions['question_logic'])
                 if (key_score < data_client.questions['question_logic']['min_key'] and
                     score < data_client.questions['question_logic']['min_score']):
                     data_client.risk_level = "low"
@@ -163,8 +163,8 @@ def assessments_details(request):
                         field_name = test['code'] + "_form" + str(i)
                         answer = assessments_form.cleaned_data[field_name]
                         code = test['forms'][i]['code']
-                        data_client.observations['code'] = answer
-                        observations['code'] = answer
+                        data_client.observations[code] = answer
+                        observations[code] = answer
 
                         # Check logic for TUG
                         if test['code'] == "tug000":
@@ -173,7 +173,7 @@ def assessments_details(request):
                                 if test['forms'][i]['is_key'] and answer:
                                     tug_key = tug_key + 1
                                 if test['forms'][i]['code'] == 'tug001' and answer:
-                                    print ("Has problem from cant do it")
+                                    # print ("Has problem from cant do it")
                                     has_problem = True
                             # Check for timing scores
                             if test['forms'][i]['type'] == 'integer':
@@ -182,7 +182,7 @@ def assessments_details(request):
                                     form_logic = test['forms'][i]['logic']
                                     if form_logic in test['min_logic']:
                                         if answer < test['min_logic'][form_logic]:
-                                            print ("has problem from low time")
+                                            # print ("has problem from low time")
                                             has_problem = True
 
                         # Check logic for 30 Chair
@@ -220,14 +220,14 @@ def assessments_details(request):
                             if test['forms'][i]['type'] == 'integer':
                                 form_logic = test['forms'][i]['logic']
                                 if form_logic in test['min_logic']:
-                                    if is not None answer < test['min_logic'][form_logic]:
+                                    if answer is not None and answer < test['min_logic'][form_logic]:
                                         bal_score = bal_score + 1
 
             if tug_min_key >= 0 and tug_key > tug_min_key:
-                print ("has problem from key tugs")
+                # print ("has problem from key tugs")
                 has_problem = True
             if bal_min_failure >= 0 and bal_score > bal_min_failure:
-                print ('has problem from key bal')
+                # print ('has problem from key bal')
                 has_problem = True
 
             data_client.assessments_chosen = []
@@ -236,20 +236,29 @@ def assessments_details(request):
                 if 'q001' in data_client.observations:
                     if data_client.observations['q001']:
                         data_client.risk_level = "high"
-                        print("From FAT, risk level is " + data_client.risk_level)
+                        # print("From FAT, risk level is " + data_client.risk_level)
                         return HttpResponseRedirect('/app/medications/')
                 else:
                     data_client.risk_level = "moderate"
-                    print("From FAT, risk level is " + data_client.risk_level)
+                    # print("From FAT, risk level is " + data_client.risk_level)
                     return HttpResponseRedirect('/app/medications/')
             else:
                 data_client.risk_level = "low"
-                print("From FAT, risk level is " + data_client.risk_level)
+                # print("From FAT, risk level is " + data_client.risk_level)
                 return HttpResponseRedirect('/app/risks/')
 
             return HttpResponseRedirect('/app/thankyou')
     else:
-        assessments_form = AssessmentForm(assessments_chosen = assessments_chosen);
+        assessments_answers = {}
+        for test in data_client.func_test:
+            if test['name'] in data_client.assessments_chosen:
+                for i, form in enumerate(test['forms']):
+                    code = test['forms'][i]['code']
+                    print(code)
+                    if code in data_client.observations:
+                        field_name = test['code'] + "_form" + str(i)
+                        assessments_answers[field_name] = data_client.observations[code]
+        assessments_form = AssessmentForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
 
 def assessments(request):
@@ -273,7 +282,6 @@ def assessments(request):
 def medications(request):
     data_client = DataClient()
     if request.method == 'POST':
-        print("post")
         medications_form = MedicationsForm(request.POST)
         if medications_form.is_valid():
             if data_client.risk_level == "high":
@@ -307,7 +315,7 @@ def exams_details(request):
                         observations['code'] = answer
 
             data_client.exams_chosen = []
-            print("The current risk level from exams_details is " + data_client.risk_level)
+            # print("The current risk level from exams_details is " + data_client.risk_level)
             return HttpResponseRedirect('/app/risks/')
     else:
         exams_form = ExamsForm(exams_chosen=exams_chosen)
@@ -377,13 +385,13 @@ def risks(request):
     # put another if that if its empty, do the things that you have ot do pretty pekase
 
     data_client = DataClient()
-    print ("risk_level:" + data_client.risk_level)
+    # print ("risk_level:" + data_client.risk_level)
     if data_client.risk_level == "low":
         risks_form = RisksForm(risk_level="low")
     elif data_client.risk_level == "moderate":
         risks_form = RisksForm(risk_level="moderate")
     elif data_client.risk_level == "high":
-        print("In risks, the risk level is high")
+        # print("In risks, the risk level is high")
         risks_form = RisksForm(risk_level="high")
     else:
         risks_form = RisksForm("incomplete")
