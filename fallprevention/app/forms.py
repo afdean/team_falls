@@ -100,7 +100,7 @@ class QuestionForm(forms.Form):
                 pair_array.append(choice_pair["text"])
                 choice_list.append(pair_array)
             choice_tuple = tuple(tuple(x) for x in choice_list)
-            self.fields[field_name] = generate_form(question, forms.RadioSelect, choices=choice_tuple)
+            self.fields[field_name] = generate_form(question, forms.RadioSelect, field_choices=choice_tuple)
             self.fields[field_name].required = True
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
