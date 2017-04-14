@@ -84,12 +84,9 @@ def questions(request):
         if question_form.is_valid():
             score = 0
             key_score = 0
-            # like the for loop for chosen
             for i, question in enumerate(data_client.questions['questions']):
                 field_name = "question" + str(i)
                 answer = question_form.cleaned_data[field_name]
-                # Adds answer into json
-                data_client.questions['questions'][i]['answer'] = answer
                 code = data_client.questions['questions'][i]['code']
                 data_client.observations[code] = answer
                 if answer:
@@ -106,7 +103,13 @@ def questions(request):
                     return HttpResponseRedirect('/app/risks/')
                 return HttpResponseRedirect('/app/assessments/')
     else:
-        question_form = QuestionForm()
+        question_answers = {}
+        for i, question in enumerate(data_client.questions['questions']):
+            code = data_client.questions['questions'][i]['code']
+            if code in data_client.observations:
+                field_name = "question" + str(i)
+                question_answers[field_name] = data_client.observations[code]
+        question_form = QuestionForm(initial=question_answers)
 
     return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})
 
@@ -217,7 +220,7 @@ def assessments_details(request):
                             if test['forms'][i]['type'] == 'integer':
                                 form_logic = test['forms'][i]['logic']
                                 if form_logic in test['min_logic']:
-                                    if answer < test['min_logic'][form_logic]:
+                                    if is not None answer < test['min_logic'][form_logic]:
                                         bal_score = bal_score + 1
 
             if tug_min_key >= 0 and tug_key > tug_min_key:
