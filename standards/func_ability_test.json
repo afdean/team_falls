@@ -135,15 +135,15 @@
     },
     "forms": [
       {
-        "content": "Notes:",
-        "code": "chair001",
-        "type": "char"
-      },
-      {
         "content": "Score:",
         "code": "chair002",
         "type": "integer",
         "logic": "min_stand_seconds"
+      },
+      {
+        "content": "Notes:",
+        "code": "chair001",
+        "type": "char"
       }
     ]
   },

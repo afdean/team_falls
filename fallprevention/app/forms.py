@@ -9,30 +9,31 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 from .models import Question
 from app.data_client import DataClient
 
-def generate_form(field, field_widget=None, field_choices=None):
+def generate_form(field, field_widget=None, field_choices=None, is_required=False):
     if field['type'] == "boolean":
         return forms.BooleanField(
             label=field['content'],
-            required=False,
+            required=is_required,
         )
     elif field['type'] == "choice":
         return forms.ChoiceField(
             label=field['content'],
             widget=field_widget,
             choices=field_choices,
-            required=False,
+            required=is_required,
         )
     elif field['type'] == "integer":
         return forms.IntegerField(
             label=field['content'],
             min_value=0,
             widget=forms.NumberInput,
-            required=False,
+            required=is_required,
         )
     elif field['type'] == "char":
         return forms.CharField(
             label=field['content'],
-            required=False,
+            required=is_required,
+            widget=forms.Textarea,
         )
 
 class LoginForm(forms.Form):
@@ -218,7 +219,8 @@ class RisksForm(forms.Form):
     """
     def __init__(self, *args, **kwargs):
         risk_level = kwargs.pop("risk_level", None)
-        print("In forms, the risk_level is " + risk_level)
+        if risk_level is not None:
+            print("In forms, the risk_level is " + risk_level)
         super(RisksForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         self.helper = FormHelper()
