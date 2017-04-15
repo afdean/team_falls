@@ -241,6 +241,7 @@ class RisksForm(forms.Form):
         risk_level = kwargs.pop("risk_level", None)
         if risk_level is not None:
             print("In forms, the risk_level is " + risk_level)
+        incomplete = kwargs.pop("incomplete_list", None)
         super(RisksForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         self.helper = FormHelper()

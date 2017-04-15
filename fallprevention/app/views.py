@@ -92,26 +92,30 @@ def questions(request):
                 flag = False
                 # This could be fragile if changed to >=2 falls? Or something non 1
                 if isinstance(answer, int):
-                    print("If this is an integer, success: " + str(answer))
                     if answer >= 1:
                         flag = True
                 else:
-                    print("If this is a boolean, success: " + str(answer))
                     flag = answer
-                if answer == True:
-                    print(question['content'])
+                if answer == flag:
                     score += int(data_client.questions['questions'][i]['score'])
                     if data_client.questions['questions'][i]['is_key']:
                         key_score += 1
+
+            code = data_client.questions['code']
+            if (key_score < data_client.questions['question_logic']['min_key'] and
+                score < data_client.questions['question_logic']['min_score']):
+                data_client.observations[code] = "Pass"
+            else:
+                data_client.observations[code] = "Fail"
+
             if data_client.identity == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
             else:
-                # print (data_client.questions['question_logic'])
-                if (key_score < data_client.questions['question_logic']['min_key'] and
-                    score < data_client.questions['question_logic']['min_score']):
-                    data_client.risk_level = "low"
+                calculate_risk()
+                if data_client.risk_level == "incomplete":
+                    return HttpResponseRedirect('/app/assessments/')
+                elif data_client.risk_level is not None:
                     return HttpResponseRedirect('/app/risks/')
-                return HttpResponseRedirect('/app/assessments/')
     else:
         question_answers = {}
         for i, question in enumerate(data_client.questions['questions']):
@@ -142,6 +146,9 @@ def calculate_age(date_string):
     return math.floor(age.days / 365)
 
 def assessments_details(request):
+    """
+    If there's anything in this project that needs refactoring, this is it.
+    """
     data_client = DataClient()
     assessments_chosen = data_client.assessments_chosen
     if request.method == 'POST':
@@ -162,13 +169,21 @@ def assessments_details(request):
             bal_min_failure = -1
             # Minimum amount of time needed for patient to stand in chair (use -1 as a check if test conducted)
             chair_min_failure = -1
+            tug_conducted = False
+            bal_conducted = False
+            chair_conducted = False
 
             for test in data_client.func_test:
                 if test['name'] in data_client.assessments_chosen:
+                    # Pulls required fields to evaluate logic
                     if test['code'] == "tug000":
                         tug_min_key = test['min_logic']['min_key']
+                        tug_conducted = True
                     elif test['code'] == "bal000":
                         bal_min_failure = test['min_logic']['min_failure']
+                        bal_conducted = True
+                    elif test['code'] == "chair000":
+                        chair_conducted = True
 
                     for i, form in enumerate(test['forms']):
                         field_name = test['code'] + "_form" + str(i)
@@ -186,6 +201,7 @@ def assessments_details(request):
                                 if test['forms'][i]['code'] == 'tug001' and answer:
                                     # print ("Has problem from cant do it")
                                     has_problem = True
+                                    data_client.observations["tug000"] = "Fail"
                             # Check for timing scores
                             if test['forms'][i]['type'] == 'integer':
                                 # Check to make sure it isnt NoneType
@@ -195,6 +211,7 @@ def assessments_details(request):
                                         if answer < test['min_logic'][form_logic]:
                                             # print ("has problem from low time")
                                             has_problem = True
+                                            data_client.observations["tug000"] = "Fail"
 
                         # Check logic for 30 Chair
                         if test['code'] == 'chair000':
@@ -225,6 +242,7 @@ def assessments_details(request):
                                     if answer is not None and chair_min_failure >= 0:
                                         if answer < chair_min_failure:
                                             has_problem = True
+                                            data_client.observations["chair000"] = "Fail"
 
                         # Check logic for Balance Test
                         if test['code'] == 'bal000':
@@ -234,31 +252,40 @@ def assessments_details(request):
                                     if answer is not None and answer < test['min_logic'][form_logic]:
                                         bal_score = bal_score + 1
 
+            # Final logic checks for tests
             if tug_min_key >= 0 and tug_key > tug_min_key:
                 # print ("has problem from key tugs")
                 has_problem = True
+                data_client.observations["tug000"] = "Fail"
             if bal_min_failure >= 0 and bal_score > bal_min_failure:
                 # print ('has problem from key bal')
                 has_problem = True
+                data_client.observations["bal000"] = "Fail"
+            if tug_conducted:
+                if "tug000" not in data_client.observations:
+                    data_client.observations["tug000"] = "Pass"
+            if bal_conducted:
+                if "bal000" not in data_client.observations:
+                    data_client.observations["bal000"] = "Pass"
+            if chair_conducted:
+                if "chair000" not in data_client.observations:
+                    data_client.observations["chair000"] = "Pass"
 
+
+            # Wipe clean for next iteration through, if desired to do more assessments
             data_client.assessments_chosen = []
 
+            # Call calculate_risk at this point...
+            calculate_risk()
+
             if has_problem:
-                if 'q001' in data_client.observations:
-                    if data_client.observations['q001']:
-                        data_client.risk_level = "high"
-                        # print("From FAT, risk level is " + data_client.risk_level)
-                        return HttpResponseRedirect('/app/medications/')
+                if data_client.risk_level == "incomplete":
+                    return HttpResponseRedirect('/app/risks/')
                 else:
-                    data_client.risk_level = "moderate"
-                    # print("From FAT, risk level is " + data_client.risk_level)
                     return HttpResponseRedirect('/app/medications/')
             else:
-                data_client.risk_level = "low"
-                # print("From FAT, risk level is " + data_client.risk_level)
                 return HttpResponseRedirect('/app/risks/')
 
-            return HttpResponseRedirect('/app/thankyou')
     else:
         assessments_answers = {}
         for test in data_client.func_test:
@@ -296,15 +323,10 @@ def medications(request):
         if medications_form.is_valid():
             if data_client.risk_level == "high":
                 return HttpResponseRedirect('/app/exams/')
-            elif data_client.risk_level == "moderate":
-                return HttpResponseRedirect('/app/risks')
-            # Low should only get here through the usage of the side bar
-            elif data_client.risk_level == "low":
-                return HttpResponseRedirect('/app/risks')
-            return HttpResponseRedirect('/app/thankyou/')
+            else:
+                return HttpResponseRedirect('/app/risks/')
     else:
         medications_form = MedicationsForm()
-
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient})
 
 def exams_details(request):
@@ -323,8 +345,9 @@ def exams_details(request):
                         code = exam['forms'][i]['code']
                         data_client.observations[code] = answer
                         observations['code'] = answer
+            # Clear this for the next iteration...
             data_client.exams_chosen = []
-            # print("The current risk level from exams_details is " + data_client.risk_level)
+            # Exams is last stop before risks, all levels go to risks including incomplete
             return HttpResponseRedirect('/app/risks/')
     else:
         exam_answers = {}
@@ -399,17 +422,91 @@ def user_login(request):
         return render(request, 'app/login.html', {})
 
 def risks(request):
-    # put another if that if its empty, do the things that you have ot do pretty pekase
-
     data_client = DataClient()
-    # print ("risk_level:" + data_client.risk_level)
+    incomplete_list = calculate_risk()
+    print(incomplete_list)
     if data_client.risk_level == "low":
         risks_form = RisksForm(risk_level="low")
     elif data_client.risk_level == "moderate":
         risks_form = RisksForm(risk_level="moderate")
     elif data_client.risk_level == "high":
-        # print("In risks, the risk level is high")
         risks_form = RisksForm(risk_level="high")
     else:
-        risks_form = RisksForm("incomplete")
+        risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
     return render(request, 'app/risks.html', {'risks_form':risks_form})
+
+def calculate_risk():
+    """
+    Function that updates the current status of the risk level based on what's written in the observation list
+    That is, it can be called at any time to know the status of the risk level
+    Returns a list of things yet to be completed
+    """
+    data_client = DataClient()
+    obs = data_client.observations
+
+    # Set to "Pass" and "Fail"
+    question_fail = None
+    assessment_fail = None
+
+    num_falls = None
+    injury = None
+    incomplete_list = []
+    question_code = data_client.questions['code']
+    tests = data_client.func_test
+    test_codes = []
+    for test in tests:
+        test_codes.append(test['code'])
+
+    # Check if questions have been completed
+    if question_code in obs:
+        question_fail = obs["q000"]
+        num_falls = obs["q001"]
+        injury = obs["q003"]
+
+    # Check each test; If one has failed then assesment_fail is fail guaranteed
+    for code in test_codes:
+        if code in obs and obs[code] == "Fail":
+            assessment_fail = "Fail"
+            break
+
+    # If wasn't set to True above but one of the tests is in obs, then the patient had no problems, and so they passed
+    for code in test_codes:
+        if code in obs:
+            if assessment_fail == None:
+                assessment_fail = "Pass"
+
+    # Algorithm
+    if question_fail is None:
+        data_client.risk_level = "incomplete"
+        incomplete_list.append("Questions")
+
+    if assessment_fail is None:
+        incomplete_list.append("Assessments")
+
+    if question_fail is not None:
+        if assessment_fail is None:
+            if question_fail == "Fail":
+                data_client.risk_level = "low"
+            else:
+                data_client.risk_level = "incomplete"
+        elif assessment_fail == "Fail":
+            if num_falls > 1:
+                data_client.risk_level = "high"
+            elif num_falls == 1:
+                # Unnecessary check but just in case
+                if injury:
+                    data_client.risk_level = "high"
+                elif not injury:
+                        data_client.risk_level = "moderate"
+            elif num_falls == 0:
+                data_client.risk_level = "moderate"
+        # Note that by just doing a FAT, and passing it, then you are low risk anyway
+        # The decision is made to return "incomplete" even if there's a pass for assessment and nothing
+        # for questions, since they are rather crucial to know about, and screening is fast.
+    elif assessment_fail == "Pass":
+            data_client.risk_level = "low"
+
+    return incomplete_list
+
+
+
