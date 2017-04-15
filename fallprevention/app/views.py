@@ -90,10 +90,13 @@ def questions(request):
                 code = data_client.questions['questions'][i]['code']
                 data_client.observations[code] = answer
                 flag = False
-                if instanceOf(answer, int):
+                # This could be fragile if changed to >=2 falls? Or something non 1
+                if isinstance(answer, int):
+                    print("If this is an integer, success: " + str(answer))
                     if answer >= 1:
                         flag = True
                 else:
+                    print("If this is a boolean, success: " + str(answer))
                     flag = answer
                 if answer == True:
                     print(question['content'])
@@ -116,6 +119,7 @@ def questions(request):
             if code in data_client.observations:
                 field_name = "question" + str(i)
                 question_answers[field_name] = data_client.observations[code]
+        print(data_client.observations)
         question_form = QuestionForm(initial=question_answers)
 
     return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})

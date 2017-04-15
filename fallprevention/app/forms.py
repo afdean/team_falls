@@ -112,7 +112,10 @@ class QuestionForm(forms.Form):
                 pair_array.append(choice_pair["text"])
                 choice_list.append(pair_array)
             choice_tuple = tuple(tuple(x) for x in choice_list)
+            print(choice_tuple)
+            print(question['type'])
             self.fields[field_name] = generate_form(question, forms.RadioSelect, field_choices=choice_tuple)
+            # Could expand on standards doc by requiring things to be filled in dynamically
             self.fields[field_name].required = True
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
@@ -121,7 +124,6 @@ class QuestionForm(forms.Form):
 
 class AssessmentForm(forms.Form):
     def __init__(self, *args, **kwargs):
-
         assessments_chosen = kwargs.pop("assessments_chosen", None)
         super(AssessmentForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
