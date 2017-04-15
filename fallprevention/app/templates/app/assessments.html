@@ -21,5 +21,29 @@ form#id-assessmentForm{
 </style>
 {% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
 <p> {{ patient.name }} </p>
-<center class='title'><p>Select the test you would like to perform:</p></center>
-{% crispy assessments_form %} {% endblock %}
+ <div class="row">
+
+                    <div class="col-md-12">
+                        <!--panel-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h4>Assessments </h4>
+
+
+                                </div>
+                            </div>
+                            <div class="panel-body forms" id="assessments">
+
+
+                                        {%crispy assessments_form%}
+                            </div>
+                            <!--/panel content-->
+                        </div>
+                        <!--/panel-->
+                    </div>
+                    <!--/col-span-6-->
+
+
+
+                </div> {% endblock %}

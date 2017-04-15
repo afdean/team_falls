@@ -3,28 +3,28 @@
 // Main function that is called throughout sessions
 var main = function () {
     "use strict";
-    var elements = document.getElementsByTagName('fieldset');
-  
+    var elements = $(".select_exam fieldset" );
+    
     createExamSelectForm();
-
-    $('#id-tugform2').hide();
-    showSelectedExams(elements);
+    
+    // $('form#id-examsForm').hide();
+    // showSelectedExams(elements);
 
 }
 $(document).ready(main);
 
 function showSelectedExams(elements) {
-    var checkboxes = document.getElementById("exam_select").querySelectorAll('.checkbox input');
+    var checkboxes = $("#exam_select .checkbox input");
 
     
-      var exams_class_names = document.getElementById("exam_select").querySelectorAll('.checkbox');
+    var exams_class_names = document.getElementById("exam_select").querySelectorAll('.checkbox');
 
 
-    $('#select_exam_button button').click(function () {
-        $('.select_exam').hide();
-         $('#id-tugform2').show(); 
-
-         //check which check boxes were selected
+    $('#select_exam_button #submit-id-submit').click(function () {
+         $('#exam_select').hide();
+         $('form#id-examsForm').show(); 
+        
+         
          for(var i = 0;i < checkboxes.length;i++){
             if(!checkboxes[i].checked){
               elements[i].style.display = 'none';
@@ -32,9 +32,6 @@ function showSelectedExams(elements) {
          }
 
     });
-
- 
-
 }
 
 function createNewCheckboxt(name, id) {
@@ -57,7 +54,7 @@ function createNewCheckboxt(name, id) {
 
 function createExamSelectForm() {
     var exam_form = $('#exam_select');
-    var exam_button = $('#select_exam_button');
+    var exam_button = $('#select_exam_button #submit-id-submit');
     exam_button.hide();
     var legends = document.getElementsByTagName('legend');
     for (var i = 0; i < legends.length; i++) {

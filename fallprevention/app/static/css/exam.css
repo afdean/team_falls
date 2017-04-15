@@ -6,7 +6,7 @@
 form#id-examsForm{
     margin: auto; 
     overflow-y: auto;
-    width: 80%;
+    width: 100%;
 }
 
 #id-examsForm legend{
@@ -14,7 +14,8 @@ form#id-examsForm{
     font-size: 30px;
 }
 #id-examsForm label{
-    font-size: 15px;
+    font-size: 20px;
+
 }
 #submit-id-submit{
     margin-top:20px;
@@ -40,6 +41,6 @@ p{
         padding-top: 20px;
         border: none;
     }
-     #exam_select .checkbox label{
+  .checkbox label{
          font-size: 20px;
      }
