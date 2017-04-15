@@ -464,7 +464,7 @@ def risks(request):
         risks_form = RisksForm(risk_level="high")
     else:
         risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
-    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level})
+    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list})
 
 def calculate_risk():
     """
@@ -509,7 +509,7 @@ def calculate_risk():
     # Algorithm
     if question_fail is None:
         data_client.risk_level = "incomplete"
-        incomplete_list.append("Questions")
+        incomplete_list.append("Fall Screening")
 
     if assessment_fail is None:
         incomplete_list.append("Assessments")

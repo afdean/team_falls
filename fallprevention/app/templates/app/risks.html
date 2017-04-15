@@ -31,10 +31,16 @@
                     <div class="container">
                         <h5>Risk Levels</h5>
                         <div class="row">
-                            {% if risk_level == "incomplete"%}
+                            {% if risk_level == "incomplete" %}
                                 <div class="col-lg-3">
                                     <a href=""><button class="btn btn-success risk_button" id="incomplete" type="button" >Indeterminate Risk</button></a>
                                 </div>
+                                {% if incomplete_list %}
+                                    <h6> You must complete the following interventions to get the patient's risk level: </h6>
+                                    {% for incomplete in incomplete_list %}
+                                        <h7> {{ incomplete }} </h7>
+                                    {% endfor %}
+                                {% endif %}
                             {% elif risk_level == "low"%}
                                 <div class="col-lg-3">
                                     <a href=""><button class="btn btn-success risk_button" id="low" type="button" >Low Risk</button></a>
