@@ -41,6 +41,7 @@ def generate_form(field, field_widget=None, field_choices=None, is_required=Fals
             min_value=0,
             widget=forms.NumberInput,
             required=is_required,
+            help_text=field['help_text']
         )
     elif field['type'] == "char":
         return forms.CharField(
@@ -112,8 +113,6 @@ class QuestionForm(forms.Form):
                 pair_array.append(choice_pair["text"])
                 choice_list.append(pair_array)
             choice_tuple = tuple(tuple(x) for x in choice_list)
-            print(choice_tuple)
-            print(question['type'])
             self.fields[field_name] = generate_form(question, forms.RadioSelect, field_choices=choice_tuple)
             # Could expand on standards doc by requiring things to be filled in dynamically
             self.fields[field_name].required = True
@@ -136,7 +135,6 @@ class AssessmentForm(forms.Form):
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
                     for i, form in enumerate(test['forms']):
                         field_name = test['code'] + "_form" + str(i)
-                        print(field_name)
                         self.fields[field_name] = generate_form(form, None, None)
                         test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
@@ -239,8 +237,6 @@ class RisksForm(forms.Form):
     """
     def __init__(self, *args, **kwargs):
         risk_level = kwargs.pop("risk_level", None)
-        if risk_level is not None:
-            print("In forms, the risk_level is " + risk_level)
         incomplete = kwargs.pop("incomplete_list", None)
         super(RisksForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
@@ -249,9 +245,7 @@ class RisksForm(forms.Form):
 
         intervention_list = []
 
-        if risk_level == None:
-            print("There was an error somewhere, shouldn't have been directed here")
-        elif risk_level == "low":
+        if risk_level == "low":
             for intervention in data_client.risk_list["risks"]["low_risk"]:
                 intervention_list.append(intervention)
         elif risk_level == "moderate":
@@ -264,9 +258,7 @@ class RisksForm(forms.Form):
         # Pythonic way to check if list isn't empty
         if intervention_list:
             for intervention in intervention_list:
-                print(intervention)
                 current_intervention = data_client.intervention_list[intervention]
-                print(current_intervention)
                 intervention_fieldset = Fieldset(current_intervention['name'], css_class='field_set_results')
                 for i, form in enumerate(current_intervention['forms']):
                     field_name = current_intervention['name'] + "_form" + str(i)

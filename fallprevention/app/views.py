@@ -96,6 +96,7 @@ def questions(request):
                         flag = True
                 else:
                     flag = answer
+                print(answer)
                 if answer == flag:
                     score += int(data_client.questions['questions'][i]['score'])
                     if data_client.questions['questions'][i]['is_key']:
@@ -247,6 +248,7 @@ def assessments_details(request):
                         # Check logic for Balance Test
                         if test['code'] == 'bal000':
                             if test['forms'][i]['type'] == 'integer':
+                                # Bug here: what if logic doesn't exist?
                                 form_logic = test['forms'][i]['logic']
                                 if form_logic in test['min_logic']:
                                     if answer is not None and answer < test['min_logic'][form_logic]:
@@ -424,7 +426,9 @@ def user_login(request):
 def risks(request):
     data_client = DataClient()
     incomplete_list = calculate_risk()
+    print("Here is the list of incomplete tasks: ")
     print(incomplete_list)
+    print("The risk level is currently: " + data_client.risk_level)
     if data_client.risk_level == "low":
         risks_form = RisksForm(risk_level="low")
     elif data_client.risk_level == "moderate":
@@ -485,7 +489,7 @@ def calculate_risk():
 
     if question_fail is not None:
         if assessment_fail is None:
-            if question_fail == "Fail":
+            if question_fail == "Pass":
                 data_client.risk_level = "low"
             else:
                 data_client.risk_level = "incomplete"
@@ -503,7 +507,7 @@ def calculate_risk():
         # Note that by just doing a FAT, and passing it, then you are low risk anyway
         # The decision is made to return "incomplete" even if there's a pass for assessment and nothing
         # for questions, since they are rather crucial to know about, and screening is fast.
-    elif assessment_fail == "Pass":
+        elif assessment_fail == "Pass":
             data_client.risk_level = "low"
 
     return incomplete_list
