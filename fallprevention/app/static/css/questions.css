@@ -5,7 +5,7 @@
 .question-container{
     margin-top: 80px;
     width: 100%;
-    height: auto;
+    height: 50%;
   
 }
 #pass-button{
@@ -39,4 +39,31 @@ button{
 
 .question_row{
     margin-bottom: 10px;
+}
+
+ .auto-pass-fail {
+            width: 100%;
+        }
+        i{
+            margin-right: 5px;
+            
+        }
+        .fail{
+            background-color: red;
+            text-align: center;
+            color: white;
+            border: none;
+        }
+        .pass{
+            background-color: green;
+            text-align: center;
+            color: white;
+            border: none;
+        }
+        i:hover {
+            transform: scale(1.1, 1.1);
+            opacity: 1;
+}
+label{
+    font-size: 20px;
 }
