@@ -32,7 +32,8 @@
         "content": "TUG Time (seconds): ",
         "code": "tug002",
         "type": "integer",
-        "logic": "min_key"
+        "logic": "min_key",
+        "help_text": "Please leave blank if patient is unable to complete the test"
       },
       {
         "content": "No problems",
@@ -138,7 +139,8 @@
         "content": "Time (seconds):",
         "code": "chair002",
         "type": "integer",
-        "logic": "min_stand_seconds"
+        "logic": "min_stand_seconds",
+        "help_text": ""
       },
       {
         "content": "Notes:",
@@ -175,25 +177,29 @@
         "content": "Stand with your feet side by side. Time (seconds):",
         "code": "bal002",
         "type": "integer",
-        "logic": "min_side"
+        "logic": "min_side",
+        "help_text": ""
       },
       {
         "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):",
         "code": "bal003",
         "type": "integer",
-        "logic": "min_front"
+        "logic": "min_front",
+        "help_text": ""
       },
       {
         "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):",
         "code": "bal004",
         "type": "integer",
-        "logic": "min_tandem"
+        "logic": "min_tandem",
+        "help_text": ""
       },
       {
         "content": "Stand on one foot. Time (seconds):",
         "code": "bal005",
         "type": "integer",
-        "logic": "n/a"
+        "logic": "n/a",
+        "help_text": ""
       },
       {
         "content": "Notes:",

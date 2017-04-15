@@ -7,19 +7,22 @@
         "content": "Supine",
         "type": "integer",
         "code": "pos001",
-        "num_forms": 2
+        "num_forms": 2,
+        "help_text": ""
       },
       {
         "content": "Standing (1m)",
         "type": "integer",
         "code": "pos002",
-        "num_forms": 2
+        "num_forms": 2,
+        "help_text": ""
       },
       {
         "content": "Standing (3m)",
         "type": "integer",
         "code": "pos003",
-        "num_forms": 2
+        "num_forms": 2,
+        "help_text": ""
       },
       {
         "content": "Postural Dizziness",
@@ -31,7 +34,8 @@
         "content": "Heart Rate",
         "type": "integer",
         "code": "pos005",
-        "num_forms": 3
+        "num_forms": 3,
+        "help_text": ""
       }
     ]
   },
