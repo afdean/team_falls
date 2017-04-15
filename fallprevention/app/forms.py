@@ -15,12 +15,25 @@ def generate_form(field, field_widget=None, field_choices=None, is_required=Fals
             label=field['content'],
             required=is_required,
         )
-    elif field['type'] == "choice":
-        return forms.ChoiceField(
+    elif field['type'] == "choice_bool":
+        return forms.TypedChoiceField(
             label=field['content'],
             widget=field_widget,
             choices=field_choices,
             required=is_required,
+            # Can't coerce bool, because cleaned_data returns unicode string, which is
+            # always true if the string isn't empty, i.e "". Lambda is a work around
+            coerce=lambda x: x=="True"
+        )
+    elif field['type'] == "choice_int":
+        return forms.TypedChoiceField(
+            label=field['content'],
+            widget=field_widget,
+            choices=field_choices,
+            required=is_required,
+            # Can't coerce bool, because cleaned_data returns unicode string, which is
+            # always true if the string isn't empty, i.e "". Lambda is a work around
+            coerce=int
         )
     elif field['type'] == "integer":
         return forms.IntegerField(
@@ -90,7 +103,6 @@ class QuestionForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
-        # CHOICES = ((True, 'Yes',), (False, 'No',))
         for i, question in enumerate(data_client.questions['questions']):
             field_name = "question" + str(i)
             choice_list = []
@@ -105,7 +117,7 @@ class QuestionForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', 'Submit'))\
 
 class AssessmentForm(forms.Form):
     def __init__(self, *args, **kwargs):

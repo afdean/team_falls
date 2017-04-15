@@ -89,7 +89,14 @@ def questions(request):
                 answer = question_form.cleaned_data[field_name]
                 code = data_client.questions['questions'][i]['code']
                 data_client.observations[code] = answer
-                if answer:
+                flag = False
+                if instanceOf(answer, int):
+                    if answer >= 1:
+                        flag = True
+                else:
+                    flag = answer
+                if answer == True:
+                    print(question['content'])
                     score += int(data_client.questions['questions'][i]['score'])
                     if data_client.questions['questions'][i]['is_key']:
                         key_score += 1

@@ -2,7 +2,7 @@
   "questions": [
     {
       "content": "In the past year I have fallen...",
-      "type": "choice",
+      "type": "choice_int",
       "code": "q001",
       "score": 2,
       "is_key": true,
@@ -25,7 +25,7 @@
     },
     {
       "content": "I have been injured from a fall in the past year",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q003",
       "score": 0,
       "is_key": false,
@@ -39,16 +39,12 @@
         {
           "value": false,
           "text": "No"
-        },
-        {
-          "value": null,
-          "text": "N/A"
         }
       ]
     },
     {
       "content": "Sometimes I feel unsteady when I am walking",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q004",
       "score": 2,
       "is_key": true,
@@ -67,7 +63,7 @@
     },
     {
       "content": "I am worried about falling",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q005",
       "score": 1,
       "is_key": true,
@@ -86,7 +82,7 @@
     },
     {
       "content": "I use or have been advised to use a cane or walker to get around safely",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q006",
       "score": 2,
       "is_key": false,
@@ -105,7 +101,7 @@
     },
     {
       "content": "I steady myself by holding onto furniture when walking at home",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q007",
       "score": 1,
       "is_key": false,
@@ -124,7 +120,7 @@
     },
     {
       "content": "I need to push with my hands to stand up from a chair",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q008",
       "score": 1,
       "is_key": false,
@@ -143,7 +139,7 @@
     },
     {
       "content": "I have some trouble stepping up onto a curb",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q009",
       "score": 1,
       "is_key": false,
@@ -162,7 +158,7 @@
     },
     {
       "content": "I often have to rush to the toilet",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q010",
       "score": 1,
       "is_key": false,
@@ -181,7 +177,7 @@
     },
     {
       "content": "I have lost some feeling in my feet",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q011",
       "score": 1,
       "is_key": false,
@@ -200,7 +196,7 @@
     },
     {
       "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q012",
       "score": "1",
       "is_key": false,
@@ -219,7 +215,7 @@
     },
     {
       "content": "I take medicine to help me sleep or improve my mood",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q013",
       "score": 1,
       "is_key": false,
@@ -238,7 +234,7 @@
     },
     {
       "content": "I often feel sad or depressed",
-      "type": "choice",
+      "type": "choice_bool",
       "code": "q014",
       "score": 1,
       "is_key": false,
