@@ -17,7 +17,8 @@ def index(request):
     return render(request, 'app/index.html', {'form': MessageForm()})
 
 def login(request):
-    # Wipe whatever is in memory...
+    data_client = DataClient()
+    # Wipe whatever is in memory...?
     # data_client = DataClient().clean()
 
     if request.method == 'POST':
@@ -60,7 +61,6 @@ def login_patient(request):
         print("I am here 2")
     return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
 
-
 def searchPatient(request):
     data_client = DataClient()
     patient_list = []
@@ -86,6 +86,8 @@ def searchPatient(request):
         # if search_patient_form.is_valid():
     else:
         search_patient_form = SearchPatientForm()
+        if data_client.identity != "care_provider":
+            return HttpResponseRedirect('/app/login/')
 
     return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patient_list': patient_list})
 
@@ -139,7 +141,11 @@ def questions(request):
         print(data_client.observations)
         question_form = QuestionForm(initial=question_answers)
 
-    return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})
+    if data_client.identity == "patient":
+        return render(request, 'app/questions_patient.html', {'question_form': question_form, 'patient': data_client.patient})
+    else:
+        return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})
+
 
 def thankyou(request):
     data_client = DataClient()

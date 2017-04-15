@@ -85,6 +85,26 @@ class LoginCPForm(forms.Form):
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Next'))
 
+class LoginPatientForm(forms.Form):
+    username = forms.CharField(
+        label="Username:",
+        max_length=80,
+        required=True,
+    )
+    password = forms.CharField(
+        label="Password:",
+        widget=forms.PasswordInput,
+        max_length=80,
+        required=True,
+    )
+    def __init__(self, *args, **kwargs):
+        super(LoginCPForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-loginCPForms'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Next'))
+
 class SearchPatientForm(forms.Form):
     patient_name = forms.CharField(
         label="Patient Name:",
