@@ -2,12 +2,17 @@
     margin: 20px;
     width:100%;
 }
+#incomplete{
+    background-color: #2af542;
+    border-color: #2af542;
+    color:white;
+}
 #low{
     background-color: #FFE621;
     border-color:#FFE621;
     color: white;
 }
-#med{
+#mod{
     background-color: orange;
     border-color:orange;
     color: white;

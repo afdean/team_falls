@@ -452,6 +452,7 @@ def user_login(request):
 def risks(request):
     data_client = DataClient()
     incomplete_list = calculate_risk()
+    risk_level = data_client.risk_level
     print("Here is the list of incomplete tasks: ")
     print(incomplete_list)
     print("The risk level is currently: " + data_client.risk_level)
@@ -463,7 +464,7 @@ def risks(request):
         risks_form = RisksForm(risk_level="high")
     else:
         risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
-    return render(request, 'app/risks.html', {'risks_form':risks_form})
+    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level})
 
 def calculate_risk():
     """
