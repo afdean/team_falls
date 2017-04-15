@@ -64,9 +64,7 @@ button{
             transform: scale(1.1, 1.1);
             opacity: 1;
 }
-label{
-    font-size: 20px;
-}
+
 .question_row{
 
     text-align: left;
