@@ -96,12 +96,19 @@ def questions(request):
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
         if question_form.is_valid():
+            # try:
+            #     question_form.check_injury()
+            # except forms.ValidationError as e:
+            #     return HttpResponseRedirect('/app/questions/')
+            # if question_form.check_injury():
+            #     return HttpResponseRedirect('/app/questions/')
+            print("I got to this point!")
             score = 0
             key_score = 0
             for i, question in enumerate(data_client.questions['questions']):
-                field_name = "question" + str(i)
-                answer = question_form.cleaned_data[field_name]
                 code = data_client.questions['questions'][i]['code']
+                field_name = code
+                answer = question_form.cleaned_data[field_name]
                 data_client.observations[code] = answer
                 flag = False
                 # This could be fragile if changed to >=2 falls? Or something non 1
@@ -110,19 +117,17 @@ def questions(request):
                         flag = True
                 else:
                     flag = answer
-                print(answer)
-                if answer == flag:
+                if flag:
                     score += int(data_client.questions['questions'][i]['score'])
                     if data_client.questions['questions'][i]['is_key']:
                         key_score += 1
-
             code = data_client.questions['code']
             if (key_score < data_client.questions['question_logic']['min_key'] and
                 score < data_client.questions['question_logic']['min_score']):
                 data_client.observations[code] = "Pass"
             else:
                 data_client.observations[code] = "Fail"
-
+            print(data_client.observations)
             if data_client.identity == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
             else:
@@ -131,12 +136,15 @@ def questions(request):
                     return HttpResponseRedirect('/app/assessments/')
                 elif data_client.risk_level is not None:
                     return HttpResponseRedirect('/app/risks/')
+        else:
+            print("form not valid!")
     else:
         question_answers = {}
         for i, question in enumerate(data_client.questions['questions']):
             code = data_client.questions['questions'][i]['code']
             if code in data_client.observations:
-                field_name = "question" + str(i)
+                code = data_client.questions['questions'][i]['code']
+                field_name = code
                 question_answers[field_name] = data_client.observations[code]
         print(data_client.observations)
         question_form = QuestionForm(initial=question_answers)

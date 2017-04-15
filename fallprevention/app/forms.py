@@ -125,7 +125,8 @@ class QuestionForm(forms.Form):
         super(QuestionForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         for i, question in enumerate(data_client.questions['questions']):
-            field_name = "question" + str(i)
+            code = data_client.questions['questions'][i]['code']
+            field_name = code
             choice_list = []
             for choice_pair in question['choices']:
                 pair_array = []
@@ -139,7 +140,26 @@ class QuestionForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))\
+        self.helper.add_input(Submit('submit', 'Submit'))
+
+    def clean(self):
+        """
+        This is a custom override
+        """
+        data_client = DataClient()
+        cleaned_data = super(QuestionForm, self).clean()
+        num_falls = cleaned_data.get("q001")
+        injury = cleaned_data.get("q003")
+
+        if injury and num_falls == 0:
+            print("This was reached")
+            msg = "It is not possible to have been injured without having a fall"
+            self.add_error('q001', msg)
+            self.add_error('q003', msg)
+            raise forms.ValidationError("Please fix the fields")
+
+        # Could set obs. here to have in record despite incomplete?
+        return cleaned_data
 
 class AssessmentForm(forms.Form):
     def __init__(self, *args, **kwargs):
