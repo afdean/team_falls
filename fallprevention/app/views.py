@@ -17,18 +17,17 @@ def index(request):
     return render(request, 'app/index.html', {'form': MessageForm()})
 
 def login(request):
-    data_client = DataClient()
+    # Wipe whatever is in memory...
+    # data_client = DataClient().clean()
+
     if request.method == 'POST':
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
             identity = login_form.cleaned_data['identity']
             if identity == 'patient':
-                # login_form.helper.form_action = '/app/questions/'
-                url = '/app/questions/'
+                url = '/app/login/patient/'
                 data_client.identity = 'patient'
-                # request.session['identity'] = 'patient'
-            else:
-                # login_form.helper.form_action = '/app/login/care_provider/'
+            elif identity == "care_provider":
                 url = '/app/login/care_provider/'
                 data_client.identity = 'care_provider'
             return HttpResponseRedirect(url)
@@ -42,12 +41,25 @@ def login_cp(request):
     if request.method == 'POST':
         login_cp_form = LoginCPForm(request.POST)
         if login_cp_form.is_valid():
+            url = '/app/search/'
+            return HttpResponseRedirect(url)
+    else:
+        login_cp_form = LoginCPForm()
+    return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
+
+def login_patient(request):
+    data_client = DataClient()
+    if request.method == 'POST':
+        login_cp_form = LoginCPForm(request.POST)
+        if login_cp_form.is_valid():
+            print("I am here")
             url = '/app/questions/'
             return HttpResponseRedirect(url)
     else:
         login_cp_form = LoginCPForm()
-
+        print("I am here 2")
     return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
+
 
 def searchPatient(request):
     data_client = DataClient()

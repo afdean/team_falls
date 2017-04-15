@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^$', app_views.index, name="index"),
     url(r'^login/$', app_views.login, name="login"),
     url(r'^login/care_provider/$', app_views.login_cp, name="login_cp"),
+    url(r'^login/patient/$', app_views.login_patient, name="login_patient"),
     url(r'^search/$', app_views.searchPatient, name="searchPatient"),
     url(r'^questions/$', app_views.questions, name="questions"),
     url(r'^thankyou/$', app_views.thankyou, name="thankyou"),

@@ -43,7 +43,7 @@ class DataClient(metaclass=Singleton):
         # Complete dict of observations to be written to FHIR
         self.observations = {}
         # Determines if patient or provider that has logged in
-        self.identity = "care_provider"
+        self.identity = ""
         # Used for displaying asssessments
         self.assessments_chosen = []
         # Used for displaying phyiscal exams

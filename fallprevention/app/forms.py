@@ -52,7 +52,7 @@ def generate_form(field, field_widget=None, field_choices=None, is_required=Fals
 
 class LoginForm(forms.Form):
     identity = forms.TypedChoiceField(
-        label='Identify Who you are',
+        label='Identify who you are',
         choices=(('patient', 'Patient'),
                 ('care_provider', 'Care Provider')),
         required=True,

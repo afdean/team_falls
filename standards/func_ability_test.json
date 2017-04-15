@@ -192,7 +192,8 @@
       {
         "content": "Stand on one foot. Time (seconds):",
         "code": "bal005",
-        "type": "integer"
+        "type": "integer",
+        "logic": "n/a"
       },
       {
         "content": "Notes:",
