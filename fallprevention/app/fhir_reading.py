@@ -99,6 +99,30 @@ class FallsFHIRClient(object):
             patient_list = resp.json()['entry']
             return patient_list
 
+    # Search for a patient by id
+    # Input: patient_id
+    # Returns: list of patients. Each is a dict.
+    # Note: Patient_id is found at patient['resource']['identifier'][0]['value']
+    # Requires: api-server running
+    def search_patient_by_id(self, pat=None):
+        if pat == None:
+            pat = self.patient_id
+        if not pat:
+            print('I am missing a patient_id to search for relevant encounters')
+            return None
+        search_headers = {'Accept': 'application/json'}
+        search_params = {'identifier': pat}
+        resp = requests.get(self.api_base + 'Patient/', headers=search_headers, params=search_params)
+        # print(resp)
+        if resp.status_code != 200 or resp.json()['total'] < 1:
+            # This means something went wrong.
+            print('Something went wrong. Probably there is no patient by that id')
+            return []
+        else:
+            # print(resp.json())
+            patient = resp.json()['entry']
+            return patient
+
     # Function to select the patient (i.e., set the client's patient_id to the desired patient) based
     # on a returned list from search_patient or search_patient_dob.
     # Input: patient_list, index of desired patient (defaults to first on list)
@@ -680,11 +704,16 @@ if __name__ == "__main__":
     print('Patient ID:')
     print(client.patient_id, '\n')
 
+    patient = client.search_patient_by_id(pat=client.patient_id)
+    # print(patient)
+    print(patient[0]['resource'])
+    # print(patient['resource'][0]['id'])
+
     # Search for encounters by the patient by searching the date. The date must be right.
     encounters = client.search_encounter_all()
-    print(len(encounters))
-    for enc in encounters:
-        print(enc['resource']['patient'])
+    # print(len(encounters))
+    # for enc in encounters:
+    #     print(enc['resource']['patient'])
     client.select_encounter_from_encounter_result(encounters)
     # client.create_new_encounter(set_as_active_encounter=True)
 
@@ -697,7 +726,7 @@ if __name__ == "__main__":
 
     # See the last medication order on the list
     print('The last medication on the list is:')
-    print(meds[-1], '\n')
+    # print(meds[-1], '\n')
 
     # End that medication order (e.g., if doctor decides to change the prescription)
     # Commented out so you don't keep removing medications.
