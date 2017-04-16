@@ -18,7 +18,7 @@ import copy
 import time
 from collections import namedtuple
 import urllib.request as ur
-from .constants import *
+from constants import *
 # Requires a smart-on-fhir api-server running on localhost. Find code to run that at
 # https://github.com/smart-on-fhir/api-server
 class FallsFHIRClient(object):
@@ -119,7 +119,7 @@ class FallsFHIRClient(object):
         encounter_list = []
         search_headers = {'Accept': 'application/json'}
         for stat in status:
-            search_params = {'subject': pat, 'status': stat}
+            search_params = {'patient': pat, 'status': stat}
             resp = requests.get(self.api_base + 'Encounter/', headers=search_headers, params=search_params)
             if resp.json()['total'] > 0:
                 for enc in resp.json()['entry']:
@@ -197,7 +197,7 @@ class FallsFHIRClient(object):
         encounter_list = []
         search_headers = {'Accept': 'application/json'}
         for stat in ['planned', 'arrived', 'in-progress']:
-            search_params = {'subject': pat, 'status': stat}
+            search_params = {'patient': 'Patient/'+pat, 'status': stat}
             resp = requests.get(self.api_base + 'Encounter/', headers=search_headers, params=search_params)
             if resp.json()['total']>0:
                 for enc in resp.json()['entry']:
@@ -640,12 +640,12 @@ class FallsFHIRClient(object):
 
 if __name__ == "__main__":
     # This is some example of how to run this:
-    QUESTIONS_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json"
-    with ur.urlopen(QUESTIONS_URL) as url_questions:
-        questions = json.loads(url_questions.read().decode('utf8'))
+    # QUESTIONS_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json"
+    # with ur.urlopen(QUESTIONS_URL) as url_questions:
+    #     questions = json.loads(url_questions.read().decode('utf8'))
 
     client = FallsFHIRClient()
-    client.load_standards_document(questions)
+    # client.load_standards_document(questions)
 
     # Search for a patient by first and last name
     patients = client.search_patient('S', 'Graham')
@@ -667,7 +667,11 @@ if __name__ == "__main__":
 
     # Search for encounters by the patient by searching the date. The date must be right.
     encounters = client.search_encounter_all()
+    print(len(encounters))
+    for enc in encounters:
+        print(enc['resource']['patient'])
     client.select_encounter_from_encounter_result(encounters)
+
     # client.select_encounter(patients[0]['resource']['id'])
     print('Encounter ID:')
     print(client.encounter_id, '\n')
@@ -676,8 +680,8 @@ if __name__ == "__main__":
     meds = client.search_medication()
 
     # See the last medication order on the list
-    print('The last medication on the list is:')
-    print(meds[-1], '\n')
+    # print('The last medication on the list is:')
+    # print(meds[-1], '\n')
 
     # End that medication order (e.g., if doctor decides to change the prescription)
     # Commented out so you don't keep removing medications.
@@ -689,9 +693,9 @@ if __name__ == "__main__":
     # client.load_standards_document("https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json")
 
     # Find all observations that are on fall prevention for this patient and this encounter:
-    current_obs = client.search_observations()
-    print('Observations for this patient and this encounter:')
-    print(current_obs, '\n')
+    # current_obs = client.search_observations()
+    # print('Observations for this patient and this encounter:')
+    # print(current_obs, '\n')
 
     # Write to FHIR server a bunch of observations from the app. Makes new observations if a previous one does not
     # exist for this question and this encounter. Updates existing observation if it does exist.
