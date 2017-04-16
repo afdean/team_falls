@@ -18,7 +18,7 @@ import copy
 import time
 from collections import namedtuple
 import urllib.request as ur
-from constants import *
+from .constants import *
 # Requires a smart-on-fhir api-server running on localhost. Find code to run that at
 # https://github.com/smart-on-fhir/api-server
 class FallsFHIRClient(object):
@@ -145,7 +145,7 @@ class FallsFHIRClient(object):
         save_enc['patient'] = {}
         save_enc['patient']['reference'] = 'Patient/'+pat
         write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        resp = requests.post(client.api_base + 'Encounter/', data=json.dumps(save_enc), headers=write_headers)
+        resp = requests.post(self.api_base + 'Encounter/', data=json.dumps(save_enc), headers=write_headers)
         if resp.status_code != 201:
             print('Something went wrong when trying to write to the server')
             return False
