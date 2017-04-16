@@ -3,6 +3,7 @@ import json
 from .constants import *
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
+from django.conf import settings
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from app.forms import *
@@ -148,9 +149,11 @@ def questions(request):
         question_form = QuestionForm(initial=question_answers)
 
     if data_client.identity == "patient":
-        return render(request, 'app/questions_patient.html', {'question_form': question_form, 'patient': data_client.patient})
+        extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/base.html')
     else:
-        return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})
+        extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/baseWithSideBar.html')
+
+    return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient, 'identity': data_client.identity, 'extends_variable': extends_variable})
 
 def thankyou(request):
     data_client = DataClient()
@@ -349,6 +352,7 @@ def medications(request):
     calculate_risk()
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
+        print("Button is triggering")
         if medications_form.is_valid():
             if data_client.risk_level == "high":
                 return HttpResponseRedirect('/app/exams/')
