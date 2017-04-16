@@ -18,7 +18,7 @@ import copy
 import time
 from collections import namedtuple
 import urllib.request as ur
-from .constants import *
+from constants import *
 # Requires a smart-on-fhir api-server running on localhost. Find code to run that at
 # https://github.com/smart-on-fhir/api-server
 class FallsFHIRClient(object):
@@ -456,10 +456,10 @@ class FallsFHIRClient(object):
         return output_dict
 
     # Function write many observations to fhir. Takes in a list of question codes and associated responses.
-    # Input: question_code list from the standards document, responses list to question, patient_id, encounter_id,
+    # Input: data (a dict where keys are question_codes and contents are the responses to the question), patient_id, encounter_id,
     # diagnostic report (the default uses client values if they have been set)
     # Returns: True if succeeds in creating a new procedure or False if fails.
-    def write_list_of_observations_to_fhir(self, question_codes, responses, pat_id=None, enc_id=None, diag_rpt=None):
+    def write_list_of_observations_to_fhir(self, data, pat_id=None, enc_id=None, diag_rpt=None):
         if pat_id == None:
             pat_id = self.patient_id
         if enc_id == None:
@@ -472,16 +472,16 @@ class FallsFHIRClient(object):
         search_headers = {'Accept': 'application/json'}
         search_params = {'subject': pat_id, 'encounter': enc_id, 'category': 'fall_prevention'}
         resp = requests.get(self.api_base + 'Observation/', headers=search_headers, params=search_params)
-        for i in range(len(question_codes)):
+        for code in data:
             updated_existing = False
             if resp.json()['total'] > 0:
                 for obs in resp.json()['entry']:
-                    if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention' and obs['resource']['code']['coding'][0]['code'] == question_codes[i]:
-                        self.update_observation_by_observation(obs, responses[i])
+                    if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention' and obs['resource']['code']['coding'][0]['code'] == code:
+                        self.update_observation_by_observation(obs, data[code])
                         updated_existing = True
             if updated_existing:
                 continue
-            self.create_new_observation(question_codes[i],responses[i], pat_id=pat_id, enc_id=enc_id, diag_rpt=diag_rpt)
+            self.create_new_observation(code, data[code], pat_id=pat_id, enc_id=enc_id, diag_rpt=diag_rpt)
 
     # Function write a note observation to fhir. Takes in a list the question code we would like to save it as and
     # the content of the note. Writes a new observation if one did not previously exist. Updates existing one if it
@@ -685,7 +685,7 @@ if __name__ == "__main__":
     # client.load_standards_document(questions)
 
     # Search for a patient by first and last name
-    patients = client.search_patient('Stephan', 'Graham')
+    patients = client.search_patient('Stephan P.', 'Graham')
     print('Patient info:')
     print(patients[0], '\n')
     print(patients[0]['resource']['name'][0]['given'], '\n')
