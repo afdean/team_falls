@@ -477,20 +477,42 @@ def user_login(request):
 
 def risks(request):
     data_client = DataClient()
-    incomplete_list = calculate_risk()
     completed = get_sidebar_completed()
-    risk_level = data_client.risk_level
-    print("Here is the list of incomplete tasks: ")
-    print(incomplete_list)
-    print("The risk level is currently: " + data_client.risk_level)
-    if data_client.risk_level == "low":
-        risks_form = RisksForm(risk_level="low")
-    elif data_client.risk_level == "moderate":
-        risks_form = RisksForm(risk_level="moderate")
-    elif data_client.risk_level == "high":
-        risks_form = RisksForm(risk_level="high")
+    incomplete_list = calculate_risk()
+
+    if request.method == "POST":
+        risk_level = data_client.risk_level
+        risks_form = RisksForm(request.POST, risk_level=risk_level)
+        if risks_form.is_valid():
+            for key, intervention in data_client.intervention_list.items():
+                for i, form in enumerate(intervention['forms']):
+                    intervention['forms'][i]['code']
+                    if code in risks_form.cleaned_data:
+                        answer = assessments_form.cleaned_data[field_name]
+                        data_client.observations[code] = answer
+            return HttpResponseRedirect('/app/risks')
+
     else:
-        risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
+        intervention_answers = {}
+        for key, intervention in data_client.intervention_list.items():
+            # print(key)
+            # print(intervention)
+            for i, form in enumerate(intervention['forms']):
+                code = intervention['forms'][i]['code']
+                if code in data_client.observations:
+                    field_name = code
+                    intervention_answers[field_name] = data_client.observations[code]
+        risk_level = data_client.risk_level
+        print(data_client.observations)
+        if data_client.risk_level == "low":
+            risks_form = RisksForm(initial=intervention_answers, risk_level="low")
+        elif data_client.risk_level == "moderate":
+            risks_form = RisksForm(initial=intervention_answers, risk_level="moderate")
+        elif data_client.risk_level == "high":
+            risks_form = RisksForm(initial=intervention_answers, risk_level="high")
+        else:
+            risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
+
     return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed})
 
 def calculate_risk():
@@ -636,7 +658,7 @@ def get_exams_completed():
                 break
 
     return completed
-    
+
 def history(request):
 
     return render(request,'app/history.html',{})
