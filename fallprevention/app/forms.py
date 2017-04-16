@@ -48,6 +48,7 @@ def generate_form(field, field_widget=None, field_choices=None, is_required=Fals
             label=field['content'],
             required=is_required,
             widget=forms.Textarea,
+            help_text=field['help_text']
         )
 
 class LoginForm(forms.Form):
@@ -287,6 +288,13 @@ class MedicationsLinkedForm(forms.Form):
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))
 
+def is_int(str):
+    try:
+        int(str)
+        return True
+    except:
+        return False
+
 class ExamsForm(forms.Form):
     def __init__(self, *args, **kwargs):
         exams_chosen = kwargs.pop("exams_chosen", None)
@@ -314,6 +322,48 @@ class ExamsForm(forms.Form):
             self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
+
+    def clean(self):
+        """
+        This is a custom override
+        """
+        data_client = DataClient()
+        problem_list = []
+        cleaned_data = super(ExamsForm, self).clean()
+        left = cleaned_data.get("vis001")
+        right = cleaned_data.get("vis002")
+        both = cleaned_data.get("vis003")
+
+        eye_list = []
+        if left != None:
+            eye_list.append(left)
+        if right != None:
+            eye_list.append(left)
+        if both != None:
+            eye_list.append(left)
+
+        # This needs to be cleaned up: standards should have fields indicating the type of entry they should have.
+        # For example, this one would be vision, another could just be "" if you can enter whatever you want
+        for s in eye_list:
+            if s is not None and  '/' in s:
+                index = s.find('/', 0, len(s))
+                if index != -1:
+                    first_str = s[0:index]
+                    second_str = s[index + 1:len(s)]
+                    if is_int(first_str) and is_int(second_str):
+                        first_num = int(first_str)
+                        second_num = int(second_str)
+                        if first_num != 20:
+                            self.add_error("code", "Must be in form \"20/20\": Please ensure the first number is equal to 20")
+                        if second_num <= 0:
+                            self.add_error("Must be in form \"20/20\": Please ensure the second number is positive")
+                    else:
+                        self.add_error("Must be in form \"20/20\": Please ensure numbers are correctly formatted")
+                else:
+                    self.add_error("Must be in form \"20/20\": Please ensure \"/\" is in entry")
+            else:
+                self.add_error("Must be in form \"20/20\": Please ensure / is in entry")
+        return cleaned_data
 
 
 class RisksForm(forms.Form):

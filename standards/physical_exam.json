@@ -51,6 +51,7 @@
         "content": "Notes",
         "type": "char",
         "code": "cog001",
+        "help_text": "",
         "num_forms": 1
       },
       {
@@ -135,18 +136,21 @@
         "content": "Left",
         "type": "char",
         "code": "vis001",
+        "help_text": "Please enter in the form \"20/20\"",
         "num_forms": 1
       },
       {
         "content": "Right",
         "type": "char",
         "code": "vis002",
+        "help_text": "Please enter in the form \"20/20\"",
         "num_forms": 1
       },
       {
         "content": "Both",
         "type": "char",
         "code": "vis003",
+        "help_text": "Please enter in the form \"20/20\"",
         "num_forms": 1
       },
       {

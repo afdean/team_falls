@@ -152,7 +152,7 @@
         "type": "integer",
         "is_required": true,
         "logic": "min_stand_seconds",
-        "help_text": ""
+        "help_text": "Please enter 0 if the patient cannot complete the test"
       },
       {
         "content": "Notes:",
@@ -191,7 +191,7 @@
         "type": "integer",
         "is_required": "true",
         "logic": "min_side",
-        "help_text": ""
+        "help_text": "Please enter 0 if the patient cannot complete the test"
       },
       {
         "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):",
@@ -199,7 +199,7 @@
         "type": "integer",
         "is_required": "true",
         "logic": "min_front",
-        "help_text": ""
+        "help_text": "Please enter 0 if the patient cannot complete the test"
       },
       {
         "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):",
@@ -207,7 +207,7 @@
         "type": "integer",
         "is_required": "true",
         "logic": "min_tandem",
-        "help_text": ""
+        "help_text": "Please enter 0 if the patient cannot complete the test"
       },
       {
         "content": "Stand on one foot. Time (seconds):",
@@ -215,11 +215,12 @@
         "type": "integer",
         "is_required": "true",
         "logic": "n/a",
-        "help_text": ""
+        "help_text": "Please enter 0 if the patient cannot complete the test"
       },
       {
         "content": "Notes:",
         "code": "bal001",
+        "help_text": "",
         "type": "char"
       }
     ]
