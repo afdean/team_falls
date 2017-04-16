@@ -215,13 +215,14 @@ class AssessmentForm(forms.Form):
                         problem_list.append(field['code'])
 
         if cant_tug is not None and cant_tug:
-            if num_falls is not None:
-                if no_problems is not None and no_problems:
-                    print("This was reached")
-                    msg = "It is not possible to unable to do the TUG while having timed score or no problems"
-                    self.add_error('tug001', msg)
-                    self.add_error('tug001', msg)
-                    error = True
+            if tug_time is not None:
+                time_msg = "Either uncheck the box above or please leave this blank"
+                self.add_error('tug002', time_msg)
+                error = True
+            if no_problems is not None and no_problems:
+                prob_msg = "It is not possible to unable to do the TUG while having timed score or no problems"
+                self.add_error('tug001', prob_msg)
+                error = True
 
         if no_problems is not None and no_problems:
             msg = "It is not possible to have no problems checked off with other problems"
