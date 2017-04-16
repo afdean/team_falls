@@ -90,10 +90,20 @@ def search_patient(request):
 
     return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patients': patient_list})
 
+def history(request):
+    data_client = DataClient()
+    if (request.GET.get('patient') is not None):
+        data_client.patient = literal_eval(request.GET.get('patient'))
+        data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
+    encounter_list = data_client.fhir_client.search_encounter_all()
+    print (encounter_list)
+    return render(request,'app/history.html',{'patient': data_client.patient, 'encounters': encounter_list})
+
 def questions(request):
     data_client = DataClient()
-    if (request.GET.get('patient') != None):
+    if (request.GET.get('patient') is not None):
         data_client.patient = literal_eval(request.GET.get('patient'))
+        data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
     # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
     encounter_list = data_client.fhir_client.search_encounter_all()
     if encounter_list:
@@ -135,6 +145,7 @@ def questions(request):
             else:
                 data_client.observations[questions_code] = "Fail"
             print(data_client.observations)
+            # data_client.fhir_client.write_list_of_observations_to_fhir()
             if data_client.identity == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
             else:
@@ -643,7 +654,3 @@ def get_exams_completed():
                 break
 
     return completed
-
-def history(request):
-
-    return render(request,'app/history.html',{})
