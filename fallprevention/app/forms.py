@@ -171,10 +171,11 @@ class AssessmentForm(forms.Form):
         self.helper.layout = Layout()
         if assessments_chosen:
             for test in data_client.func_test:
-                if test['name'] in assessments_chosen:
+                if test['code'] in assessments_chosen:
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
                     for i, form in enumerate(test['forms']):
-                        field_name = test['code'] + "_form" + str(i)
+                        code = test['forms'][i]['code']
+                        field_name = code
                         self.fields[field_name] = generate_form(form, None, None)
                         test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
@@ -182,12 +183,12 @@ class AssessmentForm(forms.Form):
         else:
             for test in data_client.func_test:
                 if test['is_recommended']:
-                    self.fields[test['name']] = forms.BooleanField(
+                    self.fields[test['code']] = forms.BooleanField(
                         label=test['name'] + " (Recommended)",
                         required=False,
                     )
                 else:
-                    self.fields[test['name']] = forms.BooleanField(
+                    self.fields[test['code']] = forms.BooleanField(
                         label=test['name'],
                         required=False,
                     )
@@ -254,16 +255,17 @@ class ExamsForm(forms.Form):
         self.helper.layout = Layout()
         if exams_chosen:
             for exam in data_client.physical_exam:
-                if exam['name'] in exams_chosen:
+                if exam['code'] in exams_chosen:
                     exam_fieldset = Fieldset(exam['name'], css_class=exam['name'])
                     for i, form in enumerate(exam['forms']):
-                        field_name = exam['name'] + "_form" + str(i)
+                        code = exam['forms'][i]['code']
+                        field_name = code
                         self.fields[field_name] = generate_form(form)
                         exam_fieldset.append(Field(field_name))
                     self.helper.layout.append(exam_fieldset)
         else:
             for exam in data_client.physical_exam:
-                self.fields[exam['name']] = forms.BooleanField(
+                self.fields[exam['code']] = forms.BooleanField(
                     label=exam['name'],
                     required=False,
                 )
