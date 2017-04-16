@@ -542,3 +542,6 @@ def calculate_risk():
 
 
 
+def history(request):
+
+    return render(request,'app/history.html',{})

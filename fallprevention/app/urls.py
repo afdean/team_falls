@@ -16,4 +16,6 @@ urlpatterns = [
     url(r'^exams/$', app_views.exams, name="exams"),
     url(r'^exams/details$', app_views.exams_details, name="exams_details"),
     url(r'^risks/$', app_views.risks, name="risks"),
+    url(r'^history/$', app_views.history, name="history"),
+
 ]

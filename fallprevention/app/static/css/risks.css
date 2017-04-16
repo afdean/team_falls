@@ -4,7 +4,7 @@
 }
 #incomplete{
     background-color: #2af542;
-    border-color: #2af542;
+    color: #2af542;
     color:white;
 }
 #low{
@@ -15,7 +15,7 @@
 #moderate{
     background-color: orange;
     border-color:orange;
-    color: white;
+    color: white
 }
 #high{
     background-color: #d9534f;
@@ -23,7 +23,6 @@
     color: white;
 }
 .results_form{
-    height: 200px;
     overflow-y: auto;
 }
 .field_set_results{

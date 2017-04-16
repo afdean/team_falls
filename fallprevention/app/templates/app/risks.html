@@ -4,99 +4,58 @@
         font-size: 14px;
     }
 </style>
-{% block content %}
+{% block content %} {% csrf_token %}
 
-    <form method='post' id="risk_form">
-        {% csrf_token %}
 
-        <div class="container">
-            <div class="row form-group assessment_block" id="patient_education">
-                <h3>Interventions</h3>
 
-                  <div class="col-md-12 results_form">
-                    <div class="container">
-                        <div class="row justify-content-end">
-                            {% crispy risks_form %}
-                        </div>
-                    </div>
-                </div>
+<div class="row assessment_block form-group" id="patient_education">
 
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row assessment_block form-group" id="patient_education">
-
-                     <div class="col-md-6">
-                    <div class="container">
-                        <h5>Risk Levels</h5>
-                        <div class="row">
-                            {% if risk_level == "incomplete" %}
-                                <div class="col-lg-3">
-                                    <a href=""><button class="btn btn-success risk_button" id="incomplete" type="button" >Indeterminate Risk</button></a>
-                                </div>
-                                {% if incomplete_list %}
-                                    <h6> You must complete the following interventions to get the patient's risk level: </h6>
-                                    {% for incomplete in incomplete_list %}
-                                        <h7> {{ incomplete }} </h7>
-                                    {% endfor %}
-                                {% endif %}
-                            {% elif risk_level == "low"%}
-                                <div class="col-lg-3">
-                                    <a href=""><button class="btn btn-success risk_button" id="low" type="button" >Low Risk</button></a>
-                                </div>
-                            {% elif risk_level == "moderate"%}
-                                <div class="col-lg-3">
-                                    <a href=""><button class="btn btn-success risk_button" id="moderate" type="button" >Moderate Risk</button></a>
-                                </div>
-                            {% elif risk_level == "high"%}
-                                <div class="col-lg-3">
-                                    <a href=""><button class="btn btn-success risk_button" id="high" type="button" >High Risk</button></a>
-                                </div>
-                            {% endif %}
-                        </div>
-                        <!--<div class="row">
-                            <div class="col-lg-3">
-                                <a href=""><button class="btn btn-success risk_button" id="mod" type="button" >Medium</button></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <a href=""><button class="btn btn-success risk_button" id="high" type="button" >High</button></a>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="container">
-                        <h5>Print</h5>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <a href=""><button class="btn btn-info risk_button" type="button" >Print Brochure</button></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <a href=""><button class="btn btn-info risk_button"  type="button" >Print Handout</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row assessment_block form-group" id="risk_notes">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="container-fluid">
+            <h5>Risk Level</h5>
+            <div class="row">
+                {% if risk_level == "incomplete" %}
                 <div class="col-lg-12">
-                    <label for="comment">Notes:</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                    <h1 id="incomplete">Indeterminate Risk
+                        <h1>
                 </div>
+                {% if incomplete_list %}
+                <h6> You must complete the following interventions to get the patient's risk level: </h6>
+                {% for incomplete in incomplete_list %}
+                <h7> {{ incomplete }} </h7>
+                {% endfor %} {% endif %} {% elif risk_level == "low"%}
+                <div class="col-lg-12">
+                    <h1 id="low" type="button">Low </button>
+                    </h1>
+                </div>
+                {% elif risk_level == "moderate"%}
+                <div class="col-lg-12">
+                    <h1 id="moderate">Moderate </h2>
+                </div>
+                {% elif risk_level == "high"%}
+                <div class="col-lg-12">
+                    <h1 id="hihg">High </h1>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row form-group" id="patient_education">
+
+    <div class="col-md-12 results_form">
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                {% crispy risks_form %}
             </div>
         </div>
-        <div class="row form-group" id="submit_risk_button">
-            <div class="col-lg-12 text-center">
-                <button class="btn btn-primary" type="button" id="risks_submit_button">Submit</button>
-            </div>
-        </div>
-    </form>
+    </div>
+
+</div>
+
+
 {% endblock %}
