@@ -403,4 +403,4 @@ class RisksForm(forms.Form):
 
         self.helper.form_id = 'id-risksForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', 'Complete'))

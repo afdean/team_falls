@@ -3,36 +3,22 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-FallsFHIRClient	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^class FallsFHIRClient(object):$/;"	class	line:24
-__init__	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def __init__(self):$/;"	member	line:25	class:FallsFHIRClient
-test_function	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def test_function(self):$/;"	member	line:34	class:FallsFHIRClient
-load_standards_document	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def load_standards_document(self, standards_document_dict):$/;"	member	line:43	class:FallsFHIRClient
-search_patient	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_patient(self, first_name, last_name):$/;"	member	line:57	class:FallsFHIRClient
-search_patient_dob	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_patient_dob(self, first_name, last_name, date_of_birth):$/;"	member	line:78	class:FallsFHIRClient
-select_patient_from_patient_result	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_patient_from_patient_result(self, patient_list, list_index=0):$/;"	member	line:95	class:FallsFHIRClient
-select_patient	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_patient(self, patient_id):$/;"	member	line:106	class:FallsFHIRClient
-search_encounter_all	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_encounter_all(self, pat=None, status=['']):$/;"	member	line:114	class:FallsFHIRClient
-search_encounter_date	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_encounter_date(self, date, pat=None):$/;"	member	line:139	class:FallsFHIRClient
-select_encounter_from_encounter_result	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_encounter_from_encounter_result(self, encounter_list, list_index=0):$/;"	member	line:173	class:FallsFHIRClient
-search_medication	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_medication(self, pat=None):$/;"	member	line:188	class:FallsFHIRClient
-end_medication_by_id	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def end_medication_by_id(self, medication_order_id, pat=None):$/;"	member	line:234	class:FallsFHIRClient
-end_medication_by_order	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def end_medication_by_order(self, medication_order):$/;"	member	line:262	class:FallsFHIRClient
-select_encounter	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def select_encounter(self, encounter_id):$/;"	member	line:288	class:FallsFHIRClient
-pullup_diagnostic_report	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def pullup_diagnostic_report(self, pat=None, enc=None):$/;"	member	line:296	class:FallsFHIRClient
-create_new_diagnostic_report	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def create_new_diagnostic_report(self, pat=None, enc=None):$/;"	member	line:320	class:FallsFHIRClient
-search_observations	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def search_observations(self, standards_dict=None, pat=None, enc=None):$/;"	member	line:342	class:FallsFHIRClient
-write_list_of_observations_to_fhir	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def write_list_of_observations_to_fhir(self, question_codes, responses, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:369	class:FallsFHIRClient
-write_note_to_fhir	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def write_note_to_fhir(self, question_code, note_text, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:399	class:FallsFHIRClient
-create_new_observation_yes_no	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def create_new_observation_yes_no(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:468	class:FallsFHIRClient
-create_new_observation_quantity	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def create_new_observation_quantity(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):$/;"	member	line:526	class:FallsFHIRClient
-update_observation_by_id	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def update_observation_by_id(self, observation_id, response, pat=None):$/;"	member	line:585	class:FallsFHIRClient
-update_observation_by_observation	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    def update_observation_by_observation(self, observation, response):$/;"	member	line:615	class:FallsFHIRClient
-client	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    client = FallsFHIRClient()$/;"	variable	line:642	class:FallsFHIRClient
-patients	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    patients = client.search_patient('S', 'Graham')$/;"	variable	line:645	class:FallsFHIRClient
-patients	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    patients = client.search_patient_dob('Sarah', 'Graham', '1949')$/;"	variable	line:650	class:FallsFHIRClient
-encounters	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    encounters = client.search_encounter_all()$/;"	variable	line:663	class:FallsFHIRClient
-meds	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    meds = client.search_medication()$/;"	variable	line:670	class:FallsFHIRClient
-current_obs	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    current_obs = client.search_observations()$/;"	variable	line:686	class:FallsFHIRClient
-question_codes	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    question_codes = ['1', '2', '7']$/;"	variable	line:693	class:FallsFHIRClient
-responses	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    responses = ['1', '0', '1', '1', '0']$/;"	variable	line:694	class:FallsFHIRClient
+!_TAG_PROGRAM_VERSION	5.8	//
+json	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^import json$/;"	namespace	line:1
+namedtuple	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^from collections import namedtuple$/;"	namespace	line:2
+urllib	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^import urllib.request as ur$/;"	namespace	line:3
+ur	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^import urllib.request as ur$/;"	namespace	line:3
+FallsFHIRClient	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^from app.fhir_reading import FallsFHIRClient$/;"	namespace	line:5
+_json_object_hook	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^def _json_object_hook(d): return namedtuple('X', d.keys())(*d.values())$/;"	function	line:7
+json2obj	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^def json2obj(data): return json.loads(data, object_hook=_json_object_hook)$/;"	function	line:8
+Singleton	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^class Singleton(type):$/;"	class	line:10
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:11	class:Singleton
+__call__	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def __call__(self, *args, **kwargs):$/;"	member	line:15	class:Singleton	file:
+DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^class DataClient(metaclass=Singleton):$/;"	class	line:22
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def __init__(self):$/;"	member	line:23	class:DataClient
+reload_data	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def reload_data(self):$/;"	member	line:63	class:DataClient
+create_fhir_dict	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def create_fhir_dict(self):$/;"	member	line:75	class:DataClient
+add_question_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_question_info(self):$/;"	member	line:85	class:DataClient
+add_assessment_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_assessment_info(self):$/;"	member	line:98	class:DataClient
+add_exam_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_exam_info(self):$/;"	member	line:112	class:DataClient
+add_intervention_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_intervention_info(self):$/;"	member	line:121	class:DataClient

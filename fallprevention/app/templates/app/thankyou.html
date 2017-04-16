@@ -1,11 +1,18 @@
-{% extends 'app/baseWithSideBar.html' %}
-{% load crispy_forms_tags %}
-{%load static%}
+{% extends 'app/base.html' %} {% load crispy_forms_tags %} {%load static%} {% block content %}
+<div class="thank_you_content">
+    <center>
+        <h1> Your answers have been recorded. Thank you!</h1>
+    </center>
 
-{% block content %}
-   <center><h1> Your answers have been recorded. Thank you!</h1></center>
-
-<div class="completion">
-   <center><img src="{% static 'img/completed.svg'%}" id="completed_image" align="middle" /></center>
+    <div class="completion">
+        <center><img src="{% static 'img/completed.svg'%}" id="completed_image" align="middle" /></center>
+    </div>
 </div>
+
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript">
+    $('.sidenav').remove()
+    $('.main').addClass('col-md-offset-1')
+
+</script>
 {% endblock %}

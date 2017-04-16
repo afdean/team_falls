@@ -1,26 +1,18 @@
 .risk_button{
-    margin: 20px;
+    margin: 10px;
     width:100%;
 }
 #incomplete{
-    background-color: #2af542;
-    color: #2af542;
-    color:white;
+    color:grey;
 }
 #low{
-    background-color: #FFE621;
-    border-color:#FFE621;
-    color: white;
+    color:#FFE621;
 }
 #moderate{
-    background-color: orange;
-    border-color:orange;
-    color: white
+    color:orange;
 }
 #high{
-    background-color: #d9534f;
-    border-color:#d9534f;
-    color: white;
+    color:#d9534f;
 }
 .results_form{
     overflow-y: auto;
@@ -35,4 +27,10 @@
 }
 .field_set_results label{
     font-size: 15px;
+}
+.risk_level{
+    text-align: center;
+}
+.level p{
+    font-size: 80px;
 }
