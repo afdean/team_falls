@@ -171,29 +171,33 @@ class AssessmentForm(forms.Form):
         self.helper.layout = Layout()
         if assessments_chosen:
             for test in data_client.func_test:
-                if test['name'] in assessments_chosen:
+                if test['code'] in assessments_chosen:
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
                     for i, form in enumerate(test['forms']):
-                        field_name = test['code'] + "_form" + str(i)
+                        code = test['forms'][i]['code']
+                        field_name = code
                         self.fields[field_name] = generate_form(form, None, None)
                         test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
                     self.helper.layout.append(test_fieldset)
+            self.helper.add_input(Submit('submit', 'Submit'))
         else:
             for test in data_client.func_test:
                 if test['is_recommended']:
-                    self.fields[test['name']] = forms.BooleanField(
+                    self.fields[test['code']] = forms.BooleanField(
                         label=test['name'] + " (Recommended)",
                         required=False,
                     )
                 else:
-                    self.fields[test['name']] = forms.BooleanField(
+                    self.fields[test['code']] = forms.BooleanField(
                         label=test['name'],
                         required=False,
                     )
+            self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Next'))
+
 
 class NoteForm(forms.Form):
     note = forms.CharField(
@@ -254,22 +258,28 @@ class ExamsForm(forms.Form):
         self.helper.layout = Layout()
         if exams_chosen:
             for exam in data_client.physical_exam:
-                if exam['name'] in exams_chosen:
+                if exam['code'] in exams_chosen:
                     exam_fieldset = Fieldset(exam['name'], css_class=exam['name'])
                     for i, form in enumerate(exam['forms']):
-                        field_name = exam['name'] + "_form" + str(i)
+                        code = exam['forms'][i]['code']
+                        field_name = code
                         self.fields[field_name] = generate_form(form)
                         exam_fieldset.append(Field(field_name))
                     self.helper.layout.append(exam_fieldset)
+            self.helper.add_input(Submit('submit', 'Submit'))
         else:
             for exam in data_client.physical_exam:
-                self.fields[exam['name']] = forms.BooleanField(
+                self.fields[exam['code']] = forms.BooleanField(
                     label=exam['name'],
                     required=False,
                 )
+            self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
+<<<<<<< HEAD
         self.helper.add_input(Submit('submit', 'Next'))
+=======
+>>>>>>> origin/master
 
 class RisksForm(forms.Form):
     """

@@ -61,7 +61,7 @@ def login_patient(request):
         print("I am here 2")
     return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
 
-def searchPatient(request):
+def search_patient(request):
     data_client = DataClient()
     patient_list = []
     if request.method == 'POST':
@@ -121,12 +121,12 @@ def questions(request):
                     score += int(data_client.questions['questions'][i]['score'])
                     if data_client.questions['questions'][i]['is_key']:
                         key_score += 1
-            code = data_client.questions['code']
+            questions_code = data_client.questions['code']
             if (key_score < data_client.questions['question_logic']['min_key'] and
                 score < data_client.questions['question_logic']['min_score']):
-                data_client.observations[code] = "Pass"
+                data_client.observations[questions_code] = "Pass"
             else:
-                data_client.observations[code] = "Fail"
+                data_client.observations[questions_code] = "Fail"
             print(data_client.observations)
             if data_client.identity == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
@@ -136,8 +136,6 @@ def questions(request):
                     return HttpResponseRedirect('/app/assessments/')
                 elif data_client.risk_level is not None:
                     return HttpResponseRedirect('/app/risks/')
-        else:
-            print("form not valid!")
     else:
         question_answers = {}
         for i, question in enumerate(data_client.questions['questions']):
@@ -154,10 +152,8 @@ def questions(request):
     else:
         return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})
 
-
 def thankyou(request):
     data_client = DataClient()
-    data_client.assessments_chosen = []
     return render(request, 'app/thankyou.html')
 
 def calculate_age(date_string):
@@ -196,12 +192,13 @@ def assessments_details(request):
             bal_min_failure = -1
             # Minimum amount of time needed for patient to stand in chair (use -1 as a check if test conducted)
             chair_min_failure = -1
+            bal_score = 0
             tug_conducted = False
             bal_conducted = False
             chair_conducted = False
 
             for test in data_client.func_test:
-                if test['name'] in data_client.assessments_chosen:
+                if test['code'] in data_client.assessments_chosen:
                     # Pulls required fields to evaluate logic
                     if test['code'] == "tug000":
                         tug_min_key = test['min_logic']['min_key']
@@ -213,9 +210,9 @@ def assessments_details(request):
                         chair_conducted = True
 
                     for i, form in enumerate(test['forms']):
-                        field_name = test['code'] + "_form" + str(i)
-                        answer = assessments_form.cleaned_data[field_name]
                         code = test['forms'][i]['code']
+                        field_name = code
+                        answer = assessments_form.cleaned_data[field_name]
                         data_client.observations[code] = answer
                         observations[code] = answer
 
@@ -277,6 +274,9 @@ def assessments_details(request):
                                 # Bug here: what if logic doesn't exist?
                                 form_logic = test['forms'][i]['logic']
                                 if form_logic in test['min_logic']:
+                                    # However, still force them to enter 0 so that the field is acknowledged
+                                    if answer is None:
+                                        bal_score = bal_score + 1
                                     if answer is not None and answer < test['min_logic'][form_logic]:
                                         bal_score = bal_score + 1
 
@@ -317,11 +317,11 @@ def assessments_details(request):
     else:
         assessments_answers = {}
         for test in data_client.func_test:
-            if test['name'] in data_client.assessments_chosen:
+            if test['code'] in data_client.assessments_chosen:
                 for i, form in enumerate(test['forms']):
                     code = test['forms'][i]['code']
                     if code in data_client.observations:
-                        field_name = test['code'] + "_form" + str(i)
+                        field_name = code
                         assessments_answers[field_name] = data_client.observations[code]
         assessments_form = AssessmentForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
@@ -346,6 +346,7 @@ def assessments(request):
 
 def medications(request):
     data_client = DataClient()
+    calculate_risk()
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
         if medications_form.is_valid():
@@ -366,13 +367,13 @@ def exams_details(request):
             # Local obs just in case
             observations = {}
             for exam in data_client.physical_exam:
-                if exam['name'] in exams_chosen:
+                if exam['code'] in exams_chosen:
                     for i, form in enumerate(exam['forms']):
-                        field_name = exam['name'] + "_form" + str(i)
-                        answer = exams_form.cleaned_data[field_name]
                         code = exam['forms'][i]['code']
+                        field_name = code
+                        answer = exams_form.cleaned_data[field_name]
                         data_client.observations[code] = answer
-                        observations['code'] = answer
+                        observations[code] = answer
             # Clear this for the next iteration...
             data_client.exams_chosen = []
             # Exams is last stop before risks, all levels go to risks including incomplete
@@ -380,11 +381,11 @@ def exams_details(request):
     else:
         exam_answers = {}
         for exam in data_client.physical_exam:
-            if exam['name'] in exams_chosen:
+            if exam['code'] in exams_chosen:
                 for i, form in enumerate(exam['forms']):
                     code = exam['forms'][i]['code']
                     if code in data_client.observations:
-                        field_name = exam['name'] + "_form" + str(i)
+                        field_name = code
                         exam_answers[field_name] = data_client.observations[code]
         exams_form = ExamsForm(initial=exam_answers, exams_chosen=exams_chosen)
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
@@ -452,6 +453,7 @@ def user_login(request):
 def risks(request):
     data_client = DataClient()
     incomplete_list = calculate_risk()
+    risk_level = data_client.risk_level
     print("Here is the list of incomplete tasks: ")
     print(incomplete_list)
     print("The risk level is currently: " + data_client.risk_level)
@@ -463,7 +465,7 @@ def risks(request):
         risks_form = RisksForm(risk_level="high")
     else:
         risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
-    return render(request, 'app/risks.html', {'risks_form':risks_form})
+    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list})
 
 def calculate_risk():
     """
@@ -508,7 +510,7 @@ def calculate_risk():
     # Algorithm
     if question_fail is None:
         data_client.risk_level = "incomplete"
-        incomplete_list.append("Questions")
+        incomplete_list.append("Fall Screening")
 
     if assessment_fail is None:
         incomplete_list.append("Assessments")
