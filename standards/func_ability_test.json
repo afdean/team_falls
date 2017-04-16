@@ -157,6 +157,7 @@
       {
         "content": "Notes:",
         "code": "chair001",
+        "help_text": "",
         "type": "char"
       }
     ]
