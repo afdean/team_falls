@@ -22,7 +22,6 @@ form#id-assessmentForm{
 {% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
 {%block patient_first_name%} {{ patient.name }}{%endblock%}
 {%block patient_age%} {{ patient.age }}{%endblock%}
-{{ assessments_form.non_field_errors }}
 
  <div class="row">
 

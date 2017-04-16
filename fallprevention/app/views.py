@@ -186,7 +186,7 @@ def assessments_details(request):
         more_info.append(test['more_info'])
 
     if request.method == 'POST':
-        assessments_form = AssessmentForm(request.POST, assessments_chosen=assessments_chosen);
+        assessments_form = AssessmentDetailsForm(request.POST, assessments_chosen=assessments_chosen);
         if assessments_form.is_valid():
             # Local obs just in case
             observations = {}
@@ -335,7 +335,7 @@ def assessments_details(request):
                     if code in data_client.observations:
                         field_name = code
                         assessments_answers[field_name] = data_client.observations[code]
-        assessments_form = AssessmentForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
+        assessments_form = AssessmentDetailsForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'assessments_chosen': assessments_chosen, 'more_info': more_info})
 
 def assessments(request):
@@ -388,7 +388,7 @@ def exams_details(request):
     exams_chosen = data_client.exams_chosen
     completed = get_sidebar_completed()
     if request.method == 'POST':
-        exams_form = ExamsForm(request.POST, exams_chosen=exams_chosen)
+        exams_form = ExamsDetailsForm(request.POST, exams_chosen=exams_chosen)
         if exams_form.is_valid():
             # Local obs just in case
             observations = {}
@@ -413,7 +413,7 @@ def exams_details(request):
                     if code in data_client.observations:
                         field_name = code
                         exam_answers[field_name] = data_client.observations[code]
-        exams_form = ExamsForm(initial=exam_answers, exams_chosen=exams_chosen)
+        exams_form = ExamsDetailsForm(initial=exam_answers, exams_chosen=exams_chosen)
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient, 'completed': completed})
 
 def exams(request):

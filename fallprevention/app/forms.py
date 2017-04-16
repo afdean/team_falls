@@ -162,10 +162,10 @@ class QuestionForm(forms.Form):
         # Could set obs. here to have in record despite incomplete?
         return cleaned_data
 
-class AssessmentForm(forms.Form):
+class AssessmentDetailsForm(forms.Form):
     def __init__(self, *args, **kwargs):
         assessments_chosen = kwargs.pop("assessments_chosen", None)
-        super(AssessmentForm, self).__init__(*args, **kwargs)
+        super(AssessmentDetailsForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         # assessments_chosen = data_client.assessments_chosen
         self.helper = FormHelper()
@@ -182,19 +182,6 @@ class AssessmentForm(forms.Form):
                         # self.fields[field_name].widget = forms.HiddenInput()
                     self.helper.layout.append(test_fieldset)
             self.helper.add_input(Submit('submit', 'Submit'))
-        else:
-            for test in data_client.func_test:
-                if test['is_recommended']:
-                    self.fields[test['code']] = forms.BooleanField(
-                        label=test['name'] + " (Recommended)",
-                        required=False,
-                    )
-                else:
-                    self.fields[test['code']] = forms.BooleanField(
-                        label=test['name'],
-                        required=False,
-                    )
-            self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
 
@@ -204,7 +191,7 @@ class AssessmentForm(forms.Form):
         """
         data_client = DataClient()
         problem_list = []
-        cleaned_data = super(AssessmentForm, self).clean()
+        cleaned_data = super(AssessmentDetailsForm, self).clean()
         cant_tug = cleaned_data.get("tug001")
         tug_time = cleaned_data.get("tug002")
         no_problems = cleaned_data.get("tug003")
@@ -235,6 +222,45 @@ class AssessmentForm(forms.Form):
         if error:
             raise forms.ValidationError("Please fix the fields")
 
+        # Could set obs. here to have in record despite incomplete?
+        return cleaned_data
+
+class AssessmentForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(AssessmentForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        # assessments_chosen = data_client.assessments_chosen
+        self.helper = FormHelper()
+        self.helper.layout = Layout()
+        for test in data_client.func_test:
+            if test['is_recommended']:
+                self.fields[test['code']] = forms.BooleanField(
+                    label=test['name'] + " (Recommended)",
+                    required=False,
+                )
+            else:
+                self.fields[test['code']] = forms.BooleanField(
+                    label=test['name'],
+                    required=False,
+                )
+        self.helper.add_input(Submit('submit', 'Next'))
+        self.helper.form_id = 'id-assessmentForm'
+        self.helper.form_method = 'post'
+
+    def clean(self):
+        """
+        This is a custom override
+        """
+        data_client = DataClient()
+        cleaned_data = super(AssessmentForm, self).clean()
+        selected_tests = False
+        for exam, value in cleaned_data.items():
+            if value:
+                selected_tests = True
+                break
+        if not selected_tests:
+            raise forms.ValidationError("Please select at least one exam")
+        return cleaned_data
         # Could set obs. here to have in record despite incomplete?
         return cleaned_data
 
@@ -295,10 +321,10 @@ def is_int(str):
     except:
         return False
 
-class ExamsForm(forms.Form):
+class ExamsDetailsForm(forms.Form):
     def __init__(self, *args, **kwargs):
         exams_chosen = kwargs.pop("exams_chosen", None)
-        super(ExamsForm, self).__init__(*args, **kwargs)
+        super(ExamsDetailsForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
         self.helper = FormHelper()
         self.helper.layout = Layout()
@@ -313,13 +339,6 @@ class ExamsForm(forms.Form):
                         exam_fieldset.append(Field(field_name))
                     self.helper.layout.append(exam_fieldset)
             self.helper.add_input(Submit('submit', 'Submit'))
-        else:
-            for exam in data_client.physical_exam:
-                self.fields[exam['code']] = forms.BooleanField(
-                    label=exam['name'],
-                    required=False,
-                )
-            self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
 
@@ -329,7 +348,7 @@ class ExamsForm(forms.Form):
         """
         data_client = DataClient()
         problem_list = []
-        cleaned_data = super(ExamsForm, self).clean()
+        cleaned_data = super(ExamsDetailsForm, self).clean()
         left = cleaned_data.get("vis001")
         right = cleaned_data.get("vis002")
         both = cleaned_data.get("vis003")
@@ -365,6 +384,35 @@ class ExamsForm(forms.Form):
                 self.add_error(s[0], "Must be in form \"20/20\": Please ensure / is in entry")
         return cleaned_data
 
+class ExamsForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(ExamsForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
+        self.helper = FormHelper()
+        self.helper.layout = Layout()
+        for exam in data_client.physical_exam:
+            self.fields[exam['code']] = forms.BooleanField(
+                label=exam['name'],
+                required=False,
+            )
+        self.helper.add_input(Submit('submit', 'Next'))
+        self.helper.form_id = 'id-examsForm'
+        self.helper.form_method = 'post'
+
+    def clean(self):
+        """
+        This is a custom override
+        """
+        data_client = DataClient()
+        cleaned_data = super(ExamsForm, self).clean()
+        selected_exams = False
+        for exam, value in cleaned_data.items():
+            if value:
+                selected_exams = True
+                break
+        if not selected_exams:
+            raise forms.ValidationError("Please select at least one exam")
+        return cleaned_data
 
 class RisksForm(forms.Form):
     """
