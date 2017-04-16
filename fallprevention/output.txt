@@ -1,0 +1,68 @@
+q000:{'content': 'Questions Test', 'description': 'Pass or Fail', 'units': 'Pass or Fail'}
+q001:{'content': 'In the past year I have fallen...', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q003:{'content': 'I have been injured from a fall in the past year', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q004:{'content': 'Sometimes I feel unsteady when I am walking', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q005:{'content': 'I am worried about falling', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q006:{'content': 'I use or have been advised to use a cane or walker to get around safely', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q007:{'content': 'I steady myself by holding onto furniture when walking at home', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q008:{'content': 'I need to push with my hands to stand up from a chair', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q009:{'content': 'I have some trouble stepping up onto a curb', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q010:{'content': 'I often have to rush to the toilet', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q011:{'content': 'I have lost some feeling in my feet', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q012:{'content': 'I take medicine that sometimes makes me feel light-headed or more tired than usual', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q013:{'content': 'I take medicine to help me sleep or improve my mood', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+q014:{'content': 'I often feel sad or depressed', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug000:{'content': 'Timed Up and Go Test', 'description': 'Pass or Fail', 'units': 'Pass or Fail'}
+tug001:{'content': 'Patient unable to do TUG', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug002:{'content': 'TUG Time (seconds): ', 'description': 'Time for Timed Up and Go Test', 'units': 'Seconds'}
+tug003:{'content': 'No problems', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug004:{'content': 'Loss of balance', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug005:{'content': 'Steadying self on walls', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug006:{'content': 'Shuffling', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug007:{'content': 'Short Stride', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug008:{'content': 'Little or no arm swing', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug009:{'content': 'En bloc turning', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+tug010:{'content': 'Not using assistive device properly', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+chair000:{'content': '30-Second Chair Stand', 'description': 'Pass or Fail', 'units': 'Pass or Fail'}
+chair002:{'content': 'Time (seconds):', 'description': 'Time for Timed Up and Go Test', 'units': 'Seconds'}
+chair001:{'content': 'Notes:', 'description': 'Notes for 30 Second Chair Stand', 'units': 'Notes for 30 Second Chair Stand'}
+bal000:{'content': '4 Stage Balance Test', 'description': 'Pass or Fail', 'units': 'Pass or Fail'}
+bal002:{'content': 'Stand with your feet side by side. Time (seconds):', 'description': 'Time for 4 Stage Balance Test (Feet Side by Side)', 'units': 'Seconds'}
+bal003:{'content': 'Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):', 'description': 'Time for 4 Stage Balance Test (Instep touching Big Toe)', 'units': 'Seconds'}
+bal004:{'content': 'Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):', 'description': 'Time for 4 Stage Balance Test (Tandem Stance)', 'units': 'Seconds'}
+bal005:{'content': 'Stand on one foot. Time (seconds):', 'description': 'Time for 4 Stage Balance Test (Stand on One Foot)', 'units': 'Seconds'}
+bal001:{'content': 'Notes:', 'description': 'Notes for 30 Second Chair Stand', 'units': 'Notes for 30 Second Chair Stand'}
+pos001:{'content': 'Supine', 'description': 'Supine hypotension', 'units': 'Blood Pressure (systolic and diastolic)'}
+pos002:{'content': 'Standing (1m)', 'description': 'Standing Hypotension #1', 'units': 'Blood Pressure (systolic and diastolic)'}
+pos003:{'content': 'Standing (3m)', 'description': 'Standing Hypotension #2', 'units': 'Blood Pressure (systolic and diastolic)'}
+pos004:{'content': 'Postural Dizziness', 'description': 'True or False', 'units': 'True or False'}
+pos005:{'content': 'Heart Rate', 'description': 'Heart Rate', 'units': 'Beats per Minute'}
+cog001:{'content': 'Notes', 'description': 'Notes for Cognitive Screening', 'units': 'Notes for Cognitive Screening'}
+cog002:{'content': 'Cognitive Impairment', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet001:{'content': 'Normal', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet002:{'content': 'Bunions', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet003:{'content': 'Ulcers', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet004:{'content': 'Structural Abnormalities', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet005:{'content': 'Impaired Sensation', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet006:{'content': 'Impaired Proprioception', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet007:{'content': 'Amputation noted on one foot', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+feet008:{'content': 'Amputation noted on both feet', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+aid001:{'content': 'Uses Aid', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+vis001:{'content': 'Left', 'description': 'Visual Acuity for Left Eye', 'units': 'Visual Acuity'}
+vis002:{'content': 'Right', 'description': 'Visual Acuity for Right Eye', 'units': 'Visual Acuity'}
+vis003:{'content': 'Both', 'description': 'Visual Acuity for Both Eyes', 'units': 'Visual Acuity'}
+vis004:{'content': 'Vision Impairment', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+musc001:{'content': 'Normal Tone and Strength', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+musc002:{'content': 'Diffuse Muscle Weakness', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+musc003:{'content': 'Diffuse Muscle Atrophy', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+musc004:{'content': 'Focal Weakness', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+musc005:{'content': 'Cogwheel Rigidity', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+edu001:{'content': 'Check for Safety Brochure', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+edu002:{'content': 'What Can You Do to Prevent Falls', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+edu003:{'content': 'Chair Rise Exercise Sheet', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+edu004:{'content': 'Postural Hypotension Brochure', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+vit001:{'content': 'Patient is currently taking at least 800 IU of Vitamin D', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+vit002:{'content': 'Patient is currently taking enough calcium', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+ref001:{'content': 'PT to improve gait, strength and balance', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+ref002:{'content': 'Fall prevention/Community exercise program', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+home001:{'content': 'Reviewed home safety with patient', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}

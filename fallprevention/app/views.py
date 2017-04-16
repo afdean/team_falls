@@ -94,11 +94,11 @@ def questions(request):
     if encounter_list:
         #status for encounter finished/in-progress/arrived/...
         print (encounter_list)
-        if (encounter_list[0]['resource']['status'] == "in-progress"):
+        if encounter_list[0]['resource']['status'] == "in-progress":
             data_client.encounter = encounter_list[0]
             data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
-       else:
-           data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+        else:
+            data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
     else:
         data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
     print (data_client.fhir_client.encounter_id)
@@ -107,13 +107,6 @@ def questions(request):
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
         if question_form.is_valid():
-            # try:
-            #     question_form.check_injury()
-            # except forms.ValidationError as e:
-            #     return HttpResponseRedirect('/app/questions/')
-            # if question_form.check_injury():
-            #     return HttpResponseRedirect('/app/questions/')
-            print("I got to this point!")
             score = 0
             key_score = 0
             for i, question in enumerate(data_client.questions['questions']):

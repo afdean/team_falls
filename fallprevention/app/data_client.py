@@ -34,7 +34,10 @@ class DataClient(metaclass=Singleton):
         with ur.urlopen(RISK_URL) as url_risk:
             self.risk_list = json.loads(url_risk.read().decode('utf8'))
         self.fhir_client = FallsFHIRClient()
-        self.fhir_client.load_standards_document(self.questions)
+        # Creates self.fhir_dict
+        self.create_fhir_dict()
+        print(self.fhir_dict['q000'])
+        self.fhir_client.load_standards_document(self.fhir_dict)
         # Use "low", "moderate", and "high"
         self.risk_level = ""
         # Stores resources
@@ -54,6 +57,9 @@ class DataClient(metaclass=Singleton):
         # doing this again can quickly review.
         self.medication_complete = False
         self.risks_complete = False
+
+        # self.fhir_client.load_standards_document(self.fhir_dict)
+
     def reload_data(self):
         self.risk_level = ""
         self.patient = {}
@@ -65,3 +71,58 @@ class DataClient(metaclass=Singleton):
         self.patient_id = ""
         self.medication_complete = False
         self.risks_complete = False
+
+    def create_fhir_dict(self):
+        self.fhir_dict = {}
+        self.add_question_info()
+        self.add_assessment_info()
+        self.add_exam_info()
+        self.add_intervention_info()
+        with open("output.txt", 'w') as f:
+            for key, value in self.fhir_dict.items():
+                f.write('%s:%s\n' % (key, value))
+
+    def add_question_info(self):
+        self.doc_dict = {}
+        self.doc_dict['content'] = self.questions['name']
+        self.doc_dict['description'] = self.questions['description']
+        self.doc_dict['units'] = self.questions['units']
+        self.fhir_dict[self.questions['code']] = self.doc_dict
+        for i, question in enumerate(self.questions['questions']):
+            self.question_dict = {}
+            self.question_dict['content'] = question['content']
+            self.question_dict['description'] = question['description']
+            self.question_dict['units'] = question['units']
+            self.fhir_dict[question['code']] = self.question_dict
+
+    def add_assessment_info(self):
+        for i, test in enumerate(self.func_test):
+            self.test_dict = {}
+            self.test_dict['content'] = test['name']
+            self.test_dict['description'] = test['description']
+            self.test_dict['units'] = test['units']
+            self.fhir_dict[test['code']] = self.test_dict
+            for i, field in enumerate(test['forms']):
+                self.field_dict = {}
+                self.field_dict['content'] = field['content']
+                self.field_dict['description'] = field['description']
+                self.field_dict['units'] = field['units']
+                self.fhir_dict[field['code']] = self.field_dict
+
+    def add_exam_info(self):
+        for i, entity in enumerate(self.physical_exam):
+            for i, field in enumerate(entity['forms']):
+                self.field_dict = {}
+                self.field_dict['content'] = field['content']
+                self.field_dict['description'] = field['description']
+                self.field_dict['units'] = field['units']
+                self.fhir_dict[field['code']] = self.field_dict
+
+    def add_intervention_info(self):
+        for name, entity in self.intervention_list.items():
+            for i, field in enumerate(entity['forms']):
+                self.field_dict = {}
+                self.field_dict['content'] = field['content']
+                self.field_dict['description'] = field['description']
+                self.field_dict['units'] = field['units']
+                self.fhir_dict[field['code']] = self.field_dict

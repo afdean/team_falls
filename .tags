@@ -2348,8 +2348,6 @@ TestCase	/Users/andrewdean/github/team_falls/fallprevention/app/tests.py	/^from 
 url	/Users/andrewdean/github/team_falls/fallprevention/app/urls.py	/^from django.conf.urls import url$/;"	namespace	line:1
 views	/Users/andrewdean/github/team_falls/fallprevention/app/urls.py	/^from . import views$/;"	namespace	line:2
 urlpatterns	/Users/andrewdean/github/team_falls/fallprevention/app/urls.py	/^urlpatterns = [$/;"	variable	line:4
-render	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.shortcuts import render$/;"	namespace	line:1
-index	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def index(request):$/;"	function	line:4
 os	/Users/andrewdean/github/team_falls/fallprevention/fallprevention/settings.py	/^import os$/;"	namespace	line:13
 BASE_DIR	/Users/andrewdean/github/team_falls/fallprevention/fallprevention/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	variable	line:16
 DEBUG	/Users/andrewdean/github/team_falls/fallprevention/fallprevention/settings.py	/^DEBUG = True$/;"	variable	line:26
@@ -3259,3 +3257,70 @@ meds	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    
 current_obs	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    current_obs = client.search_observations()$/;"	variable	line:686	class:FallsFHIRClient
 question_codes	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    question_codes = ['1', '2', '7']$/;"	variable	line:693	class:FallsFHIRClient
 responses	/home/parallels/github/team_falls/fallprevention/app/fhir_reading.py	/^    responses = ['1', '0', '1', '1', '0']$/;"	variable	line:694	class:FallsFHIRClient
+json	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^import json$/;"	namespace	line:1
+urllib	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^import urllib.request as ur$/;"	namespace	line:3
+ur	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^import urllib.request as ur$/;"	namespace	line:3
+DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^class DataClient():$/;"	class	line:6
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^    def __init__(self):$/;"	member	line:7	class:DataClient
+add_question_info	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^def add_question_info(fhir_dict):$/;"	function	line:21
+add_assessment_info	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^def add_assessment_info(fhir_dict):$/;"	function	line:37
+add_exam_info	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^def add_exam_info(fhir_dict):$/;"	function	line:54
+add_intervention_info	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^def add_intervention_info(fhir_dict):$/;"	function	line:66
+fhir_dict	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^    fhir_dict = {}$/;"	variable	line:79
+fhir_dict	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^    fhir_dict = add_question_info(fhir_dict)$/;"	variable	line:80
+fhir_dict	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^    fhir_dict = add_assessment_info(fhir_dict)$/;"	variable	line:81
+fhir_dict	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^    fhir_dict = add_exam_info(fhir_dict)$/;"	variable	line:82
+fhir_dict	/Users/andrewdean/github/team_falls/fallprevention/app/test.py	/^    fhir_dict = add_intervention_info(fhir_dict)$/;"	variable	line:83
+url	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import urllib as url$/;"	namespace	line:1
+json	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import json$/;"	namespace	line:2
+render	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.shortcuts import render$/;"	namespace	line:4
+reverse	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.urlresolvers import reverse$/;"	namespace	line:5
+settings	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.conf import settings$/;"	namespace	line:6
+forms	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django import forms$/;"	namespace	line:7
+HttpResponse	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	namespace	line:8
+HttpResponseRedirect	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	namespace	line:8
+Question	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
+FuncAbilityTest	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
+TestParameter	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
+DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.data_client import DataClient$/;"	namespace	line:11
+Paginator	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
+EmptyPage	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
+PageNotAnInteger	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
+index	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def index(request):$/;"	function	line:16
+login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login(request):$/;"	function	line:20
+login_cp	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login_cp(request):$/;"	function	line:42
+login_patient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login_patient(request):$/;"	function	line:53
+search_patient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def search_patient(request):$/;"	function	line:66
+questions	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def questions(request):$/;"	function	line:90
+thankyou	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def thankyou(request):$/;"	function	line:159
+calculate_age	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_age(date_string):$/;"	function	line:163
+assessments_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments_details(request):$/;"	function	line:175
+assessments	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments(request):$/;"	function	line:338
+medications	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def medications(request):$/;"	function	line:361
+exams_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams_details(request):$/;"	function	line:383
+exams	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams(request):$/;"	function	line:416
+user_login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def user_login(request):$/;"	function	line:440
+risks	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def risks(request):$/;"	function	line:480
+calculate_risk	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_risk():$/;"	function	line:520
+get_sidebar_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_sidebar_completed():$/;"	function	line:593
+get_tests_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_tests_completed():$/;"	function	line:629
+get_exams_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_exams_completed():$/;"	function	line:648
+history	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def history(request):$/;"	function	line:664
+json	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^import json$/;"	namespace	line:1
+namedtuple	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^from collections import namedtuple$/;"	namespace	line:2
+urllib	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^import urllib.request as ur$/;"	namespace	line:3
+ur	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^import urllib.request as ur$/;"	namespace	line:3
+FallsFHIRClient	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^from app.fhir_reading import FallsFHIRClient$/;"	namespace	line:5
+_json_object_hook	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^def _json_object_hook(d): return namedtuple('X', d.keys())(*d.values())$/;"	function	line:7
+json2obj	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^def json2obj(data): return json.loads(data, object_hook=_json_object_hook)$/;"	function	line:8
+Singleton	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^class Singleton(type):$/;"	class	line:10
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:11	class:Singleton
+__call__	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def __call__(self, *args, **kwargs):$/;"	member	line:15	class:Singleton	file:
+DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^class DataClient(metaclass=Singleton):$/;"	class	line:22
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def __init__(self):$/;"	member	line:23	class:DataClient
+reload_data	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def reload_data(self):$/;"	member	line:63	class:DataClient
+create_fhir_dict	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def create_fhir_dict(self):$/;"	member	line:75	class:DataClient
+add_question_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_question_info(self):$/;"	member	line:85	class:DataClient
+add_assessment_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_assessment_info(self):$/;"	member	line:98	class:DataClient
+add_exam_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_exam_info(self):$/;"	member	line:112	class:DataClient
+add_intervention_info	/Users/andrewdean/github/team_falls/fallprevention/app/data_client.py	/^    def add_intervention_info(self):$/;"	member	line:121	class:DataClient
