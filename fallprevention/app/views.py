@@ -626,10 +626,8 @@ def get_exams_completed():
                 completed.append(exam['code'])
                 break
 
-<<<<<<< HEAD
+    return completed
+    
 def history(request):
 
     return render(request,'app/history.html',{})
-=======
-    return completed
->>>>>>> origin/master

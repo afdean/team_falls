@@ -6,7 +6,8 @@
 </style>
 {% block content %} {% csrf_token %}
 
-
+{%block patient_first_name%} {{ patient.name }}{%endblock%}
+{%block patient_age%} {{ patient.age }}{%endblock%}
 
     <div class="col-md-6 col-md-offset-3">
         <div class="container-fluid">

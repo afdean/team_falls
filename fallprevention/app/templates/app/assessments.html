@@ -20,7 +20,8 @@ form#id-assessmentForm{
     }
 </style>
 {% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
-<p> {{ patient.name }} </p>
+{%block patient_first_name%} {{ patient.name }}{%endblock%}
+{%block patient_age%} {{ patient.age }}{%endblock%}
  <div class="row">
 
                     <div class="col-md-12">

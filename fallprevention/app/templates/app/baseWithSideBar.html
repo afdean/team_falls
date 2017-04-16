@@ -14,7 +14,7 @@
 
         <div class="patient-info">
           <h2 class="" id="patient-name">{%block patient_first_name%}John Doe{%endblock%}</h2>
-          <h4 class="" id="patient-age">{%block patient_age%}Age: 83{%endblock%}</h4>
+          <h4 class="" id="patient-age">Age: {%block patient_age%}83{%endblock%}</h4>
         </div>
       </li>
 
@@ -23,14 +23,13 @@
       <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
       <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
         <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a> 
-        <li><a href="{% url 'risks' %}" id="risks_li">Risks</a></li>
-      <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display -->
-      {% if completed is not None %}
+      <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display 
+      <!--{% if completed is not None %}
           {% for task in completed %}
             <li>{{ task }} completed (style this...)</li>
           {% endfor %}
       {% endif %}
-        <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a>
+        <a href="/app/search"><button class="btn" style="background-color: red;"> END</button></a>-->
 
     </ul>
   </li>

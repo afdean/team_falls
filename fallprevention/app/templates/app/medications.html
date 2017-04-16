@@ -1,4 +1,6 @@
 {% extends 'app/baseWithSideBar.html' %} {% block content %}
+{%block patient_first_name%} {{ patient.name }}{%endblock%}
+{%block patient_age%} {{ patient.age }}{%endblock%}
 <div class="container">
     <div class="row justify-content-between medication_block">
         <div class="col-lg-6">

@@ -3,8 +3,8 @@
     <ul class="nav nav-stacked collapse in" id="userMenu">
 
         <div class="patient-info">
-            <h2 class="" id="patient-name">{%block patient_first_name%}John Doe{%endblock%}</h2>
-            <h4 class="" id="patient-age">{%block patient_age%}Age: 83{%endblock%}</h4>
+            <h2 class="" id="patient-name">{{patient.name}}</h2>
+            <h4 class="" id="patient-age">{{patient.age}}</h4>
         </div>
 </li>
 
