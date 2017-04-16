@@ -61,7 +61,7 @@ def login_patient(request):
         print("I am here 2")
     return render(request, 'app/login_cp.html', {'login_cp_form': login_cp_form})
 
-def searchPatient(request):
+def search_patient(request):
     data_client = DataClient()
     patient_list = []
     if request.method == 'POST':
@@ -346,6 +346,7 @@ def assessments(request):
 
 def medications(request):
     data_client = DataClient()
+    calculate_risk()
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
         if medications_form.is_valid():

@@ -180,6 +180,7 @@ class AssessmentForm(forms.Form):
                         test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
                     self.helper.layout.append(test_fieldset)
+            self.helper.add_input(Submit('submit', 'Submit'))
         else:
             for test in data_client.func_test:
                 if test['is_recommended']:
@@ -192,9 +193,9 @@ class AssessmentForm(forms.Form):
                         label=test['name'],
                         required=False,
                     )
+            self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
 
 class NoteForm(forms.Form):
     note = forms.CharField(
@@ -263,15 +264,16 @@ class ExamsForm(forms.Form):
                         self.fields[field_name] = generate_form(form)
                         exam_fieldset.append(Field(field_name))
                     self.helper.layout.append(exam_fieldset)
+            self.helper.add_input(Submit('submit', 'Submit'))
         else:
             for exam in data_client.physical_exam:
                 self.fields[exam['code']] = forms.BooleanField(
                     label=exam['name'],
                     required=False,
                 )
+            self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
 
 class RisksForm(forms.Form):
     """
