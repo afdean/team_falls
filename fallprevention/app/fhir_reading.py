@@ -18,7 +18,7 @@ import copy
 import time
 from collections import namedtuple
 import urllib.request as ur
-from constants import *
+from .constants import *
 # Requires a smart-on-fhir api-server running on localhost. Find code to run that at
 # https://github.com/smart-on-fhir/api-server
 class FallsFHIRClient(object):
@@ -40,7 +40,7 @@ class FallsFHIRClient(object):
     # Returns: nothing
     # Note: We can change this to take input so you can tell it where the document is.
     def load_standards_document(self, standards_document_dict):
-        self.standards_document_dict = standards_document_dict;
+        self.standards_document_dict = standards_document_dict
         self.questions_text = []
         self.questions_code = []
         for question in self.standards_document_dict['questions']:
@@ -171,7 +171,7 @@ class FallsFHIRClient(object):
                 return False
             alter_enc = resp.json()
             alter_enc['status'] = 'finished'
-            resp = requests.put(self.api_base + 'Encounter/' + enc_id, data=json.dumps(alter_med),
+            resp = requests.put(self.api_base + 'Encounter/' + enc_id, data=json.dumps(alter_enc),
                                 headers=write_headers)
             if resp.status_code != 200:
                 print('Something went wrong in writing the update to close the encounter by setting its status to ' \
@@ -404,7 +404,7 @@ class FallsFHIRClient(object):
             return {}
         search_headers = {'Accept': 'application/json'}
         search_params = {'subject': pat, 'encounter': enc, 'category': 'fall_prevention'}
-        resp = requests.get(client.api_base + 'Observation/', headers=search_headers, params=search_params)
+        resp = requests.get(self.api_base + 'Observation/', headers=search_headers, params=search_params)
         if resp.json()['total'] > 0:
             for obs in resp.json()['entry']:
                 if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention':
