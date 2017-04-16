@@ -18,7 +18,7 @@ import copy
 import time
 from collections import namedtuple
 import urllib.request as ur
-from .constants import *
+from constants import *
 # Requires a smart-on-fhir api-server running on localhost. Find code to run that at
 # https://github.com/smart-on-fhir/api-server
 class FallsFHIRClient(object):
@@ -29,7 +29,6 @@ class FallsFHIRClient(object):
         self.diagnostic_report = None
         self.medication_list = None
         #self.load_standards_document('https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json')
-
 
     def test_function(self):
         self.select_patient_from_patient_result(self.search_patient('sarah', 'graham'))
@@ -392,7 +391,7 @@ class FallsFHIRClient(object):
     # have been set)
     # Returns: Dict of observations. The key is the observation code. Each observation is also a dict.
     # Requires: api-server running
-    def search_observations(self, standards_dict=None, pat=None, enc=None):
+    def search_observations(self, standards_dict=None, pat=None, enc=None, return_entire_observation_not_just_value=False):
         output_dict = {}
         if pat == None:
             pat = self.patient_id
@@ -409,10 +408,15 @@ class FallsFHIRClient(object):
         if resp.json()['total'] > 0:
             for obs in resp.json()['entry']:
                 if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention':
-                    for standards_question in standards_dict:
+                    for question_code in self.questions_code:
                         # if standards_question['model'] == 'app.Question':
-                        if obs['resource']['code']['coding'][0]['code'] == standards_question['code']:
-                            output_dict[str(standards_question['code'])] = obs
+                        # print (standards_question)
+
+                        if obs['resource']['code']['coding'][0]['code'] == question_code:
+                            if return_entire_observation_not_just_value:
+                                output_dict[str(question_code)] = obs
+                            else:
+                                output_dict[str(question_code)] = obs['resource']['valueQuantity']['value']
         return output_dict
 
     # Function write many observations to fhir. Takes in a list of question codes and associated responses.
@@ -441,7 +445,7 @@ class FallsFHIRClient(object):
                         updated_existing = True
             if updated_existing:
                 continue
-            self.create_new_observation_yes_no(question_codes[i],responses[i],pat_id=pat_id,enc_id=enc_id,diag_rpt=diag_rpt)
+            self.create_new_observation(question_codes[i],responses[i], pat_id=pat_id, enc_id=enc_id, diag_rpt=diag_rpt)
 
     # Function write a note observation to fhir. Takes in a list the question code we would like to save it as and
     # the content of the note. Writes a new observation if one did not previously exist. Updates existing one if it
@@ -500,7 +504,7 @@ class FallsFHIRClient(object):
         save_obs['valueQuantity'] = {}
         save_obs['valueQuantity']['value'] = str(note_text)
         save_obs['valueQuantity']['unit'] = 'Free form notes'
-        save_obs['valueQuantity']['system'] = "Free form notes"
+        save_obs['valueQuantity']['system'] = "fall_prevention"
         save_obs['valueQuantity']['code'] = "Free form notes"
         resp = requests.post(self.api_base + 'Observation/', data=json.dumps(save_obs), headers=write_headers)
         if resp.status_code != 201:
@@ -518,7 +522,7 @@ class FallsFHIRClient(object):
     # Returns: True if succeeds in creating a new observation or False if fails.
     # Note: Some of the coding names are a bit made up. We can probably just use them.
     # Sets effective date as current date.
-    def create_new_observation_yes_no(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):
+    def create_new_observation(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):
         if pat_id == None:
             pat_id = self.patient_id
         if enc_id == None:
@@ -528,6 +532,9 @@ class FallsFHIRClient(object):
         if not pat_id or not enc_id or not diag_rpt:
             print('I am missing a patient_id, encounter_id, or diagnostic_report to create observations')
             return None
+
+        q_ind = self.questions_code.index(str(falls_question_code))
+
         write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         save_obs = {}
         save_obs['resourceType'] = "Observation"
@@ -548,8 +555,8 @@ class FallsFHIRClient(object):
         # save_obs['code']['coding']['code'] = str(questions_code[i])
         save_obs['code']['coding'][0]['code'] = str(falls_question_code)
         # save_obs['code']['coding']['display'] = str(questions[i])
-        save_obs['code']['coding'][0]['display'] = self.questions_text[self.questions_code.index(str(falls_question_code))]
-        save_obs['code']['coding'][0]['text'] = self.questions_text[self.questions_code.index(str(falls_question_code))]
+        save_obs['code']['coding'][0]['display'] = self.questions_text[q_ind]
+        save_obs['code']['coding'][0]['text'] = self.questions_text[q_ind]
         save_obs['subject'] = {}
         save_obs['subject']['reference'] = 'Patient/'+str(pat_id)
         save_obs['encounter'] = {}
@@ -557,9 +564,9 @@ class FallsFHIRClient(object):
         save_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
         save_obs['valueQuantity'] = {}
         save_obs['valueQuantity']['value'] = str(response)
-        save_obs['valueQuantity']['unit'] = 'True or False (1 or 0)'
-        save_obs['valueQuantity']['system'] = "True or False (1 or 0)"
-        save_obs['valueQuantity']['code'] = "True or False (1 or 0)"
+        save_obs['valueQuantity']['unit'] = self.questions_units[q_ind]
+        save_obs['valueQuantity']['system'] = "fall_prevention"
+        save_obs['valueQuantity']['code'] = self.questions_answer_description[q_ind]
         resp = requests.post(self.api_base + 'Observation/', data=json.dumps(save_obs), headers=write_headers)
         if resp.status_code != 201:
             print('Something went wrong when trying to write to the server')
@@ -568,67 +575,6 @@ class FallsFHIRClient(object):
             return True
             diag_rpt['resource']['result'].append({})
             diag_rpt['resource']['result'][-1]['reference'] = 'Observation/'+resp.json()['entry'][0]['resource']['id']
-            return True
-
-    # Function to create a new observation for a question with a quantity response.
-    # Input: question_code from the standards document (for quantities instead of yes/no), response to question,
-    # patient_id, encounter_id (the default uses client values if they have been set)
-    # Returns: True if succeeds in creating a new observation or False if fails.
-    # Note: Some of the coding names are a bit made up. We can probably just use them.
-    # Sets effective date as current date.
-    def create_new_observation_quantity(self, falls_question_code, response, pat_id=None, enc_id=None, diag_rpt=None):
-        if pat_id == None:
-            pat_id = self.patient_id
-        if enc_id == None:
-            enc_id = self.encounter_id
-        if diag_rpt == None:
-            diag_rpt = self.diagnostic_report
-        if not pat_id or not enc_id or not diag_rpt:
-            print('I am missing a patient_id, encounter_id, or diagnostic_report to create observations')
-            return None
-        write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        save_obs = {}
-        save_obs['resourceType'] = "Observation"
-        save_obs['status'] = "final"
-
-        save_obs['category'] = {}
-        save_obs['category']['coding'] = []
-        save_obs['category']['coding'].append({})
-        save_obs['category']['coding'][0]['code'] = 'fall_prevention'
-        save_obs['category']['coding'][0]['display'] = 'Fall Prevention Assessment Results'
-        save_obs['category']['coding'][0]['system'] = 'fall_prevention'
-        save_obs['category']['coding'][0]['text'] = 'Fall Prevention Assessment Results'
-        save_obs['code'] = {}
-        save_obs['code']['coding'] = []
-        save_obs['code']['coding'].append({})
-        # save_obs['code']['coding']['system'] = 'http://fall_prevention_algorithm.org'
-        save_obs['code']['coding'][0]['system'] = 'fall_prevention'
-        # save_obs['code']['coding']['code'] = str(questions_code[i])
-        save_obs['code']['coding'][0]['code'] = str(falls_question_code)
-        # save_obs['code']['coding']['display'] = str(questions[i])
-        save_obs['code']['coding'][0]['display'] = self.questions_text[
-            self.questions_code.index(str(falls_question_code))]
-        save_obs['code']['coding'][0]['text'] = self.questions_text[
-            self.questions_code.index(str(falls_question_code))]
-        save_obs['subject'] = {}
-        save_obs['subject']['reference'] = 'Patient/' + str(pat_id)
-        save_obs['encounter'] = {}
-        save_obs['encounter']['reference'] = enc_id
-        save_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
-        save_obs['valueQuantity'] = {}
-        save_obs['valueQuantity']['value'] = str(response)
-        save_obs['valueQuantity']['unit'] = "Custom for question"
-        save_obs['valueQuantity']['system'] = "falls_prevention"
-        save_obs['valueQuantity']['code'] = "Custom for question"
-        resp = requests.post(self.api_base + 'Observation/', data=json.dumps(save_obs), headers=write_headers)
-        if resp.status_code != 201:
-            print('Something went wrong when trying to write to the server')
-            return False
-        else:
-            return True
-            diag_rpt['resource']['result'].append({})
-            diag_rpt['resource']['result'][-1]['reference'] = 'Observation/' + resp.json()['entry'][0]['resource'][
-                'id']
             return True
 
     # Update an existing observation, searched by ID
@@ -653,6 +599,7 @@ class FallsFHIRClient(object):
             return False
         alter_obs = resp.json()
         alter_obs['valueQuantity']['value'] = str(response)
+        alter_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
         resp = requests.put(self.api_base + 'Observation/' + observation_id, data=json.dumps(alter_obs),
                             headers=write_headers)
         if resp.status_code != 200:
@@ -680,6 +627,7 @@ class FallsFHIRClient(object):
             return False
         alter_obs = resp.json()
         alter_obs['valueQuantity']['value'] = str(response)
+        alter_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
         resp = requests.put(self.api_base + 'Observation/' + observation_id, data=json.dumps(alter_obs),
                             headers=write_headers)
         if resp.status_code != 200:
@@ -692,7 +640,12 @@ class FallsFHIRClient(object):
 
 if __name__ == "__main__":
     # This is some example of how to run this:
+    QUESTIONS_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json"
+    with ur.urlopen(QUESTIONS_URL) as url_questions:
+        questions = json.loads(url_questions.read().decode('utf8'))
+
     client = FallsFHIRClient()
+    client.load_standards_document(questions)
 
     # Search for a patient by first and last name
     patients = client.search_patient('S', 'Graham')
@@ -733,7 +686,7 @@ if __name__ == "__main__":
 
     # If the standards document has been updated, run this to update the dict the client is using to perform its search
     # for relevant observations
-    client.load_standards_document("https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json")
+    # client.load_standards_document("https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json")
 
     # Find all observations that are on fall prevention for this patient and this encounter:
     current_obs = client.search_observations()
@@ -746,7 +699,7 @@ if __name__ == "__main__":
     question_codes = ['1', '2', '7']
     responses = ['1', '0', '1', '1', '0']
     client.diagnostic_report = True
-    client.write_list_of_observations_to_fhir(question_codes, responses)
+    # client.write_list_of_observations_to_fhir(question_codes, responses)
 
 
 
