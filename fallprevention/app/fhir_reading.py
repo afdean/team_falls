@@ -28,11 +28,15 @@ class FallsFHIRClient(object):
         self.encounter_id = None
         self.diagnostic_report = None
         self.medication_list = None
+        self.standards_document_dict = {}
+        self.questions_code = []
+        self.questions_text = []
+        self.questions_answer_description = []
+        self.questions_units = []
         #self.load_standards_document('https://raw.githubusercontent.com/akapusta/team_falls/master/standards/questions.json')
 
     def test_function(self):
         self.select_patient_from_patient_result(self.search_patient('sarah', 'graham'))
-
 
     # Loads the latest standards document. Should probably be run occasionally or whenever things are
     # called to make sure questions are being kept up to date.
@@ -41,12 +45,20 @@ class FallsFHIRClient(object):
     # Note: We can change this to take input so you can tell it where the document is.
     def load_standards_document(self, standards_document_dict):
         self.standards_document_dict = standards_document_dict
-        self.questions_text = []
         self.questions_code = []
-        for question in self.standards_document_dict['questions']:
-            self.questions_text.append(str(question['content']))
-            self.questions_code.append(str(question['code']))
+        self.questions_text = []
+        self.questions_answer_description = []
+        self.questions_units = []
+        for question in standards_document_dict:
+            if question in self.questions_code:
+                print('There are repeated question codes in the standards document! That will cause problems')
+                return False
+            self.questions_code.append(question)
+            self.questions_text.append(standards_document_dict[question]['content'])
+            self.questions_answer_description.append(standards_document_dict[question]['answer_description'])
+            self.questions_units.append(standards_document_dict[question]['units'])
         print('Client has loaded the current standards document')
+        return True
 
     # Search for a patient by name
     # Input: first_name, last_name
@@ -533,6 +545,7 @@ class FallsFHIRClient(object):
             print('I am missing a patient_id, encounter_id, or diagnostic_report to create observations')
             return None
 
+        # q_info = self.standards_document_dict[falls_question_code]
         q_ind = self.questions_code.index(str(falls_question_code))
 
         write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -648,7 +661,7 @@ if __name__ == "__main__":
     # client.load_standards_document(questions)
 
     # Search for a patient by first and last name
-    patients = client.search_patient('S', 'Graham')
+    patients = client.search_patient('Stephan', 'Graham')
     print('Patient info:')
     print(patients[0], '\n')
 
@@ -671,6 +684,7 @@ if __name__ == "__main__":
     for enc in encounters:
         print(enc['resource']['patient'])
     client.select_encounter_from_encounter_result(encounters)
+    # client.create_new_encounter(set_as_active_encounter=True)
 
     # client.select_encounter(patients[0]['resource']['id'])
     print('Encounter ID:')
@@ -680,8 +694,8 @@ if __name__ == "__main__":
     meds = client.search_medication()
 
     # See the last medication order on the list
-    # print('The last medication on the list is:')
-    # print(meds[-1], '\n')
+    print('The last medication on the list is:')
+    print(meds[-1], '\n')
 
     # End that medication order (e.g., if doctor decides to change the prescription)
     # Commented out so you don't keep removing medications.
@@ -702,6 +716,8 @@ if __name__ == "__main__":
     # 1 is for yes. 0 is for no.
     question_codes = ['1', '2', '7']
     responses = ['1', '0', '1', '1', '0']
+
+    # question_codes = client.questions_code[]
     client.diagnostic_report = True
     # client.write_list_of_observations_to_fhir(question_codes, responses)
 

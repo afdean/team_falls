@@ -36,6 +36,8 @@
     <!--END NAV-->
 
 
+
+
     <div class="container-fluid">
         <!--Search Bar-->
         <div class="row searchbar">
@@ -47,16 +49,25 @@
         <!--Search Bar end-->
         <div class="row row-centered">
             <!--Patient BLOCK-->
+            {%for patient in patients%}
+                
+              
             <div class="col-lg-3  patient-block col-centered">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2 id="name">John Doe</h2>
+                        {%for name in patient.resource.name.0.given%}
+                        <h2 id="name">{{name}}</h2>
+                        {%endfor%}
+                        {%for name in patient.resource.name.0.family%}
+                          <h2 id="lastname">{{name}}</h2>
+                        {%endfor%}
                         <div class="row">
                             <div class="col-xs-4">
-                                <p id="age">Age: 83</p>
+                                <p id="age">DOB:{{patient.resource.birthDate}}</p>
+                                
                             </div>
                             <div class="col-xs-4">
-                                <p id="gender">Male</p>
+                                <p id="gender">{{patient.resource.gender}}</p>
                             </div>
                         </div>
                         
@@ -67,7 +78,14 @@
                 <div class="buttons">
                     <div class="row justify-content-end">
                         <div class="col-xs-12">
-                            <a href="{% url 'questions' %}"><button class="btn btn-success start" type="button" >Start</button></a>
+
+                                <form method="POST" action="{% url 'questions' %}">
+                                    {%csrf_token%}
+                                <input type="submit" value= "Start" class="btn btn-success start" type="button" >
+                                <input type="hidden" value='{{patient.resource.id}}' name="id"/>
+                                
+                                </form>
+                                
                         </div>
                     </div>
                     <div class="row justify-content-end">
@@ -83,74 +101,10 @@
                     </div>-->
 
             </div>
+
+            {%endfor%}
             <!--/END-->
-            <!--Patient BLOCK-->
-            <div class="col-lg-3 patient-block col-centered">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 id="name">John Doe</h2>
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <p id="age">Age: 83</p>
-                            </div>
-                            <div class="col-xs-4">
-                                <p id="gender">Male</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="buttons">
-                    <div class="row justify-content-end">
-                        <div class="col-md-12">
-                            <a href="{% url 'questions' %}"><button class="btn btn-success start" type="button" >Start</button></a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-end">
-                        <div class="col-xs-12">
-                            <a href="{% url 'history' %}"><button class="btn btn-info history" type="button" >History</button></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!--/END-->
-            <!--Patient BLOCK-->
-            <div class="col-lg-3 patient-block col-centered">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 id="name">John Doe</h2>
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <p id="age">Age: 83</p>
-                            </div>
-                            <div class="col-xs-4">
-                                <p id="gender">Male</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="buttons">
-                    <div class="row justify-content-end">
-                        <div class="col-xs-12">
-                            <a href="{% url 'questions' %}"><button class="btn btn-success start" type="button" >Start</button></a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-end">
-                        <div class="col-xs-12">
-                            <a href="{% url 'history' %}"><button class="btn btn-info history" type="button" >History</button></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!--/END-->
-
+      
 
         </div>
 
