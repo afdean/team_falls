@@ -26,6 +26,7 @@
         "content": "Patient unable to do TUG",
         "type": "boolean",
         "code": "tug001",
+        "is_problem": true,
         "is_key": false
       },
       {
@@ -33,6 +34,7 @@
         "code": "tug002",
         "type": "integer",
         "logic": "min_key",
+        "is_problem": false,
         "is_required": false,
         "help_text": "Please leave blank if patient is unable to complete the test"
       },
@@ -40,48 +42,56 @@
         "content": "No problems",
         "type": "boolean",
         "code": "tug003",
+        "is_problem": false,
         "is_key": false
       },
       {
         "content": "Loss of balance",
         "type": "boolean",
         "code": "tug004",
+        "is_problem": true,
         "is_key": true
       },
       {
         "content": "Steadying self on walls",
         "type": "boolean",
         "code": "tug005",
+        "is_problem": true,
         "is_key": true
       },
       {
         "content": "Shuffling",
         "type": "boolean",
         "code": "tug006",
+        "is_problem": true,
         "is_key": false
       },
       {
         "content": "Short Stride",
         "type": "boolean",
         "code": "tug007",
+        "is_problem": true,
         "is_key": false
       },
       {
         "content": "Little or no arm swing",
         "type": "boolean",
         "code": "tug008",
+        "is_problem": true,
         "is_key": false
       },
       {
         "content": "En bloc turning",
         "type": "boolean",
         "code": "tug009",
+        "is_problem": true,
         "is_key": false
       },
       {
         "content": "Not using assistive device properly",
         "type": "boolean",
         "code": "tug010",
+        "is_problem": true,
         "is_key": false
       }
     ]

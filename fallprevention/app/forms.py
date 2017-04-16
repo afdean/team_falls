@@ -40,7 +40,7 @@ def generate_form(field, field_widget=None, field_choices=None, is_required=Fals
             label=field['content'],
             min_value=0,
             widget=forms.NumberInput,
-            required=is_required,
+            required=field['is_required'],
             help_text=field['help_text']
         )
     elif field['type'] == "char":
@@ -180,7 +180,7 @@ class AssessmentForm(forms.Form):
                         test_fieldset.append(Field(field_name))
                         # self.fields[field_name].widget = forms.HiddenInput()
                     self.helper.layout.append(test_fieldset)
-            self.helper.add_input(Submit('submit', 'Next'))
+            self.helper.add_input(Submit('submit', 'Submit'))
         else:
             for test in data_client.func_test:
                 if test['is_recommended']:
@@ -196,6 +196,45 @@ class AssessmentForm(forms.Form):
             self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
+
+    def clean(self):
+        """
+        This is a custom override
+        """
+        data_client = DataClient()
+        problem_list = []
+        cleaned_data = super(AssessmentForm, self).clean()
+        cant_tug = cleaned_data.get("tug001")
+        tug_time = cleaned_data.get("tug002")
+        no_problems = cleaned_data.get("tug003")
+        error = False
+        for test in data_client.func_test:
+            if test['code'] == "tug000":
+                for field in test['forms']:
+                    if field['is_problem']:
+                        problem_list.append(field['code'])
+
+        if cant_tug is not None and cant_tug:
+            if num_falls is not None:
+                if no_problems is not None and no_problems:
+                    print("This was reached")
+                    msg = "It is not possible to unable to do the TUG while having timed score or no problems"
+                    self.add_error('tug001', msg)
+                    self.add_error('tug001', msg)
+                    error = True
+
+        if no_problems is not None and no_problems:
+            msg = "It is not possible to have no problems checked off with other problems"
+            for code in problem_list:
+                if code in cleaned_data and cleaned_data[code]:
+                    self.add_error(code, msg)
+                    error = True
+
+        if error:
+            raise forms.ValidationError("Please fix the fields")
+
+        # Could set obs. here to have in record despite incomplete?
+        return cleaned_data
 
 class NoteForm(forms.Form):
     note = forms.CharField(
@@ -264,7 +303,7 @@ class ExamsForm(forms.Form):
                         self.fields[field_name] = generate_form(form)
                         exam_fieldset.append(Field(field_name))
                     self.helper.layout.append(exam_fieldset)
-            self.helper.add_input(Submit('submit', 'Next'))
+            self.helper.add_input(Submit('submit', 'Submit'))
         else:
             for exam in data_client.physical_exam:
                 self.fields[exam['code']] = forms.BooleanField(
