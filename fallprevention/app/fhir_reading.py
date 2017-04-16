@@ -152,7 +152,8 @@ class FallsFHIRClient(object):
             return False
         else:
             if set_as_active_encounter:
-                self.encounter_id = resp.json()['resource']['id']
+                print(resp.json())
+                self.encounter_id = resp.json()['id']
             return True
 
     # Search for encounters on a date and by patient_id. Sets client encounter_id if there is only one
