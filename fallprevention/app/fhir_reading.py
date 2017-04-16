@@ -55,7 +55,7 @@ class FallsFHIRClient(object):
                 return False
             self.questions_code.append(question)
             self.questions_text.append(standards_document_dict[question]['content'])
-            self.questions_answer_description.append(standards_document_dict[question]['answer_description'])
+            self.questions_answer_description.append(standards_document_dict[question]['description'])
             self.questions_units.append(standards_document_dict[question]['units'])
         print('Client has loaded the current standards document')
         return True
@@ -664,6 +664,8 @@ if __name__ == "__main__":
     patients = client.search_patient('Stephan', 'Graham')
     print('Patient info:')
     print(patients[0], '\n')
+    print(patients[0]['resource']['name'][0]['given'], '\n')
+    print(patients[0]['resource']['name'][0]['family'], '\n')
 
     # Or search by name and date of birth
     patients = client.search_patient_dob('Sarah', 'Graham', '1949')
