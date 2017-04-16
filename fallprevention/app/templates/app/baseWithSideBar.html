@@ -33,7 +33,9 @@
       <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display -->
       {% if completed is not None %}
           {% for task in completed %}
-            <li>{{ task }} completed (style this...)</li>
+            {% if task %}
+                <li>{{ task }} completed (style this...)</li>
+            {% endif %}
           {% endfor %}
       {% endif %}
         <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a>

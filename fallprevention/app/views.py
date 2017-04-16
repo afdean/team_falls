@@ -94,6 +94,7 @@ def search_patient(request):
 
 def questions(request):
     data_client = DataClient()
+    completed = get_sidebar_completed()
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
         if question_form.is_valid():
@@ -147,13 +148,10 @@ def questions(request):
                 question_answers[field_name] = data_client.observations[code]
         print(data_client.observations)
         question_form = QuestionForm(initial=question_answers)
-
     if data_client.identity == "patient":
         extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/base.html')
     else:
         extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/baseWithSideBar.html')
-
-    completed = get_sidebar_completed()
     return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient, 'identity': data_client.identity, 'extends_variable': extends_variable, 'completed': completed})
 
 def thankyou(request):
@@ -178,6 +176,11 @@ def assessments_details(request):
     """
     data_client = DataClient()
     assessments_chosen = data_client.assessments_chosen
+    completed = get_sidebar_completed()
+    more_info = []
+    for test in data_client.func_test:
+        more_info.append(test['more_info'])
+
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST, assessments_chosen=assessments_chosen);
         if assessments_form.is_valid():
@@ -328,11 +331,12 @@ def assessments_details(request):
                         field_name = code
                         assessments_answers[field_name] = data_client.observations[code]
         assessments_form = AssessmentForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
-    completed = get_sidebar_completed()
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed})
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'assessments_chosen': assessments_chosen, 'more_info': more_info})
 
 def assessments(request):
     data_client = DataClient()
+    completed = get_sidebar_completed()
+    tests_completed = get_tests_completed()
     if request.method == 'POST':
         assessments_form = AssessmentForm(request.POST);
         if assessments_form.is_valid():
@@ -347,14 +351,14 @@ def assessments(request):
                 return HttpResponseRedirect('/app/assessments/details')
     else:
         assessments_form = AssessmentForm();
-    completed = get_sidebar_completed()
-    tests_completed = get_tests_completed()
+
     # Comment this out later, just want to see it works
     print(tests_completed)
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'tests_completed': tests_completed})
 
 def medications(request):
     data_client = DataClient()
+    completed = get_sidebar_completed()
     calculate_risk()
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
@@ -367,12 +371,12 @@ def medications(request):
                 return HttpResponseRedirect('/app/risks/')
     else:
         medications_form = MedicationsForm()
-    completed = get_sidebar_completed()
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed})
 
 def exams_details(request):
     data_client = DataClient()
     exams_chosen = data_client.exams_chosen
+    completed = get_sidebar_completed()
     if request.method == 'POST':
         exams_form = ExamsForm(request.POST, exams_chosen=exams_chosen)
         if exams_form.is_valid():
@@ -400,11 +404,11 @@ def exams_details(request):
                         field_name = code
                         exam_answers[field_name] = data_client.observations[code]
         exams_form = ExamsForm(initial=exam_answers, exams_chosen=exams_chosen)
-    completed = get_sidebar_completed()
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient, 'completed': completed})
 
 def exams(request):
     data_client = DataClient()
+    completed = get_sidebar_completed()
     if request.method == 'POST':
         exams_form = ExamsForm(request.POST)
         if exams_form.is_valid():
@@ -469,6 +473,7 @@ def user_login(request):
 def risks(request):
     data_client = DataClient()
     incomplete_list = calculate_risk()
+    completed = get_sidebar_completed()
     risk_level = data_client.risk_level
     print("Here is the list of incomplete tasks: ")
     print(incomplete_list)
@@ -481,7 +486,6 @@ def risks(request):
         risks_form = RisksForm(risk_level="high")
     else:
         risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
-    completed = get_sidebar_completed()
     return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed})
 
 def calculate_risk():
@@ -561,7 +565,7 @@ def get_sidebar_completed():
     """
     Returns a list of completed sidebar tasks
     """
-    completed = []
+    completed = {}
     data_client = DataClient()
     obs = data_client.observations
     question_code = data_client.questions['code']
@@ -572,24 +576,24 @@ def get_sidebar_completed():
         test_codes.append(test['code'])
 
     if question_code in obs:
-        completed.append("screening")
+        completed["screening"] = True
 
     for test_code in test_codes:
         if test_code in obs:
-            completed.append("tests")
+            completed["tests"] = True
             break
 
     for exam in data_client.physical_exam:
         for form in exam['forms']:
             if form['code'] in obs:
-                completed.append("exams")
+                completed["exams"] = True
                 break
 
     if data_client.medication_complete:
-        completed.append("medication")
+        completed["medication"] = True
 
     if data_client.risks_complete:
-        completed.append("risks")
+        completed["risks"] = True
 
     return completed
 
