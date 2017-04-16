@@ -4,24 +4,32 @@
     "forms": [
       {
         "content": "Check for Safety Brochure",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "edu001",
         "num_forms": 1
       },
       {
         "content": "What Can You Do to Prevent Falls",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "edu002",
         "num_forms": 1
       },
       {
         "content": "Chair Rise Exercise Sheet",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "edu003",
         "num_forms": 1
       },
       {
         "content": "Postural Hypotension Brochure",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "edu004",
         "num_forms": 1
@@ -33,12 +41,16 @@
     "forms": [
       {
         "content": "Patient is currently taking at least 800 IU of Vitamin D",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "vit001",
         "num_forms": 1
       },
       {
         "content": "Patient is currently taking enough calcium",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "vit002",
         "num_forms": 1
@@ -50,12 +62,16 @@
     "forms": [
       {
         "content": "PT to improve gait, strength and balance",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "ref001",
         "num_forms": 1
       },
       {
         "content": "Fall prevention/Community exercise program",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "ref002",
         "num_forms": 1
@@ -67,6 +83,8 @@
     "forms": [
       {
         "content": "Reviewed home safety with patient",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "home001",
         "num_forms": 1

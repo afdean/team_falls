@@ -5,6 +5,8 @@
     "forms": [
       {
         "content": "Supine",
+        "description": "Supine hypotension",
+        "units": "Blood Pressure (systolic and diastolic)",
         "type": "integer",
         "is_required": "false",
         "code": "pos001",
@@ -13,6 +15,8 @@
       },
       {
         "content": "Standing (1m)",
+        "description": "Standing Hypotension #1",
+        "units": "Blood Pressure (systolic and diastolic)",
         "type": "integer",
         "is_required": "false",
         "code": "pos002",
@@ -21,6 +25,8 @@
       },
       {
         "content": "Standing (3m)",
+        "description": "Standing Hypotension #2",
+        "units": "Blood Pressure (systolic and diastolic)",
         "type": "integer",
         "is_required": "false",
         "code": "pos003",
@@ -29,12 +35,17 @@
       },
       {
         "content": "Postural Dizziness",
+        "description": "True or False",
+        "units": "True or False",
         "type": "boolean",
         "code": "pos004",
         "num_forms": 1
       },
       {
         "content": "Heart Rate",
+        "description": "Heart Rate",
+        "units": "Beats per Minute",
+        "type": "boolean",
         "type": "integer",
         "code": "pos005",
         "is_required": "false",
@@ -49,6 +60,8 @@
     "forms": [
       {
         "content": "Notes",
+        "description": "Notes for Cognitive Screening",
+        "units": "Notes for Cognitive Screening",
         "type": "char",
         "code": "cog001",
         "help_text": "",
@@ -56,6 +69,8 @@
       },
       {
         "content": "Cognitive Impairment",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "cog002",
         "num_forms": 1
@@ -68,48 +83,64 @@
     "forms": [
       {
         "content": "Normal",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet001",
         "num_forms": 1
       },
       {
         "content": "Bunions",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet002",
         "num_forms": 1
       },
       {
         "content": "Ulcers",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet003",
         "num_forms": 1
       },
       {
         "content": "Structural Abnormalities",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet004",
         "num_forms": 1
       },
       {
         "content": "Impaired Sensation",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet005",
         "num_forms": 1
       },
       {
         "content": "Impaired Proprioception",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet006",
         "num_forms": 1
       },
       {
         "content": "Amputation noted on one foot",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet007",
         "num_forms": 1
       },
       {
         "content": "Amputation noted on both feet",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "feet008",
         "num_forms": 1
@@ -122,6 +153,8 @@
     "forms": [
       {
         "content": "Uses Aid",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "aid001",
         "num_forms": 1
@@ -134,6 +167,8 @@
     "forms": [
       {
         "content": "Left",
+        "description": "Visual Acuity for Left Eye",
+        "units": "Visual Acuity",
         "type": "char",
         "code": "vis001",
         "help_text": "Please enter in the form \"20/20\"",
@@ -141,6 +176,8 @@
       },
       {
         "content": "Right",
+        "description": "Visual Acuity for Right Eye",
+        "units": "Visual Acuity",
         "type": "char",
         "code": "vis002",
         "help_text": "Please enter in the form \"20/20\"",
@@ -148,6 +185,8 @@
       },
       {
         "content": "Both",
+        "description": "Visual Acuity for Both Eyes",
+        "units": "Visual Acuity",
         "type": "char",
         "code": "vis003",
         "help_text": "Please enter in the form \"20/20\"",
@@ -155,6 +194,8 @@
       },
       {
         "content": "Vision Impairment",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "vis004",
         "num_forms": 1
@@ -167,30 +208,40 @@
     "forms": [
       {
         "content": "Normal Tone and Strength",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "musc001",
         "num_forms": 1
       },
       {
         "content": "Diffuse Muscle Weakness",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "musc002",
         "num_forms": 1
       },
       {
         "content": "Diffuse Muscle Atrophy",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "musc003",
         "num_forms": 1
       },
       {
         "content": "Focal Weakness",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "musc004",
         "num_forms": 1
       },
       {
         "content": "Cogwheel Rigidity",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "musc005",
         "num_forms": 1
