@@ -142,11 +142,11 @@ class FallsFHIRClient(object):
         save_enc['resourceType'] = "Encounter"
         save_enc['status'] = "in-progress"
         save_enc['period'] = {}
-        save_enc['start'] = date
-        save_enc['subject'] = {}
-        save_enc['subject']['reference'] = 'Patient/'+pat
+        save_enc['period']['start'] = date
+        save_enc['patient'] = {}
+        save_enc['patient']['reference'] = 'Patient/'+pat
         write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        resp = requests.post(self.api_base + 'Encounter/', data=json.dumps(save_enc), headers=write_headers)
+        resp = requests.post(client.api_base + 'Encounter/', data=json.dumps(save_enc), headers=write_headers)
         if resp.status_code != 201:
             print('Something went wrong when trying to write to the server')
             return False
@@ -156,18 +156,45 @@ class FallsFHIRClient(object):
                 self.encounter_id = resp.json()['id']
             return True
 
+        def end_encounter(self, enc_id=None):
+            if enc_id == None:
+                enc_id = self.encounter_id
+            if not enc_id:
+                print('I am missing a encounter_id to search for relevant encounters')
+                return None
+            write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+            search_headers = {'Accept': 'application/json'}
+            resp = requests.get(self.api_base + 'Encounter/' + enc_id, headers=search_headers)
+            if resp.status_code != 200:
+                print(
+                'Could not find the encounter by that encounter id or something else ' \
+                'went wrong.')
+                return False
+            alter_enc = resp.json()
+            alter_enc['status'] = 'finished'
+            resp = requests.put(self.api_base + 'Encounter/' + enc_id, data=json.dumps(alter_med),
+                                headers=write_headers)
+            if resp.status_code != 200:
+                print('Something went wrong in writing the update to close the encounter by setting its status to ' \
+                      'finished')
+                return False
+            else:
+                return True
+
     # Search for encounters on a date and by patient_id. Sets client encounter_id if there is only one
     # matching encounter.
     # Input: Date str(YYYY-MM-DD), patient_id (by default uses the client's patient_id, if it has
     # been set)
     # Returns: list of encounters. Each is a dict.
     # Requires: api-server running
-    def search_encounter_date(self, date, pat=None):
+    def search_encounter_date(self, date=None, pat=None):
         if pat == None:
             pat = self.patient_id
         if not pat:
             print('I am missing a patient_id to search for relevant encounters')
             return None
+        if not date:
+            date = (time.strftime("%Y-%m-%d"))
         encounter_list = []
         search_headers = {'Accept': 'application/json'}
         for stat in ['planned', 'arrived', 'in-progress']:
@@ -378,7 +405,7 @@ class FallsFHIRClient(object):
             return {}
         search_headers = {'Accept': 'application/json'}
         search_params = {'subject': pat, 'encounter': enc, 'category': 'fall_prevention'}
-        resp = requests.get(self.api_base + 'Observation/', headers=search_headers, params=search_params)
+        resp = requests.get(client.api_base + 'Observation/', headers=search_headers, params=search_params)
         if resp.json()['total'] > 0:
             for obs in resp.json()['entry']:
                 if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention':
