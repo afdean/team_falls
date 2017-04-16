@@ -196,8 +196,6 @@ class AssessmentForm(forms.Form):
             self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Next'))
-
 
 class NoteForm(forms.Form):
     note = forms.CharField(
@@ -276,7 +274,6 @@ class ExamsForm(forms.Form):
             self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Next'))
 
 class RisksForm(forms.Form):
     """
