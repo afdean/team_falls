@@ -360,6 +360,11 @@ def medications(request):
     data_client = DataClient()
     completed = get_sidebar_completed()
     calculate_risk()
+    med_questions = []
+    for question in data_client.questions['questions']:
+        if question['medication_related'] and question['code'] in data_client.observations:
+            if data_client.observations[question['code']]:
+                med_questions.append(question['content'])
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
         print("Button is triggering")
@@ -371,7 +376,7 @@ def medications(request):
                 return HttpResponseRedirect('/app/risks/')
     else:
         medications_form = MedicationsForm()
-    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed})
+    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed, 'med_questions': med_questions})
 
 def exams_details(request):
     data_client = DataClient()

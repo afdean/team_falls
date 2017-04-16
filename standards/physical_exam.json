@@ -6,6 +6,7 @@
       {
         "content": "Supine",
         "type": "integer",
+        "is_required": "false",
         "code": "pos001",
         "num_forms": 2,
         "help_text": ""
@@ -13,6 +14,7 @@
       {
         "content": "Standing (1m)",
         "type": "integer",
+        "is_required": "false",
         "code": "pos002",
         "num_forms": 2,
         "help_text": ""
@@ -20,6 +22,7 @@
       {
         "content": "Standing (3m)",
         "type": "integer",
+        "is_required": "false",
         "code": "pos003",
         "num_forms": 2,
         "help_text": ""
@@ -34,6 +37,7 @@
         "content": "Heart Rate",
         "type": "integer",
         "code": "pos005",
+        "is_required": "false",
         "num_forms": 3,
         "help_text": ""
       }

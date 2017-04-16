@@ -36,7 +36,6 @@
              </select>
             </div>
         </div>
-
     </div>
 
     <div class="row medication_block">
@@ -46,6 +45,21 @@
                 <input type="checkbox" class="form-check-input">
                  Print med changes to note
                 </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row medication_block">
+        <div class="col-lg-12">
+            <div class="form-group" id="medications_linked_to_falls">
+                <label for="exampleSelect2">Fall screening questions answered yes related to medication</label>
+                {% if "screening" in completed %}
+                    {% for question in med_questions %}
+                        <li> {{ question }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li> Fall screening must be completed to display answers </li>
+                {% endif %}
             </div>
         </div>
     </div>
