@@ -99,6 +99,28 @@ class FallsFHIRClient(object):
             patient_list = resp.json()['entry']
             return patient_list
 
+    # Search for a patient by id
+    # Input: patient_id
+    # Returns: Patient resource.
+    # Note: Patient_id is found at patient['identifier'][0]['value']
+    # Requires: api-server running
+    def search_patient_by_id(self, pat=None):
+        if pat == None:
+            pat = self.patient_id
+        if not pat:
+            print('I am missing a patient_id to search for relevant encounters')
+            return None
+        search_headers = {'Accept': 'application/json'}
+        resp = requests.get(self.api_base + 'Patient/'+pat, headers=search_headers)
+        if resp.status_code != 200:
+            # This means something went wrong.
+            print('Something went wrong. Probably there is no patient by that id')
+            return []
+        else:
+            # print resp.json()
+            patient = resp.json()
+            return patient
+
     # Function to select the patient (i.e., set the client's patient_id to the desired patient) based
     # on a returned list from search_patient or search_patient_dob.
     # Input: patient_list, index of desired patient (defaults to first on list)
@@ -679,6 +701,9 @@ if __name__ == "__main__":
     client.select_patient_from_patient_result(client.search_patient('Sarah', 'Graham'))
     print('Patient ID:')
     print(client.patient_id, '\n')
+
+    patient = client.search_patient_by_id(pat=client.patient_id)
+    print(patient)
 
     # Search for encounters by the patient by searching the date. The date must be right.
     encounters = client.search_encounter_all()
