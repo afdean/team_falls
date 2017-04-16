@@ -1,4 +1,71 @@
-{% extends 'app/base.html' %}
-{%load static%}
-{% block content %}
+{% extends 'app/base.html' %} {%load static%} {%block sidebar%}
+<li class="nav-header">
+    <ul class="nav nav-stacked collapse in" id="userMenu">
+
+        <div class="patient-info">
+            <h2 class="" id="patient-name">{{patient.name}}</h2>
+            <h4 class="" id="patient-age">{{patient.age}}</h4>
+        </div>
+</li>
+
+
+{%endblock%} {% block content %}
+<div class="row ecounter">
+
+    <div class="col-md-12">
+        <!--panel-->
+        <div class="panel panel-default" id="exams">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h4>Encounter</h4>
+                </div>
+            </div>
+            <div class="panel-body forms">
+
+
+            </div>
+            <!--/panel content-->
+        </div>
+        <!--/panel-->
+    </div>
+</div>
+<div class="row ecounter">
+
+    <div class="col-md-12">
+        <!--panel-->
+        <div class="panel panel-default" id="exams">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h4>Encounter</h4>
+                </div>
+            </div>
+            <div class="panel-body forms">
+
+
+            </div>
+            <!--/panel content-->
+        </div>
+        <!--/panel-->
+    </div>
+</div>
+<div class="row ecounter">
+
+    <div class="col-md-12">
+        <!--panel-->
+        <div class="panel panel-default" id="exams">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h4>Encounter</h4>
+                </div>
+            </div>
+            <div class="panel-body forms">
+
+
+            </div>
+            <!--/panel content-->
+        </div>
+        <!--/panel-->
+    </div>
+</div>
+
 {% endblock %}

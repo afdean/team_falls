@@ -7,21 +7,14 @@
 <!-- Left column -->
 
 <ul class="nav nav-stacked" style="position:fixed;">
-  <div class="col-lg-6  auto-pass-fail">
-    <div class="row">
-
-    </div>
-
-
-
-  </div>
+ 
 
   <li class="nav-header">
     <ul class="nav nav-stacked collapse in" id="userMenu">
 
         <div class="patient-info">
           <h2 class="" id="patient-name">{%block patient_first_name%}John Doe{%endblock%}</h2>
-          <h4 class="" id="patient-age">{%block patient_age%}Age: 83{%endblock%}</h4>
+          <h4 class="" id="patient-age">Age: {%block patient_age%}83{%endblock%}</h4>
         </div>
       </li>
 
@@ -29,16 +22,17 @@
       <li><a href="{% url 'assessments' %}">Assessment</a></li>
       <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
       <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
-      <li><a href="{% url 'risks' %}" id="risks_li">Risks</a></li>
-      <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display -->
-      {% if completed is not None %}
+        <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a> 
+      <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display 
+      <!--{% if completed is not None %}
           {% for task in completed %}
             {% if task %}
                 <li>{{ task }} completed (style this...)</li>
             {% endif %}
           {% endfor %}
       {% endif %}
-        <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a>
+        <a href="/app/search"><button class="btn" style="background-color: red;"> END</button></a>-->
+
     </ul>
   </li>
 

@@ -4,6 +4,8 @@
 {% load bootstrap3 %}
 {% block content %}
 {{ question_form.non_field_errors }}
+{%block patient_first_name%} {{ patient.name }}{%endblock%}
+{%block patient_age%} {{ patient.age }}{%endblock%}
     <div class="row">
 
         <div class="col-md-12">
