@@ -1,6 +1,82 @@
-{% extends 'app/base.html' %}
-{% load crispy_forms_tags %}
+ {% load crispy_forms_tags %} 
+<html>
 
-{% block content %}
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+        <title> {% block title %}Fall Prevention{% endblock %}</title>
+
+        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+        <link href="{% static 'css/basestyle.css' %}" rel="stylesheet">
+
+        <link href="{%static 'css/styles.css'%}" rel="stylesheet">
+        <link href="{%static 'css/searchPatient.css'%}" rel="stylesheet">
+        <link href="{%static 'css/questions.css' %}" rel="stylesheet">
+        <link href="{%static 'css/assessments.css'%}" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+        <link rel="stylesheet" href="{%static 'css/medications.css'%}" />
+        <link rel="stylesheet" href="{%static 'css/risks.css'%}" />
+        <link rel="stylesheet" href="{%static 'css/exam.css'%}" />
+
+        <style>
+                .login_form {
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        width: 30em;
+                        height: 18em;
+                        margin-top: -9em;
+                        padding: 30px;
+                        /*set to a negative number 1/2 of your height*/
+                        margin-left: -15em;
+                        /*set to a negative number 1/2 of your width*/
+                        border: 1px solid #ccc;
+                        background-color: #fff;
+                }
+                  body{
+                        background-color: white;
+                }  
+        </style>
+</head>
+
+<body>
+
+
+        <div class="container">
+                <!--BEGIN NAV-->
+                <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #075290" role="navigation">
+                        <div class="container-fluid">
+                                <a class="navbar-brand" style="color: white;" href="">CDC Fall Prevention</a>
+                        </div>
+        </div>
+        </nav>
+        <div class="row">
+              <!--panel-->
+            <div class="panel panel-default" id="questions">
+                <div class="panel-heading">
+                    <div class="panel-title">
+
+                     
+                        <h4>Login</h4>
+                    </div>
+                </div>
+                <div class="col-md-12 panel-body login_form">
    {% crispy login_patient_form %}
-{% endblock %}
+                </div>
+        </div>
+        </div>
+        </div>
+
+        <!--END NAV-->
+</body>
+
+</html>

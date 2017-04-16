@@ -1,22 +1,46 @@
+<style>
+.nohover:hover { color: transparent; }
+</style>
+
 {% extends 'app/base.html' %} {%load static%} {% block sidebar %}
 
+<!-- Left column -->
 
-    <ul class="nav sidebar-nav">
-      <!--Patient in NAV-->
-      <div class="patient-info">
-        <li class="" id="patient-name">John Doe</li>
-        <li class="" id="patient-age">Age: 83</li>
-      </div>
-      <!--END-->
+<ul class="nav nav-stacked" style="position:fixed;">
+  <div class="col-lg-6  auto-pass-fail">
+    <div class="row">
 
-          <li id="questions_li"><a href="{% url 'questions' %}" >Fall Screening</a></li>
-          <li><a href="{% url 'assessments' %}" id="assessments_li">Assessment</a></li>
-          <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
-          <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
-          <li><a href="{% url 'risks' %}" id="risks_li">Risks</a></li>
+    </div>
 
+
+
+  </div>
+
+  <li class="nav-header">
+    <ul class="nav nav-stacked collapse in" id="userMenu">
+
+        <div class="patient-info">
+          <h2 class="" id="patient-name">{%block patient_first_name%}John Doe{%endblock%}</h2>
+          <h4 class="" id="patient-age">{%block patient_age%}Age: 83{%endblock%}</h4>
+        </div>
+      </li>
+
+      <li class="active" id="questions_li"><a href="{% url 'questions' %}">Fall Screening</a></li>
+      <li><a href="{% url 'assessments' %}">Assessment</a></li>
+      <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
+      <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
+      <li><a href="{% url 'risks' %}" id="risks_li">Risks</a></li>
+        <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a> 
     </ul>
+  </li>
 
-      <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a>
+
+</ul>
+
+
+
+
+
+
 
 {%endblock%}

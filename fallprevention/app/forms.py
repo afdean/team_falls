@@ -140,7 +140,7 @@ class QuestionForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_id = 'id-questionsForm'
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', 'Next'))
 
     def clean(self):
         """
@@ -196,6 +196,8 @@ class AssessmentForm(forms.Form):
             self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Next'))
+
 
 class NoteForm(forms.Form):
     note = forms.CharField(
@@ -274,6 +276,7 @@ class ExamsForm(forms.Form):
             self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Next'))
 
 class RisksForm(forms.Form):
     """
@@ -312,4 +315,4 @@ class RisksForm(forms.Form):
 
         self.helper.form_id = 'id-risksForm'
         self.helper.form_method = 'post'
-        # self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', 'Submit'))
