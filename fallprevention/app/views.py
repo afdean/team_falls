@@ -10,6 +10,8 @@ from app.forms import *
 from app.models import Question, FuncAbilityTest, TestParameter
 from app.data_client import DataClient
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from datetime import date
+import math
 
 
 # Home screen
@@ -254,15 +256,16 @@ def assessments_details(request):
                                     patient_gender = data_client.patient['resource']['gender']
                                     date_string = data_client.patient['resource']['birthDate']
                                     patient_age = calculate_age(date_string)
-                                    age_index = test['min_logic']['form_logic']['ages']
-                                    male_score = test['min_logic']['form_logic']['male']
-                                    female_score = test['min_logic']['form_logic']['female']
-                                    if patient_age < ages[0]:
+                                    age_index = test['min_logic'][form_logic]['ages']
+                                    male_score = test['min_logic'][form_logic]['male']
+                                    female_score = test['min_logic'][form_logic]['female']
+                                    if patient_age < age_index[0]:
                                         print("Age is less than minimum age for test, will pass since score irrelevant")
-                                    if patient_age > ages[-1]:
+                                    if patient_age > age_index[-1]:
                                         print("Age is greater than maximum age for test, will fail since score irrelevant")
                                     else:
-                                        for i, age in age_index:
+                                        print(age_index)
+                                        for i, age in enumerate(age_index):
                                             if patient_age >= age:
                                                 continue
                                             else:
