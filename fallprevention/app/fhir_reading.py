@@ -130,6 +130,31 @@ class FallsFHIRClient(object):
         return encounter_list
 
 
+    def create_new_encounter(self, pat=None, date='', set_as_active_encounter=False):
+        if pat == None:
+            pat = self.patient_id
+        if not pat:
+            print('I am missing a patient_id to search for relevant encounters')
+            return None
+        if not date:
+            date = (time.strftime("%Y-%m-%d"))
+        save_enc = {}
+        save_enc['resourceType'] = "Encounter"
+        save_enc['status'] = "in-progress"
+        save_enc['period'] = {}
+        save_enc['start'] = date
+        save_enc['subject'] = {}
+        save_enc['subject']['reference'] = 'Patient/'+pat
+        write_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        resp = requests.post(self.api_base + 'Encounter/', data=json.dumps(save_enc), headers=write_headers)
+        if resp.status_code != 201:
+            print('Something went wrong when trying to write to the server')
+            return False
+        else:
+            if set_as_active_encounter:
+                self.encounter_id = resp.json()['resource']['id']
+            return True
+
     # Search for encounters on a date and by patient_id. Sets client encounter_id if there is only one
     # matching encounter.
     # Input: Date str(YYYY-MM-DD), patient_id (by default uses the client's patient_id, if it has
