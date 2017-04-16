@@ -19,6 +19,7 @@ def index(request):
 
 def login(request):
     data_client = DataClient()
+    data_client.reload_data()
     # Wipe whatever is in memory...?
     # data_client = DataClient().clean()
 
@@ -76,12 +77,6 @@ def search_patient(request):
             if patient_list:
                 data_client.patient = patient_list[0]
                 data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
-                encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
-                if encounter_list:
-                    data_client.encounter = encounter_list[0]
-                    data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
-                    #print (data_client.fhir_client.encounter_id)
-                    # print (data_client.fhir_client.search_observations())
             url = '/app/questions/'
             return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
@@ -94,6 +89,20 @@ def search_patient(request):
 
 def questions(request):
     data_client = DataClient()
+    # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
+    encounter_list = data_client.fhir_client.search_encounter_all()
+    if encounter_list:
+        #status for encounter finished/in-progress/arrived/...
+        print (encounter_list)
+        if (encounter_list[0]['resource']['status'] == "in-progress"):
+            data_client.encounter = encounter_list[0]
+            data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
+       else:
+           data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+    else:
+        data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+    print (data_client.fhir_client.encounter_id)
+
     completed = get_sidebar_completed()
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
