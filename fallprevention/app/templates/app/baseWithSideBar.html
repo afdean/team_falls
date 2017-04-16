@@ -13,8 +13,10 @@
     <ul class="nav nav-stacked collapse in" id="userMenu">
 
         <div class="patient-info">
-          <h2 class="" id="patient-name">{%block patient_first_name%}John Doe{%endblock%}</h2>
-          <h4 class="" id="patient-age">Age: {%block patient_age%}83{%endblock%}</h4>
+            {%for name in patient.resource.name.0.given%}
+            <h2 id="name">{{name}}</h2>
+            {%endfor%}
+            <h4 class="" id="patient-age">DOB: {{patient.resource.birthDate}}</h4>
         </div>
       </li>
 
@@ -23,7 +25,7 @@
       <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
       <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
       <li><a href="{% url 'risks' %}" id="risks_li">Results</a></li>
-        
+
       <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display
       <!--{% if completed is not None %}
           {% for task in completed %}
