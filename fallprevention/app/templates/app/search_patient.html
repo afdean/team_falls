@@ -50,8 +50,8 @@
         <div class="row row-centered">
             <!--Patient BLOCK-->
             {%for patient in patients%}
-                
-              
+
+
             <div class="col-lg-3  patient-block col-centered">
                 <div class="row">
                     <div class="col-xs-12">
@@ -64,13 +64,13 @@
                         <div class="row">
                             <div class="col-xs-4">
                                 <p id="age">DOB:{{patient.resource.birthDate}}</p>
-                                
+
                             </div>
                             <div class="col-xs-4">
                                 <p id="gender">{{patient.resource.gender}}</p>
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -79,13 +79,12 @@
                     <div class="row justify-content-end">
                         <div class="col-xs-12">
 
-                                <form method="POST" action="{% url 'questions' %}">
+                                <form method="GET" action="{% url 'questions' %}">
                                     {%csrf_token%}
-                                <input type="submit" value= "Start" class="btn btn-success start" type="button" >
-                                <input type="hidden" value='{{patient.resource.id}}' name="id"/>
-                                
+                                    <input type="submit" value= "Start" class="btn btn-success start" type="button" >
+                                    <input type="hidden" value='{{patient}}' name="patient"/>
                                 </form>
-                                
+
                         </div>
                     </div>
                     <div class="row justify-content-end">
@@ -104,7 +103,7 @@
 
             {%endfor%}
             <!--/END-->
-      
+
 
         </div>
 

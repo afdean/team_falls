@@ -10,6 +10,7 @@ from app.forms import *
 from app.models import Question, FuncAbilityTest, TestParameter
 from app.data_client import DataClient
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from ast import literal_eval
 
 
 # Home screen
@@ -74,26 +75,27 @@ def search_patient(request):
             # Search for a patient by first and last name
             #TODO error check fot the search result
             patient_list = data_client.fhir_client.search_patient(patient_name[0], patient_name[1])
-            if patient_list:
-                data_client.patient = patient_list[0]
-                data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
-            url = '/app/questions/'
-            return HttpResponseRedirect(url)
+            # if patient_list:
+                # data_client.patient = patient_list[0]
+                # data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
+            # url = '/app/questions/'
+            # return HttpResponseRedirect(url)
         # if search_patient_form.is_valid():
     else:
         search_patient_form = SearchPatientForm()
         if data_client.identity != "care_provider":
             return HttpResponseRedirect('/app/login/')
 
-    return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patient_list': patient_list})
+    return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patients': patient_list})
 
 def questions(request):
     data_client = DataClient()
+    if (request.GET.get('patient') != None):
+        data_client.patient = literal_eval(request.GET.get('patient'))
     # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
     encounter_list = data_client.fhir_client.search_encounter_all()
     if encounter_list:
         #status for encounter finished/in-progress/arrived/...
-        print (encounter_list)
         if encounter_list[0]['resource']['status'] == "in-progress":
             data_client.encounter = encounter_list[0]
             data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
@@ -101,7 +103,6 @@ def questions(request):
             data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
     else:
         data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
-    print (data_client.fhir_client.encounter_id)
 
     completed = get_sidebar_completed()
     if request.method == 'POST':
@@ -154,6 +155,7 @@ def questions(request):
         extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/base.html')
     else:
         extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/baseWithSideBar.html')
+
     return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient, 'identity': data_client.identity, 'extends_variable': extends_variable, 'completed': completed})
 
 def thankyou(request):
@@ -479,42 +481,20 @@ def user_login(request):
 
 def risks(request):
     data_client = DataClient()
-    completed = get_sidebar_completed()
     incomplete_list = calculate_risk()
-
-    if request.method == "POST":
-        risk_level = data_client.risk_level
-        risks_form = RisksForm(request.POST, risk_level=risk_level)
-        if risks_form.is_valid():
-            for key, intervention in data_client.intervention_list.items():
-                for i, form in enumerate(intervention['forms']):
-                    intervention['forms'][i]['code']
-                    if code in risks_form.cleaned_data:
-                        answer = assessments_form.cleaned_data[field_name]
-                        data_client.observations[code] = answer
-            return HttpResponseRedirect('/app/risks')
-
+    completed = get_sidebar_completed()
+    risk_level = data_client.risk_level
+    print("Here is the list of incomplete tasks: ")
+    print(incomplete_list)
+    print("The risk level is currently: " + data_client.risk_level)
+    if data_client.risk_level == "low":
+        risks_form = RisksForm(risk_level="low")
+    elif data_client.risk_level == "moderate":
+        risks_form = RisksForm(risk_level="moderate")
+    elif data_client.risk_level == "high":
+        risks_form = RisksForm(risk_level="high")
     else:
-        intervention_answers = {}
-        for key, intervention in data_client.intervention_list.items():
-            # print(key)
-            # print(intervention)
-            for i, form in enumerate(intervention['forms']):
-                code = intervention['forms'][i]['code']
-                if code in data_client.observations:
-                    field_name = code
-                    intervention_answers[field_name] = data_client.observations[code]
-        risk_level = data_client.risk_level
-        print(data_client.observations)
-        if data_client.risk_level == "low":
-            risks_form = RisksForm(initial=intervention_answers, risk_level="low")
-        elif data_client.risk_level == "moderate":
-            risks_form = RisksForm(initial=intervention_answers, risk_level="moderate")
-        elif data_client.risk_level == "high":
-            risks_form = RisksForm(initial=intervention_answers, risk_level="high")
-        else:
-            risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
-
+        risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
     return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed})
 
 def calculate_risk():
