@@ -1,57 +1,62 @@
-<!-- Look in questions in views to see how extends_varible gets set -->
-{% extends extends_variable %}
-{% load crispy_forms_tags %}
-{% load bootstrap3 %}
-{% block content %}
-{{ question_form.non_field_errors }}
-{%block patient_first_name%} {{ patient.name }}{%endblock%}
-{%block patient_age%} {{ patient.age }}{%endblock%}
-    <div class="row">
+{% extends 'app/baseWithSideBar.html' %}
+{%load static%}
+ {% load crispy_forms_tags %} {% load bootstrap3 %} {% block content %} 
+ {{ question_form.non_field_errors}} 
+{%block patient_first_name%} {{ patient.name }}{%endblock%} {%block patient_age%} {{ patient.age }}{%endblock%}
+<div class="row">
 
-        <div class="col-md-12">
-            <!--panel-->
-            <div class="panel panel-default" id="questions">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        {% if identity != "patient" %}
-                            <div id="pass-fail">
-                                <i class="pull-right"><button type='button' class='pass' >Pass</button> </i>
-                                <i class="pull-right"><button type='button' class='fail' >Fail</button> </i>
-                                <i class="pull-right">Auto: </i>
-                            </div>
-                        {% endif %}
-                        <h4>Self-Assessment</h4>
+    <div class="col-md-12">
+        <!--panel-->
+        <div class="panel panel-default" id="questions">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    {% if identity != "patient" %}
+                    <div id="pass-fail">
+                        <i class="pull-right"><button type='button' class='pass' >Pass</button> </i>
+                        <i class="pull-right"><button type='button' class='fail' >Fail</button> </i>
+                        <i class="pull-right">Auto: </i>
                     </div>
+
+                    {% endif %}
+                    <h4>Self-Assessment</h4>
                 </div>
-                <div class="panel-body" style="text-align: center;">
-                    <form method='post' class="self_assessment_questions">
-                        {% csrf_token %} {% for field in question_form%}
-                            {{ field.errors }}
-                            <div class="row question_row">
-                                <div class="col-md-9">
-                                    {{field.label}}
-                                </div>
-                                <div class="col-md-3">
-                                    {{field}}
-                                </div>
-                            </div>
-                        {% endfor %}
-                        <div class="control-group">
-                            <label></label>
-                            <div class="controls">
-                                <button type="submit" class="btn btn-primary">
+            </div>
+            <div class="panel-body" style="text-align: center;">
+                <form method='post' class="self_assessment_questions">
+                    {% csrf_token %} {% for field in question_form%} {{ field.errors }}
+                    <div class="row question_row">
+                        <div class="col-md-9">
+                            {{field.label}}
+                        </div>
+                        <div class="col-md-3">
+                            {{field}}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="control-group">
+                        <label></label>
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">
                                             Submit
                                         </button>
-                            </div>
                         </div>
+                    </div>
 
-                    </form>
-                </div>
-                <!--/panel content-->
+                </form>
             </div>
-            <!--/panel-->
+            <!--/panel content-->
         </div>
-        <!--/col-span-12-->
+        <!--/panel-->
+    </div>
+    <!--/col-span-12-->
 
 </div>
-{% endblock %}
+
+{% if identity == "patient" %}
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript">
+    $('.sidenav').remove()
+    $('.main').addClass('col-md-offset-1')
+
+</script>
+{%endif%} {% endblock %}
