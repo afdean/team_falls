@@ -1,41 +1,52 @@
-{% extends 'app/baseWithSideBar.html' %}
+{% extends 'app/baseWithSideBar.html' %}{% load bootstrap3 %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container ">
-        <div class="col-lg-9 question-form">
-            <form method='post' class="self_assessment_questions">
-                {% csrf_token %}
-                {% for field in question_form%}
-                <div class="row question_row">
-                    <div class="col-md-9">
-                        {{field.label}}
-                    </div>
-                    <div class="col-md-3">
-                        {{field}}
-                    </div>
-                </div>
-                {% endfor %}
-                <div class="row">
-                    <div class="col-lg-6 col-lg-offset-3 center_in_column">
-                        <input class="btn btn-primary" type="submit" value="Submit" id="questions_submit_button"/>
+    <div class="row">
+
+        <div class="col-md-12">
+            <!--panel-->
+            <div class="panel panel-default" id="questions">
+                <div class="panel-heading">
+                    <div class="panel-title">
+
+                        <div id="pass-fail">
+                            <i class="pull-right"><button type='button' class='pass' >Pass</button> </i>
+                            <i class="pull-right"><button type='button' class='fail' >Fail</button> </i>
+                            <i class="pull-right">Auto: </i>
+
+                        </div>
+                        <h4>Self-Assessment</h4>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="col-lg-1  auto-pass-fail">
-            <div class="row " id="pass-button">
-                <center>
-                    <h5>Auto</h5>
-                </center>
-                <div class="col-xs-12 text-center">
-                    <button class="btn btn-success" type="button">Pass  </button>
+                <div class="panel-body" style="text-align: center;">
+                    <form method='post' class="self_assessment_questions">
+                        {% csrf_token %} {% for field in question_form%}
+                            {{ field.errors }}
+                            <div class="row question_row">
+                                <div class="col-md-9">
+                                    {{field.label}}
+                                </div>
+                                <div class="col-md-3">
+                                    {{field}}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="control-group">
+                            <label></label>
+                            <div class="controls">
+                                <button type="submit" class="btn btn-primary">
+                                            Submit
+                                        </button>
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
+                <!--/panel content-->
             </div>
-            <div class="row" id="fail-button">
-                <div class="col-xs-12 text-center">
-                    <button class="btn btn-danger" type="button">Fail</button>
-                </div>
-            </div>
+            <!--/panel-->
         </div>
+        <!--/col-span-12-->
+
 </div>
 {% endblock %}
