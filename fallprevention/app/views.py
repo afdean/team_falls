@@ -348,7 +348,10 @@ def assessments(request):
     else:
         assessments_form = AssessmentForm();
     completed = get_sidebar_completed()
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed})
+    tests_completed = get_tests_completed()
+    # Comment this out later, just want to see it works
+    print(tests_completed)
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'tests_completed': tests_completed})
 
 def medications(request):
     data_client = DataClient()
@@ -417,7 +420,10 @@ def exams(request):
     else:
         exams_form = ExamsForm()
     completed = get_sidebar_completed()
-    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient, 'completed': completed})
+    exams_completed = get_exams_completed()
+    # Delete this out later, just want to see that it works
+    print(exams_completed)
+    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient, 'completed': completed, 'exams_completed': exams_completed})
 
 # User Login - Currently not working
 def user_login(request):
@@ -587,13 +593,37 @@ def get_sidebar_completed():
 
     return completed
 
-def tests_completed():
+def get_tests_completed():
     """
     Returns a list of completed tests
     """
+    completed = []
+    data_client = DataClient()
+    obs = data_client.observations
+    test_codes = []
 
-def exams_completed():
+    tests = data_client.func_test
+    for test in tests:
+        test_codes.append(test['code'])
+
+    for code in test_codes:
+        if code in obs:
+            completed.append(code)
+
+    return completed
+
+def get_exams_completed():
     """
     Returns a list of completed exams
     """
+    completed = []
+    data_client = DataClient()
+    obs = data_client.observations
 
+    for exam in data_client.physical_exam:
+        for form in exam['forms']:
+            if form['code'] in obs:
+                completed.append(exam['code'])
+                break
+
+    return completed
