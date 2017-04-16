@@ -50,3 +50,7 @@ class DataClient(metaclass=Singleton):
         # Used for displaying phyiscal exams
         self.exams_chosen = []
         self.patient_id = ""
+        # Keeping these separate because they aren't written to FHIR in any meaninful way. Plus, anybody
+        # doing this again can quickly review. 
+        self.medication_complete = False
+        self.risks_complete = False

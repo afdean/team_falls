@@ -274,7 +274,10 @@ class ExamsForm(forms.Form):
             self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 
 class RisksForm(forms.Form):
     """

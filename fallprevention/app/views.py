@@ -3,6 +3,7 @@ import json
 from .constants import *
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
+from django.conf import settings
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from app.forms import *
@@ -148,9 +149,12 @@ def questions(request):
         question_form = QuestionForm(initial=question_answers)
 
     if data_client.identity == "patient":
-        return render(request, 'app/questions_patient.html', {'question_form': question_form, 'patient': data_client.patient})
+        extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/base.html')
     else:
-        return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient})
+        extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/baseWithSideBar.html')
+
+    completed = get_sidebar_completed()
+    return render(request, 'app/questions.html', {'question_form': question_form, 'patient': data_client.patient, 'identity': data_client.identity, 'extends_variable': extends_variable, 'completed': completed})
 
 def thankyou(request):
     data_client = DataClient()
@@ -324,7 +328,8 @@ def assessments_details(request):
                         field_name = code
                         assessments_answers[field_name] = data_client.observations[code]
         assessments_form = AssessmentForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
+    completed = get_sidebar_completed()
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed})
 
 def assessments(request):
     data_client = DataClient()
@@ -342,21 +347,28 @@ def assessments(request):
                 return HttpResponseRedirect('/app/assessments/details')
     else:
         assessments_form = AssessmentForm();
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient})
+    completed = get_sidebar_completed()
+    tests_completed = get_tests_completed()
+    # Comment this out later, just want to see it works
+    print(tests_completed)
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'tests_completed': tests_completed})
 
 def medications(request):
     data_client = DataClient()
     calculate_risk()
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
+        print("Button is triggering")
         if medications_form.is_valid():
+            data_client.medication_complete = True
             if data_client.risk_level == "high":
                 return HttpResponseRedirect('/app/exams/')
             else:
                 return HttpResponseRedirect('/app/risks/')
     else:
         medications_form = MedicationsForm()
-    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient})
+    completed = get_sidebar_completed()
+    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed})
 
 def exams_details(request):
     data_client = DataClient()
@@ -388,7 +400,8 @@ def exams_details(request):
                         field_name = code
                         exam_answers[field_name] = data_client.observations[code]
         exams_form = ExamsForm(initial=exam_answers, exams_chosen=exams_chosen)
-    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
+    completed = get_sidebar_completed()
+    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient, 'completed': completed})
 
 def exams(request):
     data_client = DataClient()
@@ -406,11 +419,14 @@ def exams(request):
                 return HttpResponseRedirect('/app/exams/details')
     else:
         exams_form = ExamsForm()
-    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient})
+    completed = get_sidebar_completed()
+    exams_completed = get_exams_completed()
+    # Delete this out later, just want to see that it works
+    print(exams_completed)
+    return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient, 'completed': completed, 'exams_completed': exams_completed})
 
 # User Login - Currently not working
 def user_login(request):
-
     # If the request is a HTTP POST, try to pull out the relevant information.
     if request.method == 'POST':
         # Gather the username and password provided by the user.
@@ -465,7 +481,8 @@ def risks(request):
         risks_form = RisksForm(risk_level="high")
     else:
         risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
-    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list})
+    completed = get_sidebar_completed()
+    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed})
 
 def calculate_risk():
     """
@@ -540,8 +557,79 @@ def calculate_risk():
 
     return incomplete_list
 
+def get_sidebar_completed():
+    """
+    Returns a list of completed sidebar tasks
+    """
+    completed = []
+    data_client = DataClient()
+    obs = data_client.observations
+    question_code = data_client.questions['code']
+    test_codes = []
 
+    tests = data_client.func_test
+    for test in tests:
+        test_codes.append(test['code'])
 
+    if question_code in obs:
+        completed.append("screening")
+
+    for test_code in test_codes:
+        if test_code in obs:
+            completed.append("tests")
+            break
+
+    for exam in data_client.physical_exam:
+        for form in exam['forms']:
+            if form['code'] in obs:
+                completed.append("exams")
+                break
+
+    if data_client.medication_complete:
+        completed.append("medication")
+
+    if data_client.risks_complete:
+        completed.append("risks")
+
+    return completed
+
+def get_tests_completed():
+    """
+    Returns a list of completed tests
+    """
+    completed = []
+    data_client = DataClient()
+    obs = data_client.observations
+    test_codes = []
+
+    tests = data_client.func_test
+    for test in tests:
+        test_codes.append(test['code'])
+
+    for code in test_codes:
+        if code in obs:
+            completed.append(code)
+
+    return completed
+
+def get_exams_completed():
+    """
+    Returns a list of completed exams
+    """
+    completed = []
+    data_client = DataClient()
+    obs = data_client.observations
+
+    for exam in data_client.physical_exam:
+        for form in exam['forms']:
+            if form['code'] in obs:
+                completed.append(exam['code'])
+                break
+
+<<<<<<< HEAD
 def history(request):
 
     return render(request,'app/history.html',{})
+=======
+    return completed
+>>>>>>> origin/master

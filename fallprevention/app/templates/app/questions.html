@@ -1,4 +1,8 @@
-{% extends 'app/baseWithSideBar.html' %} {% load bootstrap3 %}{% load crispy_forms_tags %} {% block content %}
+<!-- Look in questions in views to see how extends_varible gets set -->
+{% extends extends_variable %}
+{% load crispy_forms_tags %}
+{% load bootstrap3 %}
+{% block content %}
 {{ question_form.non_field_errors }}
     <div class="row">
 
@@ -7,13 +11,13 @@
             <div class="panel panel-default" id="questions">
                 <div class="panel-heading">
                     <div class="panel-title">
-
-                        <div id="pass-fail">
-                            <i class="pull-right"><button type='button' class='pass' >Pass</button> </i>
-                            <i class="pull-right"><button type='button' class='fail' >Fail</button> </i>
-                            <i class="pull-right">Auto: </i>
-
-                        </div>
+                        {% if identity != "patient" %}
+                            <div id="pass-fail">
+                                <i class="pull-right"><button type='button' class='pass' >Pass</button> </i>
+                                <i class="pull-right"><button type='button' class='fail' >Fail</button> </i>
+                                <i class="pull-right">Auto: </i>
+                            </div>
+                        {% endif %}
                         <h4>Self-Assessment</h4>
                     </div>
                 </div>
