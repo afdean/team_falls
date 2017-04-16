@@ -51,6 +51,17 @@ class DataClient(metaclass=Singleton):
         self.exams_chosen = []
         self.patient_id = ""
         # Keeping these separate because they aren't written to FHIR in any meaninful way. Plus, anybody
-        # doing this again can quickly review. 
+        # doing this again can quickly review.
+        self.medication_complete = False
+        self.risks_complete = False
+    def reload_data(self):
+        self.risk_level = ""
+        self.patient = {}
+        self.encounter = {}
+        self.observations = {}
+        self.identity = "care_provider"
+        self.assessments_chosen = []
+        self.exams_chosen = []
+        self.patient_id = ""
         self.medication_complete = False
         self.risks_complete = False

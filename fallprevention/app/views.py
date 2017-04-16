@@ -19,6 +19,7 @@ def index(request):
 
 def login(request):
     data_client = DataClient()
+    data_client.reload_data()
     # Wipe whatever is in memory...?
     # data_client = DataClient().clean()
 
@@ -636,7 +637,7 @@ def get_exams_completed():
                 break
 
     return completed
-    
+
 def history(request):
 
     return render(request,'app/history.html',{})
