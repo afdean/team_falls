@@ -1,9 +1,13 @@
 {
   "name": "Questions Test",
   "code": "q000",
+  "description": "Pass or Fail",
+  "units": "Pass or Fail",
   "questions": [
     {
       "content": "In the past year I have fallen...",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_int",
       "code": "q001",
       "score": 2,
@@ -27,6 +31,8 @@
     },
     {
       "content": "I have been injured from a fall in the past year",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q003",
       "score": 0,
@@ -46,6 +52,8 @@
     },
     {
       "content": "Sometimes I feel unsteady when I am walking",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q004",
       "score": 2,
@@ -65,6 +73,8 @@
     },
     {
       "content": "I am worried about falling",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q005",
       "score": 1,
@@ -84,6 +94,8 @@
     },
     {
       "content": "I use or have been advised to use a cane or walker to get around safely",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q006",
       "score": 2,
@@ -103,6 +115,8 @@
     },
     {
       "content": "I steady myself by holding onto furniture when walking at home",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q007",
       "score": 1,
@@ -122,6 +136,8 @@
     },
     {
       "content": "I need to push with my hands to stand up from a chair",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q008",
       "score": 1,
@@ -141,6 +157,8 @@
     },
     {
       "content": "I have some trouble stepping up onto a curb",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q009",
       "score": 1,
@@ -160,6 +178,8 @@
     },
     {
       "content": "I often have to rush to the toilet",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q010",
       "score": 1,
@@ -179,6 +199,8 @@
     },
     {
       "content": "I have lost some feeling in my feet",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q011",
       "score": 1,
@@ -198,6 +220,8 @@
     },
     {
       "content": "I take medicine that sometimes makes me feel light-headed or more tired than usual",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q012",
       "score": "1",
@@ -217,6 +241,8 @@
     },
     {
       "content": "I take medicine to help me sleep or improve my mood",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q013",
       "score": 1,
@@ -236,6 +262,8 @@
     },
     {
       "content": "I often feel sad or depressed",
+      "description": "Yes or No (True or False)",
+      "units": "Yes or No (True or False)",
       "type": "choice_bool",
       "code": "q014",
       "score": 1,

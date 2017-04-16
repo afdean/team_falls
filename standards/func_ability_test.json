@@ -1,6 +1,8 @@
 [
   {
     "name": "Timed Up and Go Test",
+    "description": "Pass or Fail",
+    "units": "Pass or Fail",
     "is_recommended": true,
     "code": "tug000",
     "min_logic": {
@@ -24,6 +26,8 @@
     "forms": [
       {
         "content": "Patient unable to do TUG",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug001",
         "is_problem": true,
@@ -31,6 +35,8 @@
       },
       {
         "content": "TUG Time (seconds): ",
+        "description": "Time for Timed Up and Go Test",
+        "units": "Seconds",
         "code": "tug002",
         "type": "integer",
         "logic": "min_key",
@@ -40,6 +46,8 @@
       },
       {
         "content": "No problems",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug003",
         "is_problem": false,
@@ -47,6 +55,8 @@
       },
       {
         "content": "Loss of balance",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug004",
         "is_problem": true,
@@ -54,6 +64,8 @@
       },
       {
         "content": "Steadying self on walls",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug005",
         "is_problem": true,
@@ -61,6 +73,8 @@
       },
       {
         "content": "Shuffling",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug006",
         "is_problem": true,
@@ -68,6 +82,8 @@
       },
       {
         "content": "Short Stride",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug007",
         "is_problem": true,
@@ -75,6 +91,8 @@
       },
       {
         "content": "Little or no arm swing",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug008",
         "is_problem": true,
@@ -82,6 +100,8 @@
       },
       {
         "content": "En bloc turning",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug009",
         "is_problem": true,
@@ -89,6 +109,8 @@
       },
       {
         "content": "Not using assistive device properly",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "tug010",
         "is_problem": true,
@@ -98,6 +120,8 @@
   },
   {
     "name": "30-Second Chair Stand",
+    "description": "Pass or Fail",
+    "units": "Pass or Fail",
     "is_recommended": false,
     "code": "chair000",
     "more_info": {
@@ -148,6 +172,8 @@
     "forms": [
       {
         "content": "Time (seconds):",
+        "description": "Time for Timed Up and Go Test",
+        "units": "Seconds",
         "code": "chair002",
         "type": "integer",
         "is_required": true,
@@ -156,6 +182,8 @@
       },
       {
         "content": "Notes:",
+        "description": "Notes for 30 Second Chair Stand",
+        "units": "Notes for 30 Second Chair Stand",
         "code": "chair001",
         "help_text": "",
         "type": "char"
@@ -164,6 +192,8 @@
   },
   {
     "name": "4 Stage Balance Test",
+    "description": "Pass or Fail",
+    "units": "Pass or Fail",
     "is_recommended": false,
     "code": "bal000",
     "min_logic": {
@@ -188,6 +218,8 @@
     "forms": [
       {
         "content": "Stand with your feet side by side. Time (seconds):",
+        "description": "Time for 4 Stage Balance Test (Feet Side by Side)",
+        "units": "Seconds",
         "code": "bal002",
         "type": "integer",
         "is_required": "true",
@@ -196,6 +228,8 @@
       },
       {
         "content": "Place the instep of one foot so it is touching the big toe of the other foot. Time (seconds):",
+        "description": "Time for 4 Stage Balance Test (Instep touching Big Toe)",
+        "units": "Seconds",
         "code": "bal003",
         "type": "integer",
         "is_required": "true",
@@ -204,6 +238,8 @@
       },
       {
         "content": "Place one foot in front of the other, heel touching toe (tandem stance). Time (seconds):",
+        "description": "Time for 4 Stage Balance Test (Tandem Stance)",
+        "units": "Seconds",
         "code": "bal004",
         "type": "integer",
         "is_required": "true",
@@ -212,6 +248,8 @@
       },
       {
         "content": "Stand on one foot. Time (seconds):",
+        "description": "Time for 4 Stage Balance Test (Stand on One Foot)",
+        "units": "Seconds",
         "code": "bal005",
         "type": "integer",
         "is_required": "true",
@@ -220,6 +258,8 @@
       },
       {
         "content": "Notes:",
+        "description": "Notes for 30 Second Chair Stand",
+        "units": "Notes for 30 Second Chair Stand",
         "code": "bal001",
         "help_text": "",
         "type": "char"
