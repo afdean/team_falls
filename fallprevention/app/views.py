@@ -679,5 +679,5 @@ def get_exams_completed():
     return completed
 
 def history(request):
-
+    
     return render(request,'app/history.html',{})
