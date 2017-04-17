@@ -13,7 +13,7 @@
 <div class="row form-group" id="patient_education">
     <div class="col-md-8 col-md-offset-2">
         <div class="container-fluid risk_level">
-            <h2>Risk Level</h2>
+            <h3>Risk Level</h3>
             <div class="row level">
                 {% if risk_level == "incomplete" %}
                 <div class="col-lg-12">
@@ -48,7 +48,7 @@
 <div class="row form-group" id="patient_education">
     <div class="col-md-12">
                         <!--panel-->
-                        <div class="panel panel-default">
+                        <div class="panel panel-default" id="interventions">
                             <div class="panel-heading">
                                 <div class="panel-title">
                                     <h4>Interventions </h4>
@@ -81,11 +81,13 @@
 <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 <script type="text/javascript"> 
    var risk_level = "{{risk_level}}";
-   if(risk_level=="incomplete"){
        console.log(risk_level)
-       $('.btn').remove()
-         document.getElementsByTagName("input").remove();
+   
+   if(risk_level=="incomplete"){
+       $('#interventions').remove()
+       
    }
+ 
 </script>
 
 

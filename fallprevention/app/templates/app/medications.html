@@ -12,11 +12,11 @@
 
                     <div class="panel-body">
                         <form method='post' class="self_assessment_questions">
-                            <label for="exampleSelect2" id=""> Fall screening questions answered yes related to medication</label>                            {% if med_questions%} {% csrf_token %} {% for question in med_questions %} {{ question.errors
-                            }}
+                            <label for="exampleSelect2" id=""> Fall screening questions answered "yes" related to medication</label>                            {% if med_questions%} {% csrf_token %} {% for question in med_questions %} 
+                            {{ question.errors}}
                             <div class="row question_row">
                                 <div class="col-md-12">
-                                    {{question}}
+                                   <li> {{question}}</li>
                                 </div>
                                 <div class="col-md-3">
                                 </div>
