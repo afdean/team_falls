@@ -6,6 +6,7 @@
 form#id-examsForm{
     margin: auto; 
     overflow-y: auto;
+    overflow-x: hidden;
     width: 100%;
 }
 
@@ -35,6 +36,7 @@ p{
 }
     .main {
         overflow-y: auto;
+        overflow-x: hidden;
     }
     #id-examsForm fieldset{
         padding-bottom: 20px;

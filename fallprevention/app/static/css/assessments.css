@@ -28,6 +28,7 @@ form #assessment{
     margin-top: 80px;
     margin-right: 50px;
 }
+
     .checkbox label {
         font-size:20px;
     }
@@ -46,6 +47,7 @@ form#id-assessmentForm{
     width:100%;
     margin: auto; 
     overflow-y: auto;
+    overflow-x: hidden;
 }
 #id-assessmentForm legend {
     padding-top: 50px;
