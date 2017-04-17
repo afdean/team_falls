@@ -9,17 +9,19 @@
 .text-input{
      box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
-button{
+.buttons .btn{
     width:100%;
 }
-
+h2 {display:inline;}
+.patient-name{
+    padding-bottom: 20px;
+}
 .patient-block {
-    height: 250px;
     border-radius: 10px;
     border: 1px solid;
     border-color: #ddd;
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
-
+    padding: 20px;
     margin: 20;
 }
 .row-centered {

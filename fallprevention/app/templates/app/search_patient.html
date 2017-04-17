@@ -54,19 +54,21 @@
 
             <div class="col-lg-3  patient-block col-centered">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 ">
+                        <div class="patient-name">
                         {%for name in patient.resource.name.0.given%}
-                        <h2 id="name">{{name}}</h2>
+                        <h2 class="name">{{name}}</h2>
                         {%endfor%}
                         {%for name in patient.resource.name.0.family%}
-                          <h2 id="lastname">{{name}}</h2>
+                          <h2 class="name">{{name}}</h2>
                         {%endfor%}
+                        </div>
                         <div class="row">
-                            <div class="col-xs-4">
+                            <div class="col-xs-6">
                                 <p id="age">DOB:{{patient.resource.birthDate}}</p>
 
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-6">
                                 <p id="gender">{{patient.resource.gender}}</p>
                             </div>
                         </div>
@@ -79,18 +81,18 @@
                     <div class="row justify-content-end">
                         <div class="col-xs-12">
                             <form method="GET" action="{% url 'questions' %}">
-                                {%csrf_token%}
                                 <input type="submit" value= "Start" class="btn btn-success start" type="button" >
                                 <input type="hidden" value='{{patient}}' name="patient"/>
                             </form>
                         </div>
                     </div>
                     <div class="row justify-content-end">
+                          <div class="col-xs-12">
                         <form method="GET" action="{% url 'history' %}">
-                            {%csrf_token%}
                             <input type="submit" value= "History" class="btn btn-info history" type="button" >
                             <input type="hidden" value='{{patient}}' name="patient"/>
                         </form>
+                          </div>
                     </div>
                 </div>
                 <!--<div class="row justify-content-end">
