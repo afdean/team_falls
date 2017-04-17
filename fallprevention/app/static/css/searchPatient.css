@@ -2,7 +2,7 @@
     float: none;
     margin: 0 auto;
 }
-        
+
 .searchbar {
     margin-top: 30;
 }
@@ -12,7 +12,7 @@
 button{
     width:100%;
 }
-        
+
 .patient-block {
     height: 250px;
     border-radius: 10px;
@@ -36,8 +36,8 @@ button{
 
 .buttons .start{
     margin-bottom: 10px;
-    
-}     
+
+}
 #id-searchPatientForm #submit-id-submit{
     width:100%;
 

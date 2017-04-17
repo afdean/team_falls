@@ -78,19 +78,19 @@
                 <div class="buttons">
                     <div class="row justify-content-end">
                         <div class="col-xs-12">
-
-                                <form method="GET" action="{% url 'questions' %}">
-                                    {%csrf_token%}
-                                    <input type="submit" value= "Start" class="btn btn-success start" type="button" >
-                                    <input type="hidden" value='{{patient}}' name="patient"/>
-                                </form>
-
+                            <form method="GET" action="{% url 'questions' %}">
+                                {%csrf_token%}
+                                <input type="submit" value= "Start" class="btn btn-success start" type="button" >
+                                <input type="hidden" value='{{patient}}' name="patient"/>
+                            </form>
                         </div>
                     </div>
                     <div class="row justify-content-end">
-                        <div class="col-xs-12">
-                            <a href="{% url 'history' %}"><button class="btn btn-info history" type="button" >History</button></a>
-                        </div>
+                        <form method="GET" action="{% url 'history' %}">
+                            {%csrf_token%}
+                            <input type="submit" value= "History" class="btn btn-info history" type="button" >
+                            <input type="hidden" value='{{patient}}' name="patient"/>
+                        </form>
                     </div>
                 </div>
                 <!--<div class="row justify-content-end">

@@ -492,18 +492,12 @@ def risks(request):
                 for i, form in enumerate(intervention['forms']):
                     code = intervention['forms'][i]['code']
                     if code in risks_form.cleaned_data:
-                        print("Here is the cleaned data")
-                        print(risks_form.cleaned_data)
                         answer = risks_form.cleaned_data[code]
-                        print("Here is the answer")
-                        print(answer)
                         data_client.observations[code] = answer
             return HttpResponseRedirect('/app/risks')
     else:
         intervention_answers = {}
         for key, intervention in data_client.intervention_list.items():
-            # print(key)
-            # print(intervention)
             for i, form in enumerate(intervention['forms']):
                 code = intervention['forms'][i]['code']
                 if code in data_client.observations:
@@ -514,7 +508,6 @@ def risks(request):
         print(data_client.observations)
         print("Here are intervention answers")
         print(intervention_answers)
-        # print(data_client.observations)
         if data_client.risk_level == "low":
             risks_form = RisksForm(initial=intervention_answers, risk_level="low")
         elif data_client.risk_level == "moderate":
