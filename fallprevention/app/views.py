@@ -67,27 +67,24 @@ def login_patient(request):
 def search_patient(request):
     data_client = DataClient()
     patient_list = []
-   
+
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
             data_client = DataClient()
             patient_name = search_patient_form.cleaned_data['patient_name'].split()
             # Search for a patient by first and last name
-            #TODO error check fot the search result
             patient_list = data_client.fhir_client.search_patient(patient_name[0], patient_name[1])
             # if patient_list:
                 # data_client.patient = patient_list[0]
                 # data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
             # url = '/app/questions/'
             # return HttpResponseRedirect(url)
-        # if search_patient_form.is_valid():
     else:
         search_patient_form = SearchPatientForm()
         if data_client.identity != "care_provider":
             return HttpResponseRedirect('/app/login/')
-    
-    
+
     patient_paginator = Paginator(patient_list, 3)
 
     page = request.GET.get('page')
@@ -100,25 +97,37 @@ def search_patient(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         patient_list = patient_paginator.page(patient_paginator.num_pages)
 
-
-
     return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patients': patient_list})
+
+def history(request):
+    data_client = DataClient()
+    encounter_list = []
+    if (request.GET.get('patient') != None):
+        data_client.patient = literal_eval(request.GET.get('patient'))
+        data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
+        encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['status'] != "in-progress")
+    # encounter_order = ['in-progress', 'arrived', 'finished']
+    return render(request,'app/history.html',{'encounters': encounter_list, 'patient': data_client.patient})
 
 def questions(request):
     data_client = DataClient()
     if (request.GET.get('patient') != None):
         data_client.patient = literal_eval(request.GET.get('patient'))
-    # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
-    encounter_list = data_client.fhir_client.search_encounter_all()
-    if encounter_list:
-        #status for encounter finished/in-progress/arrived/...
-        if encounter_list[0]['resource']['status'] == "in-progress":
-            data_client.encounter = encounter_list[0]
-            data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
-        else:
-            data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+        data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
+    if (request.GET.get('encounter_id') != None):
+        data_client.fhir_client.select_encounter(request.GET.get('encounter_id'))
+        data_client.observations = data_client.fhir_client.search_observations()
     else:
         data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+        # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
+        # if encounter_list:
+        #     #status for encounter finished/in-progress/arrived/...
+        #     if encounter_list[0]['resource']['status'] == "in-progress":
+        #         data_client.encounter = encounter_list[0]
+        #         data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
+        #     else:
+        #         data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+        # else:
 
     completed = get_sidebar_completed()
     if request.method == 'POST':
@@ -149,6 +158,8 @@ def questions(request):
             else:
                 data_client.observations[questions_code] = "Fail"
             # print(data_client.observations)
+            # save observations to FHIR server
+            data_client.fhir_client.write_list_of_observations_to_fhir(data=data_client.observations)
             if data_client.identity == 'patient':
                 return HttpResponseRedirect('/app/thankyou/')
             else:
@@ -327,7 +338,8 @@ def assessments_details(request):
                 if "chair000" not in data_client.observations:
                     data_client.observations["chair000"] = "Pass"
 
-
+            #save observations to FHIR server
+            data_client.fhir_client.write_list_of_observations_to_fhir(data=data_client.observations)
             # Wipe clean for next iteration through, if desired to do more assessments
             data_client.assessments_chosen = []
 
@@ -419,6 +431,8 @@ def exams_details(request):
             # Clear this for the next iteration...
             data_client.exams_chosen = []
             # Exams is last stop before risks, all levels go to risks including incomplete
+            #save observations to FHIR server
+            data_client.fhir_client.write_list_of_observations_to_fhir(data=data_client.observations)
             return HttpResponseRedirect('/app/risks/')
     else:
         exam_answers = {}
@@ -510,6 +524,8 @@ def risks(request):
                     if code in risks_form.cleaned_data:
                         answer = risks_form.cleaned_data[code]
                         data_client.observations[code] = answer
+            #save observations to FHIR server
+            data_client.fhir_client.write_list_of_observations_to_fhir(data=data_client.observations)
             return HttpResponseRedirect('/app/risks')
     else:
         intervention_answers = {}
@@ -677,7 +693,3 @@ def get_exams_completed():
                 break
 
     return completed
-
-def history(request):
-    
-    return render(request,'app/history.html',{})

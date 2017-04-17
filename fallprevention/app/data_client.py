@@ -70,7 +70,7 @@ class DataClient(metaclass=Singleton):
         self.exams_chosen = []
         self.patient_id = ""
         self.medication_complete = False
-        self.risks_complete = False
+        self.risks_complete = False        
 
     def create_fhir_dict(self):
         self.fhir_dict = {}
