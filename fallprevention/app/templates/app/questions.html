@@ -20,7 +20,7 @@
                     <h4>Self-Assessment</h4>
                 </div>
             </div>
-            <div class="panel-body" style="text-align: center;">
+            <div class="panel-body forms" style="text-align: center;">
                 <form method='post' class="self_assessment_questions">
                     {% csrf_token %} {% for field in question_form%} {{ field.errors }}
                     <div class="row question_row">

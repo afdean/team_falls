@@ -17,6 +17,16 @@
     margin-right: 100px;
     width: 100%;
 }
-.form-group{
+#medications .form-control{
+    height: 100%;
     width: 100%;
+    display: inline;
+}
+#medications .panel-body{
+    padding: 0px;
+}
+#medications select[multiple], select[size] {
+    height: auto;
+    border: none;
+    outline: none;
 }

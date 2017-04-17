@@ -6,6 +6,7 @@
     margin-top: 80px;
     width: 100%;
     height: 50%;
+    padding: 10px;
   
 }
 #pass-button{
@@ -68,4 +69,7 @@ button{
 .question_row{
 
     text-align: left;
+}
+ .panel-body{
+    padding: 10px;
 }
