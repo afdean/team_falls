@@ -46,15 +46,35 @@
 </div>
 
 <div class="row form-group" id="patient_education">
+    <div class="col-md-12">
+                        <!--panel-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h4>Interventions </h4>
 
-    <div class="col-md-12 results_form ">
+
+                                </div>
+                            </div>
+                            <div class="panel-body forms" id="assessments">
+
+
+  {% crispy risks_form %}
+              <button class="btn" style="background-color: lightblue;"> Print</button> 
+                            </div>
+                            <!--/panel content-->
+                        </div>
+                        <!--/panel-->
+                    </div>
+                    <!--/col-span-6-->
+
+    <!--<div class="col-md-12 results_form ">
         <div class="container-fluid panel-body">
             <div class=" row justify-content-end">
-                {% crispy risks_form %}
-              <button class="btn" style="background-color: lightblue;"> Print</button> 
+              
             </div>
         </div>
-    </div>
+    </div>-->
 
 </div>
 
