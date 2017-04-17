@@ -13,7 +13,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from ast import literal_eval
 from datetime import date
 import math
-
+from django.core.paginator import Paginator
 
 # Home screen
 def index(request):
@@ -67,6 +67,7 @@ def login_patient(request):
 def search_patient(request):
     data_client = DataClient()
     patient_list = []
+   
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():
@@ -85,6 +86,21 @@ def search_patient(request):
         search_patient_form = SearchPatientForm()
         if data_client.identity != "care_provider":
             return HttpResponseRedirect('/app/login/')
+    
+    
+    patient_paginator = Paginator(patient_list, 3)
+
+    page = request.GET.get('page')
+    try:
+        patient_list = patient_paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        patient_list = patient_paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        patient_list = patient_paginator.page(patient_paginator.num_pages)
+
+
 
     return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patients': patient_list})
 

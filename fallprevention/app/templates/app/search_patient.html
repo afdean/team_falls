@@ -110,13 +110,24 @@
         </div>
 
         <!--PAGINATION-->
+      
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3">
-                <ul class="pagination" style="display: flex; margin: auto;">
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
+            <div class="pagination">
+    <span class="step-links">
+        {% if patients.has_previous %}
+            <a href="?page={{ patients.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ patients.number }} of {{ patients.paginator.num_pages }}.
+        </span>
+
+        {% if patients.has_next %}
+            <a href="?page={{ patients.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
             </div>
         </div>
         <!--END PAGINATION-->
