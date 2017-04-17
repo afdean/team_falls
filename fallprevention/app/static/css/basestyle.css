@@ -46,9 +46,14 @@ font-size: 14px;
       padding-top: 20px;
       background-color: #075290;
       height: 100%;
+  
     }
     .sidenav li, a{
       color: white;
+    }
+
+    .nav{
+      position: fixed;
     }
 
    
@@ -96,14 +101,20 @@ font-size: 14px;
 
  
     /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 900px) {
       .sidenav {
         height: auto;
         padding: 15px;
       }
+      .nav{
+         position: relative;
+        
+      }
       .row.content {height:auto;} 
     }
+
   
+
 .forms{
   padding: 10px;
 }

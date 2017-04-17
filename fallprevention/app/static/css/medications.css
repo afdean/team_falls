@@ -1,6 +1,4 @@
-#problems, #medications{
-    width: 300px;
-}
+
 
 #medications_linked_to_falls{
     width: 740px;
@@ -29,4 +27,7 @@
     height: auto;
     border: none;
     outline: none;
+}
+.panel #medications{
+    width: 100%;
 }

@@ -1,9 +1,12 @@
-$(document).ready(function () {
-//   $(".nav li").removeClass("active");//this will remove the active class from  
-                                     //previously active menu item 
-  $('#home').addClass('active');
-  //for demo
-  //$('#demo').addClass('active');
-  //for sale 
-  //$('#sale').addClass('active');
-});
+
+// Main function that is called throughout sessions
+var main = function () {
+  "use strict";
+  $(".nav a").on("click", function () {
+    
+    $(".nav .nav-stacked").find(".active").removeClass("active");
+    $(this).parent().addClass("active");
+    console.log($(this))
+  });
+}
+$(document).ready(main);

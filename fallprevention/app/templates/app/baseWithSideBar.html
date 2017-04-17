@@ -8,7 +8,7 @@
 
 <!-- Left column -->
 
-<ul class="nav nav-stacked" style="position:fixed;">
+<ul class="nav nav-stacked" >
 
 
   <li class="nav-header">
@@ -20,13 +20,20 @@
         {%endfor%}
         <h4 class="" id="patient-age">DOB: {{patient.resource.birthDate}}</h4>
       </div>
+      <li class="active" id="questions_li">
+        <a href="{% url 'questions' %}">Fall Screening</a></li>
+      <li><a href="{% url 'assessments' %}">Assessment</a></li>
+      <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
+      <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
+      <li><a href="{% url 'risks' %}" id="risks_li">Results</a></li>
+
+
+      {% if identity != "patient" %}
+      <a href="/app/search"><button class="btn" style="background-color: red;"> END</button></a> {%else%}
+      <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a> {%endif%}
   </li>
 
-  <li class="active" id="questions_li"><a href="{% url 'questions' %}">Fall Screening</a></li>
-  <li><a href="{% url 'assessments' %}">Assessment</a></li>
-  <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
-  <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
-  <li><a href="{% url 'risks' %}" id="risks_li">Results</a></li>
+
 
   <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display
       <!--{% if completed is not None %}
@@ -38,13 +45,7 @@
       {% endif %}
         <a href="/app/search"><button class="btn" style="background-color: red;"> END</button>
         </a>-->
-  {% if identity != "patient" %}
-   <a href="/app/search"><button class="btn" style="background-color: red;"> END</button></a> 
 
-  {%else%}
-     <a href="/app/login"><button class="btn" style="background-color: red;"> END</button></a> 
-  
-  {%endif%}
   </ul>
   </li>
 
