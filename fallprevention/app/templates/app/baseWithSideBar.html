@@ -8,7 +8,7 @@
 
 <!-- Left column -->
 
-<ul class="nav nav-stacked" >
+<ul class="nav nav-stacked">
 
 
   <li class="nav-header">
@@ -20,12 +20,13 @@
         {%endfor%}
         <h4 class="" id="patient-age">DOB: {{patient.resource.birthDate}}</h4>
       </div>
-      <li class="active" id="questions_li">
+      <li class="active" id="screening">
         <a href="{% url 'questions' %}">Fall Screening</a></li>
-      <li><a href="{% url 'assessments' %}">Assessment</a></li>
-      <li><a href="{% url 'medications' %}" id="medications_li">Medications</a></li>
-      <li><a href="{% url 'exams' %}" id="exams_li">Exams</a></li>
-      <li><a href="{% url 'risks' %}" id="risks_li">Results</a></li>
+      <li><a href="{% url 'assessments' %}" id="assessments">Assessment</a></li>
+      <li><a href="{% url 'exams' %}" id="exams">Exams</a></li>
+      <li><a href="{% url 'medications' %}" id="medications" id="medications">Medications</a></li>
+
+      <li><a href="{% url 'risks' %}" id="risks">Results</a></li>
 
 
       {% if identity != "patient" %}
@@ -35,16 +36,6 @@
 
 
 
-  <!-- Look at get_completed_sidebar in views to see exact names returned to know what to display
-      <!--{% if completed is not None %}
-          {% for task in completed %}
-            {% if task %}
-                <li>{{ task }} completed (style this...)</li>
-            {% endif %}
-          {% endfor %}
-      {% endif %}
-        <a href="/app/search"><button class="btn" style="background-color: red;"> END</button>
-        </a>-->
 
   </ul>
   </li>
@@ -54,7 +45,26 @@
 
 
 
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript">
+  var completed = "{{completed}}";
+  completed = completed.replace(/[^a-zA-Z True]+/g, ' ');
+  // completed = replaceAll(completed,'True','');
+  completed = completed.split('True')
+  console.log(completed);
+  for (item in completed) {
+    var navItem = completed[item].trim();
+    console.log(navItem)
+    for (item in completed) {
+      $("#" + navItem).wrap("<del>");
+    }
+  }
 
+  function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+  }
+
+</script>
 
 
 

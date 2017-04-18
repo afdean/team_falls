@@ -665,7 +665,7 @@ def get_sidebar_completed():
 
     for test_code in test_codes:
         if test_code in obs:
-            completed["tests"] = True
+            completed["assessments"] = True
             break
 
     for exam in data_client.physical_exam:

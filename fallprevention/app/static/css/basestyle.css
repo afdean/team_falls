@@ -16,12 +16,16 @@ body {
 a .btn:hover {
     background-color: transparent;
 }
+a{
+  color: grey;
+}
 
 .patient-info{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   list-style: none;
   margin-bottom: 30px;
+  color: black
 }
 
 
@@ -44,11 +48,14 @@ font-size: 14px;
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #075290;
+      background-color: white;
       height: 100%;
   
     }
     .sidenav li, a{
+      color: grey;
+    }
+    .sidenav .btn{
       color: white;
     }
 
