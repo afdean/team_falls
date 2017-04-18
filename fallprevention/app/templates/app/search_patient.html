@@ -1,9 +1,4 @@
-{% extends 'app/base.html' %} {%load static%} 
-{%load static%} {% load crispy_forms_tags %}
-
-
-
-{% block content %}
+{% extends 'app/base.html' %} {%load static%} {%load static%} {% load crispy_forms_tags %} {% block content %}
 <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 <script type="text/javascript">
     $('.sidenav').remove()
@@ -11,100 +6,96 @@
 
 </script>
 
-    <div class="container-fluid">
-        <!--Search Bar-->
-        <div class="row searchbar">
-            <div class="col-lg-10 col-lg-offset-1">
-                {% crispy search_patient_form %}
+<div class="container-fluid">
+    <!--Search Bar-->
+    <div class="row searchbar">
+        <div class="col-lg-10 col-lg-offset-1">
+            {% crispy search_patient_form %}
+
+        </div>
+    </div>
+    <!--Search Bar end-->
+    <div class="row row-centered">
+        <!--Patient BLOCK-->
+        {%for patient in patients%}
+
+
+        <div class="row row-centered  patient-block col-centered">
+            <div class="col-lg-10 col-lg-offset-1 ">
+                <div class="patient-name">
+                    {%for name in patient.resource.name.0.given%}
+                    <h2 class="name">{{name}}</h2>
+                    {%endfor%} {%for name in patient.resource.name.0.family%}
+                    <h2 class="name">{{name}}</h2>
+                    {%endfor%}
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p id="age">DOB:{{patient.resource.birthDate}}</p>
+
+                    </div>
+                    <div class="col-xs-6">
+                        <p id="gender">{{patient.resource.gender}}</p>
+                    </div>
+                </div>
 
             </div>
-        </div>
-        <!--Search Bar end-->
-        <div class="row row-centered">
-            <!--Patient BLOCK-->
-            {%for patient in patients%}
 
-
-            <div class="col-lg-3  patient-block col-centered">
-                <div class="row">
-                    <div class="col-xs-12 ">
-                        <div class="patient-name">
-                        {%for name in patient.resource.name.0.given%}
-                        <h2 class="name">{{name}}</h2>
-                        {%endfor%}
-                        {%for name in patient.resource.name.0.family%}
-                          <h2 class="name">{{name}}</h2>
-                        {%endfor%}
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <p id="age">DOB:{{patient.resource.birthDate}}</p>
-
-                            </div>
-                            <div class="col-xs-6">
-                                <p id="gender">{{patient.resource.gender}}</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="buttons">
-                    <div class="row justify-content-end">
-                        <div class="col-xs-12">
-                            <form method="GET" action="{% url 'questions' %}">
-                                <input type="submit" value= "Start" class="btn btn-success start" type="button" >
-                                <input type="hidden" value='{{patient}}' name="patient"/>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row justify-content-end">
-                          <div class="col-xs-12">
-                        <form method="GET" action="{% url 'history' %}">
-                            <input type="submit" value= "History" class="btn btn-info history" type="button" >
-                            <input type="hidden" value='{{patient}}' name="patient"/>
+            <div class="buttons">
+                <div class="row justify-content-end">
+                    <div class="col-xs-12">
+                        <form method="GET" action="{% url 'questions' %}">
+                            <input type="submit" value="Start" class="btn btn-success start" type="button">
+                            <input type="hidden" value='{{patient}}' name="patient" />
                         </form>
-                          </div>
                     </div>
                 </div>
-                <!--<div class="row justify-content-end">
+                <div class="row justify-content-end">
+                    <div class="col-xs-12">
+                        <form method="GET" action="{% url 'history' %}">
+                            <input type="submit" value="History" class="btn btn-info history" type="button">
+                            <input type="hidden" value='{{patient}}' name="patient" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--<div class="row justify-content-end">
                         <div class="col-xs-12">
                             <a href="{% url 'questions' %}"><button class="btn btn-success" type="button" >History</button></a>
                         </div>
                     </div>-->
 
-            </div>
 
-            {%endfor%}
-            <!--/END-->
+        {%endfor%}
+        <!--/END-->
 
 
-        </div>
+    </div>
 
-        <!--PAGINATION-->
-      
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-3">
+    <!--PAGINATION-->
+
+    <div class="row">
+        <div class="col-lg-12 col-centered">
             <div class="pagination">
-    <span class="step-links">
+                <span class="step-links">
         {% if patients.has_previous %}
             <a href="?page={{ patients.previous_page_number }}">previous</a>
         {% endif %}
 
         <span class="current">
             Page {{ patients.number }} of {{ patients.paginator.num_pages }}.
-        </span>
-
         {% if patients.has_next %}
-            <a href="?page={{ patients.next_page_number }}">next</a>
-        {% endif %}
-    </span>
-</div>
+                <a href="?page={{ patients.next_page_number }}">next</a> {% endif %}
+                </span>
             </div>
         </div>
-        <!--END PAGINATION-->
     </div>
+    <!--END PAGINATION-->
+</div>
 
 
 

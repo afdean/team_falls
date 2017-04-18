@@ -17,12 +17,13 @@ h2 {display:inline;}
     padding-bottom: 20px;
 }
 .patient-block {
+    width: 80%;
     border-radius: 10px;
     border: 1px solid;
     border-color: #ddd;
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
     padding: 20px;
-    margin: 20;
+    margin: 20px;
 }
 .row-centered {
     text-align:center;
@@ -31,7 +32,7 @@ h2 {display:inline;}
     display:inline-block;
     float:none;
     /* reset the text-align */
-    text-align:left;
+    text-align:center;
     /* inline-block space fix */
     /*margin-right:-4px;*/
 }
