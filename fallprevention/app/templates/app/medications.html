@@ -1,5 +1,4 @@
-{% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %}
-{%block patient_first_name%} {{ patient.name}}{%endblock%}
+{% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %} {%block patient_first_name%} {{ patient.name}}{%endblock%}
 {%block patient_age%} {{ patient.age }}{%endblock%}
 <div class="row justify-content-between medication_block">
     <div class="col-lg-12">
@@ -12,11 +11,10 @@
 
                     <div class="panel-body">
                         <form method='post' class="self_assessment_questions">
-                            <label for="exampleSelect2" id=""> Fall screening questions answered "yes" related to medication</label>                            {% if med_questions%} {% csrf_token %} {% for question in med_questions %}
-                            {{ question.errors}}
+                            <label for="exampleSelect2" id=""> Fall screening questions answered "yes" related to medication</label>                            {% if med_questions%} {% csrf_token %} {% for question in med_questions %} {{ question.errors}}
                             <div class="row question_row">
                                 <div class="col-md-12">
-                                   <li> {{question}}</li>
+                                    <li> {{question}}</li>
                                 </div>
                                 <div class="col-md-3">
                                 </div>
@@ -79,39 +77,8 @@
     </div>
     <div class="col-lg-6">
 
-        <!--panel-->
-        <div class="panel panel-default" id="medications">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4>Questions Related to Medication</h4>
-                </div>
-            </div>
-            <div class="panel-body forms" id="problems">
-
-                <select multiple class="form-control">
-                <!--Hard coded-->
-                {% if "screening" in completed %}
-                  {% if med_questions%} {% csrf_token %}
-                  {% for question in med_questions %}
-                  {{ question.errors}}
-                    <option> {{question}}</option>
-                    {% endfor %}
-                {% else %}
-                  <option> Fall screening must be completed to display answers </option>
-                  {% endif %}
-                {% endif %}
-             </select>
-            </div>
-            <!--/panel content-->
-        </div>
-        <!--/panel-->
 
 
-    </div>
-</div>
-
-<div class="row medication_block">
-    <div class="col-lg-12">
 
         <!--panel-->
         <div class="panel panel-default" id="medications">
@@ -132,8 +99,43 @@
             <!--/panel content-->
         </div>
         <!--/panel-->
-        <button type="submit" class="btn btn-primary" id="">Submit</button>
+    
 
+    </div>
+</div>
+
+<div class="row medication_block">
+    <div class="col-lg-12">
+        <!--panel-->
+        <div class="panel panel-default" id="medications">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h4>Questions Related to Medication</h4>
+                </div>
+            </div>
+            <div class="panel-body forms" id="problems">
+
+                <select multiple class="form-control">
+                <!--Hard coded-->
+                {% if "screening" in completed %}
+                  {% if med_questions%} 
+                  {% csrf_token %}
+                  {% for question in med_questions %}
+                  {{ question.errors}}
+                    <option> {{question}}</option>
+                  {% endfor %}
+                {% else %}
+                  <option> Fall screening must be completed to display answers </option>
+                  {% endif %}
+                {% endif %}
+             </select>
+            </div>
+            <!--/panel content-->
+        </div>
+        <!--/panel-->
+
+
+    <button type="submit" class="btn btn-primary" id="">Submit</button>
 
 
     </div>
@@ -147,9 +149,8 @@
 
 <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 <script type="text/javascript">
-var completed = "{{completed}}";
-console.log(completed)
-
+    var completed = "{{completed}}";
+    console.log(completed)
 
 </script>
 
