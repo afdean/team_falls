@@ -3,13 +3,17 @@
     <ul class="nav nav-stacked collapse in" id="userMenu">
 
         <div class="patient-info">
-            <h2 class="" id="patient-name">{{patient.name}}</h2>
-            <h4 class="" id="patient-age">{{patient.age}}</h4>
+            {%for name in patient.resource.name.0.given%}
+            <h2 class="" id="name">{{name}}</h2>
+
+            {%endfor%}
+            <h4 class="" id="patient-age">DOB: {{patient.resource.birthDate}}</h4>
         </div>
 </li>
 
 
-{%endblock%} {% block content %}
+{%endblock%} {% block content %} {%for encounter in encounters%}
+
 <div class="row ecounter">
 
     <div class="col-md-12">
@@ -21,26 +25,25 @@
                 </div>
             </div>
             <div class="panel-body forms">
+                <h2>ID: {{encounter.resource.id}}</h2>
+                <h3>Status: {{encounter.resource.status}}</h3>
 
 
-            </div>
-            <!--/panel content-->
-        </div>
-        <!--/panel-->
-    </div>
-</div>
-<div class="row ecounter">
+                <div class="buttons">
+                    <div class="row justify-content-end">
+                        <div class="col-xs-12">
+                            <form method="GET" action="{% url 'questions' %}">
 
-    <div class="col-md-12">
-        <!--panel-->
-        <div class="panel panel-default" id="exams">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4>Encounter</h4>
+                                {% ifnotequal encounter.resource.status "finished"%}
+                                <input type="submit" value="Resume" class="btn btn-success start" type="button">
+                                <input type="hidden" value='{{encounter}}' name="encounter" /> {%else%}
+                                <input type="submit" value="Review" class="btn btn-basic start" type="button">
+                                <input type="hidden" value='{{encounter}}' name="encounter" /> {%endifnotequal%}
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="panel-body forms">
-                
 
             </div>
             <!--/panel content-->
@@ -48,24 +51,4 @@
         <!--/panel-->
     </div>
 </div>
-<div class="row ecounter">
-
-    <div class="col-md-12">
-        <!--panel-->
-        <div class="panel panel-default" id="exams">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4>Encounter</h4>
-                </div>
-            </div>
-            <div class="panel-body forms">
-
-
-            </div>
-            <!--/panel content-->
-        </div>
-        <!--/panel-->
-    </div>
-</div>
-
-{% endblock %}
+{%endfor%} {% endblock %}
