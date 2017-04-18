@@ -12,7 +12,7 @@
 </li>
 
 
-{%endblock%} {% block content %} {%for encounter in encounters%}
+{%endblock%} {% block content %} {% if encounters%} {%for encounter in encounters%}
 
 <div class="row ecounter">
 
@@ -51,4 +51,12 @@
         <!--/panel-->
     </div>
 </div>
-{%endfor%} {% endblock %}
+{%endfor%} {%else%}
+
+<center>
+        <p id="history">No History</p>
+        <a href="/app/search">
+            <h3>Click to Return</h3>
+        </a>
+</center>
+{%endif%} {% endblock %}
