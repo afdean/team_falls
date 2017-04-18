@@ -742,5 +742,29 @@
     "date": "2015-12",
     "gpi_codes": [],
     "rx_codes": []
+  },
+  {
+    "name": "Cetirizine",
+    "date": "2015-12",
+    "gpi_codes": [],
+    "rx_codes": [210596]
+  }
+  {
+    "name": "Promethazine",
+    "date": "2015-12",
+    "gpi_codes": [],
+    "rx_codes": [312664]
+  },
+  {
+    "name": "Lisinopril",
+    "date": "2015-12",
+    "gpi_codes": [],
+    "rx_codes": [314077]
+  },
+  {
+    "name": "Meclizine",
+    "date": "2015-12",
+    "gpi_codes": [],
+    "rx_codes": [311470]
   }
 ]

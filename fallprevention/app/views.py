@@ -407,18 +407,22 @@ def medications(request):
 
     # Just return something that I can pull name and code from
     med = data_client.fhir_client.search_medication()
-    # if med is not None:
-    #     for thing in med:
-            # med_names.append things anme
-            # med_codes.append things code
+    if med is not None:
+        for order in med:
+            code = order['resource']['medicationCodeableConcept']['coding'][0]['code']
+            name = order['resource']['medicationCodeableConcept']['coding'][0]['display']
+            med_names.append(name)
+            med_codes.append(code)
 
-    # for i, code in enumerate(med codes)
-    #   for med in data_client.medication
-    #       for tem in med.rx_codes
-    #           if code == item
-    #               med_linked_names.append med_names[i]
+    for i, code in enumerate(med_codes):
+      for med in data_client.medication:
+          for item in med["rx_codes"]:
+              if code == item:
+                  med_linked_names.append(med_names[i])
 
-    #pass in med_names and med_linked_names
+    print(med_names)
+    print(med_codes)
+    print(med_linked_names)
 
 
     if request.method == 'POST':
@@ -432,7 +436,7 @@ def medications(request):
                 return HttpResponseRedirect('/app/risks/')
     else:
         medications_form = MedicationsForm()
-    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed, 'med_questions': med_questions})
+    return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed, 'med_questions': med_questions, 'med_names': med_names, 'med_linked_names': med_linked_names})
 
 def exams_details(request):
     data_client = DataClient()
