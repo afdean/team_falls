@@ -4,93 +4,184 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-forms	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django import forms$/;"	namespace	line:1
-models	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.db import models$/;"	namespace	line:2
-ModelForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.forms import ModelForm$/;"	namespace	line:3
-FormHelper	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.helper import FormHelper$/;"	namespace	line:5
-Layout	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-Div	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-Submit	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-HTML	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-Button	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-Row	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-Field	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-Fieldset	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:6
-AppendedText	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:7
-PrependedText	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:7
-FormActions	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:7
-Question	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from .models import Question$/;"	namespace	line:9
-DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from app.data_client import DataClient$/;"	namespace	line:10
-validate_search_patient	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def validate_search_patient(patient_name):$/;"	function	line:12
-generate_form	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def generate_form(field, field_widget=None, field_choices=None, is_required=False):$/;"	function	line:19
-LoginForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginForm(forms.Form):$/;"	class	line:61
-identity	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    identity = forms.TypedChoiceField($/;"	variable	line:62	class:LoginForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label='Identify who you are',$/;"	variable	line:63	class:LoginForm
-choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices=(('patient', 'Patient'),$/;"	variable	line:64	class:LoginForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:66	class:LoginForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:68	class:LoginForm
-LoginCPForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginCPForm(forms.Form):$/;"	class	line:76
-username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:77	class:LoginCPForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Username:",$/;"	variable	line:78	class:LoginCPForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:79	class:LoginCPForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:80	class:LoginCPForm
-password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:82	class:LoginCPForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Password:",$/;"	variable	line:83	class:LoginCPForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.PasswordInput,$/;"	variable	line:84	class:LoginCPForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:85	class:LoginCPForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:86	class:LoginCPForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:88	class:LoginCPForm
-LoginPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginPatientForm(forms.Form):$/;"	class	line:96
-username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:97	class:LoginPatientForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Username:",$/;"	variable	line:98	class:LoginPatientForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:99	class:LoginPatientForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:100	class:LoginPatientForm
-password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:102	class:LoginPatientForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Password:",$/;"	variable	line:103	class:LoginPatientForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.PasswordInput,$/;"	variable	line:104	class:LoginPatientForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:105	class:LoginPatientForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:106	class:LoginPatientForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:108	class:LoginPatientForm
-SearchPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class SearchPatientForm(forms.Form):$/;"	class	line:116
-patient_name	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    patient_name = forms.CharField($/;"	variable	line:117	class:SearchPatientForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Patient Name:",$/;"	variable	line:118	class:SearchPatientForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:119	class:SearchPatientForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:120	class:SearchPatientForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:123	class:SearchPatientForm
-QuestionForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class QuestionForm(forms.Form):$/;"	class	line:131
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:132	class:QuestionForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:153	class:QuestionForm
-AssessmentDetailsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class AssessmentDetailsForm(forms.Form):$/;"	class	line:172
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:173	class:AssessmentDetailsForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:195	class:AssessmentDetailsForm
-AssessmentForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class AssessmentForm(forms.Form):$/;"	class	line:235
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:236	class:AssessmentForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:257	class:AssessmentForm
-NoteForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class NoteForm(forms.Form):$/;"	class	line:274
-note	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    note = forms.CharField($/;"	variable	line:275	class:NoteForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.Textarea,$/;"	variable	line:276	class:NoteForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label='Note:',$/;"	variable	line:277	class:NoteForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=False,$/;"	variable	line:278	class:NoteForm
-MedicationsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsForm(forms.Form):$/;"	class	line:281
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:283	class:MedicationsForm
-asprin	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    asprin = forms.CharField($/;"	variable	line:290	class:MedicationsForm
-isosorbide	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    isosorbide = forms.CharField($/;"	variable	line:294	class:MedicationsForm
-ProblemsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ProblemsForm(forms.Form):$/;"	class	line:299
-problems	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    problems = forms.CharField($/;"	variable	line:300	class:ProblemsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Problems',$/;"	variable	line:301	class:ProblemsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:302	class:ProblemsForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:304	class:ProblemsForm
-MedicationsLinkedForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsLinkedForm(forms.Form):$/;"	class	line:311
-medicationsLinked	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    medicationsLinked = forms.CharField($/;"	variable	line:312	class:MedicationsLinkedForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Medications linked to Falls',$/;"	variable	line:313	class:MedicationsLinkedForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:314	class:MedicationsLinkedForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:317	class:MedicationsLinkedForm
-is_int	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def is_int(str):$/;"	function	line:324
-ExamsDetailsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ExamsDetailsForm(forms.Form):$/;"	class	line:331
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:332	class:ExamsDetailsForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:352	class:ExamsDetailsForm
-ExamsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ExamsForm(forms.Form):$/;"	class	line:430
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:431	class:ExamsForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:445	class:ExamsForm
-RisksForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class RisksForm(forms.Form):$/;"	class	line:460
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:464	class:RisksForm
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Postural Hypotension",$/;"	function	line:3
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "pos000",$/;"	function	line:4
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:5
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Supine",$/;"	function	line:7
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Supine hypotension",$/;"	function	line:8
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Blood Pressure (systolic and diastolic)",$/;"	function	line:9
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:10
+is_required	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "is_required": "false",$/;"	function	line:11
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "pos001",$/;"	function	line:12
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 2,$/;"	function	line:13
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"120\/80\\""$/;"	function	line:14
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Standing (1m)",$/;"	function	line:17
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Standing Hypotension #1",$/;"	function	line:18
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Blood Pressure (systolic and diastolic)",$/;"	function	line:19
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:20
+is_required	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "is_required": "false",$/;"	function	line:21
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "pos002",$/;"	function	line:22
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 2,$/;"	function	line:23
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"120\/80\\""$/;"	function	line:24
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Standing (3m)",$/;"	function	line:27
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Standing Hypotension #2",$/;"	function	line:28
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Blood Pressure (systolic and diastolic)",$/;"	function	line:29
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:30
+is_required	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "is_required": "false",$/;"	function	line:31
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "pos003",$/;"	function	line:32
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 2,$/;"	function	line:33
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"120\/80\\""$/;"	function	line:34
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Postural Dizziness",$/;"	function	line:37
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "True or False",$/;"	function	line:38
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "True or False",$/;"	function	line:39
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:40
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "pos004",$/;"	function	line:41
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:42
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Heart Rate",$/;"	function	line:45
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Heart Rate",$/;"	function	line:46
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Beats per Minute",$/;"	function	line:47
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:48
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "integer",$/;"	function	line:49
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "pos005",$/;"	function	line:50
+is_required	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "is_required": "false",$/;"	function	line:51
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 3,$/;"	function	line:52
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Measured in BPM"$/;"	function	line:53
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Cognitive Screen",$/;"	function	line:58
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "cog000",$/;"	function	line:59
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:60
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Notes",$/;"	function	line:62
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Notes for Cognitive Screening",$/;"	function	line:63
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Notes for Cognitive Screening",$/;"	function	line:64
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:65
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "cog001",$/;"	function	line:66
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "",$/;"	function	line:67
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:68
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Cognitive Impairment",$/;"	function	line:71
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:72
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:73
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:74
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "cog002",$/;"	function	line:75
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:76
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Feet and Footwear",$/;"	function	line:81
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "feet000",$/;"	function	line:82
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:83
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Normal",$/;"	function	line:85
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:86
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:87
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:88
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet001",$/;"	function	line:89
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:90
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Bunions",$/;"	function	line:93
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:94
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:95
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:96
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet002",$/;"	function	line:97
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:98
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Ulcers",$/;"	function	line:101
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:102
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:103
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:104
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet003",$/;"	function	line:105
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:106
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Structural Abnormalities",$/;"	function	line:109
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:110
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:111
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:112
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet004",$/;"	function	line:113
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:114
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Impaired Sensation",$/;"	function	line:117
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:118
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:119
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:120
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet005",$/;"	function	line:121
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:122
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Impaired Proprioception",$/;"	function	line:125
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:126
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:127
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:128
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet006",$/;"	function	line:129
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:130
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Amputation noted on one foot",$/;"	function	line:133
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:134
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:135
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:136
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet007",$/;"	function	line:137
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:138
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Amputation noted on both feet",$/;"	function	line:141
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:142
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:143
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:144
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet008",$/;"	function	line:145
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:146
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Use of Mobility Aids",$/;"	function	line:151
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "aid000",$/;"	function	line:152
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:153
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Uses Aid",$/;"	function	line:155
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:156
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:157
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:158
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "aid001",$/;"	function	line:159
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:160
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Visual Acuity Check",$/;"	function	line:165
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "vis000",$/;"	function	line:166
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:167
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Left",$/;"	function	line:169
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Left Eye",$/;"	function	line:170
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:171
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:172
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis001",$/;"	function	line:173
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:174
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:175
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Right",$/;"	function	line:178
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Right Eye",$/;"	function	line:179
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:180
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:181
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis002",$/;"	function	line:182
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:183
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:184
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Both",$/;"	function	line:187
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Both Eyes",$/;"	function	line:188
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:189
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:190
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis003",$/;"	function	line:191
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:192
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:193
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Vision Impairment",$/;"	function	line:196
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:197
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:198
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:199
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis004",$/;"	function	line:200
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:201
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Muscle Strength & Tone",$/;"	function	line:206
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "musc000",$/;"	function	line:207
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:208
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Normal Tone and Strength",$/;"	function	line:210
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:211
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:212
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:213
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc001",$/;"	function	line:214
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:215
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Diffuse Muscle Weakness",$/;"	function	line:218
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:219
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:220
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:221
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc002",$/;"	function	line:222
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:223
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Diffuse Muscle Atrophy",$/;"	function	line:226
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:227
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:228
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:229
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc003",$/;"	function	line:230
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:231
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Focal Weakness",$/;"	function	line:234
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:235
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:236
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:237
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc004",$/;"	function	line:238
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:239
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Cogwheel Rigidity",$/;"	function	line:242
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:243
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:244
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:245
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc005",$/;"	function	line:246
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:247
