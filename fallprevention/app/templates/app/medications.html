@@ -61,9 +61,13 @@
 
                         <select multiple class="form-control">
                 <!--Hard coded-->
-                {% for med in med_names %}
-                 <option>{{ med }}</option>
-                {% endfor %}
+                {% if med_names %}
+                  {% for med in med_names %}
+                   <option>{{ med }}</option>
+                  {% endfor %}
+                {% else %}
+                  <option> Patient has no medications </option>
+                {% endif %}
 
              </select>
                     </div>
@@ -125,7 +129,13 @@
                 <!--Hard coded-->
                 <select multiple class="form-control">
                      <!--medications go here-->
-                    <option>Fanapt 10 MG Tabs</option>
+                    <{% if med_names %}
+                      {% for med in med_linked_names %}
+                       <option>{{ med }}</option>
+                      {% endfor %}
+                    {% else %}
+                      <option> Patient has no medications linked to falls </option>
+                    {% endif %}
              </select>
 
             </div>
