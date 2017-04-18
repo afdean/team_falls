@@ -1,46 +1,8 @@
 {% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %} {%block patient_first_name%} {{ patient.name}}{%endblock%}
 {%block patient_age%} {{ patient.age }}{%endblock%}
-<div class="row justify-content-between medication_block">
-    <div class="col-lg-12">
-        {% if identity != "patient" %}
-
-        <div class="row medication_block" id="question_prompt">
-            <div class="col-lg-12">
-                <div class="form-group" id="medications">
-                    {% if "screening" in completed %}
-
-                    <div class="panel-body">
-                        <form method='post' class="self_assessment_questions">
-                            <label for="exampleSelect2" id=""> Fall screening questions answered "yes" related to medication</label>                            {% if med_questions%} {% csrf_token %} {% for question in med_questions %} {{ question.errors}}
-                            <div class="row question_row">
-                                <div class="col-md-12">
-                                    <li> {{question}}</li>
-                                </div>
-                                <div class="col-md-3">
-                                </div>
-                            </div>
-                            {% endfor %} {%else%}
-                            <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-                            <script type="text/javascript">
-                                $('#question_prompt').remove();
-                            </script>
-                            {%endif%}
-
-
-                        </form>
-                    </div>
-                    {% else %}
-                    <li> Fall screening must be completed to display answers </li>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
-</div>
-{% endif %}
 
 <div class="row medication_block">
     <div class="col-lg-6">
@@ -96,14 +58,20 @@
                 <!--Hard coded-->
                 <select multiple class="form-control">
                      <!--medications go here-->
-                    <option>Fanapt 10 MG Tabs</option>
+                    <{% if med_names %}
+                      {% for med in med_linked_names %}
+                       <option id="option">{{ med }}</option>
+                      {% endfor %}
+                    {% else %}
+                      <option > Patient has no medications linked to falls </option>
+                    {% endif %}
              </select>
 
             </div>
             <!--/panel content-->
         </div>
         <!--/panel-->
-    
+
 
     </div>
 </div>
@@ -119,25 +87,21 @@
             </div>
             <div class="panel-body forms" id="problems">
 
-                <select multiple class="form-control">
-                <!--Hard coded-->
-                <!--medications go here-->
-                    <{% if med_names %}
-                      {% for med in med_linked_names %}
-                       <option>{{ med }}</option>
-                      {% endfor %}
-                    {% else %}
-                      <option> Patient has no medications linked to falls </option>
-                    {% endif %}
-
-             </select>
+                <ul style="padding: 10;">
+                    <!--Hard coded-->
+                    {% if "screening" in completed %} {% if med_questions%} {% csrf_token %} {% for question in med_questions %} {{ question.errors}}
+                    <li class="option"> {{question}}</li>
+                    {% endfor %} {% else %}
+                    <li class="option"> Fall screening must be completed to display answers </li>
+                    {% endif %} {% endif %}
+                </ul>
             </div>
             <!--/panel content-->
         </div>
         <!--/panel-->
 
 
-   <a href="/app/risks" ><button type="submit" class="btn btn-primary" id="">Next</button> </a>
+        <a href="/app/risks"><button type="submit" class="btn btn-primary" id="">Next</button> </a>
 
 
     </div>
@@ -149,12 +113,8 @@
 
 </div>
 
-<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-<script type="text/javascript">
-    var completed = "{{completed}}";
-    console.log(completed)
 
-</script>
+
 
 
 {% endblock %}
