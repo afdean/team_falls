@@ -693,3 +693,8 @@ def get_exams_completed():
                 break
 
     return completed
+
+def test(request):
+    test_form = TestForm()
+    print("called")
+    return render(request, 'app/test.html', {'test_form': test_form})

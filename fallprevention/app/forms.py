@@ -3,7 +3,9 @@ from django.db import models
 from django.forms import ModelForm
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset
+# from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset
+from crispy_forms.layout import *
+from crispy_forms.bootstrap import *
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 from .models import Question
@@ -169,6 +171,46 @@ class QuestionForm(forms.Form):
         # Could set obs. here to have in record despite incomplete?
         return cleaned_data
 
+class TestForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(TestForm, self).__init__(*args, **kwargs)
+        self.helper=FormHelper()
+        self.fields["test1"] = forms.BooleanField(label="does this work1?")
+        self.fields["test2"] = forms.BooleanField(label="does this work2?")
+        self.fields["test3"] = forms.BooleanField(label="does this work3?")
+        self.fields["test4"] = forms.BooleanField(label="does this work4?")
+        self.str = "heres another test"
+        self.helper.layout = Layout(
+            TabHolder(
+                Tab(
+                    "Tab 1",
+                    Fieldset(
+                        "Here's a title",
+                        Div("test1"),
+                        Div("test2"),
+                        Div(self.str),
+                        HTML("<p> {{ that_string }} </p>"),
+                        HTML("<p> self.str </p>"),
+                    ),
+                ),
+                Tab(
+                    "Tab 2",
+                    Fieldset(
+                        "Here's a title",
+                        Div("test3"),
+                        Div("test4"),
+                    ),
+                ),
+            ),
+            # Fieldset(
+            #     "Did this work?"
+            # )
+        )
+        self.helper.form_id = 'id-questionsForm'
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Next'))
+
+
 class AssessmentDetailsForm(forms.Form):
     def __init__(self, *args, **kwargs):
         assessments_chosen = kwargs.pop("assessments_chosen", None)
@@ -177,17 +219,24 @@ class AssessmentDetailsForm(forms.Form):
         # assessments_chosen = data_client.assessments_chosen
         self.helper = FormHelper()
         self.helper.layout = Layout()
+        self.helper.tab_holder = TabHolder()
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
+        self.helper.layout.append(self.helper.tab_holder)
         if assessments_chosen:
             for test in data_client.func_test:
                 if test['code'] in assessments_chosen:
-                    test_fieldset = Fieldset(test['name'], css_class=test['name'])
+                    test_tab = Tab(test['name'], css_class=test['name'])
+                    test_fieldset = Fieldset("", css_class=test['name'])
                     for i, form in enumerate(test['forms']):
                         code = test['forms'][i]['code']
                         field_name = code
                         self.fields[field_name] = generate_form(form, None, None)
                         test_fieldset.append(Field(field_name))
-                        # self.fields[field_name].widget = forms.HiddenInput()
-                    self.helper.layout.append(test_fieldset)
+                        # test_tab.append(Field(field_name))]
+                    test_tab.append(test_fieldset)
+                    # self.helper.layout.append(test_fieldset)
+                    self.helper.tab_holder.append(test_tab)
             self.helper.add_input(Submit('submit', 'Submit'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
