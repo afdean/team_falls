@@ -3059,6 +3059,53 @@ units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^       
 type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:244
 code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc005",$/;"	function	line:245
 num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:246
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<div class="row justify-content-between medication_block">$/;"	function	line:4
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-12">$/;"	function	line:5
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="row medication_block" id="question_prompt">$/;"	function	line:8
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="col-lg-12">$/;"	function	line:9
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="form-group" id="medications">$/;"	function	line:10
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <div class="panel-body">$/;"	function	line:13
+form	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                        <form method='post' class="self_assessment_questions">$/;"	function	line:14
+label	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <label for="exampleSelect2" id=""> Fall screening questions answered "yes" related to medication<\/label>                            {% if med_questions%} {% csrf_token %} {% for question in med_questions %}$/;"	function	line:15
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <div class="row question_row">$/;"	function	line:17
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                                <div class="col-md-12">$/;"	function	line:18
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                                   <li> {{question}}<\/li>$/;"	function	line:19
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                                <div class="col-md-3">$/;"	function	line:21
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:25
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <script type="text\/javascript">$/;"	function	line:26
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <li> Fall screening must be completed to display answers <\/li>$/;"	function	line:35
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<div class="row medication_block">$/;"	function	line:47
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-6">$/;"	function	line:48
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="row">$/;"	function	line:50
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="col-md-12">$/;"	function	line:52
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="panel panel-default" id="medications">$/;"	function	line:54
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <div class="panel-heading">$/;"	function	line:55
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                        <div class="panel-title">$/;"	function	line:56
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <h4>Medications<\/h4>$/;"	function	line:57
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <div class="panel-body forms">$/;"	function	line:60
+select	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                        <select multiple class="form-control">$/;"	function	line:62
+option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                 <option>{{ med }}<\/option>$/;"	function	line:65
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-6">$/;"	function	line:80
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="panel panel-default" id="medications">$/;"	function	line:83
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-heading">$/;"	function	line:84
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="panel-title">$/;"	function	line:85
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <h4>Questions Related to Medication<\/h4>$/;"	function	line:86
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-body forms" id="problems">$/;"	function	line:89
+select	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <select multiple class="form-control">$/;"	function	line:91
+option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <option> {{question}}<\/option>$/;"	function	line:97
+option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                  <option> Fall screening must be completed to display answers <\/option>$/;"	function	line:100
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<div class="row medication_block">$/;"	function	line:113
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-12">$/;"	function	line:114
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="panel panel-default" id="medications">$/;"	function	line:117
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-heading">$/;"	function	line:118
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="panel-title">$/;"	function	line:119
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <h4>Medications Linked to Falls<\/h4>$/;"	function	line:120
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-body forms">$/;"	function	line:123
+select	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <select multiple class="form-control">$/;"	function	line:126
+option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <option>Fanapt 10 MG Tabs<\/option>$/;"	function	line:128
+button	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <button type="submit" class="btn btn-primary" id="">Submit<\/button>$/;"	function	line:135
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:148
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<script type="text\/javascript">$/;"	function	line:149
 url	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import urllib as url$/;"	namespace	line:1
 json	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import json$/;"	namespace	line:2
 render	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.shortcuts import render$/;"	namespace	line:4
@@ -3090,14 +3137,14 @@ calculate_age	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^
 assessments_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments_details(request):$/;"	function	line:204
 assessments	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments(request):$/;"	function	line:369
 medications	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def medications(request):$/;"	function	line:392
-exams_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams_details(request):$/;"	function	line:441
-exams	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams(request):$/;"	function	line:476
-user_login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def user_login(request):$/;"	function	line:500
-risks	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def risks(request):$/;"	function	line:540
-calculate_risk	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_risk():$/;"	function	line:580
-get_sidebar_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_sidebar_completed():$/;"	function	line:653
-get_tests_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_tests_completed():$/;"	function	line:689
-get_exams_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_exams_completed():$/;"	function	line:708
+exams_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams_details(request):$/;"	function	line:443
+exams	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams(request):$/;"	function	line:478
+user_login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def user_login(request):$/;"	function	line:502
+risks	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def risks(request):$/;"	function	line:542
+calculate_risk	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_risk():$/;"	function	line:582
+get_sidebar_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_sidebar_completed():$/;"	function	line:655
+get_tests_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_tests_completed():$/;"	function	line:691
+get_exams_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_exams_completed():$/;"	function	line:710
 name	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "name": "Acetaminophen-Codeine",$/;"	function	line:3
 date	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "date": "2015-12",$/;"	function	line:4
 gpi_codes	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "gpi_codes": [],$/;"	function	line:5
@@ -3610,50 +3657,3 @@ name	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "name":
 date	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "date": "2015-12",$/;"	function	line:766
 gpi_codes	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "gpi_codes": [],$/;"	function	line:767
 rx_codes	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "rx_codes": [311470]$/;"	function	line:768
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<div class="row justify-content-between medication_block">$/;"	function	line:4
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-12">$/;"	function	line:5
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="row medication_block" id="question_prompt">$/;"	function	line:8
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="col-lg-12">$/;"	function	line:9
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="form-group" id="medications">$/;"	function	line:10
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <div class="panel-body">$/;"	function	line:13
-form	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                        <form method='post' class="self_assessment_questions">$/;"	function	line:14
-label	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <label for="exampleSelect2" id=""> Fall screening questions answered "yes" related to medication<\/label>                            {% if med_questions%} {% csrf_token %} {% for question in med_questions %}$/;"	function	line:15
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <div class="row question_row">$/;"	function	line:17
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                                <div class="col-md-12">$/;"	function	line:18
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                                   <li> {{question}}<\/li>$/;"	function	line:19
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                                <div class="col-md-3">$/;"	function	line:21
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:25
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <script type="text\/javascript">$/;"	function	line:26
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <li> Fall screening must be completed to display answers <\/li>$/;"	function	line:35
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<div class="row medication_block">$/;"	function	line:47
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-6">$/;"	function	line:48
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="row">$/;"	function	line:50
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="col-md-12">$/;"	function	line:52
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="panel panel-default" id="medications">$/;"	function	line:54
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <div class="panel-heading">$/;"	function	line:55
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                        <div class="panel-title">$/;"	function	line:56
-h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                            <h4>Medications<\/h4>$/;"	function	line:57
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <div class="panel-body forms">$/;"	function	line:60
-select	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                        <select multiple class="form-control">$/;"	function	line:62
-option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                 <option>{{ med }}<\/option>$/;"	function	line:65
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-6">$/;"	function	line:80
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="panel panel-default" id="medications">$/;"	function	line:83
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-heading">$/;"	function	line:84
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="panel-title">$/;"	function	line:85
-h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <h4>Questions Related to Medication<\/h4>$/;"	function	line:86
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-body forms" id="problems">$/;"	function	line:89
-select	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <select multiple class="form-control">$/;"	function	line:91
-option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <option> {{question}}<\/option>$/;"	function	line:97
-option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                  <option> Fall screening must be completed to display answers <\/option>$/;"	function	line:100
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<div class="row medication_block">$/;"	function	line:113
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^    <div class="col-lg-12">$/;"	function	line:114
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <div class="panel panel-default" id="medications">$/;"	function	line:117
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-heading">$/;"	function	line:118
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <div class="panel-title">$/;"	function	line:119
-h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <h4>Medications Linked to Falls<\/h4>$/;"	function	line:120
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^            <div class="panel-body forms">$/;"	function	line:123
-select	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                <select multiple class="form-control">$/;"	function	line:126
-option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^                    <option>Fanapt 10 MG Tabs<\/option>$/;"	function	line:128
-button	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <button type="submit" class="btn btn-primary" id="">Submit<\/button>$/;"	function	line:135
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:148
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<script type="text\/javascript">$/;"	function	line:149

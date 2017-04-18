@@ -59,9 +59,13 @@
 
                         <select multiple class="form-control">
                 <!--Hard coded-->
-                {% for med in med_names %}
-                 <option>{{ med }}</option>
-                {% endfor %}
+                {% if med_names %}
+                  {% for med in med_names %}
+                   <option>{{ med }}</option>
+                  {% endfor %}
+                {% else %}
+                  <option> Patient has no medications </option>
+                {% endif %}
 
              </select>
                     </div>
@@ -117,17 +121,15 @@
 
                 <select multiple class="form-control">
                 <!--Hard coded-->
-                {% if "screening" in completed %}
-                  {% if med_questions%} 
-                  {% csrf_token %}
-                  {% for question in med_questions %}
-                  {{ question.errors}}
-                    <option> {{question}}</option>
-                  {% endfor %}
-                {% else %}
-                  <option> Fall screening must be completed to display answers </option>
-                  {% endif %}
-                {% endif %}
+                <!--medications go here-->
+                    <{% if med_names %}
+                      {% for med in med_linked_names %}
+                       <option>{{ med }}</option>
+                      {% endfor %}
+                    {% else %}
+                      <option> Patient has no medications linked to falls </option>
+                    {% endif %}
+
              </select>
             </div>
             <!--/panel content-->
