@@ -36,8 +36,10 @@
 
                                 {% ifnotequal encounter.resource.status "finished"%}
                                 <input type="submit" value="Resume" class="btn btn-success start" type="button">
+                                <input type="hidden" value='{{patient}}' name="patient" />
                                 <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" /> {%else%}
                                 <input type="submit" value="Review" class="btn btn-basic start" type="button">
+                                <input type="hidden" value='{{patient}}' name="patient" />
                                 <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" /> {%endifnotequal%}
                             </form>
                         </div>
