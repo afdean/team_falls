@@ -40,148 +40,147 @@ num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^   
 content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Heart Rate",$/;"	function	line:45
 description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Heart Rate",$/;"	function	line:46
 units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Beats per Minute",$/;"	function	line:47
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:48
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "integer",$/;"	function	line:49
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "pos005",$/;"	function	line:50
-is_required	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "is_required": "false",$/;"	function	line:51
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 3,$/;"	function	line:52
-help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Measured in BPM"$/;"	function	line:53
-name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Cognitive Screen",$/;"	function	line:58
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "cog000",$/;"	function	line:59
-forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:60
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Notes",$/;"	function	line:62
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Notes for Cognitive Screening",$/;"	function	line:63
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Notes for Cognitive Screening",$/;"	function	line:64
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:65
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "cog001",$/;"	function	line:66
-help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "",$/;"	function	line:67
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:68
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Cognitive Impairment",$/;"	function	line:71
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:72
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:73
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:74
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "cog002",$/;"	function	line:75
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:76
-name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Feet and Footwear",$/;"	function	line:81
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "feet000",$/;"	function	line:82
-forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:83
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Normal",$/;"	function	line:85
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:86
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:87
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:88
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet001",$/;"	function	line:89
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:90
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Bunions",$/;"	function	line:93
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:94
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:95
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:96
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet002",$/;"	function	line:97
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:98
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Ulcers",$/;"	function	line:101
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:102
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:103
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:104
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet003",$/;"	function	line:105
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:106
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Structural Abnormalities",$/;"	function	line:109
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:110
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:111
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:112
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet004",$/;"	function	line:113
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:114
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Impaired Sensation",$/;"	function	line:117
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:118
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:119
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:120
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet005",$/;"	function	line:121
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:122
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Impaired Proprioception",$/;"	function	line:125
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:126
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:127
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:128
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet006",$/;"	function	line:129
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:130
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Amputation noted on one foot",$/;"	function	line:133
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:134
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:135
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:136
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet007",$/;"	function	line:137
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:138
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Amputation noted on both feet",$/;"	function	line:141
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:142
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:143
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:144
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet008",$/;"	function	line:145
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:146
-name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Use of Mobility Aids",$/;"	function	line:151
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "aid000",$/;"	function	line:152
-forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:153
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Uses Aid",$/;"	function	line:155
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:156
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:157
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:158
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "aid001",$/;"	function	line:159
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:160
-name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Visual Acuity Check",$/;"	function	line:165
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "vis000",$/;"	function	line:166
-forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:167
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Left",$/;"	function	line:169
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Left Eye",$/;"	function	line:170
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:171
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:172
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis001",$/;"	function	line:173
-help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:174
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:175
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Right",$/;"	function	line:178
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Right Eye",$/;"	function	line:179
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:180
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:181
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis002",$/;"	function	line:182
-help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:183
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:184
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Both",$/;"	function	line:187
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Both Eyes",$/;"	function	line:188
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:189
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:190
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis003",$/;"	function	line:191
-help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:192
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:193
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Vision Impairment",$/;"	function	line:196
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:197
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:198
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:199
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis004",$/;"	function	line:200
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:201
-name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Muscle Strength & Tone",$/;"	function	line:206
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "musc000",$/;"	function	line:207
-forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:208
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Normal Tone and Strength",$/;"	function	line:210
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:211
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:212
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:213
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc001",$/;"	function	line:214
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:215
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Diffuse Muscle Weakness",$/;"	function	line:218
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:219
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:220
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:221
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc002",$/;"	function	line:222
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:223
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Diffuse Muscle Atrophy",$/;"	function	line:226
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:227
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:228
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:229
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc003",$/;"	function	line:230
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:231
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Focal Weakness",$/;"	function	line:234
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:235
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:236
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:237
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc004",$/;"	function	line:238
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:239
-content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Cogwheel Rigidity",$/;"	function	line:242
-description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:243
-units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:244
-type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:245
-code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc005",$/;"	function	line:246
-num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:247
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "integer",$/;"	function	line:48
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "pos005",$/;"	function	line:49
+is_required	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "is_required": "false",$/;"	function	line:50
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 3,$/;"	function	line:51
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Measured in BPM"$/;"	function	line:52
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Cognitive Screen",$/;"	function	line:57
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "cog000",$/;"	function	line:58
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:59
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Notes",$/;"	function	line:61
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Notes for Cognitive Screening",$/;"	function	line:62
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Notes for Cognitive Screening",$/;"	function	line:63
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:64
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "cog001",$/;"	function	line:65
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "",$/;"	function	line:66
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:67
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Cognitive Impairment",$/;"	function	line:70
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:71
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:72
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:73
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "cog002",$/;"	function	line:74
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:75
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Feet and Footwear",$/;"	function	line:80
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "feet000",$/;"	function	line:81
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:82
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Normal",$/;"	function	line:84
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:85
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:86
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:87
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet001",$/;"	function	line:88
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:89
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Bunions",$/;"	function	line:92
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:93
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:94
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:95
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet002",$/;"	function	line:96
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:97
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Ulcers",$/;"	function	line:100
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:101
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:102
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:103
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet003",$/;"	function	line:104
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:105
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Structural Abnormalities",$/;"	function	line:108
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:109
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:110
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:111
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet004",$/;"	function	line:112
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:113
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Impaired Sensation",$/;"	function	line:116
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:117
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:118
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:119
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet005",$/;"	function	line:120
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:121
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Impaired Proprioception",$/;"	function	line:124
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:125
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:126
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:127
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet006",$/;"	function	line:128
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:129
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Amputation noted on one foot",$/;"	function	line:132
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:133
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:134
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:135
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet007",$/;"	function	line:136
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:137
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Amputation noted on both feet",$/;"	function	line:140
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:141
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:142
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:143
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "feet008",$/;"	function	line:144
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:145
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Use of Mobility Aids",$/;"	function	line:150
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "aid000",$/;"	function	line:151
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:152
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Uses Aid",$/;"	function	line:154
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:155
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:156
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:157
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "aid001",$/;"	function	line:158
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:159
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Visual Acuity Check",$/;"	function	line:164
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "vis000",$/;"	function	line:165
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:166
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Left",$/;"	function	line:168
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Left Eye",$/;"	function	line:169
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:170
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:171
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis001",$/;"	function	line:172
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:173
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:174
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Right",$/;"	function	line:177
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Right Eye",$/;"	function	line:178
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:179
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:180
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis002",$/;"	function	line:181
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:182
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:183
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Both",$/;"	function	line:186
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Visual Acuity for Both Eyes",$/;"	function	line:187
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Visual Acuity",$/;"	function	line:188
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "char",$/;"	function	line:189
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis003",$/;"	function	line:190
+help_text	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "help_text": "Please enter in the form \\"20\/20\\"",$/;"	function	line:191
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:192
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Vision Impairment",$/;"	function	line:195
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:196
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:197
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:198
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "vis004",$/;"	function	line:199
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:200
+name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Muscle Strength & Tone",$/;"	function	line:205
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "musc000",$/;"	function	line:206
+forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:207
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Normal Tone and Strength",$/;"	function	line:209
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:210
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:211
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:212
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc001",$/;"	function	line:213
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:214
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Diffuse Muscle Weakness",$/;"	function	line:217
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:218
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:219
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:220
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc002",$/;"	function	line:221
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:222
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Diffuse Muscle Atrophy",$/;"	function	line:225
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:226
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:227
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:228
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc003",$/;"	function	line:229
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:230
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Focal Weakness",$/;"	function	line:233
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:234
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:235
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:236
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc004",$/;"	function	line:237
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:238
+content	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "content": "Cogwheel Rigidity",$/;"	function	line:241
+description	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "description": "Yes or No (True or False)",$/;"	function	line:242
+units	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "units": "Yes or No (True or False)",$/;"	function	line:243
+type	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "type": "boolean",$/;"	function	line:244
+code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "code": "musc005",$/;"	function	line:245
+num_forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^        "num_forms": 1$/;"	function	line:246

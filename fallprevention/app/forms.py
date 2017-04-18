@@ -377,20 +377,21 @@ class ExamsDetailsForm(forms.Form):
         standing3 = cleaned_data.get("pos003")
         pressure_list = []
         if supine != None:
-            eye_list.append(("pos001", supine))
+            pressure_list.append(("pos001", supine))
         if standing != None:
-            eye_list.append(("pos002", standing))
+            pressure_list.append(("pos002", standing))
         if standing3 != None:
-            eye_list.append(("pos003", standing3))
-
-
-
+            pressure_list.append(("pos003", standing3))
 
         # This needs to be cleaned up: standards should have fields indicating the type of entry they should have.
         # For example, this one would be vision, another could just be "" if you can enter whatever you want
+        print("Here is the eye list")
+        print (eye_list)
+
         for s in eye_list:
-            if s[1] is not None and  '/' in s:
-                index = s[1].find('/', 0, len(s))
+            if s[1] is not None and len(s[1]) > 0 and '/' in s[1]:
+                print(s)
+                index = s[1].find('/', 0, len(s[1]))
                 if index != -1:
                     first_str = s[1][0:index]
                     second_str = s[1][index + 1:len(s[1])]
@@ -406,19 +407,20 @@ class ExamsDetailsForm(forms.Form):
                 else:
                     self.add_error(s[0], "Must be in form \"20/20\": Please ensure \"/\" is in entry")
             else:
-                self.add_error(s[0], "Must be in form \"20/20\": Please ensure / is in entry")
+                self.add_error(s[0], "Must be in form \"20/20\"")
 
-        for s in pessure_list:
-            if s[1] is not None and  '/' in s:
-                index = s[1].find('/', 0, len(s))
+        for s in pressure_list:
+            if s[1] is not None and len(s[1]) > 0 and '/' in s[1]:
+                print(s)
+                index = s[1].find('/', 0, len(s[1]))
                 if index != -1:
                     first_str = s[1][0:index]
                     second_str = s[1][index + 1:len(s[1])]
                     if is_int(first_str) and is_int(second_str):
                         first_num = int(first_str)
                         second_num = int(second_str)
-                        if first_num != 20:
-                            self.add_error(s[0], "Must be in form \"120/80\": Please ensure the first number is equal to 20")
+                        if first_num <= 20:
+                            self.add_error(s[0], "Must be in form \"120/80\": Please ensure the first number is positive")
                         if second_num <= 0:
                             self.add_error(s[0], "Must be in form \"120/80\": Please ensure the second number is positive")
                     else:
@@ -426,7 +428,9 @@ class ExamsDetailsForm(forms.Form):
                 else:
                     self.add_error(s[0], "Must be in form \"120/80\": Please ensure \"/\" is in entry")
             else:
-                self.add_error(s[0], "Must be in form \"120/80\": Please ensure / is in entry")
+                self.add_error(s[0], "Must be in form \"120/80\"")
+
+
 
         return cleaned_data
 

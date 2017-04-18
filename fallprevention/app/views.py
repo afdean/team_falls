@@ -67,7 +67,7 @@ def login_patient(request):
 def search_patient(request):
     data_client = DataClient()
     patient_list = []
-
+    data_client.reload_data()
     if request.method == 'POST':
         search_patient_form = SearchPatientForm(request.POST)
         if search_patient_form.is_valid():

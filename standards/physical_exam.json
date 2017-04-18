@@ -45,7 +45,6 @@
         "content": "Heart Rate",
         "description": "Heart Rate",
         "units": "Beats per Minute",
-        "type": "boolean",
         "type": "integer",
         "code": "pos005",
         "is_required": "false",
