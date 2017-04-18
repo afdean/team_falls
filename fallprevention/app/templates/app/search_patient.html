@@ -1,42 +1,15 @@
+{% extends 'app/base.html' %} {%load static%} 
 {%load static%} {% load crispy_forms_tags %}
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
-
-    <title>STEADI</title>
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
-    <link href="{% static 'css/basestyle.css' %}" rel="stylesheet">
-
-    <link href="{%static 'css/styles.css'%}" rel="stylesheet">
-    <link href="{%static 'css/searchPatient.css'%}" rel="stylesheet">
-    <link href="{%static 'css/questions.css' %}" rel="stylesheet">
-    <link href="{%static 'css/other_index.css'%}" rel="stylesheet">
-        <link href="{%static 'css/new_styles.css'%}" rel="stylesheet">
-
-
-</head>
-
-<body>
-    <!--BEGIN NAV-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #075290" role="navigation">
-        <div class="container-fluid">
-            <a class="navbar-brand" style="color: white;" href="#">CDC Fall Prevention</a>
-        </div>
-
-        </div>
-    </nav>
-    <!--END NAV-->
 
 
 
+{% block content %}
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript">
+    $('.sidenav').remove()
+    $('.main').addClass('col-md-offset-1')
+
+</script>
 
     <div class="container-fluid">
         <!--Search Bar-->
@@ -136,6 +109,4 @@
 
 
 
-</body>
-
-</html>
+{%endblock%}

@@ -11,9 +11,3 @@ var main = function () {
 }
 $(document).ready(main);
 
-function completedTask(tasks) {
-  $("#pic1").click(function () {
-    $("#items p").wrap("<del>");
-    $("#pic1").fadeOut("slow");
-  });
-}
