@@ -353,13 +353,14 @@ class ExamsDetailsForm(forms.Form):
         """
         This is a custom override
         """
+
         data_client = DataClient()
         problem_list = []
         cleaned_data = super(ExamsDetailsForm, self).clean()
+
         left = cleaned_data.get("vis001")
         right = cleaned_data.get("vis002")
         both = cleaned_data.get("vis003")
-
         eye_list = []
         if left != None:
             eye_list.append(("vis001", left))
@@ -367,6 +368,20 @@ class ExamsDetailsForm(forms.Form):
             eye_list.append(("vis002", right))
         if both != None:
             eye_list.append(("vis003", both))
+
+        supine = cleaned_data.get("pos001")
+        standing = cleaned_data.get("pos002")
+        standing3 = cleaned_data.get("pos003")
+        pressure_list = []
+        if supine != None:
+            eye_list.append(("pos001", supine))
+        if standing != None:
+            eye_list.append(("pos002", standing))
+        if standing3 != None:
+            eye_list.append(("pos003", standing3))
+
+
+
 
         # This needs to be cleaned up: standards should have fields indicating the type of entry they should have.
         # For example, this one would be vision, another could just be "" if you can enter whatever you want
@@ -389,6 +404,27 @@ class ExamsDetailsForm(forms.Form):
                     self.add_error(s[0], "Must be in form \"20/20\": Please ensure \"/\" is in entry")
             else:
                 self.add_error(s[0], "Must be in form \"20/20\": Please ensure / is in entry")
+
+        for s in pessure_list:
+            if s[1] is not None and  '/' in s:
+                index = s[1].find('/', 0, len(s))
+                if index != -1:
+                    first_str = s[1][0:index]
+                    second_str = s[1][index + 1:len(s[1])]
+                    if is_int(first_str) and is_int(second_str):
+                        first_num = int(first_str)
+                        second_num = int(second_str)
+                        if first_num != 20:
+                            self.add_error(s[0], "Must be in form \"120/80\": Please ensure the first number is equal to 20")
+                        if second_num <= 0:
+                            self.add_error(s[0], "Must be in form \"120/80\": Please ensure the second number is positive")
+                    else:
+                        self.add_error(s[0], "Must be in form \"120/80\": Please ensure numbers are correctly formatted")
+                else:
+                    self.add_error(s[0], "Must be in form \"120/80\": Please ensure \"/\" is in entry")
+            else:
+                self.add_error(s[0], "Must be in form \"120/80\": Please ensure / is in entry")
+
         return cleaned_data
 
 class ExamsForm(forms.Form):

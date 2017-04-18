@@ -393,11 +393,34 @@ def medications(request):
     data_client = DataClient()
     completed = get_sidebar_completed()
     calculate_risk()
+
     med_questions = []
     for question in data_client.questions['questions']:
         if question['medication_related'] and question['code'] in data_client.observations:
             if data_client.observations[question['code']]:
                 med_questions.append(question['content'])
+
+
+    med_names = []
+    med_codes = []
+    med_linked_names = []
+
+    # Just return something that I can pull name and code from
+    med = data_client.fhir_client.search_medication()
+    # if med is not None:
+    #     for thing in med:
+            # med_names.append things anme
+            # med_codes.append things code
+
+    # for i, code in enumerate(med codes)
+    #   for med in data_client.medication
+    #       for tem in med.rx_codes
+    #           if code == item
+    #               med_linked_names.append med_names[i]
+
+    #pass in med_names and med_linked_names
+
+
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
         print("Button is triggering")

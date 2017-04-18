@@ -11,7 +11,7 @@
         "is_required": "false",
         "code": "pos001",
         "num_forms": 2,
-        "help_text": ""
+        "help_text": "Please enter in the form \"120/80\""
       },
       {
         "content": "Standing (1m)",
@@ -21,7 +21,7 @@
         "is_required": "false",
         "code": "pos002",
         "num_forms": 2,
-        "help_text": ""
+        "help_text": "Please enter in the form \"120/80\""
       },
       {
         "content": "Standing (3m)",
@@ -31,7 +31,7 @@
         "is_required": "false",
         "code": "pos003",
         "num_forms": 2,
-        "help_text": ""
+        "help_text": "Please enter in the form \"120/80\""
       },
       {
         "content": "Postural Dizziness",
@@ -50,7 +50,7 @@
         "code": "pos005",
         "is_required": "false",
         "num_forms": 3,
-        "help_text": ""
+        "help_text": "Measured in BPM"
       }
     ]
   },
