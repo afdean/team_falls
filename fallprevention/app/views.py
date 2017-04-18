@@ -414,6 +414,8 @@ def medications(request):
             med_names.append(name)
             med_codes.append(code)
 
+    med_codes = [int(x) for x in med_codes]
+
     for i, code in enumerate(med_codes):
       for med in data_client.medication:
           for item in med["rx_codes"]:
