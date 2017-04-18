@@ -1,6 +1,7 @@
 from django import forms
 from django.db import models
 from django.forms import ModelForm
+from django.core.exceptions import ValidationError
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset
@@ -10,11 +11,12 @@ from .models import Question
 from app.data_client import DataClient
 
 def validate_search_patient(patient_name):
-    # patient_a
-    raise ValidationError(
-        _('%(value)s is not an even number'),
-        params={'value': value},
-    )
+    # validate patient name (must have first name and last name)
+    patient_name_list = patient_name.split()
+    if (len(patient_name_list) != 2 and len(patient_name_list) != 3):
+        raise ValidationError(
+            "Please input the full name of the patient"
+        )
 
 def generate_form(field, field_widget=None, field_choices=None, is_required=False):
     if field['type'] == "boolean":
@@ -118,6 +120,7 @@ class SearchPatientForm(forms.Form):
         label="Patient Name:",
         max_length=80,
         required=True,
+        validators=[validate_search_patient]
     )
 
     def __init__(self, *args, **kwargs):
