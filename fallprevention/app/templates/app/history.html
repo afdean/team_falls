@@ -12,7 +12,7 @@
 </li>
 
 
-{%endblock%} {% block content %} {%for encounter in encounters%}
+{%endblock%} {% block content %} {% if encounters%} {%for encounter in encounters%}
 
 <div class="row ecounter">
 
@@ -36,8 +36,10 @@
 
                                 {% ifnotequal encounter.resource.status "finished"%}
                                 <input type="submit" value="Resume" class="btn btn-success start" type="button">
+                                <input type="hidden" value='{{patient}}' name="patient" />
                                 <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" /> {%else%}
                                 <input type="submit" value="Review" class="btn btn-basic start" type="button">
+                                <input type="hidden" value='{{patient}}' name="patient" />
                                 <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" /> {%endifnotequal%}
                             </form>
                         </div>
@@ -51,4 +53,14 @@
         <!--/panel-->
     </div>
 </div>
-{%endfor%} {% endblock %}
+
+{%endfor%} {%else%}
+
+<center>
+        <p id="history">No History</p>
+        <a href="/app/search">
+            <h3>Click to Return</h3>
+        </a>
+</center>
+
+{%endif%} {% endblock %}

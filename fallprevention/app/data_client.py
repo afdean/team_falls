@@ -36,7 +36,7 @@ class DataClient(metaclass=Singleton):
         self.fhir_client = FallsFHIRClient()
         # Creates self.fhir_dict
         self.create_fhir_dict()
-        print(self.fhir_dict['q000'])
+        # print(self.fhir_dict['q000'])
         self.fhir_client.load_standards_document(self.fhir_dict)
         # Use "low", "moderate", and "high"
         self.risk_level = ""
@@ -70,7 +70,7 @@ class DataClient(metaclass=Singleton):
         self.exams_chosen = []
         self.patient_id = ""
         self.medication_complete = False
-        self.risks_complete = False        
+        self.risks_complete = False
 
     def create_fhir_dict(self):
         self.fhir_dict = {}

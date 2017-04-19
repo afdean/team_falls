@@ -26,7 +26,8 @@ class FallsFHIRClient(object):
         self.api_base = 'http://localhost:8080/'
         self.patient_id = None
         self.encounter_id = None
-        self.diagnostic_report = None
+        #set diagnostic_report to True as default
+        self.diagnostic_report = True
         self.medication_list = None
         self.standards_document_dict = {}
         self.questions_code = []
@@ -452,7 +453,10 @@ class FallsFHIRClient(object):
                             if return_entire_observation_not_just_value:
                                 output_dict[str(question_code)] = obs
                             else:
-                                output_dict[str(question_code)] = obs['resource']['valueQuantity']['value']
+                                if 'valueCodeableConcept' in obs['resource'].keys() and 'code' in obs['resource']['valueCodeableConcept']['coding'][0].keys():
+                                    output_dict[str(question_code)] = obs['resource']['valueCodeableConcept']['coding'][0]['code']
+                                else:
+                                    print('Tried to pull up observation data but the old observation uses old version of standard')
         return output_dict
 
     # Function write many observations to fhir. Takes in a list of question codes and associated responses.
@@ -477,10 +481,12 @@ class FallsFHIRClient(object):
             if resp.json()['total'] > 0:
                 for obs in resp.json()['entry']:
                     if obs['resource']['code']['coding'][0]['system'] == 'fall_prevention' and obs['resource']['code']['coding'][0]['code'] == code:
+                        print('updating an existing observation')
                         self.update_observation_by_observation(obs, data[code])
                         updated_existing = True
             if updated_existing:
                 continue
+            print('Creating a new observation')
             self.create_new_observation(code, data[code], pat_id=pat_id, enc_id=enc_id, diag_rpt=diag_rpt)
 
     # Function write a note observation to fhir. Takes in a list the question code we would like to save it as and
@@ -599,12 +605,23 @@ class FallsFHIRClient(object):
         save_obs['encounter'] = {}
         save_obs['encounter']['reference'] = enc_id
         save_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
-        save_obs['valueQuantity'] = {}
-        save_obs['valueQuantity']['value'] = str(response)
-        save_obs['valueQuantity']['unit'] = self.questions_units[q_ind]
-        save_obs['valueQuantity']['system'] = "fall_prevention"
-        save_obs['valueQuantity']['code'] = self.questions_answer_description[q_ind]
+        save_obs['valueCodeableConcept'] = {}
+        save_obs['valueCodeableConcept']['coding'] = []
+        save_obs['valueCodeableConcept']['coding'].append({})
+        # save_obs['valueCodeableConcept']['coding']['value'] = str(response)
+        # if not str(response):
+            # response = ''
+        save_obs['valueCodeableConcept']['coding'][0]['code'] = str(response)
+        save_obs['valueCodeableConcept']['coding'][0]['system'] = self.questions_units[q_ind]
+        save_obs['valueCodeableConcept']['coding'][0]['display'] = self.questions_answer_description[q_ind]
+        # print('This observation response:', str(response))
+        # save_obs['valueCodeableConcept']['value'] = str(response)
+        # save_obs['valueCodeableConcept']['unit'] = self.questions_units[q_ind]
+        # save_obs['valueCodeableConcept']['system'] = "fall_prevention"
+        # save_obs['valueCodeableConcept']['code'] = self.questions_answer_description[q_ind]
         resp = requests.post(self.api_base + 'Observation/', data=json.dumps(save_obs), headers=write_headers)
+        print('response:', resp)
+        print(resp.json())
         if resp.status_code != 201:
             print('Something went wrong when trying to write to the server')
             return False
@@ -635,7 +652,10 @@ class FallsFHIRClient(object):
                   'went wrong.')
             return False
         alter_obs = resp.json()
-        alter_obs['valueQuantity']['value'] = str(response)
+        if 'valueCodeableConcept' in alter_obs.keys():
+            alter_obs['valueCodeableConcept']['coding'][0]['code'] = str(response)
+        else:
+            print('Tried to update observation using codeable concept but old observation used valueQuantity')
         alter_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
         resp = requests.put(self.api_base + 'Observation/' + observation_id, data=json.dumps(alter_obs),
                             headers=write_headers)
@@ -663,7 +683,10 @@ class FallsFHIRClient(object):
                   'went wrong.')
             return False
         alter_obs = resp.json()
-        alter_obs['valueQuantity']['value'] = str(response)
+        if 'valueCodeableConcept' in alter_obs.keys():
+            alter_obs['valueCodeableConcept']['coding'][0]['code'] = str(response)
+        else:
+            print('Tried to update observation using codeable concept but old observation used valueQuantity')
         alter_obs['effectiveDateTime'] = (time.strftime("%Y-%m-%dT%H:%M:%S"))
         resp = requests.put(self.api_base + 'Observation/' + observation_id, data=json.dumps(alter_obs),
                             headers=write_headers)
