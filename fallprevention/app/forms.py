@@ -181,8 +181,16 @@ class AssessmentDetailsForm(forms.Form):
         self.helper = FormHelper()
         self.helper.layout = Layout()
         if assessments_chosen:
+            # self.helper.layout.append(HTML (
+            #     <span id="hiddenTag" style="display: none">{{ i }}</span>
+            # ))
+            # self.helper.layout.append(Button (
+            # ))
             for test in data_client.func_test:
                 if test['code'] in assessments_chosen:
+                    self.helper.layout.append(
+                        Button(test['code'], "More Information")
+                    )
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
                     for i, form in enumerate(test['forms']):
                         code = test['forms'][i]['code']

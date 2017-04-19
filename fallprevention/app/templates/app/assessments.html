@@ -22,6 +22,10 @@ form#id-assessmentForm{
 {% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
 {%block patient_first_name%} {{ patient.name }}{%endblock%}
 {%block patient_age%} {{ patient.age }}{%endblock%}
+{%load static%}
+
+<!-- {{ some_variable|add:"1" }} -->
+<p> {{ some_variable }} </p>
 
  <div class="row">
 
@@ -46,6 +50,13 @@ form#id-assessmentForm{
                     </div>
                     <!--/col-span-6-->
 
+                    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+                    <script type="text/javascript">
+                    var completed = "{{more_info}}";
+                    console.log(completed)
+
+
+                    </script>
 
 
                 </div> {% endblock %}

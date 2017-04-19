@@ -209,8 +209,10 @@ def assessments_details(request):
     assessments_chosen = data_client.assessments_chosen
     completed = get_sidebar_completed()
     more_info = []
-    for test in data_client.func_test:
-        more_info.append(test['more_info'])
+    for assessment in assessments_chosen:
+        for test in data_client.func_test:
+            if test['code'] == assessment:
+                more_info.append(test['more_info'])
 
     if request.method == 'POST':
         assessments_form = AssessmentDetailsForm(request.POST, assessments_chosen=assessments_chosen);
@@ -364,7 +366,7 @@ def assessments_details(request):
                         field_name = code
                         assessments_answers[field_name] = data_client.observations[code]
         assessments_form = AssessmentDetailsForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'assessments_chosen': assessments_chosen, 'more_info': more_info})
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'assessments_chosen': assessments_chosen, 'more_info': more_info, 'amount': amount})
 
 def assessments(request):
     data_client = DataClient()
