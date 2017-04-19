@@ -362,7 +362,7 @@ def assessments_details(request):
                         field_name = code
                         assessments_answers[field_name] = data_client.observations[code]
         assessments_form = AssessmentDetailsForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
-    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'assessments_chosen': assessments_chosen, 'more_info': more_info, 'amount': amount})
+    return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'assessments_chosen': assessments_chosen, 'more_info': more_info})
 
 def assessments(request):
     data_client = DataClient()
