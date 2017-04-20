@@ -2,50 +2,59 @@
     .checkbox label {
         font-size: 14px;
     }
-
-form#id-assessmentForm fieldset{
+    
+    form#id-assessmentForm fieldset {
         padding-bottom: 20px;
         padding-top: 20px;
         border: none;
     }
-form#id-assessmentForm{
-    margin: auto;
-    overflow-y: auto;
-}
- .main {
+    
+    form#id-assessmentForm {
+        margin: auto;
         overflow-y: auto;
     }
-    body{
+    
+    .main {
+        overflow-y: auto;
+    }
+    
+    body {
         /*overflow-y: hidden */
     }
 </style>
-{% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
-{%block patient_first_name%} {{ patient.name }}{%endblock%}
-{%block patient_age%} {{ patient.age }}{%endblock%}
+{% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %} 
+{%load static%}
+<div class="row">
 
- <div class="row">
-
-                    <div class="col-md-12">
-                        <!--panel-->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="panel-title">
-                                    <h4>Assessments </h4>
+    <div class="col-md-12">
+        <!--panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h4>Assessments </h4>
 
 
-                                </div>
-                            </div>
-                            <div class="panel-body forms" id="assessments">
+                </div>
+            </div>
+            <div class="panel-body forms" id="assessments">
 
 
-                                        {%crispy assessments_form%}
-                            </div>
-                            <!--/panel content-->
-                        </div>
-                        <!--/panel-->
-                    </div>
-                    <!--/col-span-6-->
+                {%crispy assessments_form%}
+            </div>
+            <!--/panel content-->
+        </div>
+        <!--/panel-->
+    </div>
+    <!--/col-span-6-->
 
 
 
-                </div> {% endblock %}
+</div> 
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript">
+  var more = "{{more_info}}";
+  console.log(more);
+
+</script>
+
+{% endblock %}
