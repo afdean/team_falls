@@ -3,7 +3,12 @@ body,html,.row-offcanvas {
  
 }
 
-
+input[type=checkbox] {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    padding: 10px;
+}
 
 body {
   padding-top: 50px;

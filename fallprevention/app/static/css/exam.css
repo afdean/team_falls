@@ -15,7 +15,7 @@ form#id-examsForm{
     font-size: 30px;
 }
 #id-examsForm label{
-    font-size: 20px;
+    font-size: 16px;
 
 }
 #submit-id-submit{
@@ -44,5 +44,5 @@ p{
         border: none;
     }
   .checkbox label{
-         font-size: 20px;
+         font-size: 16px;
      }
