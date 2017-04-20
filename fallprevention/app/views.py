@@ -114,11 +114,11 @@ def questions(request):
     if (request.GET.get('patient') != None):
         data_client.patient = literal_eval(request.GET.get('patient'))
         data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
-    if (request.GET.get('encounter_id') != None):
-        data_client.fhir_client.select_encounter(request.GET.get('encounter_id'))
-        data_client.observations = data_client.fhir_client.search_observations()
-    else:
-        data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+        if (request.GET.get('encounter_id') != None):
+            data_client.fhir_client.select_encounter(request.GET.get('encounter_id'))
+            data_client.observations = data_client.fhir_client.search_observations()
+        else:
+            data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
         # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
         # if encounter_list:
         #     #status for encounter finished/in-progress/arrived/...
@@ -157,7 +157,6 @@ def questions(request):
                 data_client.observations[questions_code] = "Pass"
             else:
                 data_client.observations[questions_code] = "Fail"
-            # print(data_client.observations)
             # save observations to FHIR server
             data_client.fhir_client.write_list_of_observations_to_fhir(data=data_client.observations)
             if data_client.identity == 'patient':
@@ -187,7 +186,7 @@ def questions(request):
 
 def thankyou(request):
     data_client = DataClient()
-    return render(request, 'app/thankyou.html')
+    return render(request, 'app/thankyou.html', {'patient': data_client.patient})
 
 def calculate_age(date_string):
     date_string = date_string.replace('-', '')
@@ -208,10 +207,11 @@ def assessments_details(request):
     data_client = DataClient()
     assessments_chosen = data_client.assessments_chosen
     completed = get_sidebar_completed()
-    more_info = []
-    for test in data_client.func_test:
-        more_info.append(test['more_info'])
-
+    more_info = {}
+    for assessment in assessments_chosen:
+        for test in data_client.func_test:
+            if (test['code'] == assessment):
+                more_info[assessment] = test['more_info']
     if request.method == 'POST':
         assessments_form = AssessmentDetailsForm(request.POST, assessments_chosen=assessments_chosen);
         if assessments_form.is_valid():
@@ -261,7 +261,6 @@ def assessments_details(request):
                                 if test['forms'][i]['is_key'] and answer:
                                     tug_key = tug_key + 1
                                 if test['forms'][i]['code'] == 'tug001' and answer:
-                                    # print ("Has problem from cant do it")
                                     has_problem = True
                                     data_client.observations["tug000"] = "Fail"
                             # Check for timing scores
@@ -271,7 +270,6 @@ def assessments_details(request):
                                     form_logic = test['forms'][i]['logic']
                                     if form_logic in test['min_logic']:
                                         if answer < test['min_logic'][form_logic]:
-                                            # print ("has problem from low time")
                                             has_problem = True
                                             data_client.observations["tug000"] = "Fail"
 
@@ -565,8 +563,6 @@ def risks(request):
                     field_name = code
                     intervention_answers[field_name] = data_client.observations[code]
         risk_level = data_client.risk_level
-        print("Here are the observations")
-        print(data_client.observations)
         print("Here are intervention answers")
         print(intervention_answers)
         if data_client.risk_level == "low":
@@ -577,7 +573,7 @@ def risks(request):
             risks_form = RisksForm(initial=intervention_answers, risk_level="high")
         else:
             risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
-    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed})
+    return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed, 'patient': data_client.patient})
 
 def calculate_risk():
     """

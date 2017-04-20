@@ -163,7 +163,6 @@ class QuestionForm(forms.Form):
         injury = cleaned_data.get("q003")
 
         if injury and num_falls == 0:
-            print("This was reached")
             msg = "It is not possible to have been injured without having a fall"
             self.add_error('q001', msg)
             self.add_error('q003', msg)
@@ -180,10 +179,21 @@ class AssessmentDetailsForm(forms.Form):
         # assessments_chosen = data_client.assessments_chosen
         self.helper = FormHelper()
         self.helper.layout = Layout()
+        i = 0
         if assessments_chosen:
+            # self.helper.layout.append(HTML (
+            #     <span id="hiddenTag" style="display: none">{{ i }}</span>
+            # ))
+            # self.helper.layout.append(Button (
+            # ))
             for test in data_client.func_test:
                 if test['code'] in assessments_chosen:
+                    self.helper.layout.append(
+                        Button(test['code'], "More Information")
+                    )
+                    code = test['code']
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
+                    # self.helper.layout.append(Button(test['code'], test['code']))
                     for i, form in enumerate(test['forms']):
                         code = test['forms'][i]['code']
                         field_name = code
