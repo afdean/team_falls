@@ -630,6 +630,7 @@ def calculate_risk():
             else:
                 data_client.risk_level = "incomplete"
         elif assessment_fail == "Fail":
+            num_falls = int(num_falls)
             if num_falls > 1:
                 data_client.risk_level = "high"
             elif num_falls == 1:
