@@ -188,9 +188,7 @@ class AssessmentDetailsForm(forms.Form):
             # ))
             for test in data_client.func_test:
                 if test['code'] in assessments_chosen:
-                    self.helper.layout.append(
-                        Button(test['code'], "More Information")
-                    )
+                  
                     code = test['code']
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
                     # self.helper.layout.append(Button(test['code'], test['code']))
