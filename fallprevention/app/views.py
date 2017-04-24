@@ -577,7 +577,7 @@ def risks(request):
         elif data_client.risk_level == "high":
             risks_form = RisksForm(initial=intervention_answers, risk_level="high")
         else:
-            risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
+            risks_form = RisksForm(initial=intervention_answers, risk_level="incomplete", incomplete_list=incomplete_list)
     return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed, 'patient': data_client.patient})
 
 def calculate_risk():

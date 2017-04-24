@@ -486,7 +486,7 @@ class RisksForm(forms.Form):
 
         intervention_list = []
 
-        if risk_level == "low":
+        if risk_level == "low" or risk_level == "incomplete":
             for intervention in data_client.risk_list["risks"]["low_risk"]:
                 intervention_list.append(intervention)
         elif risk_level == "moderate":
