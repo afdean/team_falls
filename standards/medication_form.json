@@ -7,7 +7,7 @@
       "type": "choice_bool",
       "code": "m001",
       "is_key": true,
-      "medication_related": false,
+      "medication_related": false
     }
   ]
 }
