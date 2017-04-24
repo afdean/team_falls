@@ -430,12 +430,23 @@ def medications(request):
         print("Button is triggering")
         if medications_form.is_valid():
             data_client.medication_complete = True
+            for i, form in enumerate(data_client.med_form):
+                code = data_client.med_form['forms'][i]['code']
+                field_name = code
+                answer = medications_form.cleaned_data[field_name]
+                data_client.observations[code] = answer
             if data_client.risk_level == "high":
                 return HttpResponseRedirect('/app/exams/')
             else:
                 return HttpResponseRedirect('/app/risks/')
     else:
-        medications_form = MedicationsForm()
+        med_form_answers = {}
+        for i, form in enumerate(data_client.med_form):
+            code = data_client.med_form['forms'][i]['code']
+            if code in data_client.observations:
+                field_name = code
+                med_form_answers[field_name] = data_client.observations[code]
+        medications_form = MedicationsForm(initial=med_form_answers)
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed, 'med_questions': med_questions, 'med_names': med_names, 'med_linked_names': med_linked_names})
 
 def exams_details(request):
@@ -548,6 +559,7 @@ def risks(request):
             for key, intervention in data_client.intervention_list.items():
                 for i, form in enumerate(intervention['forms']):
                     code = intervention['forms'][i]['code']
+                    print(risks_form.cleaned_data)
                     if code in risks_form.cleaned_data:
                         answer = risks_form.cleaned_data[code]
                         data_client.observations[code] = answer
@@ -563,8 +575,6 @@ def risks(request):
                     field_name = code
                     intervention_answers[field_name] = data_client.observations[code]
         risk_level = data_client.risk_level
-        print("Here are intervention answers")
-        print(intervention_answers)
         if data_client.risk_level == "low":
             risks_form = RisksForm(initial=intervention_answers, risk_level="low")
         elif data_client.risk_level == "moderate":

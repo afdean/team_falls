@@ -1,4 +1,4 @@
-{% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %} {%block patient_first_name%} {{ patient.name}}{%endblock%}
+{% extends 'app/baseWithSideBar.html' %} {%load static%}{% load crispy_forms_tags %} {% block content %} {%block patient_first_name%} {{ patient.name}}{%endblock%}
 {%block patient_age%} {{ patient.age }}{%endblock%}
 
 
@@ -100,15 +100,37 @@
                       {% endif %}
                     {% else %}
                     <li class="option"> Fall screening must be completed to display answers </li>
-                    {% endif %} 
+                    {% endif %}
                 </ul>
             </div>
             <!--/panel content-->
         </div>
         <!--/panel-->
+        <div class="row">
+
+            <div class="col-md-12">
+                <!--panel-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4>Medication Check</h4>
+                        </div>
+                    </div>
+                    <div class="panel-body forms" id="form">
+                      {% crispy medications_form %}
+                    </div>
+                    <!--/panel content-->
+                </div>
+                <!--/panel-->
+            </div>
+            <!--/col-span-6-->
 
 
-        <a href="/app/exams"><button type="submit" class="btn btn-primary" id="">Submit</button> </a>
+
+        </div>
+
+        <!-- <a href="/app/exams"><button type="submit" class="btn btn-primary" id="">Submit</button> </a> -->
+
 
 
     </div>
