@@ -263,6 +263,7 @@ def assessments_details(request):
                                 if test['forms'][i]['code'] == 'tug001' and answer:
                                     has_problem = True
                                     data_client.observations["tug000"] = "Fail"
+                                    observations["tug000"] = "Fail"
                             # Check for timing scores
                             if test['forms'][i]['type'] == 'integer':
                                 # Check to make sure it isnt NoneType
@@ -272,7 +273,7 @@ def assessments_details(request):
                                         if answer < test['min_logic'][form_logic]:
                                             has_problem = True
                                             data_client.observations["tug000"] = "Fail"
-
+                                            observations["tug000"] = "Fail"
                         # Check logic for 30 Chair
                         if test['code'] == 'chair000':
                             if test['forms'][i]['type'] == 'integer':
@@ -304,6 +305,7 @@ def assessments_details(request):
                                         if answer < chair_min_failure:
                                             has_problem = True
                                             data_client.observations["chair000"] = "Fail"
+                                            observations["chair000"] = "Fail"
 
                         # Check logic for Balance Test
                         if test['code'] == 'bal000':
@@ -322,18 +324,21 @@ def assessments_details(request):
                 # print ("has problem from key tugs")
                 has_problem = True
                 data_client.observations["tug000"] = "Fail"
+                observations["tug000"] = "Fail"
             if bal_min_failure >= 0 and bal_score > bal_min_failure:
                 # print ('has problem from key bal')
                 has_problem = True
                 data_client.observations["bal000"] = "Fail"
+                observations["bal000"] = "Fail"
+            # TODO: If "fail is in before, and someone changes to pass, this wont work."
             if tug_conducted:
-                if "tug000" not in data_client.observations:
+                if "tug000" not in observations:
                     data_client.observations["tug000"] = "Pass"
             if bal_conducted:
-                if "bal000" not in data_client.observations:
+                if "bal000" not in observations:
                     data_client.observations["bal000"] = "Pass"
             if chair_conducted:
-                if "chair000" not in data_client.observations:
+                if "chair000" not in observations:
                     data_client.observations["chair000"] = "Pass"
 
             #save observations to FHIR server
@@ -601,6 +606,7 @@ def calculate_risk():
     if question_code in obs:
         question_fail = obs["q000"]
         num_falls = obs["q001"]
+        num_falls = int(num_falls)
         injury = obs["q003"]
 
     # Check each test; If one has failed then assesment_fail is fail guaranteed
@@ -609,7 +615,7 @@ def calculate_risk():
             assessment_fail = "Fail"
             break
 
-    # If wasn't set to True above but one of the tests is in obs, then the patient had no problems, and so they passed
+    # If wasn't set to Fail above but one of the tests is in obs, then the patient had no problems, and so they passed
     for code in test_codes:
         if code in obs:
             if assessment_fail == None:
@@ -621,7 +627,7 @@ def calculate_risk():
         incomplete_list.append("Fall Screening")
 
     if assessment_fail is None:
-        incomplete_list.append("Assessments")
+        incomplete_list.append("Assessment")
 
     if question_fail is not None:
         if assessment_fail is None:
@@ -630,7 +636,6 @@ def calculate_risk():
             else:
                 data_client.risk_level = "incomplete"
         elif assessment_fail == "Fail":
-            num_falls = int(num_falls)
             if num_falls > 1:
                 data_client.risk_level = "high"
             elif num_falls == 1:
