@@ -4,7 +4,7 @@
       "content": "Checked Medications",
       "description": "Yes or No (True or False)",
       "units": "Yes or No (True or False)",
-      "type": "choice_bool",
+      "type": "boolean",
       "code": "m001",
       "is_key": true,
       "medication_related": false
