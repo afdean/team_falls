@@ -5,7 +5,7 @@
       "description": "Yes or No (True or False)",
       "units": "Yes or No (True or False)",
       "type": "boolean",
-      "code": "m001",
+      "code": "m001"
     }
   ]
 }
