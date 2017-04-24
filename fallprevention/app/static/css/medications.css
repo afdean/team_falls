@@ -30,4 +30,8 @@
 }
 .panel #medications{
     width: 100%;
+    
+}
+#medications .panel-body{
+height: 240px;
 }
