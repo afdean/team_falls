@@ -1,4 +1,4 @@
-{% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %} {%block patient_first_name%} {{ patient.name}}{%endblock%}
+{% extends 'app/baseWithSideBar.html' %} {%load static%} {% block content %} {%block patient_first_name%} {{ patient.name}}{%endblock%}{% load crispy_forms_tags %}
 {%block patient_age%} {{ patient.age }}{%endblock%}
 
 
@@ -86,22 +86,18 @@
                 </div>
             </div>
             <div class="panel-body forms" id="problems">
-
-                <ul style="padding: 10;">
-                    <!--Hard coded-->
-                    {% if "screening" in completed %} {% if med_questions%} {% csrf_token %} {% for question in med_questions %} {{ question.errors}}
-                    <li class="option"> {{question}}</li>
-                    {% endfor %} {% else %}
-                    <li class="option"> Fall screening must be completed to display answers </li>
-                    {% endif %} {% endif %}
-                </ul>
+                <select multiple class="form-control">
+                {%for field in medications_form%}
+                    <option>{{field.label}}</option>
+                                    
+                {%endfor%}
+                </select>
             </div>
             <!--/panel content-->
         </div>
         <!--/panel-->
 
 
-        <a href="/app/exams"><button type="submit" class="btn btn-primary" id="">Submit</button> </a>
 
 
     </div>
