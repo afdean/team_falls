@@ -6,7 +6,7 @@
       "units": "Yes or No (True or False)",
       "type": "boolean",
       "code": "m001",
-      "is_key": true,
+      "is_key": false,
       "medication_related": false
     }
   ]
