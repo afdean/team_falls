@@ -14,7 +14,7 @@
                 <div class="panel panel-default" id="medications">
                     <div class="panel-heading">
                         <div class="panel-title">
-                            <h4>Medications</h4>
+                            <h4>Active Prescribed Medications</h4>
                         </div>
                     </div>
                     <div class="panel-body forms">
@@ -89,11 +89,18 @@
 
                 <ul style="padding: 10;">
                     <!--Hard coded-->
-                    {% if "screening" in completed %} {% if med_questions%} {% csrf_token %} {% for question in med_questions %} {{ question.errors}}
-                    <li class="option"> {{question}}</li>
-                    {% endfor %} {% else %}
+                    {% if "screening" in completed %}
+                      {% if med_questions %} {% csrf_token %}
+                        {% for question in med_questions %}
+                          {{ question.errors}}
+                          <li class="option"> {{question}}</li>
+                        {% endfor %}
+                      {% else %}
+                        <li class="option"> Patient did not answer yes to any question linked to medications </li>
+                      {% endif %}
+                    {% else %}
                     <li class="option"> Fall screening must be completed to display answers </li>
-                    {% endif %} {% endif %}
+                    {% endif %} 
                 </ul>
             </div>
             <!--/panel content-->

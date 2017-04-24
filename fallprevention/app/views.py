@@ -395,6 +395,7 @@ def assessments(request):
 def medications(request):
     data_client = DataClient()
     completed = get_sidebar_completed()
+    print(completed)
     calculate_risk()
 
     med_questions = []
@@ -402,7 +403,6 @@ def medications(request):
         if question['medication_related'] and question['code'] in data_client.observations:
             if data_client.observations[question['code']]:
                 med_questions.append(question['content'])
-
 
     med_names = []
     med_codes = []
@@ -424,11 +424,6 @@ def medications(request):
           for item in med["rx_codes"]:
               if code == item:
                   med_linked_names.append(med_names[i])
-
-    print(med_names)
-    print(med_codes)
-    print(med_linked_names)
-
 
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
