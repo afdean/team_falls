@@ -107,6 +107,17 @@ def history(request):
         data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
         encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['status'] != "in-progress")
     # encounter_order = ['in-progress', 'arrived', 'finished']
+    for encounter in encounter_list:
+        # patient_id_list = encounter['resource']['patient']['reference'].split('/')
+        # patient_id = ""
+        # if len(patient_id_list) > 1:
+        #     patient_id = patient_id_list[1]
+        print ("#############")
+        observations = data_client.fhir_client.search_observations(enc=encounter['resource']['id'])
+        if 'r000' in observations.keys():
+            print ("test")
+            print (observations['r000'])
+
     return render(request,'app/history.html',{'encounters': encounter_list, 'patient': data_client.patient})
 
 def questions(request):
@@ -658,6 +669,7 @@ def calculate_risk():
             data_client.risk_level = "low"
 
     data_client.observations["r000"] = data_client.risk_level
+    data_client.fhir_client.write_list_of_observations_to_fhir(data=data_client.observations)
     return incomplete_list
 
 def get_sidebar_completed():
