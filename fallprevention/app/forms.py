@@ -188,7 +188,7 @@ class AssessmentDetailsForm(forms.Form):
             # ))
             for test in data_client.func_test:
                 if test['code'] in assessments_chosen:
-                  
+
                     code = test['code']
                     test_fieldset = Fieldset(test['name'], css_class=test['name'])
                     # self.helper.layout.append(Button(test['code'], test['code']))
@@ -250,6 +250,7 @@ class AssessmentForm(forms.Form):
         # assessments_chosen = data_client.assessments_chosen
         self.helper = FormHelper()
         self.helper.layout = Layout()
+        field_set = Fieldset("Please select assessment(s) to complete")
         for test in data_client.func_test:
             if test['is_recommended']:
                 self.fields[test['code']] = forms.BooleanField(
@@ -261,6 +262,8 @@ class AssessmentForm(forms.Form):
                     label=test['name'],
                     required=False,
                 )
+            field_set.append(Field(test['code']))
+        self.helper.layout.append(field_set)
         self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
@@ -293,19 +296,18 @@ class MedicationsForm(forms.Form):
     #hard code medications for now, will generate it dynamically next step
     def __init__(self, *args, **kwargs):
         super(MedicationsForm, self).__init__(*args, **kwargs)
+        data_client = DataClient()
         self.helper = FormHelper()
         self.helper.form_id = 'id-problemsForms'
         self.helper.form_method = 'post'
+        # self.helper.layout = Layout()
+        for i, form in enumerate(data_client.med_form['forms']):
+            code = data_client.med_form['forms'][i]['code']
+            field_name = code
+            self.fields[field_name] = generate_form(form)
+        # self.helper.layout.append(checked_medications)
         self.helper.add_input(Submit('submit', 'Submit'))
 
-    asprin = forms.CharField(
-        label = 'Asprin',
-        required = False,
-    )
-    isosorbide = forms.CharField(
-        label = 'Isosorbide',
-        required = False,
-    )
 
 class ProblemsForm(forms.Form):
     problems = forms.CharField(
@@ -448,11 +450,14 @@ class ExamsForm(forms.Form):
         data_client = DataClient()
         self.helper = FormHelper()
         self.helper.layout = Layout()
+        field_set = Fieldset("Please select exam(s) to complete")
         for exam in data_client.physical_exam:
             self.fields[exam['code']] = forms.BooleanField(
                 label=exam['name'],
                 required=False,
             )
+            field_set.append(Field(exam['code']))
+        self.helper.layout.append(field_set)
         self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
@@ -485,8 +490,8 @@ class RisksForm(forms.Form):
         self.helper.layout = Layout()
 
         intervention_list = []
-
-        if risk_level == "low":
+        print(risk_level)
+        if risk_level == "low" or risk_level == "incomplete":
             for intervention in data_client.risk_list["risks"]["low_risk"]:
                 intervention_list.append(intervention)
         elif risk_level == "moderate":
@@ -495,17 +500,19 @@ class RisksForm(forms.Form):
         elif risk_level == "high":
             for intervention in data_client.risk_list["risks"]["high_risk"]:
                 intervention_list.append(intervention)
-
+        print(intervention_list)
         # Pythonic way to check if list isn't empty
         if intervention_list:
             for intervention in intervention_list:
                 current_intervention = data_client.intervention_list[intervention]
                 intervention_fieldset = Fieldset(current_intervention['name'], css_class='field_set_results')
                 for i, form in enumerate(current_intervention['forms']):
-                    field_name = current_intervention['name'] + "_form" + str(i)
+                    code = current_intervention['forms'][i]['code']
+                    field_name = code
                     self.fields[field_name] = generate_form(form)
                     intervention_fieldset.append(Field(field_name))
                 self.helper.layout.append(intervention_fieldset)
+            print("here")
 
         self.helper.form_id = 'id-risksForm'
         self.helper.form_method = 'post'

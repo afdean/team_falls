@@ -4,9 +4,9 @@
         font-size: 14px;
     }
 </style>
-{%block patient_first_name%} {{ patient.name }}{%endblock%} {%block patient_age%} {%endblock%} 
-{% block content %} 
-{% csrf_token %} 
+{%block patient_first_name%} {{ patient.name }}{%endblock%} {%block patient_age%} {%endblock%}
+{% block content %}
+{% csrf_token %}
 
 
 
@@ -17,7 +17,7 @@
             <div class="row level">
                 {% if risk_level == "incomplete" %}
                 <div class="col-lg-12">
-                    <p id="incomplete">Indeterminate 
+                    <p id="incomplete">Indeterminate
                         <p>
                 </div>
                 {% if incomplete_list %}
@@ -25,7 +25,8 @@
                 {% for incomplete in incomplete_list %}
                     <strong><h7> {{ incomplete }} </h7></strong>
                 <br>
-                {% endfor %} {% endif %} {% elif risk_level == "low"%}
+                {% endfor %} {% endif %}
+                {% elif risk_level == "low"%}
                 <div class="col-lg-12">
                     <p id="low" >Low </button>
                     </p>
@@ -60,7 +61,7 @@
 
 
   {% crispy risks_form %}
-              <button class="btn" style="background-color: lightblue;"> Print</button> 
+              <button class="btn" style="background-color: lightblue;"> Print</button>
                             </div>
                             <!--/panel content-->
                         </div>
@@ -71,7 +72,7 @@
     <!--<div class="col-md-12 results_form ">
         <div class="container-fluid panel-body">
             <div class=" row justify-content-end">
-              
+
             </div>
         </div>
     </div>-->
@@ -79,15 +80,15 @@
 </div>
 
 <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-<script type="text/javascript"> 
+<script type="text/javascript">
    var risk_level = "{{risk_level}}";
        console.log(risk_level)
-   
-   if(risk_level=="incomplete"){
-       $('#interventions').remove()
-       
+
+  //  if(risk_level=="incomplete"){
+  //      $('#interventions').remove()
+
    }
- 
+
 </script>
 
 

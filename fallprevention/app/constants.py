@@ -8,3 +8,4 @@ MEDICATION_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/s
 PHYEXAM_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/physical_exam.json"
 INTERVENTION_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/intervention_list.json"
 RISK_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/risk_interventions.json"
+MED_FORM_URL = "https://raw.githubusercontent.com/akapusta/team_falls/master/standards/medication_form.json"

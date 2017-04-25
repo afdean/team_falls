@@ -263,6 +263,7 @@ def assessments_details(request):
                                 if test['forms'][i]['code'] == 'tug001' and answer:
                                     has_problem = True
                                     data_client.observations["tug000"] = "Fail"
+                                    observations["tug000"] = "Fail"
                             # Check for timing scores
                             if test['forms'][i]['type'] == 'integer':
                                 # Check to make sure it isnt NoneType
@@ -272,7 +273,7 @@ def assessments_details(request):
                                         if answer < test['min_logic'][form_logic]:
                                             has_problem = True
                                             data_client.observations["tug000"] = "Fail"
-
+                                            observations["tug000"] = "Fail"
                         # Check logic for 30 Chair
                         if test['code'] == 'chair000':
                             if test['forms'][i]['type'] == 'integer':
@@ -304,6 +305,7 @@ def assessments_details(request):
                                         if answer < chair_min_failure:
                                             has_problem = True
                                             data_client.observations["chair000"] = "Fail"
+                                            observations["chair000"] = "Fail"
 
                         # Check logic for Balance Test
                         if test['code'] == 'bal000':
@@ -322,18 +324,21 @@ def assessments_details(request):
                 # print ("has problem from key tugs")
                 has_problem = True
                 data_client.observations["tug000"] = "Fail"
+                observations["tug000"] = "Fail"
             if bal_min_failure >= 0 and bal_score > bal_min_failure:
                 # print ('has problem from key bal')
                 has_problem = True
                 data_client.observations["bal000"] = "Fail"
+                observations["bal000"] = "Fail"
+            # TODO: If "fail is in before, and someone changes to pass, this wont work."
             if tug_conducted:
-                if "tug000" not in data_client.observations:
+                if "tug000" not in observations:
                     data_client.observations["tug000"] = "Pass"
             if bal_conducted:
-                if "bal000" not in data_client.observations:
+                if "bal000" not in observations:
                     data_client.observations["bal000"] = "Pass"
             if chair_conducted:
-                if "chair000" not in data_client.observations:
+                if "chair000" not in observations:
                     data_client.observations["chair000"] = "Pass"
 
             #save observations to FHIR server
@@ -390,6 +395,7 @@ def assessments(request):
 def medications(request):
     data_client = DataClient()
     completed = get_sidebar_completed()
+    print(completed)
     calculate_risk()
 
     med_questions = []
@@ -397,7 +403,6 @@ def medications(request):
         if question['medication_related'] and question['code'] in data_client.observations:
             if data_client.observations[question['code']]:
                 med_questions.append(question['content'])
-
 
     med_names = []
     med_codes = []
@@ -420,22 +425,28 @@ def medications(request):
               if code == item:
                   med_linked_names.append(med_names[i])
 
-    print(med_names)
-    print(med_codes)
-    print(med_linked_names)
-
-
     if request.method == 'POST':
         medications_form = MedicationsForm(request.POST)
         print("Button is triggering")
         if medications_form.is_valid():
             data_client.medication_complete = True
+            for i, form in enumerate(data_client.med_form):
+                code = data_client.med_form['forms'][i]['code']
+                field_name = code
+                answer = medications_form.cleaned_data[field_name]
+                data_client.observations[code] = answer
             if data_client.risk_level == "high":
                 return HttpResponseRedirect('/app/exams/')
             else:
                 return HttpResponseRedirect('/app/risks/')
     else:
-        medications_form = MedicationsForm()
+        med_form_answers = {}
+        for i, form in enumerate(data_client.med_form):
+            code = data_client.med_form['forms'][i]['code']
+            if code in data_client.observations:
+                field_name = code
+                med_form_answers[field_name] = data_client.observations[code]
+        medications_form = MedicationsForm(initial=med_form_answers)
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed, 'med_questions': med_questions, 'med_names': med_names, 'med_linked_names': med_linked_names})
 
 def exams_details(request):
@@ -548,6 +559,7 @@ def risks(request):
             for key, intervention in data_client.intervention_list.items():
                 for i, form in enumerate(intervention['forms']):
                     code = intervention['forms'][i]['code']
+                    print(risks_form.cleaned_data)
                     if code in risks_form.cleaned_data:
                         answer = risks_form.cleaned_data[code]
                         data_client.observations[code] = answer
@@ -563,8 +575,6 @@ def risks(request):
                     field_name = code
                     intervention_answers[field_name] = data_client.observations[code]
         risk_level = data_client.risk_level
-        print("Here are intervention answers")
-        print(intervention_answers)
         if data_client.risk_level == "low":
             risks_form = RisksForm(initial=intervention_answers, risk_level="low")
         elif data_client.risk_level == "moderate":
@@ -572,7 +582,7 @@ def risks(request):
         elif data_client.risk_level == "high":
             risks_form = RisksForm(initial=intervention_answers, risk_level="high")
         else:
-            risks_form = RisksForm(risk_level="incomplete", incomplete_list=incomplete_list)
+            risks_form = RisksForm(initial=intervention_answers, risk_level="incomplete", incomplete_list=incomplete_list)
     return render(request, 'app/risks.html', {'risks_form':risks_form, 'risk_level': risk_level, 'incomplete_list': incomplete_list, 'completed': completed, 'patient': data_client.patient})
 
 def calculate_risk():
@@ -601,6 +611,7 @@ def calculate_risk():
     if question_code in obs:
         question_fail = obs["q000"]
         num_falls = obs["q001"]
+        num_falls = int(num_falls)
         injury = obs["q003"]
 
     # Check each test; If one has failed then assesment_fail is fail guaranteed
@@ -609,7 +620,7 @@ def calculate_risk():
             assessment_fail = "Fail"
             break
 
-    # If wasn't set to True above but one of the tests is in obs, then the patient had no problems, and so they passed
+    # If wasn't set to Fail above but one of the tests is in obs, then the patient had no problems, and so they passed
     for code in test_codes:
         if code in obs:
             if assessment_fail == None:
@@ -621,7 +632,7 @@ def calculate_risk():
         incomplete_list.append("Fall Screening")
 
     if assessment_fail is None:
-        incomplete_list.append("Assessments")
+        incomplete_list.append("Assessment")
 
     if question_fail is not None:
         if assessment_fail is None:
@@ -630,7 +641,6 @@ def calculate_risk():
             else:
                 data_client.risk_level = "incomplete"
         elif assessment_fail == "Fail":
-            num_falls = int(num_falls)
             if num_falls > 1:
                 data_client.risk_level = "high"
             elif num_falls == 1:
@@ -647,6 +657,7 @@ def calculate_risk():
         elif assessment_fail == "Pass":
             data_client.risk_level = "low"
 
+    data_client.observations["r000"] = data_client.risk_level
     return incomplete_list
 
 def get_sidebar_completed():

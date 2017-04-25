@@ -2618,18 +2618,6 @@ content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^ 
 type	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "type": "integer"$/;"	function	line:127
 content	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "content": "Stand on one foot. Time (seconds):",$/;"	function	line:130
 type	/Users/andrewdean/github/team_falls/standards/func_ability_test.json	/^        "type": "integer"$/;"	function	line:131
-ul	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^    <ul class="nav sidebar-nav">$/;"	function	line:4
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <div class="patient-info">$/;"	function	line:6
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <li class="" id="patient-name">Lusenii Kromah<\/li>$/;"	function	line:7
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <li class="" id="patient-age">Age: 22<\/li>$/;"	function	line:8
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <li class="" id="patient-score">Today's Score: <p id="score">0<\/p><\/li>$/;"	function	line:9
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^          <li><a href="#">Patient History<\/a><\/li>$/;"	function	line:13
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^          <li><a href="{% url 'searchPatient' %}">Search Patient<\/a><\/li>$/;"	function	line:14
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^          <li><a href="{% url 'questions' %}">Fall Screening<\/a><\/li>$/;"	function	line:15
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^          <li><a href="{% url 'assessments' %}">Assessment<\/a><\/li>$/;"	function	line:16
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^          <li><a href="{% url 'medications' %}">Medications<\/a><\/li>$/;"	function	line:17
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^          <li><a href="{% url 'exams' %}">Exams<\/a><\/li>$/;"	function	line:18
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^          <li><a href="{% url 'results' %}">Results<\/a><\/li>$/;"	function	line:19
 index	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def index(request):$/;"	function	line:15
 login	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def login(request):$/;"	function	line:19
 login_cp	/home/parallels/github/team_falls/fallprevention/app/views.py	/^def login_cp(request):$/;"	function	line:40
@@ -2775,110 +2763,6 @@ div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/test.ht
 h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/test.html	/^                                    <h4>Test page<\/h4>$/;"	function	line:24
 div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/test.html	/^                            <div class="panel-body forms" id="assessments"> -->$/;"	function	line:27
 form	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/test.html	/^                                        <form action="" method="POST">$/;"	function	line:28
-style	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<style>$/;"	function	line:1
-head	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<head>$/;"	function	line:28
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^  <script src="http:\/\/code.jquery.com\/jquery-1.9.1.js">$/;"	function	line:31
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^  <script src="http:\/\/code.jquery.com\/ui\/1.11.0\/jquery-ui.js">$/;"	function	line:34
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^  <script type="text\/javascript" src="{% static 'js\/bootstrap.js'%}"><\/script>$/;"	function	line:37
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^ <div class="row">$/;"	function	line:40
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                    <div class="col-md-12">$/;"	function	line:41
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                        <div class="panel panel-default">$/;"	function	line:43
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                            <div class="panel-heading">$/;"	function	line:44
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                                <div class="panel-title">$/;"	function	line:45
-h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                                    <h4>Assessments <\/h4>$/;"	function	line:46
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                            <div class="panel-body forms" id="assessments">$/;"	function	line:49
-forms	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django import forms$/;"	namespace	line:1
-models	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.db import models$/;"	namespace	line:2
-ModelForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.forms import ModelForm$/;"	namespace	line:3
-ValidationError	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.core.exceptions import ValidationError$/;"	namespace	line:4
-FormHelper	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.helper import FormHelper$/;"	namespace	line:6
-Layout	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-Div	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-Submit	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-HTML	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-Button	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-Row	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-Field	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-Fieldset	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
-AppendedText	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:8
-PrependedText	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:8
-FormActions	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:8
-Question	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from .models import Question$/;"	namespace	line:10
-DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from app.data_client import DataClient$/;"	namespace	line:11
-validate_search_patient	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def validate_search_patient(patient_name):$/;"	function	line:13
-generate_form	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def generate_form(field, field_widget=None, field_choices=None, is_required=False):$/;"	function	line:21
-LoginForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginForm(forms.Form):$/;"	class	line:63
-identity	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    identity = forms.TypedChoiceField($/;"	variable	line:64	class:LoginForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label='Identify who you are',$/;"	variable	line:65	class:LoginForm
-choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices=(('patient', 'Patient'),$/;"	variable	line:66	class:LoginForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:68	class:LoginForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:70	class:LoginForm
-LoginCPForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginCPForm(forms.Form):$/;"	class	line:78
-username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:79	class:LoginCPForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Username:",$/;"	variable	line:80	class:LoginCPForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:81	class:LoginCPForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:82	class:LoginCPForm
-password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:84	class:LoginCPForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Password:",$/;"	variable	line:85	class:LoginCPForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.PasswordInput,$/;"	variable	line:86	class:LoginCPForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:87	class:LoginCPForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:88	class:LoginCPForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:90	class:LoginCPForm
-LoginPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginPatientForm(forms.Form):$/;"	class	line:98
-username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:99	class:LoginPatientForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Username:",$/;"	variable	line:100	class:LoginPatientForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:101	class:LoginPatientForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:102	class:LoginPatientForm
-password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:104	class:LoginPatientForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Password:",$/;"	variable	line:105	class:LoginPatientForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.PasswordInput,$/;"	variable	line:106	class:LoginPatientForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:107	class:LoginPatientForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:108	class:LoginPatientForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:110	class:LoginPatientForm
-SearchPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class SearchPatientForm(forms.Form):$/;"	class	line:118
-patient_name	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    patient_name = forms.CharField($/;"	variable	line:119	class:SearchPatientForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Patient Name:",$/;"	variable	line:120	class:SearchPatientForm
-max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:121	class:SearchPatientForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:122	class:SearchPatientForm
-validators	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        validators=[validate_search_patient]$/;"	variable	line:123	class:SearchPatientForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:126	class:SearchPatientForm
-QuestionForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class QuestionForm(forms.Form):$/;"	class	line:134
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:135	class:QuestionForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:156	class:QuestionForm
-AssessmentDetailsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class AssessmentDetailsForm(forms.Form):$/;"	class	line:175
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:176	class:AssessmentDetailsForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:198	class:AssessmentDetailsForm
-AssessmentForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class AssessmentForm(forms.Form):$/;"	class	line:238
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:239	class:AssessmentForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:260	class:AssessmentForm
-NoteForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class NoteForm(forms.Form):$/;"	class	line:277
-note	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    note = forms.CharField($/;"	variable	line:278	class:NoteForm
-widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.Textarea,$/;"	variable	line:279	class:NoteForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label='Note:',$/;"	variable	line:280	class:NoteForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=False,$/;"	variable	line:281	class:NoteForm
-MedicationsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsForm(forms.Form):$/;"	class	line:284
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:286	class:MedicationsForm
-asprin	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    asprin = forms.CharField($/;"	variable	line:293	class:MedicationsForm
-isosorbide	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    isosorbide = forms.CharField($/;"	variable	line:297	class:MedicationsForm
-ProblemsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ProblemsForm(forms.Form):$/;"	class	line:302
-problems	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    problems = forms.CharField($/;"	variable	line:303	class:ProblemsForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Problems',$/;"	variable	line:304	class:ProblemsForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:305	class:ProblemsForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:307	class:ProblemsForm
-MedicationsLinkedForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsLinkedForm(forms.Form):$/;"	class	line:314
-medicationsLinked	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    medicationsLinked = forms.CharField($/;"	variable	line:315	class:MedicationsLinkedForm
-label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Medications linked to Falls',$/;"	variable	line:316	class:MedicationsLinkedForm
-required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:317	class:MedicationsLinkedForm
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:320	class:MedicationsLinkedForm
-is_int	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def is_int(str):$/;"	function	line:327
-ExamsDetailsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ExamsDetailsForm(forms.Form):$/;"	class	line:334
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:335	class:ExamsDetailsForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:355	class:ExamsDetailsForm
-ExamsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ExamsForm(forms.Form):$/;"	class	line:437
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:438	class:ExamsForm
-clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:452	class:ExamsForm
-RisksForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class RisksForm(forms.Form):$/;"	class	line:467
-__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:471	class:RisksForm
 name	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "name": "Postural Hypotension",$/;"	function	line:3
 code	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "code": "pos000",$/;"	function	line:4
 forms	/Users/andrewdean/github/team_falls/standards/physical_exam.json	/^    "forms": [$/;"	function	line:5
@@ -3106,45 +2990,6 @@ option	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medi
 button	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^        <button type="submit" class="btn btn-primary" id="">Submit<\/button>$/;"	function	line:135
 script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:148
 script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/medications.html	/^<script type="text\/javascript">$/;"	function	line:149
-url	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import urllib as url$/;"	namespace	line:1
-json	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import json$/;"	namespace	line:2
-render	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.shortcuts import render$/;"	namespace	line:4
-reverse	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.urlresolvers import reverse$/;"	namespace	line:5
-settings	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.conf import settings$/;"	namespace	line:6
-forms	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django import forms$/;"	namespace	line:7
-HttpResponse	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	namespace	line:8
-HttpResponseRedirect	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	namespace	line:8
-Question	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
-FuncAbilityTest	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
-TestParameter	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
-DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.data_client import DataClient$/;"	namespace	line:11
-Paginator	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
-EmptyPage	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
-PageNotAnInteger	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
-literal_eval	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from ast import literal_eval$/;"	namespace	line:13
-date	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from datetime import date$/;"	namespace	line:14
-math	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import math$/;"	namespace	line:15
-Paginator	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator$/;"	namespace	line:16
-index	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def index(request):$/;"	function	line:19
-login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login(request):$/;"	function	line:23
-login_cp	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login_cp(request):$/;"	function	line:45
-login_patient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login_patient(request):$/;"	function	line:56
-search_patient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def search_patient(request):$/;"	function	line:67
-history	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def history(request):$/;"	function	line:102
-questions	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def questions(request):$/;"	function	line:112
-thankyou	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def thankyou(request):$/;"	function	line:188
-calculate_age	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_age(date_string):$/;"	function	line:192
-assessments_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments_details(request):$/;"	function	line:204
-assessments	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments(request):$/;"	function	line:369
-medications	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def medications(request):$/;"	function	line:392
-exams_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams_details(request):$/;"	function	line:443
-exams	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams(request):$/;"	function	line:478
-user_login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def user_login(request):$/;"	function	line:502
-risks	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def risks(request):$/;"	function	line:542
-calculate_risk	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_risk():$/;"	function	line:582
-get_sidebar_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_sidebar_completed():$/;"	function	line:655
-get_tests_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_tests_completed():$/;"	function	line:691
-get_exams_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_exams_completed():$/;"	function	line:710
 name	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "name": "Acetaminophen-Codeine",$/;"	function	line:3
 date	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "date": "2015-12",$/;"	function	line:4
 gpi_codes	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "gpi_codes": [],$/;"	function	line:5
@@ -3657,3 +3502,163 @@ name	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "name":
 date	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "date": "2015-12",$/;"	function	line:766
 gpi_codes	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "gpi_codes": [],$/;"	function	line:767
 rx_codes	/Users/andrewdean/github/team_falls/standards/medication.json	/^    "rx_codes": [311470]$/;"	function	line:768
+url	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import urllib as url$/;"	namespace	line:1
+json	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import json$/;"	namespace	line:2
+render	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.shortcuts import render$/;"	namespace	line:4
+reverse	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.urlresolvers import reverse$/;"	namespace	line:5
+settings	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.conf import settings$/;"	namespace	line:6
+forms	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django import forms$/;"	namespace	line:7
+HttpResponse	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	namespace	line:8
+HttpResponseRedirect	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.http import HttpResponse, HttpResponseRedirect$/;"	namespace	line:8
+Question	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
+FuncAbilityTest	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
+TestParameter	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.models import Question, FuncAbilityTest, TestParameter$/;"	namespace	line:10
+DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from app.data_client import DataClient$/;"	namespace	line:11
+Paginator	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
+EmptyPage	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
+PageNotAnInteger	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger$/;"	namespace	line:12
+literal_eval	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from ast import literal_eval$/;"	namespace	line:13
+date	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from datetime import date$/;"	namespace	line:14
+math	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^import math$/;"	namespace	line:15
+Paginator	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^from django.core.paginator import Paginator$/;"	namespace	line:16
+index	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def index(request):$/;"	function	line:19
+login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login(request):$/;"	function	line:23
+login_cp	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login_cp(request):$/;"	function	line:45
+login_patient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def login_patient(request):$/;"	function	line:56
+search_patient	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def search_patient(request):$/;"	function	line:67
+history	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def history(request):$/;"	function	line:102
+questions	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def questions(request):$/;"	function	line:112
+thankyou	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def thankyou(request):$/;"	function	line:188
+calculate_age	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_age(date_string):$/;"	function	line:192
+assessments_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments_details(request):$/;"	function	line:204
+assessments	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def assessments(request):$/;"	function	line:371
+medications	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def medications(request):$/;"	function	line:394
+exams_details	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams_details(request):$/;"	function	line:445
+exams	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def exams(request):$/;"	function	line:480
+user_login	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def user_login(request):$/;"	function	line:504
+risks	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def risks(request):$/;"	function	line:544
+calculate_risk	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def calculate_risk():$/;"	function	line:584
+get_sidebar_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_sidebar_completed():$/;"	function	line:657
+get_tests_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_tests_completed():$/;"	function	line:693
+get_exams_completed	/Users/andrewdean/github/team_falls/fallprevention/app/views.py	/^def get_exams_completed():$/;"	function	line:712
+forms	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django import forms$/;"	namespace	line:1
+models	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.db import models$/;"	namespace	line:2
+ModelForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.forms import ModelForm$/;"	namespace	line:3
+ValidationError	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from django.core.exceptions import ValidationError$/;"	namespace	line:4
+FormHelper	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.helper import FormHelper$/;"	namespace	line:6
+Layout	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+Div	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+Submit	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+HTML	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+Button	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+Row	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+Field	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+Fieldset	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field, Fieldset$/;"	namespace	line:7
+AppendedText	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:8
+PrependedText	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:8
+FormActions	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions$/;"	namespace	line:8
+Question	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from .models import Question$/;"	namespace	line:10
+DataClient	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^from app.data_client import DataClient$/;"	namespace	line:11
+validate_search_patient	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def validate_search_patient(patient_name):$/;"	function	line:13
+generate_form	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def generate_form(field, field_widget=None, field_choices=None, is_required=False):$/;"	function	line:21
+LoginForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginForm(forms.Form):$/;"	class	line:63
+identity	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    identity = forms.TypedChoiceField($/;"	variable	line:64	class:LoginForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label='Identify who you are',$/;"	variable	line:65	class:LoginForm
+choices	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        choices=(('patient', 'Patient'),$/;"	variable	line:66	class:LoginForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:68	class:LoginForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:70	class:LoginForm
+LoginCPForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginCPForm(forms.Form):$/;"	class	line:78
+username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:79	class:LoginCPForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Username:",$/;"	variable	line:80	class:LoginCPForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:81	class:LoginCPForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:82	class:LoginCPForm
+password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:84	class:LoginCPForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Password:",$/;"	variable	line:85	class:LoginCPForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.PasswordInput,$/;"	variable	line:86	class:LoginCPForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:87	class:LoginCPForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:88	class:LoginCPForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:90	class:LoginCPForm
+LoginPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class LoginPatientForm(forms.Form):$/;"	class	line:98
+username	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    username = forms.CharField($/;"	variable	line:99	class:LoginPatientForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Username:",$/;"	variable	line:100	class:LoginPatientForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:101	class:LoginPatientForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:102	class:LoginPatientForm
+password	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    password = forms.CharField($/;"	variable	line:104	class:LoginPatientForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Password:",$/;"	variable	line:105	class:LoginPatientForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.PasswordInput,$/;"	variable	line:106	class:LoginPatientForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:107	class:LoginPatientForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:108	class:LoginPatientForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:110	class:LoginPatientForm
+SearchPatientForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class SearchPatientForm(forms.Form):$/;"	class	line:118
+patient_name	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    patient_name = forms.CharField($/;"	variable	line:119	class:SearchPatientForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label="Patient Name:",$/;"	variable	line:120	class:SearchPatientForm
+max_length	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        max_length=80,$/;"	variable	line:121	class:SearchPatientForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=True,$/;"	variable	line:122	class:SearchPatientForm
+validators	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        validators=[validate_search_patient]$/;"	variable	line:123	class:SearchPatientForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:126	class:SearchPatientForm
+QuestionForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class QuestionForm(forms.Form):$/;"	class	line:134
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:135	class:QuestionForm
+clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:156	class:QuestionForm
+AssessmentDetailsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class AssessmentDetailsForm(forms.Form):$/;"	class	line:175
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:176	class:AssessmentDetailsForm
+clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:206	class:AssessmentDetailsForm
+AssessmentForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class AssessmentForm(forms.Form):$/;"	class	line:246
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:247	class:AssessmentForm
+clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:268	class:AssessmentForm
+NoteForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class NoteForm(forms.Form):$/;"	class	line:285
+note	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    note = forms.CharField($/;"	variable	line:286	class:NoteForm
+widget	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        widget=forms.Textarea,$/;"	variable	line:287	class:NoteForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label='Note:',$/;"	variable	line:288	class:NoteForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required=False,$/;"	variable	line:289	class:NoteForm
+MedicationsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsForm(forms.Form):$/;"	class	line:292
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:294	class:MedicationsForm
+asprin	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    asprin = forms.CharField($/;"	variable	line:301	class:MedicationsForm
+isosorbide	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    isosorbide = forms.CharField($/;"	variable	line:305	class:MedicationsForm
+ProblemsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ProblemsForm(forms.Form):$/;"	class	line:310
+problems	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    problems = forms.CharField($/;"	variable	line:311	class:ProblemsForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Problems',$/;"	variable	line:312	class:ProblemsForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:313	class:ProblemsForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:315	class:ProblemsForm
+MedicationsLinkedForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class MedicationsLinkedForm(forms.Form):$/;"	class	line:322
+medicationsLinked	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    medicationsLinked = forms.CharField($/;"	variable	line:323	class:MedicationsLinkedForm
+label	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        label = 'Medications linked to Falls',$/;"	variable	line:324	class:MedicationsLinkedForm
+required	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^        required = False,$/;"	variable	line:325	class:MedicationsLinkedForm
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:328	class:MedicationsLinkedForm
+is_int	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^def is_int(str):$/;"	function	line:335
+ExamsDetailsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ExamsDetailsForm(forms.Form):$/;"	class	line:342
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:343	class:ExamsDetailsForm
+clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:363	class:ExamsDetailsForm
+ExamsForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class ExamsForm(forms.Form):$/;"	class	line:445
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:446	class:ExamsForm
+clean	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def clean(self):$/;"	member	line:460	class:ExamsForm
+RisksForm	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^class RisksForm(forms.Form):$/;"	class	line:475
+__init__	/Users/andrewdean/github/team_falls/fallprevention/app/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	member	line:479	class:RisksForm
+style	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<style>$/;"	function	line:1
+p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<p> {{ some_variable }} <\/p>$/;"	function	line:28
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^ <div class="row">$/;"	function	line:30
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                    <div class="col-md-12">$/;"	function	line:32
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                        <div class="panel panel-default">$/;"	function	line:34
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                            <div class="panel-heading">$/;"	function	line:35
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                                <div class="panel-title">$/;"	function	line:36
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                                    <h4>Assessments <\/h4>$/;"	function	line:37
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                            <div class="panel-body forms" id="assessments">$/;"	function	line:42
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                    <script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:53
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                    <script type="text\/javascript">$/;"	function	line:54
+style	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<style>$/;"	function	line:1
+ul	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<ul class="nav nav-stacked">$/;"	function	line:11
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^  <li class="nav-header">$/;"	function	line:14
+ul	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^    <ul class="nav nav-stacked collapse in" id="userMenu">$/;"	function	line:15
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <div class="patient-info">$/;"	function	line:17
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <h2 id="name">{{name}}<\/h2>$/;"	function	line:19
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <h4 class="" id="patient-age">DOB: {{patient.resource.birthDate}}<\/h4>$/;"	function	line:21
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li class="active" id="screening">$/;"	function	line:23
+a	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <a href="{% url 'questions' %}">Fall Screening<\/a><\/li>$/;"	function	line:24
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'assessments' %}" id="assessments">Assessment<\/a><\/li>$/;"	function	line:25
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'exams' %}" id="exams">Exams<\/a><\/li>$/;"	function	line:26
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'medications' %}" id="medications" id="medications">Medications<\/a><\/li>$/;"	function	line:27
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'risks' %}" id="risks">Results<\/a><\/li>$/;"	function	line:29
+a	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <a href="\/app\/search"><button class="btn" style="background-color: red;"> END<\/button><\/a> {%else%}$/;"	function	line:33
+a	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <a href="\/app\/login"><button class="btn" style="background-color: red;"> END<\/button><\/a> {%endif%}$/;"	function	line:34
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:48
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<script type="text\/javascript">$/;"	function	line:49
+replaceAll	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^  function replaceAll(str, find, replace) {$/;"	function	line:64

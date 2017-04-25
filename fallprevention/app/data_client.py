@@ -33,6 +33,8 @@ class DataClient(metaclass=Singleton):
             self.intervention_list = json.loads(url_intervention.read().decode('utf8'))
         with ur.urlopen(RISK_URL) as url_risk:
             self.risk_list = json.loads(url_risk.read().decode('utf8'))
+        with ur.urlopen(MED_FORM_URL) as url_med_form:
+            self.med_form = json.loads(url_med_form.read().decode('utf8'))
         self.fhir_client = FallsFHIRClient()
         # Creates self.fhir_dict
         self.create_fhir_dict()
