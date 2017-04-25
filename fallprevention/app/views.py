@@ -603,6 +603,7 @@ def calculate_risk():
     Returns a list of things yet to be completed
     """
     data_client = DataClient()
+    risk_code = data_client.risk_list['code']
     obs = data_client.observations
 
     # Set to "Pass" and "Fail"
@@ -668,7 +669,7 @@ def calculate_risk():
         elif assessment_fail == "Pass":
             data_client.risk_level = "low"
 
-    data_client.observations["r000"] = data_client.risk_level
+    data_client.observations[risk_code] = data_client.risk_level
     data_client.fhir_client.write_list_of_observations_to_fhir(data=data_client.observations)
     return incomplete_list
 
