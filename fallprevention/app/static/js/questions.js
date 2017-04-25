@@ -3,7 +3,6 @@ var main = function () {
     $('.pass').click(function () {
         $("label input[value=False]").prop("checked", true)
          $("label input[value=0]").prop("checked", true)
-        $('form').submit()
 
     })
 
@@ -11,7 +10,6 @@ var main = function () {
     $('.fail').click(function () {
         $("label input[value=True]").prop("checked", true)
          $("label input[value=2]").prop("checked", true)
-        $('form').submit()
     })
 
 
