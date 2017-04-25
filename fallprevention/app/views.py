@@ -127,6 +127,7 @@ def questions(request):
             data_client.fhir_client.select_encounter(request.GET.get('encounter_id'))
             data_client.observations = data_client.fhir_client.search_observations()
         else:
+            data_client.reload_data()
             data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
         # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
         # if encounter_list:
@@ -136,7 +137,6 @@ def questions(request):
         #         data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
         #     else:
         #         data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
-        # else:
 
     completed = get_sidebar_completed()
     if request.method == 'POST':
