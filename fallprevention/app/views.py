@@ -657,6 +657,7 @@ def calculate_risk():
         elif assessment_fail == "Pass":
             data_client.risk_level = "low"
 
+    data_client.observations["r000"] = data_client.risk_level
     return incomplete_list
 
 def get_sidebar_completed():
