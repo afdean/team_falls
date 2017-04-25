@@ -250,6 +250,7 @@ class AssessmentForm(forms.Form):
         # assessments_chosen = data_client.assessments_chosen
         self.helper = FormHelper()
         self.helper.layout = Layout()
+        field_set = Fieldset("Please select assessment(s) to complete")
         for test in data_client.func_test:
             if test['is_recommended']:
                 self.fields[test['code']] = forms.BooleanField(
@@ -261,6 +262,8 @@ class AssessmentForm(forms.Form):
                     label=test['name'],
                     required=False,
                 )
+            field_set.append(Field(test['code']))
+        self.helper.layout.append(field_set)
         self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-assessmentForm'
         self.helper.form_method = 'post'
@@ -447,11 +450,14 @@ class ExamsForm(forms.Form):
         data_client = DataClient()
         self.helper = FormHelper()
         self.helper.layout = Layout()
+        field_set = Fieldset("Please select exam(s) to complete")
         for exam in data_client.physical_exam:
             self.fields[exam['code']] = forms.BooleanField(
                 label=exam['name'],
                 required=False,
             )
+            field_set.append(Field(exam['code']))
+        self.helper.layout.append(field_set)
         self.helper.add_input(Submit('submit', 'Next'))
         self.helper.form_id = 'id-examsForm'
         self.helper.form_method = 'post'
