@@ -252,7 +252,12 @@ class AssessmentForm(forms.Form):
         self.helper.layout = Layout()
         field_set = Fieldset("Please select assessment(s) to complete")
         for test in data_client.func_test:
-            if test['is_recommended']:
+            if test['code'] in data_client.observations:
+                self.fields[test['code']] = forms.BooleanField(
+                    label=test['name'] + " (Completed)",
+                    required=False,
+                )
+            elif test['is_recommended']:
                 self.fields[test['code']] = forms.BooleanField(
                     label=test['name'] + " (Recommended)",
                     required=False,
@@ -307,7 +312,6 @@ class MedicationsForm(forms.Form):
             self.fields[field_name] = generate_form(form)
         # self.helper.layout.append(checked_medications)
         self.helper.add_input(Submit('submit', 'Submit'))
-
 
 class ProblemsForm(forms.Form):
     problems = forms.CharField(
@@ -448,14 +452,28 @@ class ExamsForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(ExamsForm, self).__init__(*args, **kwargs)
         data_client = DataClient()
+        completed = []
+        obs = data_client.observations
+        for exam in data_client.physical_exam:
+            for form in exam['forms']:
+                if form['code'] in obs:
+                    completed.append(exam['code'])
+                    break
         self.helper = FormHelper()
         self.helper.layout = Layout()
         field_set = Fieldset("Please select exam(s) to complete")
         for exam in data_client.physical_exam:
-            self.fields[exam['code']] = forms.BooleanField(
+            if exam['code'] in completed:
+                self.fields[exam['code']] = forms.BooleanField(
+                label=exam['name'] + " (Completed)",
+                required=False,
+            )
+            else:
+                self.fields[exam['code']] = forms.BooleanField(
                 label=exam['name'],
                 required=False,
             )
+
             field_set.append(Field(exam['code']))
         self.helper.layout.append(field_set)
         self.helper.add_input(Submit('submit', 'Next'))
