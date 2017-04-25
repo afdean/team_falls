@@ -82,9 +82,9 @@ class DataClient(metaclass=Singleton):
         self.add_intervention_info()
         self.add_risk_info()
         self.add_med_form_info()
-        with open("output.txt", 'w') as f:
-            for key, value in self.fhir_dict.items():
-                f.write('%s:%s\n' % (key, value))
+        # with open("output.txt", 'w') as f:
+        #     for key, value in self.fhir_dict.items():
+        #         f.write('%s:%s\n' % (key, value))
 
     def add_question_info(self):
         self.doc_dict = {}
