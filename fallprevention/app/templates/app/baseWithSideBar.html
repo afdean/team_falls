@@ -2,6 +2,13 @@
   .nohover:hover {
     color: transparent;
   }
+  a{
+    padding: 10px 15px;
+    color: grey;
+  }
+  strike:hover{
+    color: grey;
+  }
 </style>
 
 {% extends 'app/base.html' %} {%load static%} {% block sidebar %}
@@ -52,14 +59,13 @@
   completed = completed.replace(/[^a-zA-Z True]+/g, ' ');
   // completed = replaceAll(completed,'True','');
   completed = completed.split('True')
-  console.log(completed);
-  for (item in completed) {
-    var navItem = completed[item].trim();
+  
     console.log(navItem)
     for (item in completed) {
-      $("#" + navItem).wrap("<del>");
+    var navItem = completed[item].trim();
+      
+      $("#" + navItem).wrap("<strike>");
     }
-  }
 
   function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
