@@ -47,6 +47,7 @@
                         <form method="GET" action="{% url 'questions' %}">
                             <input type="submit" value="Start" class="btn btn-success start" type="button">
                             <input type="hidden" value='{{patient}}' name="patient" />
+                              <input type="hidden" value='start' name="button_type" />
                         </form>
                     </div>
                 </div>
@@ -55,6 +56,7 @@
                         <form method="GET" action="{% url 'history' %}">
                             <input type="submit" value="History" class="btn btn-info history" type="button">
                             <input type="hidden" value='{{patient}}' name="patient" />
+                            <input type="hidden" value='history' name="button_type" />
                         </form>
                     </div>
                 </div>
