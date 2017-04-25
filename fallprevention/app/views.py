@@ -99,13 +99,48 @@ def search_patient(request):
 
     return render(request, 'app/search_patient.html', {'search_patient_form': search_patient_form, 'patients': patient_list})
 
+def cmp_to_key(mycmp):
+    'Convert a cmp= function into a key= function'
+    class K:
+        def __init__(self, obj, *args):
+            self.obj = obj
+        def __lt__(self, other):
+            return mycmp(self.obj, other.obj) < 0
+        def __gt__(self, other):
+            return mycmp(self.obj, other.obj) > 0
+        def __eq__(self, other):
+            return mycmp(self.obj, other.obj) == 0
+        def __le__(self, other):
+            return mycmp(self.obj, other.obj) <= 0
+        def __ge__(self, other):
+            return mycmp(self.obj, other.obj) >= 0
+        def __ne__(self, other):
+            return mycmp(self.obj, other.obj) != 0
+    return K
+
+def mycmp (x, y):
+    if (x['resource']['status'] != "in-progress"):
+        return 1
+    elif (y['resource']['status'] != "in-progress"):
+        return -1
+    else:
+        x_time = x['resource']['period']['start'].split('-')
+        y_time = y['resource']['period']['start'].split('-')
+        if int(x_time[0]) == int(y_time[0]):
+            if (int(x_time[1]) == int(y_time[1])):
+                return int(y_time[2]) - int(x_time[2])
+            else:
+                return int(y_time[1]) - int(x_time[1])
+        else:
+            return y_time[0] - x_time[0]
+
 def history(request):
     data_client = DataClient()
     encounter_list = []
     if (request.GET.get('patient') != None):
         data_client.patient = literal_eval(request.GET.get('patient'))
         data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
-        encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['status'] != "in-progress")
+        encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=cmp_to_key(mycmp))
     # encounter_order = ['in-progress', 'arrived', 'finished']
     for encounter in encounter_list:
         # patient_id_list = encounter['resource']['patient']['reference'].split('/')
