@@ -25,8 +25,10 @@
                 </div>
             </div>
             <div class="panel-body forms">
-                {% ifnotequal encounter.resource.status "finished"%}
-                
+                {% ifnotequal encounter.resource.status "finished"%} 
+                {%if encounter.risk_level%}
+                <h1>Risk Level: {{encounter.risk_level}}</h1>
+                {%endif%}
                 <h2>Started: {{encounter.resource.period.start}}</h2>
                 <h3>Status: {{encounter.resource.status}}</h3>
 
@@ -38,14 +40,16 @@
 
                                 <input type="submit" value="Resume" class="btn btn-success start" type="button">
                                 <input type="hidden" value='{{patient}}' name="patient" />
-                                <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" /> 
-                                
+                                <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" />
+
                             </form>
                         </div>
                     </div>
 
                 </div>
-                {%else%}
+                {%else%}  {%if encounter.risk_level%}
+                <h1>Risk Level: {{encounter.risk_level}}</h1>
+                {%endif%}
                 <h2>Completed: {{encounter.resource.period.start}}</h2>
                 <h3>Status: {{encounter.resource.status}}</h3>
                 <div class="buttons">
@@ -55,18 +59,18 @@
 
                                 <input type="submit" value="Review" class="btn btn-basic start" type="button">
                                 <input type="hidden" value='{{patient}}' name="patient" />
-                                <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" /> 
-                                
+                                <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" />
+
                             </form>
                         </div>
                     </div>
 
                 </div>
 
-                                
+
 
                 {%endifnotequal%}
-                
+
 
             </div>
             <!--/panel content-->
@@ -78,10 +82,10 @@
 {%endfor%} {%else%}
 
 <center>
-        <p id="history">No History</p>
-        <a href="/app/search">
-            <h3>Click to Return</h3>
-        </a>
+    <p id="history">No History</p>
+    <a href="/app/search">
+        <h3>Click to Return</h3>
+    </a>
 </center>
 
 {%endif%} {% endblock %}

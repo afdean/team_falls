@@ -114,7 +114,7 @@ def history(request):
         #     patient_id = patient_id_list[1]
         observations = data_client.fhir_client.search_observations(enc=encounter['resource']['id'])
         if data_client.risk_list['code'] in observations.keys():
-            encounter['risk_level'] = data_client.risk_list['code']
+            encounter['risk_level'] = observations[data_client.risk_list['code']]
 
     return render(request,'app/history.html',{'encounters': encounter_list, 'patient': data_client.patient})
 
