@@ -29,7 +29,7 @@
                 {%if encounter.risk_level%}
                 <h1>Risk Level: {{encounter.risk_level}}</h1>
                 {%endif%}
-                <h2>Started: {{encounter.resource.period.start}}</h2>
+                <h3>Started: {{encounter.resource.period.start}}</h3>
                 <h3>Status: {{encounter.resource.status}}</h3>
 
 
@@ -50,7 +50,7 @@
                 {%else%}  {%if encounter.risk_level%}
                 <h1>Risk Level: {{encounter.risk_level}}</h1>
                 {%endif%}
-                <h2>Completed: {{encounter.resource.period.start}}</h2>
+                <h3>Completed: {{encounter.resource.period.start}}</h3>
                 <h3>Status: {{encounter.resource.status}}</h3>
                 <div class="buttons">
                     <div class="row justify-content-end">
