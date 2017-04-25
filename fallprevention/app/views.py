@@ -155,24 +155,6 @@ def history(request):
 
 def questions(request):
     data_client = DataClient()
-    if (request.GET.get('patient') != None):
-        data_client.patient = literal_eval(request.GET.get('patient'))
-        data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
-        if (request.GET.get('encounter_id') != None):
-            data_client.fhir_client.select_encounter(request.GET.get('encounter_id'))
-            data_client.observations = data_client.fhir_client.search_observations()
-        else:
-            data_client.reload_data()
-            data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
-        # encounter_list = sorted(data_client.fhir_client.search_encounter_all(), key=lambda k: k['resource']['period']['end'], reverse=True)
-        # if encounter_list:
-        #     #status for encounter finished/in-progress/arrived/...
-        #     if encounter_list[0]['resource']['status'] == "in-progress":
-        #         data_client.encounter = encounter_list[0]
-        #         data_client.fhir_client.select_encounter_from_encounter_result(encounter_list)
-        #     else:
-        #         data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
-
     completed = get_sidebar_completed()
     if request.method == 'POST':
         question_form = QuestionForm(request.POST)
@@ -212,6 +194,17 @@ def questions(request):
                 elif data_client.risk_level is not None:
                     return HttpResponseRedirect('/app/risks/')
     else:
+        if (request.GET.get('patient') != None):
+            data_client.patient = literal_eval(request.GET.get('patient'))
+            data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
+            if (request.GET.get('encounter_id') != None):
+                data_client.fhir_client.select_encounter(request.GET.get('encounter_id'))
+                data_client.observations = data_client.fhir_client.search_observations()
+            elif (request.GET.get('button_type') != None and request.GET.get('button_type') == "start"):
+                print ("##################")
+                print (request.GET.get('button_type'))
+                data_client.reload_data()
+                data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
         question_answers = {}
         for i, question in enumerate(data_client.questions['questions']):
             code = data_client.questions['questions'][i]['code']
