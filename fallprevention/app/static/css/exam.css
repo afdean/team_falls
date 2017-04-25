@@ -35,11 +35,8 @@ p{
     
 }
     .main {
-        /*overflow-y: hidden;*/
         height: 100%;
         
-        overflow-x: hidden;
-        position: relative;
     }
     #id-examsForm fieldset{
         padding-bottom: 20px;
