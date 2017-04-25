@@ -66,3 +66,4 @@ vit002:{'content': 'Patient is currently taking enough calcium', 'description': 
 ref001:{'content': 'PT to improve gait, strength and balance', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
 ref002:{'content': 'Fall prevention/Community exercise program', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
 home001:{'content': 'Reviewed home safety with patient', 'description': 'Yes or No (True or False)', 'units': 'Yes or No (True or False)'}
+r000:{'content': 'Risk Level for the Patient', 'description': 'Low, Moderate, High, or Indeterminate', 'units': 'Low, Moderate, High, or Indeterminate'}
