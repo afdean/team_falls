@@ -35,8 +35,11 @@ p{
     
 }
     .main {
-        overflow-y: hidden;
+        /*overflow-y: hidden;*/
+        height: 100%;
+        
         overflow-x: hidden;
+        position: relative;
     }
     #id-examsForm fieldset{
         padding-bottom: 20px;
@@ -46,3 +49,7 @@ p{
   .checkbox label{
          font-size: 16px;
      }
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
