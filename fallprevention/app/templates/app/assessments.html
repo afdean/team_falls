@@ -21,6 +21,10 @@
     body {
         /*overflow-y: hidden */
     }
+    ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
 </style>
 {% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %} 
 {%load static%}

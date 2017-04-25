@@ -3,6 +3,10 @@
     .field_set legend {
         font-size: 14px;
     }
+    ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
 </style>
 {%block patient_first_name%} {{ patient.name }}{%endblock%} {%block patient_age%} {%endblock%}
 {% block content %}
