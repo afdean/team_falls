@@ -1,5 +1,8 @@
 {
     "code": "r000",
+    "content": "Risk Level for the Patient",
+    "description": "Low, Moderate, High, or Indeterminate",
+    "units": "Low, Moderate, High, or Indeterminate",
     "risks": {
         "code": "r001",
         "description": "Fall risk level evaluation",

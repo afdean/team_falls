@@ -80,6 +80,7 @@ class DataClient(metaclass=Singleton):
         self.add_assessment_info()
         self.add_exam_info()
         self.add_intervention_info()
+        self.add_risk_info()
         with open("output.txt", 'w') as f:
             for key, value in self.fhir_dict.items():
                 f.write('%s:%s\n' % (key, value))
@@ -128,3 +129,10 @@ class DataClient(metaclass=Singleton):
                 self.field_dict['description'] = field['description']
                 self.field_dict['units'] = field['units']
                 self.fhir_dict[field['code']] = self.field_dict
+
+    def add_risk_info(self):
+        self.fhir_dict[self.risk_list['code']] = {
+            'content': self.risk_list['content'],
+            'description': self.risk_list['description'],
+            'units': self.risk_list['units']
+        }
