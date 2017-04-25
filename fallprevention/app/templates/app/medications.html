@@ -1,4 +1,3 @@
-
 {% extends 'app/baseWithSideBar.html' %} {%load static%}{% load crispy_forms_tags %} {% block content %} {%block patient_first_name%} {{ patient.name}}{%endblock%}
 {%block patient_age%} {{ patient.age }}{%endblock%}
 
@@ -90,7 +89,19 @@
                 <select multiple class="form-control">
                 {%for field in medications_form%}
                     <option>{{field.label}}</option>
-                                    
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> origin/master
+=======
+
+>>>>>>> origin/master
+=======
+
+>>>>>>> f2163c52f8d767065f00a78a2d15b93dcac626a1
                 {%endfor%}
                 </select>`
 

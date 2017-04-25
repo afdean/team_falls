@@ -1,15 +1,16 @@
 {
-  "risks": {
-      "code": "r001",
-      "description": "Fall risk level evaluation",
-      "low_risk": [
-        "patient_edu", "vit_calcium", "referrals"
-      ],
-      "moderate_risk": [
-        "patient_edu", "vit_calcium", "referrals"
-      ],
-      "high_risk": [
-        "patient_edu", "vit_calcium", "referrals", "home_safety"
-      ]
-  }
+    "code": "r000",
+    "risks": {
+        "code": "r001",
+        "description": "Fall risk level evaluation",
+        "low_risk": [
+            "patient_edu", "vit_calcium", "referrals"
+        ],
+        "moderate_risk": [
+            "patient_edu", "vit_calcium", "referrals"
+        ],
+        "high_risk": [
+            "patient_edu", "vit_calcium", "referrals", "home_safety"
+        ]
+    }
 }
