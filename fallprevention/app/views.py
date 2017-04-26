@@ -410,6 +410,11 @@ def assessments_details(request):
                     if code in data_client.observations:
                         field_name = code
                         assessments_answers[field_name] = data_client.observations[code]
+                        if isinstance(assessments_answers[field_name], str):
+                            if assessments_answers[field_name] == "True":
+                                assessments_answers[field_name] = True
+                            elif assessments_answers[field_name] == "False":
+                                assessments_answers[field_name] = False
         assessments_form = AssessmentDetailsForm(initial=assessments_answers, assessments_chosen = assessments_chosen);
     return render(request, 'app/assessments.html', { 'assessments_form': assessments_form, 'patient': data_client.patient, 'completed': completed, 'assessments_chosen': assessments_chosen, 'more_info': more_info})
 
@@ -490,6 +495,11 @@ def medications(request):
             if code in data_client.observations:
                 field_name = code
                 med_form_answers[field_name] = data_client.observations[code]
+                if isinstance(med_form_answers[field_name], str):
+                    if med_form_answers[field_name] == "True":
+                        med_form_answers[field_name] = True
+                    elif med_form_answers[field_name] == "False":
+                        med_form_answers[field_name] = False
         medications_form = MedicationsForm(initial=med_form_answers)
     return render(request, 'app/medications.html', {'medications_form': medications_form, 'patient': data_client.patient, 'completed': completed, 'med_questions': med_questions, 'med_names': med_names, 'med_linked_names': med_linked_names})
 
@@ -525,6 +535,11 @@ def exams_details(request):
                     if code in data_client.observations:
                         field_name = code
                         exam_answers[field_name] = data_client.observations[code]
+                        if isinstance(exam_answers[field_name], str):
+                            if exam_answers[field_name] == "True":
+                                exam_answers[field_name] = True
+                            elif exam_answers[field_name] == "False":
+                                exam_answers[field_name] = False
         exams_form = ExamsDetailsForm(initial=exam_answers, exams_chosen=exams_chosen)
     return render(request, 'app/exams.html', {'exams_form': exams_form, 'patient': data_client.patient, 'completed': completed})
 
@@ -618,6 +633,11 @@ def risks(request):
                 if code in data_client.observations:
                     field_name = code
                     intervention_answers[field_name] = data_client.observations[code]
+                    if isinstance(intervention_answers[field_name], str):
+                        if intervention_answers[field_name] == "True":
+                            intervention_answers[field_name] = True
+                        elif intervention_answers[field_name] == "False":
+                            intervention_answers[field_name] = False
         risk_level = data_client.risk_level
         if data_client.risk_level == "low":
             risks_form = RisksForm(initial=intervention_answers, risk_level="low")
