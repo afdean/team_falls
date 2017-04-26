@@ -250,6 +250,10 @@ def assessments_details(request):
         for test in data_client.func_test:
             if (test['code'] == assessment):
                 more_info[assessment] = test['more_info']
+    for key, value in more_info.items():
+        for test in data_client.func_test:
+            if test["code"] == key:
+                more_info[key]["name"] = test["name"]
     if request.method == 'POST':
         assessments_form = AssessmentDetailsForm(request.POST, assessments_chosen=assessments_chosen);
         if assessments_form.is_valid():
@@ -272,6 +276,7 @@ def assessments_details(request):
             tug_conducted = False
             bal_conducted = False
             chair_conducted = False
+
 
             for test in data_client.func_test:
                 if test['code'] in data_client.assessments_chosen:
