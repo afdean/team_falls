@@ -48,6 +48,14 @@
         "num_forms": 1
       },
       {
+        "content": "Recommend 800 IU of Vitamin D",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
+        "type": "boolean",
+        "code": "vit003",
+        "num_forms": 1
+      },
+      {
         "content": "Patient is currently taking enough calcium",
         "description": "Yes or No (True or False)",
         "units": "Yes or No (True or False)",
@@ -61,7 +69,7 @@
     "name": "Referrals",
     "forms": [
       {
-        "content": "PT to improve gait, strength and balance",
+        "content": "Physical Therapy for gait, strength and balance program",
         "description": "Yes or No (True or False)",
         "units": "Yes or No (True or False)",
         "type": "boolean",
@@ -69,11 +77,27 @@
         "num_forms": 1
       },
       {
-        "content": "Fall prevention/Community exercise program",
+        "content": "Community fall prevention program",
         "description": "Yes or No (True or False)",
         "units": "Yes or No (True or False)",
         "type": "boolean",
         "code": "ref002",
+        "num_forms": 1
+      },
+      {
+        "content": "Community exercise program",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
+        "type": "boolean",
+        "code": "ref003",
+        "num_forms": 1
+      },
+      {
+        "content": "Occupational therapy for home safety assessment",
+        "description": "Yes or No (True or False)",
+        "units": "Yes or No (True or False)",
+        "type": "boolean",
+        "code": "ref004",
         "num_forms": 1
       }
     ]
