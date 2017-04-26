@@ -3772,3 +3772,44 @@ div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessm
 script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:63
 script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<script type="text\/javascript">$/;"	function	line:64
 myFunction	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^function myFunction() {$/;"	function	line:66
+style	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^<style>$/;"	function	line:1
+li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^<li class="nav-header">$/;"	function	line:13
+ul	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^    <ul class="nav nav-stacked collapse in" id="userMenu">$/;"	function	line:14
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^        <div class="patient-info">$/;"	function	line:16
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^            <h2 class="" id="name">{{name}}<\/h2>$/;"	function	line:18
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^            <h4 class="" id="patient-age">DOB: {{patient.resource.birthDate}}<\/h4>$/;"	function	line:21
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^<div class="row ecounter">$/;"	function	line:28
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^    <div class="col-md-12">$/;"	function	line:30
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^        <div class="panel panel-default" id="exams">$/;"	function	line:32
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^            <div class="panel-heading">$/;"	function	line:33
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <div class="panel-title">$/;"	function	line:34
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                    <h4>Encounter<\/h4>$/;"	function	line:35
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^            <div class="panel-body forms">$/;"	function	line:38
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <h1>Risk Level: {{encounter.risk_level}}<\/h1>$/;"	function	line:41
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                    <h1>Risk Level: not evaluated<\/h1>$/;"	function	line:43
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <h3>Started: {{encounter.resource.period.start}}<\/h3>$/;"	function	line:45
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <h3>Status: {{encounter.resource.status}}<\/h3>$/;"	function	line:46
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <div class="buttons">$/;"	function	line:49
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                    <div class="row justify-content-end">$/;"	function	line:50
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                        <div class="col-xs-12">$/;"	function	line:51
+form	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                            <form method="GET" action="{% url 'questions' %}">$/;"	function	line:52
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                <input type="submit" value="Resume" class="btn btn-success start" type="button">$/;"	function	line:54
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                <input type="hidden" value='{{patient}}' name="patient" \/>$/;"	function	line:55
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" \/>$/;"	function	line:56
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                 <input type="hidden" value='resume' name="button_type" \/>$/;"	function	line:58
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <h1>Risk Level: {{encounter.risk_level}}<\/h1>$/;"	function	line:66
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                    <h1>Risk Level: not evaluated<\/h1>$/;"	function	line:68
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <h3>Completed: {{encounter.resource.period.start}}<\/h3>$/;"	function	line:70
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <h3>Status: {{encounter.resource.status}}<\/h3>$/;"	function	line:71
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                <div class="buttons">$/;"	function	line:72
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                    <div class="row justify-content-end">$/;"	function	line:73
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                        <div class="col-xs-12">$/;"	function	line:74
+form	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                            <form method="GET" action="{% url 'questions' %}">$/;"	function	line:75
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                <input type="submit" value="Review" class="btn btn-basic start" type="button">$/;"	function	line:77
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                <input type="hidden" value='{{patient}}' name="patient" \/>$/;"	function	line:78
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                <input type="hidden" value='{{encounter.resource.id}}' name="encounter_id" \/>$/;"	function	line:79
+input	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^                                   <input type="hidden" value='review' name="button_type" \/>$/;"	function	line:80
+center	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^<center>$/;"	function	line:101
+p	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^    <p id="history">No History<\/p>$/;"	function	line:102
+a	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^    <a href="\/app\/search">$/;"	function	line:103
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/history.html	/^        <h3>Click to Return<\/h3>$/;"	function	line:104
