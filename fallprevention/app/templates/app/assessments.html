@@ -58,8 +58,8 @@
     {% for key, test in more_info.items %}
       <p id="name"> {{ test.name }} </p>
       <div id="media">
-      <a href="{{ test.video_link }}" id="video"> Video</a>
-      <a href="{{ test.pdf_link }}" id="pdf"> PDF </a>
+      <a href="{{ test.video_link }}" id="video" target="_blank"> Video</a>
+      <a href="{{ test.pdf_link }}" id="pdf" target="_blank"> PDF </a>
   </div>
       {% for string in test.details %}
         <p> {{ string }}</p>
