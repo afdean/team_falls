@@ -77,6 +77,7 @@
 
 
     </div>
+  
 
     <!--PAGINATION-->
 
@@ -90,8 +91,10 @@
 
         <span class="current">
             Page {{ patients.number }} of {{ patients.paginator.num_pages }}.
+        </span>
         {% if patients.has_next %}
-                <a href="?page={{ patients.next_page_number }}">next</a> {% endif %}
+                <a href="?page={{ patients.next_page_number }}">next</a> 
+        {% endif %}
                 </span>
             </div>
         </div>

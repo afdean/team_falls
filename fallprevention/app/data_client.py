@@ -59,7 +59,7 @@ class DataClient(metaclass=Singleton):
         # doing this again can quickly review.
         self.medication_complete = False
         self.risks_complete = False
-
+        self.patient_list = []
         # self.fhir_client.load_standards_document(self.fhir_dict)
 
     def reload_data(self):
