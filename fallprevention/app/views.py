@@ -211,7 +211,7 @@ def questions(request):
                 code = data_client.questions['questions'][i]['code']
                 field_name = code
                 question_answers[field_name] = data_client.observations[code]
-        # print(data_client.observations)
+
         completed = get_sidebar_completed()
         question_form = QuestionForm(initial=question_answers)
     if data_client.identity == "patient":

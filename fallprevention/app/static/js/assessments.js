@@ -18,12 +18,12 @@ function hideButtons() {
     $('#4_stage_balance').hide();
     $('#notes').hide();
     $('#assessment_button').hide();
+    // $('#myBtn').hide();
 }
 
 function showSelectedAssessments() {
     var button = $('#submit-id-submit');
     button.click(function () {
-
      $('center').hide();
     });
 }
