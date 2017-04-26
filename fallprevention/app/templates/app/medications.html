@@ -58,7 +58,7 @@
                 <!--Hard coded-->
                 <select multiple class="form-control">
                      <!--medications go here-->
-                    <{% if med_names %}
+                    <{% if med_linked_names %}
                       {% for med in med_linked_names %}
                        <option id="option">{{ med }}</option>
                       {% endfor %}
