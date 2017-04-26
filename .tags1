@@ -4,21 +4,16 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-style	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<style>$/;"	function	line:1
-ul	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<ul class="nav nav-stacked">$/;"	function	line:11
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^  <li class="nav-header">$/;"	function	line:14
-ul	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^    <ul class="nav nav-stacked collapse in" id="userMenu">$/;"	function	line:15
-div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <div class="patient-info">$/;"	function	line:17
-h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <h2 id="name">{{name}}<\/h2>$/;"	function	line:19
-h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <h4 class="" id="patient-age">DOB: {{patient.resource.birthDate}}<\/h4>$/;"	function	line:21
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li class="active" id="screening">$/;"	function	line:23
-a	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^        <a href="{% url 'questions' %}">Fall Screening<\/a><\/li>$/;"	function	line:24
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'assessments' %}" id="assessments">Assessment<\/a><\/li>$/;"	function	line:25
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'exams' %}" id="exams">Exams<\/a><\/li>$/;"	function	line:26
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'medications' %}" id="medications" id="medications">Medications<\/a><\/li>$/;"	function	line:27
-li	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <li><a href="{% url 'risks' %}" id="risks">Results<\/a><\/li>$/;"	function	line:29
-a	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <a href="\/app\/search"><button class="btn" style="background-color: red;"> END<\/button><\/a> {%else%}$/;"	function	line:33
-a	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^      <a href="\/app\/login"><button class="btn" style="background-color: red;"> END<\/button><\/a> {%endif%}$/;"	function	line:34
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:48
-script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^<script type="text\/javascript">$/;"	function	line:49
-replaceAll	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/baseWithSideBar.html	/^  function replaceAll(str, find, replace) {$/;"	function	line:64
+style	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<style>$/;"	function	line:1
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<div class="popup" onclick="myFunction()">More Information$/;"	function	line:32
+span	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^  <span class="popuptext" id="myPopup">Popup text...<\/span>$/;"	function	line:33
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<div class="row">$/;"	function	line:36
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^    <div class="col-md-12">$/;"	function	line:38
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^        <div class="panel panel-default">$/;"	function	line:40
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^            <div class="panel-heading">$/;"	function	line:41
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                <div class="panel-title">$/;"	function	line:42
+h	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^                    <h4>Assessments <\/h4>$/;"	function	line:43
+div	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^            <div class="panel-body forms" id="assessments">$/;"	function	line:49
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<script src="{% static 'js\/jquery-3.1.1.min.js' %}"><\/script>$/;"	function	line:63
+script	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^<script type="text\/javascript">$/;"	function	line:64
+myFunction	/Users/andrewdean/github/team_falls/fallprevention/app/templates/app/assessments.html	/^function myFunction() {$/;"	function	line:66
