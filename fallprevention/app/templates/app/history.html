@@ -39,6 +39,8 @@ h1,h2,h3{
                 {% ifnotequal encounter.resource.status "finished"%} 
                 {%if encounter.risk_level%}
                 <h1>Risk Level: {{encounter.risk_level}}</h1>
+                {%else%}
+                    <h1>Risk Level: TBD</h1>
                 {%endif%}
                 <h3>Started: {{encounter.resource.period.start}}</h3>
                 <h3>Status: {{encounter.resource.status}}</h3>
@@ -62,6 +64,8 @@ h1,h2,h3{
                 </div>
                 {%else%}  {%if encounter.risk_level%}
                 <h1>Risk Level: {{encounter.risk_level}}</h1>
+                     {%else%}
+                    <h1>Risk Level: TBD</h1>
                 {%endif%}
                 <h3>Completed: {{encounter.resource.period.start}}</h3>
                 <h3>Status: {{encounter.resource.status}}</h3>
