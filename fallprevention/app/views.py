@@ -213,6 +213,7 @@ def questions(request):
                 field_name = code
                 question_answers[field_name] = data_client.observations[code]
         # print(data_client.observations)
+        completed = get_sidebar_completed()
         question_form = QuestionForm(initial=question_answers)
     if data_client.identity == "patient":
         extends_variable = getattr(settings, 'AUTHBACKEND_LAYOUT_TEMPLATE', 'app/base.html')
