@@ -44,6 +44,7 @@ class DataClient(metaclass=Singleton):
         self.risk_level = ""
         # Stores resources
         self.patient = {}
+        self.patient_list = []
         self.encounter = {}
         # Complete dict of observations to be written to FHIR
         self.observations = {}
@@ -59,12 +60,12 @@ class DataClient(metaclass=Singleton):
         # doing this again can quickly review.
         self.medication_complete = False
         self.risks_complete = False
-        self.patient_list = []
         # self.fhir_client.load_standards_document(self.fhir_dict)
 
     def reload_data(self):
         self.risk_level = ""
         self.patient = {}
+        self.patient_list = []
         self.encounter = {}
         self.observations = {}
         self.identity = "care_provider"

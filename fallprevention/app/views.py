@@ -87,7 +87,7 @@ def search_patient(request):
 
     patient_paginator = Paginator(data_client.patient_list, 3)
 
-   
+
     try:
         page = int(request.GET.get('page', '1'))
         patients = patient_paginator.page(page)
@@ -196,16 +196,14 @@ def questions(request):
                     return HttpResponseRedirect('/app/risks/')
     else:
         if (request.GET.get('patient') != None):
-            data_client.patient = literal_eval(request.GET.get('patient'))
-            data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
             if (request.GET.get('encounter_id') != None):
                 data_client.fhir_client.select_encounter(request.GET.get('encounter_id'))
                 data_client.observations = data_client.fhir_client.search_observations()
             elif (request.GET.get('button_type') != None and request.GET.get('button_type') == "start"):
-                print ("##################")
-                print (request.GET.get('button_type'))
                 data_client.reload_data()
                 data_client.fhir_client.create_new_encounter(set_as_active_encounter=True)
+            data_client.patient = literal_eval(request.GET.get('patient'))
+            data_client.fhir_client.select_patient(data_client.patient['resource']['id'])
         question_answers = {}
         for i, question in enumerate(data_client.questions['questions']):
             code = data_client.questions['questions'][i]['code']
