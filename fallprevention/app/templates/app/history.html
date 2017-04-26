@@ -3,7 +3,7 @@
     border-color: #ddd;
     width: 60%;
     margin:20 auto;
-    
+
 }
 h1,h2,h3{
     text-align: center;
@@ -36,11 +36,11 @@ h1,h2,h3{
                 </div>
             </div>
             <div class="panel-body forms">
-                {% ifnotequal encounter.resource.status "finished"%} 
+                {% ifnotequal encounter.resource.status "finished"%}
                 {%if encounter.risk_level%}
                 <h1>Risk Level: {{encounter.risk_level}}</h1>
                 {%else%}
-                    <h1>Risk Level: TBD</h1>
+                    <h1>Risk Level: N/A</h1>
                 {%endif%}
                 <h3>Started: {{encounter.resource.period.start}}</h3>
                 <h3>Status: {{encounter.resource.status}}</h3>
@@ -65,7 +65,7 @@ h1,h2,h3{
                 {%else%}  {%if encounter.risk_level%}
                 <h1>Risk Level: {{encounter.risk_level}}</h1>
                      {%else%}
-                    <h1>Risk Level: TBD</h1>
+                    <h1>Risk Level: N/A</h1>
                 {%endif%}
                 <h3>Completed: {{encounter.resource.period.start}}</h3>
                 <h3>Status: {{encounter.resource.status}}</h3>
