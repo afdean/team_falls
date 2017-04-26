@@ -25,23 +25,49 @@
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
 }
+    #video, #pdf{
+        padding: 5px;
+        font-color:black;
+        background-color: grey;
+    }
+    #media{
+        padding-left: 9px;
+    }
+    #name{
+        font-size: 20px;
+    }
+    #myBtn{
+        width: 20%;
+        margin-bottom: 10px;
+    }
 </style>
 {% extends 'app/baseWithSideBar.html' %} {% load crispy_forms_tags %} {% block content %}
 {%load static%}
 
-<div class="popup" onclick="myFunction()">More Information
-  <span class="popuptext" id="myPopup">Popup text...
-  {% for key, test in more_info.items %}
-    <p> {{ test.name }} </p>
-    <a href="{{ test.video_link }}"> Video</a>
-    <a href="{{ test.pdf_link }}"> PDF </a>
-    <p> Instructions </p>
-    {% for string in test.details %}
-      <p> {{ string }}</p>
+{%if more_info%}
+
+<!-- Trigger/Open The Modal -->
+<button type="button" class="btn btn-outline-primary" id="myBtn">More Information</button>
+{%endif%}
+
+<!-- The Modal -->
+<div id="myModal" class="modal" style="height:100%; overflow-y:scroll;">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    {% for key, test in more_info.items %}
+      <p id="name"> {{ test.name }} </p>
+      <div id="media">
+      <a href="{{ test.video_link }}" id="video" target="_blank"> Video</a>
+      <a href="{{ test.pdf_link }}" id="pdf" target="_blank"> PDF </a>
+  </div>
+      {% for string in test.details %}
+        <p> {{ string }}</p>
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
-</span>
+  </div>
 </div>
+
 <div class="row">
 
     <div class="col-md-12">
@@ -73,6 +99,32 @@
 function myFunction() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
+}
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 </script>
 
